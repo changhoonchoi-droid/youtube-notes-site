@@ -8,8 +8,8 @@
 <meta property="og:description" content="유튜브도사 · 유튜브 정리 노트">
 <meta property="og:image" content="https://i.ytimg.com/vi/1qUzfANEeCE/hqdefault.jpg">
 <style>
-:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5}
-@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31}}
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -45,350 +45,154 @@ figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
 .pair figure{margin:4px 0}
 @media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
 li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
 footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
 </style></head>
 <body><main>
 <header class="top"><a class="thumb" href="https://youtu.be/1qUzfANEeCE" style="background-image:url('https://i.ytimg.com/vi/1qUzfANEeCE/hqdefault.jpg')" aria-label="원본 영상"></a>
-<div class="info"><h1>유료강의 듣지마세요. 해외반응 유튜브 구독자 0명으로 월300만원 버는 법 다 알려드림 (26년 최신판)</h1><p class="meta">유튜브도사 · 게시 2026-10-21 · 1시간 1분 · 정리 2026-10-23</p>
+<div class="info"><h1>유료강의 듣지마세요. 해외반응 유튜브 구독자 0명으로 월300만원 버는 법 다 알려드림 (26년 최신판)</h1><p class="meta">유튜브도사 · 게시 2026-10-21 · 1시간 1분 · 정리 2026-10-23</p><p class="note">⚠️ 자막 없음(IpBlocked / yt-dlp HTTPError: HTTP Error 429: Too Many Requests / 영상 받기 실패 DownloadError: ERROR: unable to download video data: HTTP Error 403: Forbidden) — 영상 설명만으로 정리</p>
 <a class="btn" href="https://youtu.be/1qUzfANEeCE">▶ 원본 영상 보기</a></div></header>
-<section class="glance"><h2>한눈에 보기</h2>
+<section><p>⚠️ 자막을 받지 못해 영상 설명만으로 정리했습니다</p>
+</section><section class="glance"><h2>한눈에 보기</h2>
 <ul>
-<li>이 영상은 '해외 반응' 유튜브를 권합니다. 한국 문화를 겪은 외국인의 영상을 소재로 만드는 채널이고, 얼굴을 드러내거나 직접 촬영하지 않아도 됩니다. 운영자는 이 방식으로 조회수 수익만 누적 17억 원을 벌었다고 말합니다.</li>
-<li>운영자가 내세우는 3원칙은 검증된 소재만 쓰기, 잘된 영상에서 10%만 바꾸기, 편집은 자막과 나레이션만 하기입니다. 여기서 검증된 소재란 구독자는 적은데 조회수가 높은 영상을 말합니다.</li>
-<li>만드는 순서는 7단계입니다. AI로 채널명·로고 만들기 → 새 계정으로 알고리즘 길들이기 → 썸네일 각(10% 새 포인트) 잡기 → AI 프롬프트로 대본 만들기 → Vrew·다운로더·Pexels로 재료 3가지 모으기 → CapCut 편집 → 업로드 후 48시간 동안 분석하기.</li>
-<li>남의 원본 영상을 그대로 틀고 자막만 붙이면 수익을 낼 수 없다고 합니다. 그래서 나레이션과 배경 영상·사진을 따로 넣어 직접 만든 영상으로 만들어야 한다고 강조합니다.</li>
-<li>업로드 후 48시간 동안 노출 클릭률을 보고 썸네일을 바꿀지 정합니다. 10% 이상이면 그대로 두고, 8~10%면 지켜보고, 8% 미만이면 교체합니다. 영상 뒷부분은 운영자가 만든 AI 자동화 프로그램과 무료 강의 홍보입니다.</li>
+<li>조회수 수익만으로 6년간 누적 17억 원을 벌었다고 밝힌 '유튜브도사'가 얼굴을 드러내지 않는 '해외 반응' 유튜브 채널을 처음부터 운영하는 방법을 1시간 동안 설명하는 강의입니다.</li>
+<li>영상은 채널명·로고 만들기부터 알고리즘 길들이기, 썸네일, AI 대본, 재료 준비, 캡컷 편집, 업로드 후 48시간 분석까지 7단계로 나뉩니다.</li>
+<li>얼굴 노출, 촬영 장비, 뛰어난 편집 실력 없이도 시작할 수 있다고 주장합니다.</li>
+<li>뒷부분에서는 편집 시간을 6시간에서 10분으로 줄인다는 AI 자동화 프로그램과 무료 강의 신청을 안내합니다. 홍보 성격이 섞여 있습니다.</li>
 </ul>
 </section><section><h2>이런 분께 도움이 됩니다</h2>
 <ul>
-<li>얼굴을 드러내지 않고 촬영 없이 할 수 있는 유튜브 부업을 찾는 분</li>
-<li>해외 반응 채널이 소재를 어떻게 찾고, 대본과 편집은 어떻게 하는지 실제 흐름이 궁금한 분</li>
-<li>유튜브 스튜디오의 노출 클릭률과 평균 시청 시간을 언제, 어떤 기준으로 봐야 하는지 알고 싶은 분</li>
+<li>얼굴을 드러내지 않고 유튜브 부업을 시작하고 싶은 직장인</li>
+<li>어떤 영상을 만들어야 할지 몰라 시작을 미루고 있는 초보자</li>
+<li>'해외 반응' 장르가 무엇이고 어떤 순서로 만드는지 전체 흐름을 먼저 알고 싶은 분</li>
 </ul>
 </section><section><h2>핵심 내용</h2>
-<h3>운영자 소개와 수익 주장 (0:00)</h3>
+<h3>시청자를 위한 무료 선물 2가지 (1:41)</h3>
+<p>설명란 링크로 아래 두 가지 자료를 무료로 준다고 안내합니다.</p>
+<ol>
+<li>명당 K-한류 콘텐츠 주제 100개</li>
+<li>왕초보도 대본과 제목을 쉽게 쓸 수 있는 AI 프롬프트</li>
+</ol>
 <ul>
-<li>운영자는 '유튜브도사'입니다. 구독자 0명에서 시작해 얼굴 공개 없이 해외 반응 영상만으로 첫 달에 월 1천만 원을 벌었고, 6개월 차에는 월 4,700만 원(다른 대목에서는 약 5천만 원)을 정산받았다고 합니다.</li>
-<li>예로 든 영상의 조회수는 손흥민 해외 반응 1,880만 회, BTS 해외 반응 809만 회, 불닭 해외 반응 954만 회입니다.</li>
-<li>증빙으로 계좌 입금 내역, 국세청 부가가치세 과세표준증명, 외화 매입 증명서를 보여 줍니다.</li>
-<li>300만 원짜리 유료 강의에서 가르치는 전 과정을 이 영상에서 무료로 공개한다고 말합니다.</li>
+<li>신청 링크(설명란): https://changeus.ai/campaign/OSuEQHyjs</li>
 </ul>
 <h3>빚 1억 실직자에서 누적 17억까지 (3:21)</h3>
 <ul>
-<li>운영자는 원래 러시아에서 여행 가이드로 일했는데 코로나로 실직했습니다. 2020년 6월 10일부터 휴대폰으로 축구 이야기 영상을 찍어 6편을 올렸지만 조회수는 대부분 10여 회, 가장 많이 나온 것도 100여 회여서 그만뒀습니다.</li>
-<li>그 뒤 차린 요식업도 망해 빚이 1억 원을 훌쩍 넘었고, 그 무렵 아이가 생겼습니다. 살아남아야 한다는 마음으로 유튜브를 다시 시작했습니다.</li>
-<li>다시 시작한 계기는 윤여정 배우가 영화 '미나리'로 오스카상을 받은 소식이었습니다. 이 소재로 만든 해외 반응 영상이 잘되자 윤여정 관련 영상만 계속 올렸고, 이 소재 하나로만 최소 1천만 원 넘게 벌었다고 합니다.</li>
-<li>여기서 얻은 깨달음은 열심히 하는 것보다 잘 터지는 주제를 고르는 것이 중요하다는 점입니다.</li>
-<li>지금은 유튜브 6년 차이고 누적 구독자 258만 명, 누적 수익 17억 원이라고 합니다. 운영하는 채널 수는 &quot;10억의 채널&quot;로 들려 정확하지 않습니다(자막상 불분명, 10여 개로 추정).</li>
-<li>증빙으로 제시한 숫자는 아래와 같습니다.<ul>
-<li>계좌 입금: 2025년 5월 26일~8월 25일 2억 4,400만 원(영상에서는 &quot;4개월&quot;이라고 표현)</li>
-<li>외화 매입 증명서: 같은 기간 178,767달러, 국민은행 발급</li>
-<li>국세청 신고 매출: 18억 660만 원</li>
-<li>2026년 상반기: 6개월간 4억 30만 원</li>
+<li>실직하고 빚이 1억 원이던 상황에서 유튜브를 시작해, 6년 동안 여러 채널을 운영하며 조회수 수익으로만 누적 17억 원을 벌었다고 합니다.</li>
+<li>구체적인 과정은 (자막상 불분명)합니다.</li>
 </ul>
-</li>
-</ul>
-<figure><a href="https://youtu.be/1qUzfANEeCE?t=521"><img src="01.jpg" alt="계좌 입금 내역·외화 매입 증명서로 수익을 증빙하는 장면" loading="lazy"></a><figcaption>계좌 입금 내역·외화 매입 증명서로 수익을 증빙하는 장면 · <a href="https://youtu.be/1qUzfANEeCE?t=521">▶ 8:41</a></figcaption></figure><h3>지금 해외 반응을 시작해야 하는 이유 (9:28)</h3>
+<h3>지금 '해외 반응' 유튜브를 시작해야 하는 이유 (9:28)</h3>
 <ul>
-<li>운영자는 롱폼, 쇼츠, 이슈, 리뷰를 다 해 봤지만, 돈 없이 처음부터 다시 시작한다면 해외 반응을 고르겠다고 말합니다. 초보가 가장 빨리 조회수 수익을 낼 수 있는 주제이기 때문이라고 합니다.</li>
-<li>이유는 두 가지입니다.<ul>
-<li>고점이 높다: 4개월 만에 2억 원 넘게 벌었다고 합니다.</li>
-<li>오래 간다: 6년째 지금도 월 3천만~5천만 원을 번다고 합니다.</li>
+<li>'해외 반응'은 한국 콘텐츠(K-한류 등)를 본 외국인의 반응을 다루는 장르로 보입니다. 설명란의 '명당 K-한류 콘텐츠 주제 100개'를 근거로 한 추정입니다.</li>
+<li>지금 시작해야 하는 구체적인 이유는 (자막상 불분명)합니다.</li>
 </ul>
-</li>
-<li>운영자는 한국에서 아직 잘 알려지지 않은 방법이라 블루오션(경쟁이 적은 시장)이라고 봅니다.</li>
-<li>핵심 개념은 '명당'입니다. 잘 팔리는 주제를 뜻하며, 명당을 찾아 빨리 선점하면 돈이 된다는 설명입니다. 운영자에게 처음 명당은 윤여정이었습니다. 첫 영상은 약 20만 회 조회에 40만~50만 원을 벌었다고 합니다.</li>
-<li>유튜브 스튜디오 기준으로 2021년 4월 첫 달은 조회수 341만 회에 수익 1,060만 원이었습니다. 6개월 차에는 수익 36,846달러로 지금 환율로 5천만 원이 넘었다고 합니다. 이때 조회수는 &quot;1,47만&quot;으로 들려 정확하지 않습니다(자막상 불분명).</li>
-<li>관심사별로 추천하는 주제는 축구는 손흥민, 야구는 '이 정…'(자막상 불분명), 연예 뉴스는 BTS입니다.</li>
-<li>손흥민 채널 경험담도 소개합니다. 첫 영상이 200만 회 넘게 나와 영상 하나로 수익 창출 조건을 채웠습니다. 이어서 한 달 동안 손흥민 영상 8편을 올려 그 채널 하나로 2천만 원 넘게 벌었다고 합니다.</li>
-<li>운영자는 K컬처가 지금 정점이라서 수요가 끝이 없다고 봅니다. 외국인이 계속 한국을 찾아오니 소재도 계속 생긴다는 논리입니다. 예로 청계천은 미국·스페인·프랑스 사람마다 각각 영상이 나오고, 뉴욕에서 새벽 1시까지 곰탕을 먹으려고 줄을 서는 장면도 소재가 된다고 합니다.</li>
-</ul>
-<div class="tbl"><table>
-<thead>
-<tr>
-  <th>소재('코인')</th>
-  <th>조회수</th>
-  <th>수익</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>미국 태권도 도장(한국 예절 교육)</td>
-  <td>53만</td>
-  <td>약 111만 원</td>
-</tr>
-<tr>
-  <td>한국 문화</td>
-  <td>74만</td>
-  <td>305만 원</td>
-</tr>
-<tr>
-  <td>BTS</td>
-  <td>38만</td>
-  <td>129만 원</td>
-</tr>
-<tr>
-  <td>한국 스포츠(최근)</td>
-  <td>27만</td>
-  <td>23만 원(자막상 불분명)</td>
-</tr>
-</tbody>
-</table></div>
-<figure><a href="https://youtu.be/1qUzfANEeCE?t=859"><img src="02.jpg" alt="미국 태권도 도장 사례로 해외 반응 소재를 설명하는 장면" loading="lazy"></a><figcaption>미국 태권도 도장 사례로 해외 반응 소재를 설명하는 장면 · <a href="https://youtu.be/1qUzfANEeCE?t=859">▶ 14:19</a></figcaption></figure><ul>
-<li>영상 자체는 어렵지 않다고 합니다. 태권도 영상도 원본을 틀고 음악을 깐 뒤 흐름대로 설명했을 뿐이라는 것입니다.</li>
-</ul>
-<h3>컴맹 피자집 사장님 사례 (16:35)</h3>
+<h3>실제 수익 사례: 컴맹 피자집 사장님이 월 1,500만 원 (16:35)</h3>
 <ul>
-<li>운영자에게 배운 피자집 사장님 사례도 소개합니다. 이분은 유튜브를 전혀 몰랐고 오히려 반감까지 있었지만, 지금은 월 1,500만 원을 꾸준히 벌고 누적 수익은 약 1억 2천만 원이라고 합니다.</li>
+<li>컴퓨터를 잘 모르는 피자집 사장님이 월 1,500만 원을 벌었다는 수익 인증 사례를 소개합니다.</li>
 </ul>
-<h3>무조건 터지는 3원칙 (17:50)</h3>
-<ol>
-<li><strong>검증된 레퍼런스(참고 영상)만 한다.</strong> 구독자 2천 명 채널에서 30만 회가 나온 영상과 구독자 50만 명 채널에서 30만 회가 나온 영상이 있다면, 검증된 소재는 앞쪽입니다. 채널의 힘이 아니라 소재의 힘으로 터진 것이기 때문입니다.</li>
-<li><strong>새로운 걸 하지 말고 잘된 것에서 10%만 바꾼다.</strong> 초보는 무엇이 터질지 모르고, 시청자는 낯선 것을 좋아하지 않는다고 합니다. 예를 들어 '윤여정 오스카 수상' 다음에는 '시상식 때 유명 미국 연예인이 윤여정을 보고 보인 반응'처럼 같은 명당 안에서 조금씩만 바꿉니다.</li>
-<li><strong>편집에 힘주지 않는다.</strong> 화려한 편집 대신 자막과 나레이션에만 신경 씁니다.</li>
-</ol>
-<figure><a href="https://youtu.be/1qUzfANEeCE?t=1095"><img src="03.jpg" alt="3원칙 중 &#x27;검증된 레퍼런스&#x27; 예시(구독자 수 대비 조회수 비교)" loading="lazy"></a><figcaption>3원칙 중 &#x27;검증된 레퍼런스&#x27; 예시(구독자 수 대비 조회수 비교) · <a href="https://youtu.be/1qUzfANEeCE?t=1095">▶ 18:15</a></figcaption></figure><h3>[1단계] 5분 만에 채널명·로고 만들기 (20:06)</h3>
+<blockquote class="tip"><p>💡 영상이 강조하는 메시지는 &quot;나이나 컴퓨터 실력보다 지금 시작해서 꾸준히 실행하는 것이 중요하다&quot;입니다.</p>
+</blockquote>
+<h3>해외 반응 유튜브 정석 3원칙 (17:50)</h3>
 <ul>
-<li>채널 개설에 일주일씩 쓰지 말고 5분 안에 끝내라고 합니다.</li>
-<li>GPT에 채널명 20개를 추천받고, 그중 직관적인 '외국인의 눈'을 골랐습니다. 로고도 GPT 이미지 생성으로 만들어 그대로 다운로드해 씁니다.</li>
+<li>무조건 터지는 3가지 원칙을 설명하는 부분입니다. 원칙의 내용은 (자막상 불분명)합니다.</li>
 </ul>
-<figure><a href="https://youtu.be/1qUzfANEeCE?t=1265"><img src="04.jpg" alt="GPT 이미지 생성으로 만든 &#x27;외국인의 눈&#x27; 채널 로고 결과" loading="lazy"></a><figcaption>GPT 이미지 생성으로 만든 &#x27;외국인의 눈&#x27; 채널 로고 결과 · <a href="https://youtu.be/1qUzfANEeCE?t=1265">▶ 21:05</a></figcaption></figure><h3>[2단계] 알고리즘 길들이기 (21:15)</h3>
+<h3>채널 제작 7단계 (20:06~)</h3>
+<div class="flow"><div class="flow-title">🔁 해외 반응 채널 제작 7단계 (챕터 기준)</div><ol class="flow-strip"><li><span>채널명·로고</span></li><li><span>알고리즘 길들이기</span></li><li><span>썸네일 잡기</span></li><li><span>AI 대본 작성</span></li><li><span>재료 3가지 준비</span></li><li><span>캡컷 편집</span></li><li><span>48시간 분석</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">채널명·로고</span><div class="d"><p>5분 만에 채널명과 로고를 만듭니다 (20:06)</p>
+</div></li><li><span class="n">2</span><span class="t">알고리즘 길들이기</span><div class="d"><p>조회수가 잘 나오는 소스만 추천에 뜨도록 알고리즘을 길들입니다 (21:15)</p>
+</div></li><li><span class="n">3</span><span class="t">썸네일 잡기</span><div class="d"><p>'10% 법칙'으로 썸네일을 잡습니다. 법칙의 내용은 자막상 불분명합니다 (29:47)</p>
+</div></li><li><span class="n">4</span><span class="t">AI 대본 작성</span><div class="d"><p>'도사 AI 프롬프트'로 대본을 만듭니다 (31:55)</p>
+</div></li><li><span class="n">5</span><span class="t">재료 3가지 준비</span><div class="d"><p>영상 제작에 꼭 필요한 재료 3가지를 준비합니다. 무엇인지는 자막상 불분명합니다 (35:57)</p>
+</div></li><li><span class="n">6</span><span class="t">캡컷 편집</span><div class="d"><p>CapCut으로 초보도 쉽게 편집합니다 (39:46)</p>
+</div></li><li><span class="n">7</span><span class="t">48시간 분석</span><div class="d"><p>업로드 후 48시간 동안 스튜디오 데이터를 분석하고, 기준에 따라 썸네일을 교체합니다 (46:55)</p>
+</div></li></ol></div>
+<h3>AI 자동화 프로그램 (53:15)</h3>
 <ul>
-<li>평소 계정은 이것저것 섞어 봐서 알고리즘이 뒤엉켜 있으므로, 시크릿 모드에서 새 채널을 만들어 처음부터 명당 소재만 뜨게 길들이자는 방법입니다.</li>
-<li>방법은 '해외 반응'이나 '외국인 반응'을 검색하고 필터를 '인기도'로 정렬한 뒤, 구독자는 적은데 조회수가 높은 채널을 구독하는 것입니다.</li>
-<li>이런 영상이 이상적입니다. 한국 문화를 경험한 외국인의 반응을 다룬 콘텐츠입니다(예: 한국 지하철을 탄 미국인).<ul>
-<li>'생생 반응' 채널: 구독자 2만 명인데 조회수 221만, 98만, 83만 회로 운영자는 &quot;노다지 채널&quot;이라고 부릅니다.</li>
-<li>'한국 찐 반응' 채널: 구독자 3만 명인데 조회수 131만, 130만, 110만 회</li>
+<li>6시간 걸리던 편집을 10분으로 줄여 준다는 'AI 자동화 프로그램'을 공개합니다.</li>
+<li>이름, 가격, 무료인지 여부는 (자막상 불분명)합니다.</li>
 </ul>
-</li>
-<li>이런 채널을 30~50개 구독하면 길들이기가 끝난다고 합니다. 시연에서는 2개만 구독했는데도 홈 화면에 명당 소재가 떴습니다(1일 전 13만 회, 3일 전 23만 회 등).</li>
-</ul>
-<div class="pair"><figure><a href="https://youtu.be/1qUzfANEeCE?t=1484"><img src="05.jpg" alt="구독자 2만 명인데 조회수 221만 회가 나온 &#x27;노다지 채널&#x27; 예시" loading="lazy"></a><figcaption>구독자 2만 명인데 조회수 221만 회가 나온 &#x27;노다지 채널&#x27; 예시 · <a href="https://youtu.be/1qUzfANEeCE?t=1484">▶ 24:44</a></figcaption></figure><figure><a href="https://youtu.be/1qUzfANEeCE?t=1541"><img src="06.jpg" alt="채널 2개만 구독한 뒤 홈 화면에 해외 반응 소재가 뜨는 모습" loading="lazy"></a><figcaption>채널 2개만 구독한 뒤 홈 화면에 해외 반응 소재가 뜨는 모습 · <a href="https://youtu.be/1qUzfANEeCE?t=1541">▶ 25:41</a></figcaption></figure></div><ul>
-<li>홈 화면에서 소재를 고를 때는 조회수 10만 회 이상을 '많이 나왔다'의 기준으로 삼습니다. 막 올라온 7시간짜리나 이틀 지났는데 207회인 영상은 아직 명당이 아니니 넘깁니다.</li>
-<li>182만 회처럼 가장 많이 나온 영상을 열어 원본 출처를 찾습니다. 출처는 왼쪽 위 화면에 적혀 있거나 설명란의 '더보기'에 있습니다. 출처를 복사해 검색하면 원본 영상(예: 설악산 등반 영상)이 나오고, 이 원본 채널이 내 소재 창고가 됩니다.</li>
-</ul>
-<figure><a href="https://youtu.be/1qUzfANEeCE?t=1660"><img src="07.jpg" alt="해외 반응 영상 왼쪽 위에 적힌 원본 출처를 확인하는 장면" loading="lazy"></a><figcaption>해외 반응 영상 왼쪽 위에 적힌 원본 출처를 확인하는 장면 · <a href="https://youtu.be/1qUzfANEeCE?t=1660">▶ 27:40</a></figcaption></figure><h3>[3단계] 썸네일 각 잡기, 10% 법칙 (29:47)</h3>
+<h3>무료 강의 신청과 혜택 (59:46)</h3>
 <ul>
-<li>썸네일 각이란 이미 관심이 검증된 소재에 새로운 포인트 하나(10%)를 얹는 기획입니다.</li>
-<li>윤여정은 의상, 만난 사람 등 소식이 많았지만 '윤여정이 보여 준 한국인만의 습성'으로 각을 잡아 20만 회가 나왔다고 합니다.</li>
-<li>갓 탤런트 계열 프로그램(자막상 '가런트', 불분명)은 '태권도 공연으로 우승'으로, 안젤리나 졸리는 '손목(자막상 '선목')에 한글 사인'으로 포인트를 잡았습니다.</li>
-<li>운영자는 이 부분이 가장 어렵고 해 보면서 실력이 는다고 말합니다. 자세한 방법은 다음 영상에서 다루겠다며 넘어갑니다.</li>
+<li>설명란 링크로 무료 강의를 신청하고 선물 자료를 받는 방법을 안내합니다.</li>
 </ul>
-<figure><a href="https://youtu.be/1qUzfANEeCE?t=1809"><img src="08.jpg" alt="윤여정·태권도·안젤리나 졸리 등 실제 썸네일 각 예시" loading="lazy"></a><figcaption>윤여정·태권도·안젤리나 졸리 등 실제 썸네일 각 예시 · <a href="https://youtu.be/1qUzfANEeCE?t=1809">▶ 30:09</a></figcaption></figure><h3>[4단계] '도사 AI 프롬프트'로 대본 만들기 (31:55)</h3>
-<ul>
-<li>원본 영상의 '설명'을 펼쳐 맨 아래 <strong>'스크립트 표시'</strong> 버튼을 누르면 전체 스크립트가 뜹니다. 영어든 한국어든 상관없으니 복사합니다.</li>
-<li>운영자가 만든 Claude 프롬프트(구독자 선물로 배포)에는 아래를 넣습니다.<ul>
-<li>스크립트</li>
-<li>원본 링크</li>
-<li>소재 설명: 원본 설명란에 적힌 출신 국가를 Google 번역으로 확인해 &quot;설악산에 오른 호주 커플&quot;처럼 적습니다.</li>
-</ul>
-</li>
-<li>모델은 Sonnet보다 Opus를 쓰라고 합니다. 대본이 가장 중요하고, Opus가 더 정교하게 써 준다는 이유입니다.</li>
-<li>결과물에는 아래가 한 번에 나옵니다.<ul>
-<li>썸네일 제목(예: &quot;여긴 천국인가요? 설악산 하나에 말문이 막힌 호주 커플, 한국은 대체 왜 이런 거죠?&quot;)</li>
-<li>후킹(시청자를 처음 3초 안에 붙잡는 도입) 구간 타임코드(예: 원본 16~26초)</li>
-<li>그 구간에 넣을 자막</li>
-<li>본문 나레이션</li>
-</ul>
-</li>
-</ul>
-<figure><a href="https://youtu.be/1qUzfANEeCE?t=2030"><img src="09.jpg" alt="도사 프롬프트로 만든 제목·후킹 타임코드·나레이션 대본 결과" loading="lazy"></a><figcaption>도사 프롬프트로 만든 제목·후킹 타임코드·나레이션 대본 결과 · <a href="https://youtu.be/1qUzfANEeCE?t=2030">▶ 33:50</a></figcaption></figure><h3>[5단계] 영상 재료 3가지 (35:57)</h3>
-<div class="tbl"><table>
-<thead>
-<tr>
-  <th>재료</th>
-  <th>도구</th>
-  <th>비고</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>나레이션 음성 + 자막 파일</td>
-  <td>Vrew(브루, 자막상 '부류')</td>
-  <td>AI 목소리로 TTS(글을 음성으로 바꾸는 기능) 생성</td>
-</tr>
-<tr>
-  <td>원본 영상</td>
-  <td>4K Video Downloader(자막상 '유튜브 4K 다운로드')</td>
-  <td>링크 붙여 넣어 다운로드</td>
-</tr>
-<tr>
-  <td>배경 영상·사진</td>
-  <td>Pexels(자막상 '픽셀즈')</td>
-  <td>나레이션 문장에 맞는 장면 검색</td>
-</tr>
-</tbody>
-</table></div>
-<ul>
-<li>재료가 꼭 3가지여야 하는 이유도 설명합니다. 유튜브 가이드라인은 창작물로 인정하는 기준을 두고 있어서, 남의 영상을 그대로 틀고 자막만 붙이면 수익을 낼 수 없다고 합니다. 그래서 배경 영상과 사진으로 직접 노력이 들어간 영상을 만든다는 설명입니다.</li>
-</ul>
-<figure><a href="https://youtu.be/1qUzfANEeCE?t=2242"><img src="10.jpg" alt="Vrew에서 AI 목소리로 나레이션을 만드는 화면" loading="lazy"></a><figcaption>Vrew에서 AI 목소리로 나레이션을 만드는 화면 · <a href="https://youtu.be/1qUzfANEeCE?t=2242">▶ 37:22</a></figcaption></figure><h3>[6단계] CapCut 편집 (39:46)</h3>
-<ul>
-<li>대본을 기준으로 편집합니다. 순서는 원본의 후킹 구간을 자르고, 나레이션과 자막을 붙인 뒤, 나레이션 문장마다 배경 영상을 까는 것입니다.</li>
-<li>시간 관계상 영상에서는 인트로까지만 만들고, 나머지는 같은 방식을 반복하면 된다고 합니다.</li>
-</ul>
-<div class="pair"><figure><a href="https://youtu.be/1qUzfANEeCE?t=2481"><img src="11.jpg" alt="CapCut에서 B 키로 원본 영상의 후킹 구간을 자르는 장면" loading="lazy"></a><figcaption>CapCut에서 B 키로 원본 영상의 후킹 구간을 자르는 장면 · <a href="https://youtu.be/1qUzfANEeCE?t=2481">▶ 41:21</a></figcaption></figure><figure><a href="https://youtu.be/1qUzfANEeCE?t=2685"><img src="12.jpg" alt="Pexels에서 &#x27;설악산&#x27; 동영상을 검색해 배경 영상을 받는 장면" loading="lazy"></a><figcaption>Pexels에서 &#x27;설악산&#x27; 동영상을 검색해 배경 영상을 받는 장면 · <a href="https://youtu.be/1qUzfANEeCE?t=2685">▶ 44:45</a></figcaption></figure></div><h3>[7단계] 업로드 후 48시간 분석과 썸네일 교체 (46:55)</h3>
-<ul>
-<li>유튜브 스튜디오 → <strong>분석</strong> 탭에서 28일, 90일, 1년 단위로 조회수, 시청 시간, 구독자, 수익을 봅니다. 예시 롱폼 채널은 28일 동안 조회수 797만 회, 예상 수익 약 6,000달러였습니다.</li>
-<li>올린 지 약 5시간 된 영상의 지표를 예로 들어 설명합니다.<ul>
-<li>조회수 그래프: 7만 회로 아직 오르는 중이라 사람들이 계속 보고 있다는 신호입니다. 그래프가 꺾였는데 더 끌어올리고 싶으면 썸네일을 바꿉니다.</li>
-<li>시청 시간: 2,900시간</li>
-<li>도달 범위: 노출 16만 회 중 7만 명 시청, 노출 클릭률 14.6%(처음에는 19%). 19%는 자리 잡은 채널이라 가능한 높은 수치라고 합니다.</li>
-<li>평균 시청 시간: 13분짜리 영상에서 약 5분. 이 지표가 조회당 단가를 좌우하니 &quot;목숨을 걸어야&quot; 한다고 말합니다.</li>
-</ul>
-</li>
-</ul>
-<figure><a href="https://youtu.be/1qUzfANEeCE?t=2946"><img src="13.jpg" alt="스튜디오 &#x27;도달 범위&#x27;에서 노출수·클릭률을 확인하는 장면" loading="lazy"></a><figcaption>스튜디오 &#x27;도달 범위&#x27;에서 노출수·클릭률을 확인하는 장면 · <a href="https://youtu.be/1qUzfANEeCE?t=2946">▶ 49:06</a></figcaption></figure><ul>
-<li>업로드 후 48시간이 썸네일을 바꿀지 판단하는 핵심 시간입니다. 초보 해외 반응 채널 기준은 아래와 같습니다.</li>
-</ul>
-<div class="tbl"><table>
-<thead>
-<tr>
-  <th>노출 클릭률(CTR)</th>
-  <th>판단</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>10% 이상</td>
-  <td>좋은 신호, 그대로 둠</td>
-</tr>
-<tr>
-  <td>8~10%</td>
-  <td>지켜봄</td>
-</tr>
-<tr>
-  <td>8% 미만</td>
-  <td>썸네일 교체</td>
-</tr>
-</tbody>
-</table></div>
-<ul>
-<li>조회수가 안 나올 때는 CTR, 시청 지속률, 썸네일과 내용이 맞는지, 시장성이 있는지를 점검하고 썸네일을 바꿔 봅니다. 이 과정이 실력이 쌓이는 구간이라고 합니다.</li>
-<li>꾸준함도 강조합니다. 1~3편에서 포기하지 말고 계속 올리다 보면 한 편이 터지면서 이전 영상 조회수까지 끌어올린다고 합니다. 운영자 채널도 &quot;네 번째 영상이 터진다&quot;는 취지로 네 번째 영상에 힘을 싣는다고 말합니다.</li>
-</ul>
-<h3>AI 자동화 프로그램 소개, 홍보 (53:15)</h3>
-<ul>
-<li>운영자가 직접 만든 프로그램으로, 6시간 걸리던 작업을 10분으로 줄인다고 주장합니다. 기능은 아래와 같습니다.<ul>
-<li>'해외 원본 찾기': 키워드(예: Korea travel vlog, Seoul vlog, first time in Korea)를 넣으면 아직 남이 쓰지 않았지만 터질 만한 원본을 A·B·C 등급으로 추천합니다.</li>
-<li>원본 다운로드, 타임스탬프 자막 추출, 썸네일용 대표 화면 캡처 10장 추천</li>
-<li>대본 생성, AI 나레이션 자동 생성</li>
-<li>'화면 소재 수집': 문단마다 배경 영상을 자동으로 다운로드합니다.</li>
-<li>영상 자동 완성: 시연에서는 9분짜리 영상이 만들어졌습니다.</li>
-</ul>
-</li>
-<li>운영자는 AI 없이도 돈을 버는 사람이 만든 프로그램이라야 가치가 있다고 말합니다. 고정 댓글 링크의 무료 강의에서 프로그램 정보를 안내합니다.</li>
-</ul>
-<figure><a href="https://youtu.be/1qUzfANEeCE?t=3309"><img src="14.jpg" alt="자동화 프로그램이 원본 영상을 A·B·C 등급으로 추천하는 화면" loading="lazy"></a><figcaption>자동화 프로그램이 원본 영상을 A·B·C 등급으로 추천하는 화면 · <a href="https://youtu.be/1qUzfANEeCE?t=3309">▶ 55:09</a></figcaption></figure></section><section><h2>따라 해보기</h2>
+</section><section><h2>따라 해보기</h2>
 <h3>준비물</h3>
 <ul>
-<li>영상에 나온 도구:<ul>
-<li>크롬 브라우저(시크릿 창)와 새 Google 계정 또는 새 채널</li>
-<li>ChatGPT(채널명·로고·번역)</li>
-<li>Claude(대본, Opus 권장)</li>
-<li>Vrew</li>
-<li>4K Video Downloader</li>
-<li>Pexels</li>
-<li>CapCut</li>
-</ul>
-</li>
-<li>운영자의 '도사 프롬프트'와 '소재 100개'는 구독, 댓글, 고정 댓글이나 무료 강의를 통해 받는 선물입니다. 없으면 대본을 직접 쓰거나 프롬프트를 스스로 만들어야 합니다.</li>
-<li>비용: 영상에서 따로 밝히지 않았습니다. Vrew 화면에 '9,000원'이라는 말이 잠깐 나오지만 무엇의 가격인지는 분명하지 않습니다(자막상 불분명). Claude Opus는 보통 유료 요금제에서 쓸 수 있습니다(보충).</li>
+<li>유튜브 계정과 채널</li>
+<li>CapCut(영상 편집 프로그램)</li>
+<li>AI 대본 프롬프트(설명란 링크에서 무료로 받음)</li>
+<li>AI 프롬프트를 실행할 도구(보충): 어떤 AI 서비스를 쓰는지는 자막상 불분명합니다.</li>
+<li>비용과 소요 시간: (자막상 불분명)</li>
 </ul>
 <h3>단계별 방법</h3>
-<p><strong>① 채널명·로고 만들기</strong></p>
-<ol>
-<li>ChatGPT에 입력합니다.<pre><code>나 해외 반응 유튜브 시작하려고 해. 채널명 20개 추천해 줘.
-</code></pre>
-</li>
-<li>한눈에 해외 반응 채널로 보이는 이름 하나를 고릅니다(예: 외국인의 눈).</li>
-<li>이미지 생성을 선택해 입력합니다.<pre><code>유튜브 채널 로고를 만들려고 해. 외국인의 눈이라는 채널이야. 한국 문화를 경험한 외국인의 반응을 소개하는 채널이야. 알맞게 만들어 줘.
-</code></pre>
-</li>
-<li>결과 이미지를 다운로드합니다.</li>
-</ol>
-<p><strong>② 채널 개설 + 알고리즘 길들이기</strong></p>
-<ol>
-<li>크롬 오른쪽 위 점 세 개(⋮) → <strong>새 시크릿 창</strong>을 엽니다.</li>
-<li>YouTube에 로그인 → <strong>채널 만들기</strong>에서 채널명을 입력하고, 핸들은 그대로 두거나 수정하고, 로고를 사진으로 올린 뒤 채널을 만듭니다.</li>
-<li>검색창에 <code>해외 반응</code> 또는 <code>외국인 반응</code>을 입력하고, 오른쪽 위 <strong>필터</strong> → <strong>인기도</strong>로 정렬합니다.</li>
-<li>한국 문화를 경험한 외국인 반응 영상 가운데 구독자는 적은데(2만~3만 명 수준) 조회수가 높은(100만 회 안팎) 채널을 찾아 구독합니다.</li>
-<li>같은 방법으로 30~50개 채널을 구독합니다.</li>
-<li>홈 화면에서 조회수 10만 회 이상이고 구독자는 적은 채널의 영상을 고릅니다.</li>
-</ol>
-<p><strong>③ 원본 찾기</strong></p>
-<ol>
-<li>고른 영상의 왼쪽 위 화면이나 설명란 <strong>더보기</strong>에서 원본 출처를 찾습니다.</li>
-<li>출처 이름을 복사해 YouTube에서 검색하고 원본 영상과 채널을 찾습니다.</li>
-<li>원본 설명란에 적힌 출신 국가 등을 Google 번역으로 확인합니다.</li>
-</ol>
-<p><strong>④ 대본 만들기</strong></p>
-<ol>
-<li>원본 영상의 설명 → 맨 아래 <strong>스크립트 표시</strong> → 전체 스크립트를 복사합니다.</li>
-<li>Claude에 프롬프트, 스크립트, 원본 링크, 소재 설명(예: 설악산에 오른 호주 커플)을 넣고 모델은 Opus로 실행합니다. 도사 프롬프트 전문은 영상에서 공개되지 않았습니다.</li>
-<li>결과에서 제목, 후킹 구간 타임코드, 후킹 자막, 나레이션을 확인합니다.</li>
-</ol>
-<p><strong>⑤ 재료 3가지 모으기</strong></p>
-<ol>
-<li>Vrew → <strong>새로 만들기</strong> → <strong>AI 목소리로 시작하기</strong> → 나레이션 대본을 붙여 넣습니다.</li>
-<li>목소리를 골라 미리 들어 봅니다(영상에서는 '제피로스'). → 확인 → 생성 결과를 들어 봅니다.</li>
-<li>오른쪽 위 <strong>내보내기</strong> → 오디오: 모든 클립, MP3로 저장합니다(예: <code>설악산 외국인 반응 테스트</code>).</li>
-<li><strong>내보내기</strong> → 자막 파일: 한국어로 설정해 저장합니다.</li>
-<li>4K Video Downloader에서 원본 링크를 복사한 뒤 <strong>링크 붙여넣기</strong> → 다운로드합니다.</li>
-<li>Pexels에서 <strong>동영상</strong>으로 바꾸고 나레이션 문장의 키워드(예: 설악산, 단풍)로 검색해 다운로드합니다.</li>
-</ol>
-<p><strong>⑥ CapCut 편집</strong></p>
-<ol>
-<li><strong>+ 프로젝트 만들기</strong>를 누르고 원본 영상을 타임라인에 끌어다 놓습니다.</li>
-<li>타임라인 오른쪽 줌 조절로 구간을 찾고, 후킹 시작점(예: 16초)과 끝점(예: 26초)에서 <strong>B</strong> 키를 눌러 자릅니다. 필요 없는 앞부분은 지웁니다.</li>
-<li>후킹 구간 뒤에 Vrew에서 받은 MP3와 자막 파일을 넣습니다. 싱크가 맞게 들어갑니다.</li>
-<li>후킹 구간 자막: 위쪽 <strong>텍스트</strong> → <strong>기본 텍스트</strong>를 원본 영상 위로 끌어다 놓고 길이를 맞춥니다. 오른쪽 위 입력란에 대본의 자막을 붙여 넣습니다.</li>
-<li>자막 꾸미기: 크기를 줄이고 3문장으로 나눈 뒤, 아래쪽 노란색 스타일 버튼을 누르고 <strong>획</strong>을 두껍게 하고 위치를 조정합니다.</li>
-<li>나레이션 문장마다 Pexels 배경 영상을 넣고 자막 길이에 맞춥니다.</li>
-<li>내보내기 구간 지정: 시작 지점에서 <strong>I</strong> 키(인포인트), 끝 지점에서 <strong>O</strong> 키(아웃포인트, 자막에는 '5'로 표기)를 누릅니다. → 오른쪽 위 <strong>내보내기</strong>를 누릅니다.</li>
-<li>썸네일을 만들어 업로드합니다. 썸네일 제작 방법은 영상에서 생략됐습니다.</li>
-</ol>
-<p><strong>⑦ 48시간 점검</strong></p>
-<ol>
-<li>YouTube 스튜디오 → 해당 영상의 <strong>분석</strong> 아이콘 → 조회수 그래프가 계속 오르는지 봅니다.</li>
-<li><strong>도달 범위</strong> 탭에서 노출 클릭률을 확인합니다. 10% 이상이면 그대로, 8~10%면 관찰, 8% 미만이면 썸네일을 교체합니다.</li>
-<li><strong>참여도</strong> 탭에서 평균 시청 시간을 확인합니다.</li>
-</ol>
+<div class="flow"><div class="flow-title">🔁 해외 반응 영상 첫 업로드까지</div><ol class="flow-strip"><li><span>자료 받기</span></li><li><span>채널 개설</span></li><li><span>알고리즘 길들이기</span></li><li><span>주제·썸네일 정하기</span></li><li><span>대본 생성</span></li><li><span>재료 준비</span></li><li><span>캡컷 편집</span></li><li><span>업로드 후 분석</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">자료 받기</span><div class="d"><p>설명란 링크에서 주제 100개와 AI 프롬프트를 신청해 받습니다 (1:41)</p>
+</div></li><li><span class="n">2</span><span class="t">채널 개설</span><div class="d"><p>채널명과 로고를 정합니다. 구체적인 방법은 영상 20:06 참고 (20:06)</p>
+</div></li><li><span class="n">3</span><span class="t">알고리즘 길들이기</span><div class="d"><p>해외 반응 영상이 추천에 뜨도록 시청 기록을 정리합니다. 방법은 자막상 불분명합니다 (21:15)</p>
+</div></li><li><span class="n">4</span><span class="t">주제·썸네일 정하기</span><div class="d"><p>받은 주제 목록에서 고르고, 10% 법칙으로 썸네일을 잡습니다 (29:47)</p>
+</div></li><li><span class="n">5</span><span class="t">대본 생성</span><div class="d"><p>도사 AI 프롬프트에 주제를 넣어 대본과 제목을 만듭니다 (31:55)</p>
+</div></li><li><span class="n">6</span><span class="t">재료 준비</span><div class="d"><p>필수 재료 3가지를 모읍니다 (35:57)</p>
+</div></li><li><span class="n">7</span><span class="t">캡컷 편집</span><div class="d"><p>CapCut에서 영상을 편집하고 내보냅니다 (39:46)</p>
+</div></li><li><span class="n">8</span><span class="t">업로드 후 분석</span><div class="d"><p>48시간 동안 YouTube 스튜디오 데이터를 보고, 기준에 못 미치면 썸네일을 교체합니다 (46:55)</p>
+</div></li></ol></div>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 1단계 「자료 받기」(설명란 링크가 있음)</li>
+<li class="warn">⚠️ 2단계 「채널 개설」: 채널명과 로고를 만드는 도구나 방법이 빠졌습니다 → 영상 20:06~21:15 확인</li>
+<li class="warn">⚠️ 3단계 「알고리즘 길들이기」: 구체적인 방법(검색어, 시청·관심 없음 처리 등)이 빠졌습니다 → 영상 21:15~29:47 확인. 챕터 중 가장 길어서(약 8분) 핵심 노하우일 가능성이 큽니다.</li>
+<li class="warn">⚠️ 4단계 「주제·썸네일 정하기」: '10% 법칙'의 정의가 빠졌습니다 → 영상 29:47 확인</li>
+<li class="warn">⚠️ 5단계 「대본 생성」: 프롬프트 원문과 사용할 AI 서비스가 빠졌습니다 → 설명란 링크로 자료를 받고 영상 31:55 확인</li>
+<li class="warn">⚠️ 6단계 「재료 준비」: 필수 재료 3가지가 무엇인지, 어디서 구하는지 빠졌습니다 → 영상 35:57 확인. 해외 반응 영상은 원본 영상·댓글을 쓰는 경우가 많으므로 저작권 기준도 따로 확인하세요(보충).</li>
+<li class="warn">⚠️ 7단계 「캡컷 편집」: 메뉴 순서, 자막·음성(TTS) 설정 등이 빠졌습니다 → 영상 39:46 확인</li>
+<li class="warn">⚠️ 8단계 「업로드 후 분석」: 어떤 지표를 보는지, 썸네일을 교체하는 수치 기준이 빠졌습니다 → 영상 46:55 확인</li>
+<li class="warn">⚠️ AI 자동화 프로그램(53:15): 유료 구매나 강의 신청이 필요한지 확인되지 않았습니다 → 영상 53:15와 설명란 링크 확인</li>
+<li class="warn">❓ 강의 제목은 &quot;유료강의 듣지 마세요&quot;인데, 뒷부분에 프로그램 공개와 강의 신청 안내가 있습니다. 최종적으로 유료 상품으로 이어지는지 확인이 필요합니다.</li>
+</ul>
 <h3>확인 방법</h3>
 <ul>
-<li>길들이기 후 홈 화면에 해외 반응 영상이 주로 뜨면 성공입니다.</li>
-<li>Vrew 결과물을 CapCut에 넣었을 때 음성과 자막 싱크가 맞으면 됩니다.</li>
-<li>내보낸 영상을 재생했을 때 후킹 장면, 나레이션, 자막, 배경 영상이 순서대로 나오는지 확인합니다.</li>
-</ul>
-<h3>막히면</h3>
-<ul>
-<li>원본 영상에 자막만 붙인 영상은 수익을 낼 수 없다고 합니다. 배경 영상과 사진으로 직접 구성하세요.</li>
-<li>처음 몇 편이 안 터져도 포기하지 말고 꾸준히 올리라고 합니다.</li>
-<li>소재는 직접 새로 만들려 하지 말고, 검증된 소재에서 10%만 바꾸라고 합니다.</li>
-<li>저작권 처리는 오프닝에서 알려 준다고 했지만, 본편에서는 배경 영상을 따로 넣으라는 것 말고는 구체적으로 다루지 않았습니다(영상에서 생략됨).</li>
+<li>업로드 후 48시간 동안 YouTube 스튜디오에서 지표를 확인합니다. 영상이 말하는 판단 기준은 (자막상 불분명)합니다.</li>
 </ul>
 </section><section><h2>기억할 숫자·인용</h2>
 <ul>
-<li>수익: 첫 달(2021년 4월) 1,060만 원 / 6개월 차 36,846달러(약 5천만 원) / 누적 약 17억~18억 660만 원 / 2026년 상반기 4억 30만 원</li>
-<li>명당 기준: 구독자는 적고 조회수 10만 회 이상인 영상. 길들이기에는 채널 30~50개를 구독</li>
-<li>썸네일 교체 기준: CTR 10% 이상이면 유지, 8~10%면 관찰, 8% 미만이면 교체. 판단 시간은 업로드 후 48시간</li>
-<li>편집 시간: 수작업 약 6시간이 자동화 프로그램으로 10분(운영자 주장)</li>
-<li>&quot;열심히 하는 게 중요한 게 아니라 잘 터지는 주제를 하는 게 중요하다.&quot;</li>
-<li>&quot;새로운 거 하려고 하지 말고 기존에 잘된 거에서 딱 10%만 바꿔라.&quot;</li>
+<li>6년간 조회수 수익 누적 <strong>17억 원</strong> (영상 속 주장)</li>
+<li>시작 당시 <strong>빚 1억 원</strong>, 실직 상태</li>
+<li>컴맹 피자집 사장님 사례: <strong>월 1,500만 원</strong></li>
+<li>구독자 0명에서 <strong>월 300만 원</strong> (제목)</li>
+<li>편집 시간 <strong>6시간 → 10분</strong> (AI 자동화 프로그램 주장)</li>
+<li>썸네일 <strong>'10% 법칙'</strong>, 업로드 후 <strong>48시간</strong> 분석</li>
+<li>&quot;중요한 건 얼마나 잘하느냐보다 지금 시작하고 꾸준히 실행하는 것&quot; (영상 설명)</li>
 </ul>
 </section><section><h2>생각해볼 점</h2>
 <ul>
-<li><strong>저작권과 수익 정책 위험:</strong> 이 방식은 남의 원본 영상을 내려받아 일부를 그대로 씁니다. 배경 영상을 넣으면 창작물로 인정된다는 것은 운영자의 주장일 뿐입니다. 원작자의 저작권 신고나 유튜브의 '재사용 콘텐츠' 정책에 따라 수익 창출이 거부될 수 있으니, 유튜브 공식 정책과 원작자 허락 여부를 따로 확인하는 것이 안전하다고 봅니다(제 의견). 영상 속 4K Video Downloader로 유튜브 영상을 내려받는 것도 유튜브 약관과 부딪칠 수 있습니다.</li>
-<li><strong>수익 사례의 대표성:</strong> 증빙 서류는 운영자 본인의 성공을 보여 줄 뿐입니다. 같은 방법을 따라 한 사람이 평균적으로 얼마를 버는지는 피자집 사례 하나뿐입니다. 2021년 윤여정·손흥민 시기의 결과가 지금도 똑같이 나온다는 보장도 없습니다. 영상 속 최근 사례(27만 회에 약 23만 원)는 초기보다 단가가 낮아 보입니다.</li>
-<li><strong>홍보 구조:</strong> 영상 후반은 유료로 이어질 가능성이 있는 AI 프로그램과 무료 강의로 연결됩니다. 핵심 도구인 '도사 프롬프트'도 전문은 공개되지 않았습니다. &quot;유료 강의 내용을 다 푼다&quot;는 말과 실제 공개 범위 사이에 차이가 있다는 점을 감안해 보세요.</li>
+<li><strong>수익은 본인 주장입니다.</strong> 17억 원, 월 1,500만 원 같은 숫자는 영상 속 인증일 뿐이고, 평균적인 초보자가 얻는 결과로 보기는 어렵습니다.</li>
+<li><strong>저작권·수익화 정책 위험이 있습니다(내 의견).</strong> 해외 반응 장르는 남의 영상과 댓글을 재가공하는 경우가 많아, 유튜브의 '재사용된 콘텐츠' 정책 때문에 수익화가 거절될 수 있습니다. 시작 전에 YouTube 파트너 프로그램 정책을 직접 확인하세요.</li>
+<li><strong>홍보 구조가 있습니다.</strong> 무료 자료와 무료 강의 신청이 마케팅 랜딩 페이지(changeus.ai)로 연결됩니다. 신청 전에 유료 결제로 이어지는지 확인하는 것이 좋습니다.</li>
 </ul>
 </section><section><h2>바로 해볼 일</h2>
 <ul>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>크롬 시크릿 창에서 YouTube에 '해외 반응'을 검색하고 인기도로 정렬해, 구독자는 적은데 조회수 100만 회 안팎인 채널 5곳 찾아보기</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>찾은 영상 하나의 설명란에서 원본 출처를 따라가 '스크립트 표시'로 스크립트를 열어 보기</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>시작하기 전에 YouTube 고객센터에서 '재사용 콘텐츠' 수익 창출 정책 읽어 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>영상 21:15~29:47 「알고리즘 길들이기」 구간만 먼저 보고 방법을 메모하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>유튜브에서 '해외 반응'을 검색해 조회수 높은 영상 5개의 썸네일과 제목 패턴 살펴보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>YouTube 고객센터에서 '재사용된 콘텐츠' 정책 읽어 보기</li>
 </ul>
+<hr />
+<p><strong>참고:</strong> 요청대로 노트 본문만 출력했습니다. 프로젝트 규칙(CLAUDE.md)에 따른 <code>_업무현황/tasks.json</code> 갱신과 리포트 다시 만들기는 하지 않았습니다. 자막(429, IP 차단)과 영상(403) 모두 받지 못해서, 위 내용은 제목·설명·챕터에서 확인되는 범위로 한정됩니다.</p>
 </section>
 <footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
 </main></body></html>
-<!-- build 1792746989 -->
+<!-- build 1792751021 -->
