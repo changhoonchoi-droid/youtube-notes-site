@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>PPT 만들어주는 AI! 자료 분석부터 발표자료 제작까지 한 번에 (Adobe Acrobat AI)</title>
+<meta property="og:title" content="PPT 만들어주는 AI! 자료 분석부터 발표자료 제작까지 한 번에 (Adobe Acrobat AI)">
+<meta property="og:description" content="온선 [온라인 선생님]  · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/El8L3-9DnWM/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/El8L3-9DnWM" style="background-image:url('https://i.ytimg.com/vi/El8L3-9DnWM/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>PPT 만들어주는 AI! 자료 분석부터 발표자료 제작까지 한 번에 (Adobe Acrobat AI)</h1><p class="meta">온선 [온라인 선생님]  · 게시 2026-10-22 · 14분 · 정리 2026-10-24</p>
+<a class="btn" href="https://youtu.be/El8L3-9DnWM">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>Adobe Acrobat의 <strong>PDF 스페이스</strong>에 PDF·워드·PPT·이미지·웹 링크·텍스트를 최대 100개까지 넣으면, AI가 자동으로 읽고 요약해 줍니다. 오디오 요약도 함께 만들어 줍니다.</li>
+<li>오른쪽 AI 어시스턴트에 &quot;발표 목적·청중·시간&quot;을 알려 주면 핵심 변화와 쓸 만한 수치를 정리해 줍니다. 답변 속 <strong>번호를 누르면 원문의 근거 위치가 형광펜처럼 표시</strong>됩니다.</li>
+<li>&quot;프레젠테이션을 생성해 줘&quot;라고 입력하고 대상자·톤·길이·템플릿을 고르면 슬라이드 초안이 나옵니다. 영상에서는 9장이 나왔고, PPTX·PDF·JPG·PNG로 내려받을 수 있습니다.</li>
+<li>만든 슬라이드는 글자·숫자를 바로 고칠 수 있습니다. 배경 제거, 색상·폰트, 애니메이션, AI로 다듬기, 미디어 추가 같은 세부 편집도 됩니다.</li>
+<li>회의에서 나올 만한 질문과 답변도 출처와 함께 받아 볼 수 있습니다. 작업 공간은 링크로 팀원과 공유합니다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>갑자기 받은 긴 보고서를 &quot;5분 브리핑&quot;해야 하는 직장인</li>
+<li>PDF 자료를 많이 다루고, 발표 근거를 원문 페이지로 대야 하는 사람</li>
+<li>여러 자료를 한꺼번에 분석해야 하는 학생이나 논문 준비생</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>왜 PDF 스페이스인가 (0:24)</h3>
+<p>보고서를 꼼꼼히 읽고 요약할 시간 없이 브리핑을 요청받는 상황을 해결하려는 기능입니다. 평소 쓰던 Acrobat 안에서 분석부터 PPT 제작까지 끝냅니다.</p>
+<blockquote class="tip"><p>💡 다른 AI 도구를 따로 열지 않고 PDF 작업 공간 안에서 자료 분석 → 발표자료 → 예상 질문까지 이어진다.</p>
+</blockquote>
+<h3>자료 넣기: 형식 상관없이 최대 100개 (1:35)</h3>
+<ul>
+<li>넣을 수 있는 것: <strong>장치</strong>(PDF, 워드, PPT, 텍스트, 이미지 파일), <strong>최근</strong> 파일, <strong>웹 링크</strong>, <strong>텍스트 붙여넣기</strong></li>
+<li>확장자와 관계없이 <strong>최대 100개</strong>까지 넣을 수 있습니다.</li>
+<li>영상에서는 보고서 파일 2개와 기사 링크 1개를 넣었습니다.</li>
+</ul>
+<h3>자동 분석·요약·오디오 요약 (3:05)</h3>
+<p>파일을 넣기만 해도 따로 시키지 않은 종합 분석이 시작됩니다.</p>
+<ul>
+<li>왼쪽 위: 자료 전체 요약. 영상 예시의 제목은 &quot;한국 디지털 광고 동향과 2024년 온라인 방송 광고비 분석&quot;입니다.</li>
+<li>왼쪽 아래: 첨부한 파일 목록. 여기서 파일을 삭제하거나 추가할 수 있습니다.</li>
+<li><strong>오디오 요약</strong>: 누르면 자료 내용을 음성으로 요약해 들려줍니다. 예: &quot;이번에는 2026년 디지털 라이프스타일과 미디어 이용 현황을 살펴봅니다.&quot;</li>
+<li>오른쪽: 함께 작업하는 <strong>AI 어시스턴트</strong> 창</li>
+</ul>
+<figure><a href="https://youtu.be/El8L3-9DnWM?t=245"><img src="01.jpg" alt="오디오 요약 재생: &quot;이번에는 2026년 디지털 라이프스타일과…&quot;" loading="lazy"></a><figcaption>오디오 요약 재생: &quot;이번에는 2026년 디지털 라이프스타일과…&quot; · <a href="https://youtu.be/El8L3-9DnWM?t=245">▶ 4:05</a></figcaption></figure><h3>발표 내용부터 정리하고, 근거는 원문으로 확인 (4:38)</h3>
+<p>PPT를 만들기 전에 <strong>무엇을 말할지 먼저 정리하는 것</strong>이 핵심이라고 강조합니다.</p>
+<ul>
+<li>요청에 목적(팀 회의), 시간(5분), 원하는 결과(중요한 변화 3가지 + 수치 2개)를 넣었습니다.</li>
+<li>결과: &quot;광고비는 온라인으로 이동…&quot; 같은 변화 3가지와 발표용 핵심 수치가 정리되어 나왔습니다.</li>
+<li>답변 속 <strong>숫자(인용 번호)</strong>를 누르면 원문에서 그 내용이 있는 부분이 형광펜처럼 표시됩니다.</li>
+</ul>
+<blockquote class="tip"><p>💡 200여 쪽을 다 읽지 않아도 &quot;근거가 뭐냐&quot;는 질문에 &quot;몇 페이지 어디&quot;라고 답할 수 있다.</p>
+</blockquote>
+<figure><a href="https://youtu.be/El8L3-9DnWM?t=373"><img src="02.jpg" alt="답변 인용 번호를 누르면 왼쪽 원문에 근거 부분이 표시됨" loading="lazy"></a><figcaption>답변 인용 번호를 누르면 왼쪽 원문에 근거 부분이 표시됨 · <a href="https://youtu.be/El8L3-9DnWM?t=373">▶ 6:13</a></figcaption></figure><h3>프레젠테이션 생성 (6:56)</h3>
+<p>두 가지 방법 중 하나로 시작합니다.</p>
+<ul>
+<li>어시스턴트 창에 &quot;방금 분석한 내용을 기반으로 프레젠테이션을 생성해 줘&quot; 입력</li>
+<li>또는 왼쪽 <strong>만들기 → 프레젠테이션</strong> 클릭</li>
+</ul>
+<p>AI가 <strong>대상자·톤·길이</strong>를 물어보고 템플릿 예시를 보여 줍니다. <strong>전체</strong>를 누르면 템플릿이 더 많이 나옵니다. 비즈니스용 템플릿이 많아 업무에 바로 쓸 만합니다. 짧은 PPT일수록 빨리 만들어집니다.</p>
+<figure><a href="https://youtu.be/El8L3-9DnWM?t=482"><img src="03.jpg" alt="템플릿 선택 화면에서 마음에 드는 커버 디자인 고르기" loading="lazy"></a><figcaption>템플릿 선택 화면에서 마음에 드는 커버 디자인 고르기 · <a href="https://youtu.be/El8L3-9DnWM?t=482">▶ 8:02</a></figcaption></figure><h3>결과물 확인·다운로드·편집 (8:28)</h3>
+<ul>
+<li>만들어진 슬라이드는 <strong>9장</strong>이었고, 이미지와 글자 배치가 적절히 들어갔습니다.</li>
+<li><strong>발표</strong>를 누르면 실제 발표하듯 넘겨 볼 수 있습니다.</li>
+</ul>
+<figure><a href="https://youtu.be/El8L3-9DnWM?t=541"><img src="04.jpg" alt="발표 모드로 본 첫 슬라이드 &#x27;2026 디지털 광고 시장 트렌드 분석&#x27;" loading="lazy"></a><figcaption>발표 모드로 본 첫 슬라이드 &#x27;2026 디지털 광고 시장 트렌드 분석&#x27; · <a href="https://youtu.be/El8L3-9DnWM?t=541">▶ 9:01</a></figcaption></figure><ul>
+<li>오른쪽 위 <strong>다운로드</strong>에서 <strong>JPG, PNG, PPTX, PDF</strong>로 받을 수 있습니다.</li>
+<li>간단한 수정: 글자를 바로 고칠 수 있습니다. 예: 연도를 2027년으로 바꾸기, 이름 지우기.</li>
+<li>세부 편집(<strong>편집</strong> 클릭): 배경 제거, 효과, 색상, 애니메이션, 폰트·글자 크기·배열, 배경·아이콘 교체</li>
+</ul>
+<figure><a href="https://youtu.be/El8L3-9DnWM?t=609"><img src="05.jpg" alt="편집 화면에서 폰트·글자 크기·배열을 바꾸는 모습" loading="lazy"></a><figcaption>편집 화면에서 폰트·글자 크기·배열을 바꾸는 모습 · <a href="https://youtu.be/El8L3-9DnWM?t=609">▶ 10:09</a></figcaption></figure><ul>
+<li><strong>AI로 다듬기</strong>: 페이지 일부나 전체 디자인을 바꿉니다.</li>
+<li>왼쪽 <strong>콘텐츠 추가</strong>: 사진·비디오 같은 미디어나 요소를 넣습니다. <strong>페이지</strong>에서 슬라이드를 추가합니다.</li>
+</ul>
+<blockquote class="tip"><p>💡 통이미지가 아니라 요소마다 편집할 수 있는 초안이라, 받아서 바로 고쳐 쓸 수 있다.</p>
+</blockquote>
+<h3>저장·공유 (11:12)</h3>
+<ul>
+<li>오른쪽 위 <strong>X</strong>로 나갑니다. 작업 중에는 <strong>댓글</strong>로 피드백을 남길 수 있습니다.</li>
+<li>결과 PDF는 <strong>내 컴퓨터</strong> 또는 <strong>내 콘텐츠</strong>에 저장합니다. 내 콘텐츠는 지금까지 만든 자료를 모아 두는 곳입니다.</li>
+<li>PDF 스페이스의 작업 과정 자체를 공유할 수 있습니다. 접근 권한을 <strong>링크가 있는 모든 사용자</strong> 또는 <strong>초대된 사용자만</strong>으로 정하고 <strong>링크 복사</strong>를 누르면 됩니다. 공유받은 사람은 파일·메모·주석을 보고 함께 작업할 수 있습니다.</li>
+</ul>
+<figure><a href="https://youtu.be/El8L3-9DnWM?t=732"><img src="06.jpg" alt="PDF 스페이스 링크 설정: 링크가 있는 모든 사용자 선택 후 링크 복사" loading="lazy"></a><figcaption>PDF 스페이스 링크 설정: 링크가 있는 모든 사용자 선택 후 링크 복사 · <a href="https://youtu.be/El8L3-9DnWM?t=732">▶ 12:12</a></figcaption></figure><h3>예상 질문과 답변 준비 (12:39)</h3>
+<p>&quot;팀 회의에서 나올 만한 질문 3개와 답변&quot;을 요청하면 답변마다 출처가 붙어 나옵니다. 정확한 근거가 꼭 필요하면 &quot;근거가 없는 내용은 확인이 필요하다고 표시해 주세요&quot;라고 덧붙이면 됩니다. 영상에 따르면 보통은 근거가 있는 내용만 나옵니다.</p>
+<figure><a href="https://youtu.be/El8L3-9DnWM?t=779"><img src="07.jpg" alt="예상 질문별 답변 아래 &#x27;근거&#x27;와 &#x27;확인이 필요한 사항&#x27;이 붙은 결과" loading="lazy"></a><figcaption>예상 질문별 답변 아래 &#x27;근거&#x27;와 &#x27;확인이 필요한 사항&#x27;이 붙은 결과 · <a href="https://youtu.be/El8L3-9DnWM?t=779">▶ 12:59</a></figcaption></figure></section><section><h2>따라 해보기</h2>
+<h3>준비물</h3>
+<ul>
+<li>Adobe 계정과 로그인 (영상은 로그인한 상태로 시작)</li>
+<li>발표에 쓸 자료: PDF·워드·PPT·이미지·웹 링크 등, 최대 100개</li>
+<li>소요 시간: 영상 기준으로 분석부터 PPT 생성까지 수 분</li>
+<li>비용·요금제: 영상에 나오지 않음</li>
+</ul>
+<h3>단계별 방법</h3>
+<div class="flow"><div class="flow-title">🔁 PDF 자료로 발표 PPT 만들기</div><ol class="flow-steps"><li><span class="n">1</span><span class="t">PDF 스페이스 열기</span><div class="d"><p>Adobe 사이트에 로그인한 뒤 &quot;AI 기반의 PDF 스페이스&quot;에서 <strong>스페이스 사용하기</strong>를 누릅니다. (1:12)</p>
+</div></li><li><span class="n">2</span><span class="t">새 스페이스 만들기</span><div class="d"><p>오른쪽 위 <strong>만들기 → 새 PDF 스페이스 만들기</strong>를 누릅니다. (1:35)</p>
+</div></li><li><span class="n">3</span><span class="t">자료 넣기</span><div class="d"><p>왼쪽 <strong>장치</strong>에서 파일 선택이나 끌어다 놓기로 넣습니다. 링크는 <strong>웹 링크</strong>, 텍스트는 붙여넣은 뒤 각각 <strong>추가</strong>를 누릅니다. 마지막으로 <strong>PDF 스페이스에 추가</strong>를 누릅니다. (2:21)</p>
+<ul>
+<li>자동으로 요약과 오디오 요약이 만들어집니다.</li>
+</ul>
+</div></li><li><span class="n">4</span><span class="t">발표 내용 정리 요청</span><div class="d"><p>오른쪽 AI 어시스턴트에 목적·청중·시간·원하는 결과를 넣어 요청합니다. (4:38)</p>
+</div></li><li><span class="n">5</span><span class="t">근거 확인</span><div class="d"><p>답변의 인용 번호를 눌러 원문에서 표시된 부분을 확인합니다. (5:45)</p>
+</div></li><li><span class="n">6</span><span class="t">프레젠테이션 생성</span><div class="d"><p>생성을 요청하거나 왼쪽 <strong>만들기 → 프레젠테이션</strong>을 누릅니다. (6:56)</p>
+</div></li><li><span class="n">7</span><span class="t">옵션 선택</span><div class="d"><p>대상자(예: 내부 팀)·톤·길이를 고르고, <strong>전체</strong>에서 템플릿을 고른 뒤 <strong>프레젠테이션 생성</strong>을 누릅니다. (7:42)</p>
+</div></li><li><span class="n">8</span><span class="t">검토·수정</span><div class="d"><p><strong>발표</strong>로 전체를 넘겨 보고, 글자를 고치거나 <strong>편집</strong>·<strong>AI로 다듬기</strong>로 세부를 손봅니다. (8:49)</p>
+</div></li><li><span class="n">9</span><span class="t">다운로드·저장</span><div class="d"><p>오른쪽 위 <strong>다운로드</strong>에서 PPTX 등을 받고, X로 나간 뒤 <strong>내 콘텐츠에 저장</strong>을 누릅니다. (9:24)</p>
+</div></li><li><span class="n">10</span><span class="t">예상 질문 준비</span><div class="d"><p>회의에서 나올 질문과 답변을 출처와 함께 요청합니다. (12:39)</p>
+</div></li></ol></div>
+<p><strong>4단계에 입력할 내용</strong> (영상 예시)</p>
+<pre><code>이 PDF 스페이스의 보고서 두 개와 기사를 바탕으로 팀 회의에서 디지털 광고와 소비자 트렌드를 5분 동안 소개하려고 해요. 중요한 변화 세 가지와 발표에 사용할 수치 두 개를 정리해 주세요.
+</code></pre>
+<p><strong>6단계에 입력할 내용</strong></p>
+<pre><code>방금 분석한 내용을 기반으로 프레젠테이션을 생성해 줘
+</code></pre>
+<p><strong>10단계에 입력할 내용</strong> (근거 표시는 선택)</p>
+<pre><code>이 PDF 스페이스의 자료를 바탕으로 팀 회의에서 나올 만한 질문 세 개와 답변을 정리해 주세요. 근거가 없는 내용은 확인이 필요하다고 표시해 주세요.
+</code></pre>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 2~10단계의 메뉴 이름과 입력 문장은 영상에 나옵니다.</li>
+<li class="warn">⚠️ 1단계 「PDF 스페이스 열기」: Adobe 사이트 주소와 진입 경로가 자막에 나오지 않습니다. → 영상 설명란 링크(https://adobe.ly/3WDZDRB)로 들어가거나, 영상 1:12 화면을 확인하세요.</li>
+<li class="warn">⚠️ 전체 「요금제」: 무료로 되는지, Acrobat AI 어시스턴트 유료 구독이 필요한지 영상에 나오지 않습니다. → 링크로 들어간 Adobe 공식 페이지에서 &quot;AI Assistant&quot; 요금을 확인하세요. 유료일 수 있습니다(보충).</li>
+<li class="warn">⚠️ 7단계 「옵션 선택」: 톤·길이에서 고를 수 있는 항목과 각 항목이 몇 장으로 이어지는지 나오지 않습니다(영상 결과는 9장). → 영상 7:59 화면을 보거나 직접 선택지를 확인하세요.</li>
+<li class="warn">❓ 영상 설명란에는 슬라이드 수정을 &quot;Adobe Express에서&quot; 한다고 되어 있지만, 자막에는 편집 화면의 도구 이름이 나오지 않습니다. 편집 화면이 별도 서비스로 열리는지 직접 확인해 보세요.</li>
+<li class="warn">❓ 자막의 &quot;웹크&quot;는 자동 생성 자막의 오인식으로 보이며, <strong>웹 링크</strong> 메뉴로 추정됩니다.</li>
+</ul>
+<h3>확인 방법</h3>
+<ul>
+<li>3단계 뒤 왼쪽에 자료 요약과 <strong>오디오 요약</strong> 버튼이 나오면 분석이 끝난 것입니다.</li>
+<li>5단계에서 번호를 눌렀을 때 원문 페이지에 표시가 뜨는지 확인하세요.</li>
+<li>7단계 뒤 왼쪽에 고른 템플릿 디자인의 결과물이 나오고, <strong>발표</strong>로 넘겨 볼 수 있으면 성공입니다.</li>
+</ul>
+<h3>막히면</h3>
+<ul>
+<li>결과가 기대와 다르면 요청 문장에 목적·청중·시간·원하는 결과 수를 더 구체적으로 적으세요.</li>
+<li>생성된 수치는 반드시 인용 번호로 원문과 대조하세요(설명란 권고).</li>
+<li>긴 PPT는 만드는 데 시간이 더 걸립니다.</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>한 PDF 스페이스에 넣을 수 있는 파일: <strong>최대 100개</strong> (확장자 무관)</li>
+<li>영상 예시 자료: 보고서 2개 + 기사 링크 1개 → 슬라이드 <strong>9장</strong></li>
+<li>다운로드 형식: <strong>JPG, PNG, PPTX, PDF</strong></li>
+<li>&quot;중요한 건 PPT를 제작하는 게 아니라 그 안의 내용&quot;</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>(영상 내용) 근거 표시가 강점이라고 하지만, 인용 번호는 &quot;어디를 참고했는지&quot;만 보여 줍니다. (내 의견) 해석이 맞는지는 결국 사람이 원문을 읽고 판단해야 합니다.</li>
+<li>(내 의견) 이 영상은 Adobe 링크가 붙은 소개 영상에 가깝습니다. 요금, 한국어 슬라이드 품질, 회사 보안 정책상 자료를 업로드해도 되는지는 따로 확인하세요.</li>
+<li>(내 의견) 템플릿 기반 초안이라 디자인이 비슷해질 수 있습니다. 회사 양식이 있다면 PPTX로 받은 뒤 옮겨 붙이는 수고가 남습니다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>최근 받은 보고서 PDF 1~2개로 PDF 스페이스를 만들고 오디오 요약을 들어 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>위의 &quot;5분 발표용 변화 3가지 + 수치 2개&quot; 문장을 내 주제로 바꿔 요청하고, 인용 번호로 수치를 원문과 대조하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>다음 회의 전에 &quot;예상 질문 3개와 답변(근거 없으면 표시)&quot;을 받아 보기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1792834882 -->
