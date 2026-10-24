@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>클로드 코드 모드(Mods) A to Z, 10분 만에 쉽게 알려드립니다 (26년 10월 최신)</title>
+<meta property="og:title" content="클로드 코드 모드(Mods) A to Z, 10분 만에 쉽게 알려드립니다 (26년 10월 최신)">
+<meta property="og:description" content="이동훈의 루트AI · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/Cu1_9ktuDr8/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/Cu1_9ktuDr8" style="background-image:url('https://i.ytimg.com/vi/Cu1_9ktuDr8/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>클로드 코드 모드(Mods) A to Z, 10분 만에 쉽게 알려드립니다 (26년 10월 최신)</h1><p class="meta">이동훈의 루트AI · 게시 2026-10-21 · 9분 · 정리 2026-10-24</p>
+<a class="btn" href="https://youtu.be/Cu1_9ktuDr8">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>클로드 코드 '모드(Mods)'는 클로드 코드의 화면 모양과 동작 방식을 바꾸는 작은 프로그램입니다. 정보창, 확인 버튼, 나만의 명령어를 추가할 수 있습니다.</li>
+<li>클로드는 파일 읽기, 명령 실행, 화면 그리기 같은 동작을 할 때마다 신호를 보냅니다. 모드는 이 신호를 듣고 <strong>지켜보거나, 살짝 고치거나, 대신 처리</strong>합니다.</li>
+<li>모드는 원래 TypeScript로 짜야 하지만, 모드 제작 전용 스킬이 들어 있어서 말로 설명만 하면 클로드가 만들고 테스트까지 합니다.</li>
+<li>실습은 4가지입니다. 토큰 사용량 날씨 모드, 다음 작업 추천 모드, 픽셀 병아리 모드, 내 사용 기록을 분석해 모드 5개를 추천받는 방법입니다.</li>
+<li>만든 모드는 지금 대화에서만 쓸 수 있습니다. &quot;플러그인으로 설치해 줘&quot;라고 한 번 더 요청하면 모든 세션에서 쓸 수 있습니다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>클로드 코드를 쓰는데 기본 기능만으로는 아쉬운 분</li>
+<li>코딩 없이 말로만 나만의 화면·버튼·명령어를 만들고 싶은 분</li>
+<li>내 작업 습관에 맞춰 반복 작업과 토큰 비용을 줄이고 싶은 분</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>모드란? (0:54)</h3>
+<p>모드는 클로드 코드의 <strong>보이는 모습과 행동 방식을 바꾸는 작은 프로그램</strong>입니다. 게임 모드를 깔면 같은 게임이 다른 게임이 되는 것처럼, 화면·버튼·행동 방식을 내 마음대로 바꿀 수 있습니다.</p>
+<ul>
+<li>할 수 있는 일의 예<ul>
+<li>클로드가 일할 때 옆에 원하는 정보창 띄우기</li>
+<li>위험한 작업 전에 &quot;진짜 할까요?&quot; 확인 버튼 띄우기</li>
+<li>나만의 명령어 추가하기</li>
+</ul>
+</li>
+<li>일정: 2026년 9월 일부 개발자에게 먼저 공개해 테스트했고, <strong>10월 1일 Anthropic이 공식 발표</strong>했습니다.</li>
+</ul>
+<p><strong>작동 원리</strong>: 클로드는 파일을 읽을 때, 명령을 실행할 때, 화면을 그릴 때마다 &quot;지금 이거 해요&quot;라는 신호를 보냅니다. 모드는 이 신호를 듣고 있다가 셋 중 하나를 합니다.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>반응</th>
+  <th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>지켜보기</td>
+  <td>신호만 받아서 정보 표시 등에 활용</td>
+</tr>
+<tr>
+  <td>살짝 고치기</td>
+  <td>클로드의 동작을 일부 바꾸기</td>
+</tr>
+<tr>
+  <td>대신 처리하기</td>
+  <td>그 동작을 모드가 직접 처리하기</td>
+</tr>
+</tbody>
+</table></div>
+<h3>스킬·MCP와 다른 점 (1:48)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>구분</th>
+  <th>방식</th>
+  <th>할 수 있는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>스킬·MCP</td>
+  <td><strong>바깥에서</strong> 클로드에게 지식이나 도구를 건넴</td>
+  <td>능력 추가</td>
+</tr>
+<tr>
+  <td>모드</td>
+  <td>클로드 코드 <strong>안에 들어가</strong> 작업 환경 자체를 바꿈</td>
+  <td>창 띄우기, 버튼 만들기 등 화면·동작 변경</td>
+</tr>
+</tbody>
+</table></div>
+<p>모드는 원래 <strong>TypeScript</strong>(프로그래밍 언어)로 짭니다. 하지만 클로드 코드 안에 <strong>모드 제작 전용 스킬</strong>이 있어서, 원하는 것을 말로 설명하면 클로드가 만들고 실행하고 테스트까지 해 줍니다.</p>
+<blockquote class="tip"><p>💡 창과 버튼을 만드는 일은 모드로만 할 수 있습니다. 그런데도 코딩은 필요 없습니다.</p>
+</blockquote>
+<h3>실습 준비: 데스크톱 앱과 프로젝트 폴더 (2:34)</h3>
+<p>터미널이 낯선 분이 많아서 <strong>Claude Code 데스크톱 앱</strong>으로 진행합니다. 클로드 코드는 폴더 단위로 작업하기 때문에 프로젝트 폴더부터 만듭니다(자세한 순서는 아래 <code>따라 해보기</code>).</p>
+<figure><a href="https://youtu.be/Cu1_9ktuDr8?t=198"><img src="01.jpg" alt="탐색기에서 새 폴더를 고르고 열기를 누르는 단계" loading="lazy"></a><figcaption>탐색기에서 새 폴더를 고르고 열기를 누르는 단계 · <a href="https://youtu.be/Cu1_9ktuDr8?t=198">▶ 3:18</a></figcaption></figure><h3>실습 1: 토큰 사용량 날씨 모드 (3:23)</h3>
+<p>Anthropic 공식 문서에 나온 예시 프롬프트를 바탕으로 <strong>'토큰 웨더(Token Weather)' 모드</strong>를 만듭니다. 토큰(AI가 처리하는 글자 단위, 사용량과 비용의 기준)을 얼마나 썼는지 숫자만이 아니라 <strong>날씨 아이콘으로 보여 주게</strong> 기능을 덧붙여 요청합니다.</p>
+<ul>
+<li>만들고 나면 <strong><code>Enable hot reloading for this session</code></strong> 버튼이 뜹니다. 원래는 모드를 설치한 뒤 데스크톱 앱을 다시 켜야 합니다. 이 버튼을 누르면 재시작 없이 지금 대화에 바로 적용됩니다(핫 리로딩).</li>
+<li>결과: '맑음' 같은 창과 아이콘이 뜨고, 컨텍스트 윈도우(한 대화에서 AI가 기억할 수 있는 양)를 몇 % 썼는지 바로 보입니다. 이 값은 우측 하단 버튼의 컨텍스트 윈도우 표시와 같고, 이전에 얼마나 썼는지도 한눈에 볼 수 있습니다.</li>
+</ul>
+<figure><a href="https://youtu.be/Cu1_9ktuDr8?t=273"><img src="02.jpg" alt="입력창 위에 날씨 아이콘과 컨텍스트 사용률이 뜬 화면" loading="lazy"></a><figcaption>입력창 위에 날씨 아이콘과 컨텍스트 사용률이 뜬 화면 · <a href="https://youtu.be/Cu1_9ktuDr8?t=273">▶ 4:33</a></figcaption></figure><h3>모든 세션에서 모드 쓰기 (4:53)</h3>
+<p>방금 만든 모드는 <strong>지금 대화창에서만</strong> 쓸 수 있습니다. 다른 대화나 다른 프로젝트에서도 쓰려면 &quot;플러그인으로 설치해 줘&quot;라고 한 번 더 요청하면 됩니다(입력 내용은 아래 <code>따라 해보기</code>).</p>
+<h3>실습 2: 다음 작업 추천 모드 (5:17)</h3>
+<p><strong>'넥스트 스텝(Next Step)' 모드</strong>는 클로드 답변(턴)이 끝날 때마다 작은 카드를 띄웁니다. 카드에는 클로드가 방금 한 일을 바탕으로 다음에 할 일 3가지가 추천되고, 클릭하면 바로 실행됩니다.</p>
+<ul>
+<li>똑같이 핫 리로드를 켜고 &quot;잘되는지 확인해 줘&quot;라고 요청합니다.</li>
+<li>결과: 입력창 위에 추천 카드가 뜨고, 하나를 고르면 바로 적용됩니다.</li>
+<li>응용: 카드 디자인이나 추천 방식을 바꿔 달라고 이어서 요청하면 됩니다.</li>
+</ul>
+<blockquote class="tip"><p>💡 다음 할 말을 직접 쓰는 시간이 줄어듭니다.</p>
+</blockquote>
+<figure><a href="https://youtu.be/Cu1_9ktuDr8?t=368"><img src="03.jpg" alt="답변 뒤 입력창 위에 다음 할 일 3가지가 카드로 뜬 화면" loading="lazy"></a><figcaption>답변 뒤 입력창 위에 다음 할 일 3가지가 카드로 뜬 화면 · <a href="https://youtu.be/Cu1_9ktuDr8?t=368">▶ 6:08</a></figcaption></figure><h3>실습 3: 픽셀 병아리 모드 (6:27)</h3>
+<p>재미용 모드입니다. <strong>'픽셀 칙(Pixel Chick)' 모드</strong>는 입력창 위에서 픽셀 병아리가 계속 돌아다니는 게임 같은 화면을 만듭니다. 프롬프트에는 병아리의 움직임, 잔디, 하늘, 잠자기 같은 규칙을 적어 넣었습니다.</p>
+<ul>
+<li>결과: 프롬프트 입력창 위에 병아리가 나타나고, 적어 준 규칙대로 움직입니다.</li>
+<li>응용: 병아리 대신 고양이(자막상 &quot;고향&quot;, 불분명)로 바꾸거나 먹이 주기, 잠자기 기능을 더해 보라고 추천합니다.</li>
+</ul>
+<figure><a href="https://youtu.be/Cu1_9ktuDr8?t=423"><img src="04.jpg" alt="입력창 위 잔디 위에 픽셀 병아리가 나타난 결과 화면" loading="lazy"></a><figcaption>입력창 위 잔디 위에 픽셀 병아리가 나타난 결과 화면 · <a href="https://youtu.be/Cu1_9ktuDr8?t=423">▶ 7:03</a></figcaption></figure><h3>실습 4: 내 사용 패턴으로 모드 추천받기 (7:22)</h3>
+<p>지금까지는 영상이 준 프롬프트로 만들었다면, 이번에는 <strong>내 사용 기록을 분석해 나에게 맞는 모드를 추천받습니다.</strong></p>
+<ul>
+<li>요청 내용: 클로드 코드 세션 로그를 최대한 많이 훑어보고, 내가 클로드 코드를 어떻게 쓰는지, 자주 반복하는 말이나 작업이 무엇인지 파악해 달라고 합니다. 그 결과를 바탕으로 <strong>흐름을 돕고, 돈을 아끼고, 더 빠르게</strong> 일하게 해 줄 모드 5개를 추천해 달라고 합니다.</li>
+<li>결과: 사용 패턴과 근거가 정리되어 나옵니다. 본인도 몰랐던 작업 습관을 확인할 수 있습니다.</li>
+<li>영상에서 추천받은 모드 예시<ul>
+<li>반복해서 쓰는 슬래시 명령들을 명령 하나로 묶는 모드</li>
+<li>서버 재시작·배포 버튼 모드</li>
+<li>컨텍스트가 50%를 넘으면 알아서 정리해 주는 모드</li>
+</ul>
+</li>
+<li>마음에 드는 것이 있으면 &quot;4번 만들어 줘&quot;처럼 번호로 요청하면 앞의 실습처럼 만들어 줍니다.</li>
+</ul>
+<figure><a href="https://youtu.be/Cu1_9ktuDr8?t=493"><img src="05.jpg" alt="&#x27;로그에서 보인 사용 패턴&#x27; 표와 &#x27;추천 mod 5개&#x27; 목록" loading="lazy"></a><figcaption>&#x27;로그에서 보인 사용 패턴&#x27; 표와 &#x27;추천 mod 5개&#x27; 목록 · <a href="https://youtu.be/Cu1_9ktuDr8?t=493">▶ 8:13</a></figcaption></figure></section><section><h2>따라 해보기</h2>
+<h3>준비물</h3>
+<ul>
+<li>Claude Code 데스크톱 앱(로그인된 상태). 요금제 조건은 영상에 나오지 않음</li>
+<li>실습용 빈 폴더 하나(이름은 자유)</li>
+<li>소요 시간: 모드 하나에 몇 분 정도(영상 기준)</li>
+</ul>
+<h3>단계별 방법</h3>
+<div class="flow"><div class="flow-title">🔁 모드 만들기부터 전체 세션 설치까지</div><ol class="flow-strip"><li><span>코드 탭 열기</span></li><li><span>프로젝트 폴더 지정</span></li><li><span>모드 요청 입력</span></li><li><span>핫 리로딩 켜기</span></li><li><span>동작 확인 요청</span></li><li><span>플러그인으로 설치</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">코드 탭 열기</span><div class="d"><p>Claude Code 데스크톱 앱을 실행하고 좌측 상단 <strong>코드(Code)</strong> 탭을 누릅니다. (2:55)</p>
+</div></li><li><span class="n">2</span><span class="t">프로젝트 폴더 지정</span><div class="d"><p><strong>로컬(Local)</strong> 옆 버튼 → <strong>폴더 열기</strong> → 탐색기에서 새 폴더를 만들고(이름 자유) <strong>열기</strong>를 누릅니다. (3:05)</p>
+</div></li><li><span class="n">3</span><span class="t">모드 요청 입력</span><div class="d"><p>만들고 싶은 모드를 말로 설명하고 Enter를 누릅니다. 아래 프롬프트 요지를 참고합니다. (3:28)</p>
+</div></li><li><span class="n">4</span><span class="t">핫 리로딩 켜기</span><div class="d"><p>완성 후 뜨는 <strong><code>Enable hot reloading for this session</code></strong>을 누릅니다. 재시작 없이 지금 대화에 적용됩니다. (3:52)</p>
+</div></li><li><span class="n">5</span><span class="t">동작 확인 요청</span><div class="d"><p>&quot;잘 보이는지 확인해 줘&quot;라고 입력합니다. 핫 리로딩이 실행되고 모드가 화면에 나타납니다. (4:15)</p>
+</div></li><li><span class="n">6</span><span class="t">플러그인으로 설치</span><div class="d"><p>다른 대화·프로젝트에서도 쓰려면 아래 문장을 입력합니다. (5:01)</p>
+</div></li></ol></div>
+<p><strong>3단계에 입력할 내용</strong> (화면 속 원문은 자막에 다 나오지 않아 요지만 적었습니다. 원문은 설명란 오픈채팅방 강의 자료에 있습니다.)</p>
+<pre><code>토큰 웨더(Token Weather) 모드를 만들어 줘.
+토큰을 얼마나 썼는지 날씨 아이콘으로 시각적으로 보여 줘.
+</code></pre>
+<pre><code>넥스트 스텝(Next Step) 모드를 만들어 줘.
+턴이 끝날 때마다 작은 카드를 띄워서, 방금 한 일을 바탕으로 다음에 할 일 3가지를 추천하고,
+클릭하면 바로 실행되게 해 줘.
+</code></pre>
+<pre><code>픽셀 칙(Pixel Chick) 모드를 만들어 줘.
+입력창 위에서 픽셀 병아리가 계속 돌아다니게 해 줘.
+(움직임, 잔디, 하늘, 잠자기 등의 규칙을 적기)
+</code></pre>
+<pre><code>클로드 코드 세션 로그를 최대한 많이 훑어보고, 내가 클로드 코드를 어떻게 쓰는지,
+자주 반복하는 말이나 작업이 무엇인지 파악해 줘.
+그걸 바탕으로 내 흐름을 돕고, 돈을 아끼고, 더 빠르게 일할 수 있게 해 주는 모드 5개를 추천해 줘.
+</code></pre>
+<p><strong>6단계에 입력할 내용</strong></p>
+<pre><code>방금 만든 모드를 내 모든 세션에서 쓸 수 있도록 플러그인으로 설치해 줘
+</code></pre>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 1·2단계(폴더 열기), 4단계(핫 리로딩), 5단계(확인 요청), 6단계(플러그인 설치 문장)</li>
+<li class="warn">⚠️ 3단계 「모드 요청 입력」: 영상 속 프롬프트 원문이 자막에 다 나오지 않습니다(특히 토큰 웨더의 아이콘 규칙, 병아리의 세부 규칙). → 영상 3:28·5:40·6:40 화면을 확인하거나 설명란 오픈채팅방 강의 자료를 받으세요. 토큰 웨더는 Anthropic 공식 문서 예시라고 하니 공식 문서에서 &quot;Mods&quot;를 검색해도 됩니다(보충).</li>
+<li class="warn">⚠️ 시작 전: 모드 기능을 쓰는 데 필요한 앱 버전이나 요금제 조건이 영상에 나오지 않습니다. → 데스크톱 앱을 최신 버전으로 업데이트한 뒤 시작하세요(보충).</li>
+<li class="warn">❓ 플러그인으로 설치한 모드를 끄거나 지우는 방법은 영상에 나오지 않습니다.</li>
+</ul>
+<h3>확인 방법</h3>
+<ul>
+<li>토큰 웨더: 날씨 창에 표시되는 컨텍스트 사용률이 <strong>우측 하단 컨텍스트 윈도우 표시와 같으면</strong> 정상입니다.</li>
+<li>넥스트 스텝: 답변이 끝날 때마다 추천 카드 3개가 뜨고, 클릭하면 바로 실행되면 정상입니다.</li>
+<li>픽셀 칙: 입력창 위에 병아리가 나타나 적어 준 규칙대로 움직이면 정상입니다.</li>
+<li>플러그인: 새 대화나 다른 프로젝트를 열었을 때 모드가 보이면 정상입니다.</li>
+</ul>
+<h3>막히면</h3>
+<ul>
+<li>만들었는데 화면에 안 보이면 핫 리로딩을 켰는지 확인하세요. 켜지 않았다면 데스크톱 앱을 다시 시작해야 적용됩니다.</li>
+<li>다른 대화에서 모드가 안 보이면 정상입니다. 처음 만든 모드는 그 대화 전용이므로 6단계(플러그인 설치)를 하세요.</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li><strong>2026년 9월</strong>: 일부 개발자에게 먼저 공개 / <strong>10월 1일</strong>: Anthropic 공식 발표</li>
+<li>모드가 신호에 반응하는 방식 3가지: 지켜보기 · 살짝 고치기 · 대신 처리하기</li>
+<li>모드 작성 언어: <strong>TypeScript</strong> (전용 스킬 덕분에 말로 만들 수 있음)</li>
+<li>추천 모드 예시: &quot;컨텍스트 <strong>50%</strong>가 넘으면 알아서 정리&quot;</li>
+<li>&quot;모드는 클로드 코드가 보이는 모습과 행동 방식을 바꾸는 작은 프로그램입니다.&quot;</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>(내 의견) 실습 4는 세션 로그를 최대한 많이 읽게 하는 요청이라 토큰을 많이 쓸 수 있습니다. 로그에 민감한 내용이 있을 수 있으니, 읽을 범위를 최근 몇 주나 특정 프로젝트로 좁혀 요청하는 편이 안전합니다.</li>
+<li>(내 의견) 모드는 클로드의 동작을 &quot;대신 처리&quot;할 수도 있습니다. 남이 만든 모드나 클로드가 만든 모드를 모든 세션에 플러그인으로 설치하기 전에, 어떤 동작을 가로채는지 한 번 물어보고 확인하는 것이 좋습니다.</li>
+<li>(영상 한계) 데스크톱 앱 기준이라 터미널(CLI)에서 쓰는 방법과 모드를 끄거나 지우는 방법은 다루지 않습니다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>데스크톱 앱에서 빈 폴더를 열고 토큰 웨더 모드를 만든 뒤 핫 리로딩으로 적용해 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>마음에 드는 모드 하나를 &quot;모든 세션에서 쓸 수 있도록 플러그인으로 설치해 줘&quot;로 설치하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>최근 사용 기록 범위를 정해 &quot;모드 5개 추천&quot; 프롬프트를 돌려 보고, 하나를 번호로 골라 만들어 보기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1792835195 -->
