@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>AI 왕초보들을 위한 GPT코덱스&amp;어사이드 설치 및 활용법 총정리 (GPT, Aside, 클로드)</title>
+<meta property="og:title" content="AI 왕초보들을 위한 GPT코덱스&amp;어사이드 설치 및 활용법 총정리 (GPT, Aside, 클로드)">
+<meta property="og:description" content="신영선의 AI탐구 · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/Hol_hJwEmog/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/Hol_hJwEmog" style="background-image:url('https://i.ytimg.com/vi/Hol_hJwEmog/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>AI 왕초보들을 위한 GPT코덱스&amp;어사이드 설치 및 활용법 총정리 (GPT, Aside, 클로드)</h1><p class="meta">신영선의 AI탐구 · 게시 2026-10-24</p><p class="note">🎙️ 자막 대신 영상 음성을 받아써서 정리 (ko (음성 받아쓰기·GPU))</p>
+<a class="btn" href="https://youtu.be/Hol_hJwEmog">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>이 영상은 AI를 질문용으로만 쓰던 왕초보에게 클로드 데스크톱 앱, ChatGPT 코덱스, AI 웹브라우저 어사이드(Aside)를 깔고 서로 연결하는 과정을 처음부터 보여 주는 1:1 과외입니다.</li>
+<li>일하는 구조는 간단합니다. 사람이 GPT(코덱스)에게 대충 말하면 코덱스가 어사이드에 정확한 명령을 내리고, 어사이드는 크롬에서 가져온 로그인 정보로 사이트에 들어가 클릭하고 입력합니다.</li>
+<li>어사이드에 GPT·클로드 유료 계정을 붙이면 어사이드 자체는 무료 플랜으로 쓸 수 있습니다. 크롬의 비밀번호와 즐겨찾기를 가져오면 다시 로그인할 필요가 없습니다.</li>
+<li>실전 예시로 메일 회신 확인, 물류 사이트 반품 확인, 노션 페이지 확인, 11월 마켓 일정표 초안, 인스타 인기 콘텐츠 찾기를 해 봤습니다. 그중 슬랙 자동 메시지는 이번에 하지 못했습니다.</li>
+<li>가장 중요한 요령은 GPT에게 시킬 때 &quot;어사이드를 활용해서&quot;라고 꼭 적고, 필요한 자료와 기준을 구체적으로 주는 것입니다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>ChatGPT를 웹 채팅으로만 써 봤고 데스크톱 앱이나 터미널은 처음인 분</li>
+<li>마켓 관리자 페이지, 물류 사이트, 노션처럼 로그인해서 하는 반복 클릭 업무를 AI에게 넘기고 싶은 1인 사업자나 크리에이터</li>
+<li>일정이 흩어져 있어서 일정표나 대시보드를 만들고 싶었지만 GPT로 만들다가 실패한 분</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>오늘 만든 구조: GPT가 시키고, 어사이드가 클릭한다</h3>
+<ul>
+<li>사용자는 코덱스(GPT)에게만 말합니다. 그러면 코덱스가 어사이드를 조종해 실제 웹 작업을 합니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=512">8:32</a>)</small><ul>
+<li>이렇게 하는 이유는 사람보다 AI가 명령을 더 정확하게 쓰기 때문입니다. &quot;개떡같이 말해도 찰떡같이 어사이드한테 시킨다&quot;는 설명이 나옵니다.</li>
+</ul>
+</li>
+<li>시킬 때는 &quot;어사이드를 활용해서&quot;라고 꼭 지정해야 합니다. 빼면 코덱스가 자기 브라우저로 사이트를 여는데, 거기에는 로그인 정보가 없어서 작업이 막힙니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=1063">17:43</a>)</small><ul>
+<li>영상에서도 카페24 자사몰 만들기를 시켰을 때 이렇게 실패했고, &quot;어사이드 활용해서&quot;를 붙여 다시 시켰습니다.</li>
+</ul>
+</li>
+<li>AI 활용에는 1~4단계가 있는데, 오늘은 그중 1·2단계(설치와 연결)만 다룹니다. 3·4단계(자동화)는 2탄에서 다루기로 했습니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=272">4:32</a>)</small></li>
+</ul>
+<blockquote class="tip"><p>💡 도구를 새로 만들기 전에 있는 도구부터 쓴다. 대시보드는 그다음 단계다.</p>
+</blockquote>
+<h3>어사이드(Aside)란</h3>
+<ul>
+<li>어사이드는 크롬 같은 웹브라우저에 AI가 붙은 &quot;AI 웹브라우저&quot;입니다. AI가 브라우저를 직접 움직여 클릭하고, 화면을 넘기고, 상세페이지에 제품을 등록합니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=340">5:40</a>)</small><ul>
+<li>한국인이 만든 스타트업 제품이고 실리콘밸리 YC(와이콤비네이터, 스타트업 투자사)의 투자를 받았다고 소개합니다.</li>
+</ul>
+</li>
+<li>결제는 이렇게 합니다. 이미 돈을 내고 쓰는 GPT·클로드 계정을 연결하면 어사이드는 0원 무료 플랜으로 쓸 수 있습니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=393">6:33</a>)</small></li>
+<li>모델은 영상 기준으로 낮은 요금제(약 2만 원대)를 쓰니 최고 성능 모델보다 가성비가 좋고 균형 잡힌 모델을 고르라고 권합니다. 구체적인 모델 이름은 나오지 않습니다.</li>
+<li>크롬에 저장된 비밀번호와 즐겨찾기를 가져와야 쿠팡, 네이버, 카페24 같은 사이트에 다시 로그인하지 않아도 됩니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=457">7:37</a>)</small><ul>
+<li>권한은 &quot;풀 액세스(전체 허용)&quot;로 줍니다. 진행자는 위험이 있는 건 맞지만 자신의 경험으로는 문제가 없었다고 말합니다.</li>
+<li>MCP(Model Context Protocol)는 AI가 지메일, 노션, PDF, 구글 드라이브에 오갈 수 있게 열어 주는 통로라고 간단히 설명합니다.</li>
+</ul>
+</li>
+<li>어사이드는 디자인 도구가 아닙니다. 웹사이트에 들어가서 클릭하고 입력하는 컴퓨터 조작에 특화되어 있습니다.</li>
+</ul>
+<h3>코덱스란</h3>
+<ul>
+<li>코덱스는 OpenAI가 만든 GPT의 개발용 버전입니다. 화면 문구로 비교하면 일반 GPT는 &quot;만들고 배우고 탐색하세요&quot;, 코덱스는 &quot;빌드하고 디버그하고 배포하세요&quot;입니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=533">8:53</a>)</small></li>
+<li>GPT보다 할 수 있는 범위가 넓습니다. 컴퓨터 안의 프로그램을 오가며 일하기 때문에 GPT에서 &quot;긁어올 수 없다&quot;며 거절하던 일도 해냅니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=1326">22:06</a>)</small></li>
+<li>휴대폰의 GPT 앱과 PC를 연결해 두면, 컴퓨터가 켜져 있는 동안 휴대폰에서 코덱스에게 컴퓨터 작업을 시킬 수 있습니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=813">13:33</a>)</small></li>
+<li>데스크톱 앱이 웹보다 더 최적화되어 있고, 웹에서만 되는 기능과 앱에서만 되는 기능이 따로 있다고 합니다.</li>
+</ul>
+<h3>실전에서 시켜 본 일</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>시킨 일</th>
+  <th>시킨 말(요지)</th>
+  <th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>메일 회신 확인</td>
+  <td>구글 이메일에서 최근 메일 중 회신해야 할 것 알려줘</td>
+  <td>성공. 어사이드가 자동으로 실행되어 조회함</td>
+</tr>
+<tr>
+  <td>물류 사이트 확인</td>
+  <td>어사이드로 '클로스'(자막상 불분명) 들어가서 반품 입고 건 확인해줘</td>
+  <td>따로 받은 ID로만 들어가는 사이트인데 작동함</td>
+</tr>
+<tr>
+  <td>노션 공유 페이지</td>
+  <td>노션의 아티스트 스튜디오 페이지 들어가서 확인</td>
+  <td>AI가 스스로 되물으며 진행함</td>
+</tr>
+<tr>
+  <td>카페24 자사몰</td>
+  <td>카페24 들어가서 자사몰 하나 만들어줘</td>
+  <td>처음엔 로그인이 안 돼 실패, &quot;어사이드 활용해서&quot;를 붙인 뒤 진행됨</td>
+</tr>
+<tr>
+  <td>인스타 인기 콘텐츠</td>
+  <td>어사이드 활용해서 내 인스타 계정 탐색 탭에서 조회수 20만 이상 뷰티 콘텐츠 5개</td>
+  <td>5개 찾음</td>
+</tr>
+<tr>
+  <td>슬랙 주간 자동 메시지</td>
+  <td>매주 월요일 팀원에게 같은 업무 지시 보내기</td>
+  <td>이번엔 못 함(현재 설정 수준으로는 안 된다는 답)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>진행자는 일본 입국 심사 사전 등록과 카카오톡 채널 서류 심사 신청도 어사이드에 맡겼다고 합니다. 내 정보를 알고 있으니 알아서 입력해 준다는 것입니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=1103">18:23</a>, <a href="https://youtu.be/Hol_hJwEmog?t=1426">23:46</a>)</small></li>
+<li>인스타 검색에서는 기준 20만이 너무 낮아 걸러졌고 100만, 900만짜리가 주로 잡혔습니다. 결과는 내 계정의 알고리즘을 따라가서 뷰티 쪽으로 치우쳤습니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=1588">26:28</a>)</small><ul>
+<li>진행자는 브랜드와 어울리는 인스타 계정을 찾을 때 유료 도구 대신 이 방법을 쓸 수 있겠다고 평가합니다.</li>
+</ul>
+</li>
+</ul>
+<div class="pair"><figure><a href="https://youtu.be/Hol_hJwEmog?t=990"><img src="01.jpg" alt="코덱스에 어사이드로 반품 입고 건 확인을 시킨 대화 화면" loading="lazy"></a><figcaption>코덱스에 어사이드로 반품 입고 건 확인을 시킨 대화 화면 · <a href="https://youtu.be/Hol_hJwEmog?t=990">▶ 16:30</a></figcaption></figure><figure><a href="https://youtu.be/Hol_hJwEmog?t=1546"><img src="02.jpg" alt="코덱스에 인스타 뷰티 릴스 상위 5개 찾기를 시킨 대화" loading="lazy"></a><figcaption>코덱스에 인스타 뷰티 릴스 상위 5개 찾기를 시킨 대화 · <a href="https://youtu.be/Hol_hJwEmog?t=1546">▶ 25:46</a></figcaption></figure></div><h3>마켓 일정표 만들기와 피그마 팁</h3>
+<ul>
+<li>원하는 디자인의 일정표 이미지를 캡처해 코덱스에 첨부한 다음, 구체적으로 시킵니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=1210">20:10</a>)</small></li>
+<li>처음 지시는 너무 막연해서 &quot;내 구글 캘린더에서&quot;처럼 출처를 더 붙였습니다. 그러자 캘린더 연동 설치가 필요했습니다. 휴대폰 일정은 아이클라우드 캘린더로 연동했습니다.</li>
+<li>결과는 아이클라우드 캘린더와 보낸 디자인을 참고한 초안이었고, 원래 이미지보다 읽기 쉽다는 평가를 받았습니다. 제품 사진은 임의로 넣지 않았습니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=1326">22:06</a>)</small></li>
+<li>피그마 팁: 문장 몇 개만 고치거나 일부만 다듬고 싶으면 코덱스에 피그마를 연동하고 &quot;피그마에 정리해줘&quot;라고 합니다.<ul>
+<li>가끔 이미지가 통째로 한 장으로 옮겨져 수정할 수 없을 때가 있습니다. 그때는 &quot;레이어 분리해줘&quot;라고 하면 요소별로 수정할 수 있게 나눠 줍니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=1352">22:32</a>)</small></li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/Hol_hJwEmog?t=1377"><img src="03.jpg" alt="11월 일정표 초안과 &quot;레이어를 분리해 줘&quot; 요청" loading="lazy"></a><figcaption>11월 일정표 초안과 &quot;레이어를 분리해 줘&quot; 요청 · <a href="https://youtu.be/Hol_hJwEmog?t=1377">▶ 22:57</a></figcaption></figure><h3>잘 시키는 법</h3>
+<ul>
+<li>팀원에게 일을 맡길 때처럼 두루뭉술하지 않게, 무엇을 어디서 참고해 어떤 기준으로 만들지까지 말합니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=1241">20:41</a>)</small></li>
+<li>시켰는데 못 하면 AI가 내 요청을 이해하는 데 필요한 자료를 내가 주지 않은 것입니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=1588">26:28</a>)</small></li>
+<li>&quot;이거 될까? 시켜볼까?&quot;라는 습관이 가장 중요하다고 강조합니다. 마무리 숙제는 하루 한 시간이라도 써 보기입니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=1806">30:06</a>)</small></li>
+</ul>
+<blockquote class="tip"><p>💡 작년까지는 &quot;AI가 멍청하다&quot;는 말이 맞았지만, 지금은 사용자가 잘못 시켰을 확률이 더 높다는 것이 진행자의 주장이다.</p>
+</blockquote>
+</section><section><h2>따라 해보기</h2>
+<h3>준비물</h3>
+<ul>
+<li>컴퓨터: 영상은 맥북 에어입니다. 진행자는 윈도우와 화면 구성이 많이 다르다고 말합니다.</li>
+<li>계정: ChatGPT 유료 요금제(영상 속 학생은 2만 원대 낮은 요금제)가 필요합니다. 클로드도 유료로 쓰고 있으면 함께 연결합니다.</li>
+<li>프로그램: 클로드 데스크톱 앱, ChatGPT 데스크톱 앱(코덱스), 어사이드(무료 플랜), 크롬(비밀번호와 즐겨찾기를 가져올 곳)</li>
+<li>선택: 휴대폰 GPT 앱, 노션·구글 캘린더·아이클라우드 캘린더·피그마 연동</li>
+<li>시간: 영상에서는 설치와 연결에만 약 1시간이 걸렸습니다. 처음이면 넉넉히 잡으세요.</li>
+</ul>
+<h3>단계별 방법</h3>
+<div class="flow"><div class="flow-title">🔁 코덱스 × 어사이드 설치·연결 순서</div><ol class="flow-strip"><li><span>클로드 앱 설치</span></li><li><span>코덱스 앱 설치</span></li><li><span>어사이드 설치</span></li><li><span>AI 계정 연결</span></li><li><span>크롬 정보 가져오기</span></li><li><span>코덱스 권한 켜기</span></li><li><span>휴대폰 연결</span></li><li><span>어사이드 CLI 연결</span></li><li><span>연결 시험</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">클로드 앱 설치</span><div class="d"><p>클로드 웹 화면 왼쪽 아래의 PC용 데스크톱 앱 다운로드를 눌러 설치합니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=174">2:54</a>)</small></p>
+</div></li><li><span class="n">2</span><span class="t">코덱스 앱 설치</span><div class="d"><p>&quot;코덱스&quot;를 검색해 ChatGPT 데스크톱 앱을 받아 설치합니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=214">3:34</a>)</small></p>
+</div></li><li><span class="n">3</span><span class="t">어사이드 설치</span><div class="d"><p>구글에서 <code>aside</code>를 검색해 설치하고 요금제는 0원 무료 플랜을 고릅니다. <small class="tm">(<a href="https://youtu.be/Hol_hJwEmog?t=330">5:30</a>)</small></p>
+</div><figure><a href="https://youtu.be/Hol_hJwEmog?t=355"><img src="04.jpg" alt="Aside 다운로드 페이지와 Applications로 옮기는 설치 창" loading="lazy"></a><figcaption>Aside 다운로드 페이지와 Applications로 옮기는 설치 창 · <a href="https://youtu.be/Hol_hJwEmog?t=355">▶ 5:55</a></figcaption></figure></li><li><span class="n">4</span><span class="t">AI 계정 연결</span><div class="d"><p>어사이드에 쓰고 있는 GPT와 클로드 계정을 연결하고, 아래쪽 모델 선택에서 가성비 좋은 모델을 고릅니다.</p>
+</div><figure><a href="https://youtu.be/Hol_hJwEmog?t=407"><img src="05.jpg" alt="어사이드 Settings &gt; Models에 Aside·Claude·ChatGPT 연결" loading="lazy"></a><figcaption>어사이드 Settings &gt; Models에 Aside·Claude·ChatGPT 연결 · <a href="https://youtu.be/Hol_hJwEmog?t=407">▶ 6:47</a></figcaption></figure></li><li><span class="n">5</span><span class="t">크롬 정보 가져오기</span><div class="d"><p>크롬의 비밀번호와 즐겨찾기를 어사이드로 가져오고 풀 액세스를 허용합니다.</p>
+</div><figure><a href="https://youtu.be/Hol_hJwEmog?t=471"><img src="06.jpg" alt="어사이드의 &#x27;Connect your password manager&#x27; 가져오기 창" loading="lazy"></a><figcaption>어사이드의 &#x27;Connect your password manager&#x27; 가져오기 창 · <a href="https://youtu.be/Hol_hJwEmog?t=471">▶ 7:51</a></figcaption></figure></li><li><span class="n">6</span><span class="t">코덱스 권한 켜기</span><div class="d"><p>GPT 앱 왼쪽의 코덱스에서 시작하기를 누르고, 아래쪽 승인 요청을 눌러 '전체 액세스'를 켭니다.</p>
+<ul>
+<li>'나 대신 승인'이 아니라 '전체 액세스(전체 권한)'를 고릅니다</li>
+</ul>
+</div><figure><a href="https://youtu.be/Hol_hJwEmog?t=574"><img src="07.jpg" alt="&#x27;전체 액세스를 사용할 수 있게 할까요?&#x27; 확인 창" loading="lazy"></a><figcaption>&#x27;전체 액세스를 사용할 수 있게 할까요?&#x27; 확인 창 · <a href="https://youtu.be/Hol_hJwEmog?t=574">▶ 9:34</a></figcaption></figure></li><li><span class="n">7</span><span class="t">휴대폰 연결</span><div class="d"><p>선택 사항입니다. 휴대폰 GPT 앱과 PC를 연결하면 컴퓨터가 켜져 있을 때 휴대폰으로도 일을 시킬 수 있습니다. 구체적인 연결 메뉴는 영상에서 생략됐습니다.</p>
+</div></li><li><span class="n">8</span><span class="t">어사이드 CLI 연결</span><div class="d"><p>복사해 둔 연결 명령을 맥의 터미널에 붙여 넣어 코덱스에 어사이드를 붙입니다. 터미널은 Spotlight(돋보기)에서 &quot;터미널&quot;로 검색해 엽니다.</p>
+<ul>
+<li>무엇을 어디서 복사했는지는 영상에서 생략됐습니다(자막상 불분명)</li>
+</ul>
+</div><figure><a href="https://youtu.be/Hol_hJwEmog?t=839"><img src="08.jpg" alt="코덱스에 넣은 curl 설치 명령과 Aside CLI 설치 결과" loading="lazy"></a><figcaption>코덱스에 넣은 curl 설치 명령과 Aside CLI 설치 결과 · <a href="https://youtu.be/Hol_hJwEmog?t=839">▶ 13:59</a></figcaption></figure></li><li><span class="n">9</span><span class="t">연결 시험</span><div class="d"><p>코덱스에 메일 확인을 시키고, 어사이드 창에서 직접 입력하지 않았는데도 작업이 돌아가는지 확인합니다.</p>
+</div><figure><a href="https://youtu.be/Hol_hJwEmog?t=883"><img src="09.jpg" alt="어사이드 창에 Gmail &#x27;회신이 필요할 수 있는 제안&#x27; 결과가 뜬 화면" loading="lazy"></a><figcaption>어사이드 창에 Gmail &#x27;회신이 필요할 수 있는 제안&#x27; 결과가 뜬 화면 · <a href="https://youtu.be/Hol_hJwEmog?t=883">▶ 14:43</a></figcaption></figure></li></ol></div>
+<p><strong>9단계와 실전에서 입력한 말 (영상 속 그대로)</strong></p>
+<pre><code>내 구글 이메일 확인하고 가장 최근에 온 것 중에 내가 회신해야 되는 거 알려줘
+</code></pre>
+<pre><code>어사이드로 [사이트 이름] 들어가서 반품 입고 건인지 확인해줘
+</code></pre>
+<pre><code>2026년 11월 마켓 일정을 지금 첨부한 이미지처럼 내 스케줄이랑 노션 내용 참고해가지고 만들어줘.
+애매하면 어사이드 활용해가지고 노션 들어가서 다 확인·참고해가지고 틀리지 않게 만들어
+</code></pre>
+<pre><code>어사이드 활용해서 내 인스타그램 계정 들어간 다음에 탐색 탭에서 조회수 20만 이상인 뷰티 콘텐츠 5개 알려줘
+</code></pre>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 1~3단계(앱 검색·설치·무료 플랜 선택), 6단계(코덱스 → 시작하기 → 승인 요청 → 전체 액세스), 9단계와 실전 지시문</li>
+<li class="warn">⚠️ 8단계 「어사이드 CLI 연결」: 터미널에 붙여 넣는 명령어 원문과 그 명령을 복사한 위치가 자막에 나오지 않습니다. 영상 13:45~14:13 화면을 확인하거나, 어사이드 공식 사이트에서 Codex/CLI 연결 안내를 찾아보세요(보충). 이 단계가 빠지면 코덱스가 어사이드를 조종하지 못합니다.</li>
+<li class="warn">⚠️ 4단계 「AI 계정 연결」: 어떤 모델을 골랐는지 이름이 나오지 않습니다. 영상 6:44 전후 화면에서 선택한 모델을 확인하세요.</li>
+<li class="warn">⚠️ 5단계 「크롬 정보 가져오기」: 가져오기 메뉴의 위치와 이름이 자막에 없습니다. 어사이드를 처음 실행할 때 나오는 안내나 설정 메뉴에서 크롬 데이터 가져오기를 찾으세요(보충). 끝나면 자주 쓰는 사이트에 로그인이 유지되는지 직접 열어 확인합니다.</li>
+<li class="warn">⚠️ 7단계 「휴대폰 연결」: 연결 방법이 영상에서 생략됐습니다. 휴대폰 GPT 앱의 코덱스 화면에서 PC 연결 안내를 따르세요(보충).</li>
+<li class="warn">⚠️ 준비물 「유료 요금제」: GPT 유료 요금제가 있어야 합니다. 어사이드는 무료지만 붙일 AI 계정이 유료입니다.</li>
+<li class="warn">⚠️ 준비물 「윈도우 사용자」: 영상은 맥 기준이라 터미널 열기 같은 단계가 윈도우와 다릅니다. 윈도우에서는 PowerShell이나 명령 프롬프트를 쓰는 것이 일반적입니다(보충).</li>
+<li class="warn">⚠️ 일정표 「캘린더 연동」: 구글 캘린더와 아이클라우드 캘린더를 무엇으로 연동했는지(&quot;이것도 설치해야 돼&quot;) 구체적인 내용이 없습니다. 영상 21:05~21:39 화면을 확인하세요.</li>
+<li class="warn">❓ 연결 방식을 '어사이드 CLI'와 'MCP'라는 두 이름으로 섞어 설명합니다. 8단계가 둘 중 어느 방식인지 공식 안내로 확인이 필요합니다.</li>
+<li class="warn">❓ 슬랙 자동 메시지는 &quot;지금은 수준이 안 돼서 안 된대요&quot;로 끝났습니다. 요금제 문제인지 설정 문제인지 분명하지 않습니다.</li>
+</ul>
+<h3>확인 방법</h3>
+<ul>
+<li>GPT(코덱스)에게만 시켰는데 어사이드 창이 저절로 움직이면 연결에 성공한 것입니다. 어사이드 창을 열어 메뉴를 올려 보면 GPT가 내린 명령 기록이 보입니다.</li>
+<li>로그인이 필요한 사이트(예: 마켓 관리자 페이지)를 시켰을 때 로그인 화면에서 멈추지 않으면 크롬 정보를 제대로 가져온 것입니다.</li>
+</ul>
+<h3>막히면</h3>
+<ul>
+<li>사이트가 로그인 화면에서 막히면 지시문에 &quot;어사이드 활용해서&quot;가 빠졌는지 확인하세요. 빠지면 코덱스가 로그인 정보가 없는 자기 브라우저로 엽니다.</li>
+<li>크롬 비밀번호가 다 넘어오지 않아 연결이 안 된 사이트가 있으면 그 사이트만 GPT에게 연결 방법을 물어 처리합니다.</li>
+<li>결과가 기대와 다르면 출처(구글 캘린더, 노션 페이지 이름)와 기준(날짜, 조회수)을 더 구체적으로 적어 다시 시킵니다.</li>
+<li>검색 결과가 너무 적거나 이상하면 기준을 바꿔 봅니다. 인스타의 20만 기준은 다 걸러졌습니다.</li>
+<li>피그마에 이미지가 통째로 들어가면 &quot;레이어 분리해줘&quot;라고 합니다.</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>영상에서 설치와 연결에만 약 1시간이 걸렸고 촬영은 총 90분이었습니다.</li>
+<li>출연자의 인스타 계정은 시작 10개월 만에 3.8만 팔로워입니다.</li>
+<li>쓰고 있는 요금제는 약 2만 원대 낮은 요금제였습니다.</li>
+<li>어사이드는 한국인 창업 스타트업이 만들었고 YC의 투자를 받았다고 소개됩니다.</li>
+<li>오늘의 수업 3개: ① 코덱스·어사이드·클로드 설치 ② 코덱스에 어사이드 CLI 연결 ③ 슬랙 연결(이번엔 생략)</li>
+<li>&quot;GPT한테 개떡같이 말해도 어사이드한테 찰떡같이 시킨다.&quot;</li>
+<li>&quot;이제는 사용자가 멍청한 확률이 더 높아요.&quot;</li>
+<li>&quot;GPT한테 어사이드 활용하라고 꼭 지정해 줄수록 정확해진다.&quot;</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li><strong>보안</strong>: 크롬 비밀번호 전체와 '전체 액세스' 권한을 AI에게 여는 방식입니다. &quot;경험상 문제가 없었다&quot;는 말은 진행자 개인의 경험일 뿐입니다. 쇼핑몰 관리자나 결제가 걸린 사이트는 처음엔 조회만 시키고, 등록·결제처럼 되돌리기 어려운 작업은 직접 확인하는 편이 안전하다는 것이 노트 작성자의 의견입니다.</li>
+<li><strong>재현성</strong>: 가장 중요한 연결 명령(8단계)이 영상에 나오지 않아서 이 노트만으로는 그 단계에서 막힐 수 있습니다. 공식 안내 확인이 필요합니다.</li>
+<li><strong>결과 검증</strong>: 마켓 일정표처럼 여러 출처를 합친 결과는 빠지거나 틀린 일정이 있을 수 있습니다. 영상도 초안까지만 보여 줬으니 실제 일정과 대조해 보세요.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>클로드·ChatGPT 데스크톱 앱과 어사이드를 설치하고, 어사이드에 크롬 비밀번호를 가져온 뒤 자주 쓰는 사이트 하나가 로그인된 상태로 열리는지 확인하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>코덱스에 &quot;내 구글 이메일 확인하고 가장 최근에 온 것 중에 내가 회신해야 되는 거 알려줘&quot;라고 시키고 어사이드 창이 저절로 움직이는지 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>매주 반복하는 클릭 업무 하나(반품 확인, 매출 조회 등)를 골라 &quot;어사이드 활용해서 ○○ 들어가서 ○○ 확인해줘&quot;로 시켜 보기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1792907619 -->
