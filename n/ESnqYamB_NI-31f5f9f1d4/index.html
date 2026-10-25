@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>영상 하나에 30시간 작업하던 일을 전부 자동화한 방법</title>
+<meta property="og:title" content="영상 하나에 30시간 작업하던 일을 전부 자동화한 방법">
+<meta property="og:description" content="커리어해커 알렉스 · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/ESnqYamB_NI/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/ESnqYamB_NI" style="background-image:url('https://i.ytimg.com/vi/ESnqYamB_NI/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>영상 하나에 30시간 작업하던 일을 전부 자동화한 방법</h1><p class="meta">커리어해커 알렉스 · 게시 2026-10-25</p><p class="note">🎙️ 자막 대신 영상 음성을 받아써서 정리 (ko (음성 받아쓰기·GPU))</p>
+<a class="btn" href="https://youtu.be/ESnqYamB_NI">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>예전에는 영상 한 편에 30시간이 걸렸지만, 지금은 라이브 한 편을 Claude에게 통째로 넘기고 편수까지 맡겨 롱폼 5편과 Shorts 22편을 만들었다.</li>
+<li>남의 인터뷰 영상, X 글, 좋아요 1위 댓글을 재료로 삼고, 거기에 Claude가 알렉스를 인터뷰해 얻은 답과 해석을 더해 2차 가공 영상을 만든다.</li>
+<li>자동화의 핵심은 컷 편집, 모션 그래픽, 차트 규칙을 미리 '스킬'로 정리해 두는 것이다. 그래서 라이브만 던지면 알아서 편집된다.</li>
+<li>파이프라인은 7단계다: 기획·리서치 → 대본 → 음성 → 모션·편집 → QA → 패키징 → 업로드.</li>
+<li>사람이 병목이 되지 않도록 에이전트에게 권한은 최대한 주고, 크레딧 상한 같은 확인 지점만 정해 둔다(Human on the loop).</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>영상 하나 만드는 데 시간이 너무 오래 걸려 업로드를 미루는 크리에이터</li>
+<li>라이브·강의·회의 녹화를 여러 편의 콘텐츠로 다시 쓰고 싶은 사람</li>
+<li>AI 에이전트에게 일을 맡기되, 어디서 사람이 확인할지 정하고 싶은 사람</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>결론: 이제 중요한 건 '재료'를 만드는 일</h3>
+<ul>
+<li>처음에는 컨셉, 주제, 대본, 리허설, 재촬영, 편집까지 영상 한 편에 약 30시간이 걸렸다.</li>
+<li>지금은 라이브 녹화를 Claude에게 통째로 넘긴다. &quot;5개 만들어&quot;라고 하지도 않고 몇 편을 만들지도 Claude가 정한다. 롱폼마다 썸네일도 직접 만들게 시켰다. <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=0">0:00</a>, <a href="https://youtu.be/ESnqYamB_NI?t=46">0:46</a>)</small><ul>
+<li>결과: 라이브 1편으로 롱폼 5편, Shorts 22편이 나왔다(앞부분에서는 &quot;숏폼 20개인가&quot;라고 말함). 알렉스는 &quot;퀄리티가 나쁘지 않다&quot;고 평가했다.</li>
+<li>알렉스는 휴대폰만으로 &quot;롱폼으로 완성시켜 줘, 숏폼도 뽑아&quot;라고 지시했고 결과물을 직접 손대지 않았다.</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/ESnqYamB_NI?t=300"><img src="01.jpg" alt="정리 페이지 &#x27;라이브 한 편을 롱폼 5편과 Shorts 22편으로&#x27;" loading="lazy"></a><figcaption>정리 페이지 &#x27;라이브 한 편을 롱폼 5편과 Shorts 22편으로&#x27; · <a href="https://youtu.be/ESnqYamB_NI?t=300">▶ 5:00</a></figcaption></figure><ul>
+<li>오히려 가공하지 않은 날것의 재료가 더 좋을 수 있다고 본다. 그래서 앞으로 라이브를 더 많이 할 계획이다. <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=288">4:48</a>)</small></li>
+<li>예전에는 '편집이 귀찮아 영상을 못 만드는' 딜레마가 있었다. 지금은 라이브를 하면서 &quot;이건 쇼츠감, 이건 롱폼감&quot; 하고 즐겁게 말한다.</li>
+</ul>
+<blockquote class="tip"><p>💡 콘텐츠와 메시지만 있으면, 올릴 수준까지 가공하는 데는 거의 품이 들지 않는다.</p>
+</blockquote>
+<h3>2차 가공 ①: 남의 인터뷰 영상에 내 해석 더하기</h3>
+<ul>
+<li>사례: Cleo Abram(자막상 '클리오 아브라함')과 '알렉스완'(자막상 표기)이 Muse에 대해 나눈 인터뷰 영상. 이런 2차 가공 롱폼을 4편 만들었다.</li>
+<li>번역과 자막만 다는 방법도 있고 실제로 그렇게 하는 사람도 많다. 하지만 알렉스는 자기 말로 풀어 주는 편이 더 도움이 된다고 판단했다.</li>
+</ul>
+<div class="flow"><div class="flow-title">🔁 남의 영상을 해설 롱폼으로 만드는 순서</div><ol class="flow-strip"><li><span>원본 시청</span></li><li><span>Claude에 넘기기</span></li><li><span>나를 인터뷰</span></li><li><span>말로 답하기</span></li><li><span>롱폼 제작</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">원본 시청</span><div class="d"><p>영상을 찾아 직접 끝까지 보고 듣는다 <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=106">1:46</a>)</small></p>
+</div></li><li><span class="n">2</span><span class="t">Claude에 넘기기</span><div class="d"><p>&quot;이 영상 좋던데 이걸로 롱폼 만들어 볼까?&quot;로 시작한다</p>
+</div></li><li><span class="n">3</span><span class="t">나를 인터뷰</span><div class="d"><p>Claude가 영상을 본 사람의 입장에서 시청자가 궁금해할 질문을 뽑아 알렉스를 인터뷰한다 <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=156">2:36</a>)</small></p>
+</div></li><li><span class="n">4</span><span class="t">말로 답하기</span><div class="d"><p>소감, 발언에 대한 의견과 생각을 말로 쭉 풀어 답한다</p>
+</div></li><li><span class="n">5</span><span class="t">롱폼 제작</span><div class="d"><p>그 답으로 롱폼을 만든다. 목소리, 자막, 설명용 모션 그래픽까지 입힌다</p>
+</div></li></ol></div>
+<ul>
+<li>결과는 조회수 26,000회. 그런데 분석해 보니 알렉스가 말하는 구간에서 시청자가 빠져나갔다. 그래서 그 구간을 더 잘 만들어야 한다는 피드백을 얻었다. <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=214">3:34</a>)</small></li>
+<li>번역기를 돌리고 자막을 다는 '대박 자동화'는 누구나 할 수 있다. 알렉스는 메타 엔지니어이자 AI 서비스·에이전트 메모리를 만드는 사람으로서의 색깔, 쉬운 설명, 목소리를 얹어야 차별성이 생긴다고 말한다.</li>
+</ul>
+<blockquote class="tip"><p>💡 차별점은 자동화 자체가 아니라 그 위에 얹는 '내 해석과 목소리'에서 나온다.</p>
+</blockquote>
+<h3>2차 가공 ②: X 글을 해설 영상으로</h3>
+<ul>
+<li>사례: 안드레이 카파시(Andrej Karpathy)가 X에 쓴 &quot;99.8%의 사람은 아직 진짜 AI를 써 보지 못했다&quot;. 이 글을 분석하고 알렉스의 의견을 더해 영상으로 만들었다. <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=229">3:49</a>)</small></li>
+<li>이런 영상에서는 목소리보다 글을 어떻게 시각적으로 풀어내는지가 더 중요하다고 본다. 인포그래픽, 차트, 모션 그래픽을 많이 썼다.</li>
+</ul>
+<figure><a href="https://youtu.be/ESnqYamB_NI?t=259"><img src="02.jpg" alt="카파시 글을 다룬 영상 화면: &#x27;99.8%&#x27; 인포그래픽" loading="lazy"></a><figcaption>카파시 글을 다룬 영상 화면: &#x27;99.8%&#x27; 인포그래픽 · <a href="https://youtu.be/ESnqYamB_NI?t=259">▶ 4:19</a></figcaption></figure><h3>2차 가공 ③: 좋아요 1위 댓글로 만든 후속 영상</h3>
+<ul>
+<li>Claude Code 팀 엔지니어들이 일하는 방식을 다룬 영상이 있었다. 그 영상의 좋아요 1위 댓글(503개)은 &quot;말 말고 보여 줘&quot;였다. 프롬프트도, 에디터도, 코드도 안 나오는데 무슨 좋은 영상이냐는 불만이다. <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=416">6:56</a>, <a href="https://youtu.be/ESnqYamB_NI?t=445">7:25</a>)</small></li>
+<li>그래서 &quot;이분들이 에디터·코드·프롬프트를 보여 줬다면 어땠을까&quot;를 직접 보여 주는 영상을 만들었다.</li>
+</ul>
+<blockquote class="tip"><p>💡 댓글을 보고 만들면 원본보다 더 나은 콘텐츠가 나올 수 있다.</p>
+</blockquote>
+<figure><a href="https://youtu.be/ESnqYamB_NI?t=427"><img src="03.jpg" alt="Claude Code 팀을 다룬 알렉스 채널 영상 재생 화면" loading="lazy"></a><figcaption>Claude Code 팀을 다룬 알렉스 채널 영상 재생 화면 · <a href="https://youtu.be/ESnqYamB_NI?t=427">▶ 7:07</a></figcaption></figure><h3>자동화의 핵심: 작업 규칙을 '스킬'로 만들어 두기</h3>
+<ul>
+<li>라이브 하나를 주면 Claude가 영상 편집과 모션 애니메이션까지 다 하느냐는 질문에 &quot;그렇다&quot;고 답했다. 모션 그래픽, 디자인 시스템, 차트를 모두 스킬로 다듬어 두었기 때문이다. <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=482">8:02</a>)</small></li>
+<li>컷 편집도 스킬로 만들었다. 컷 편집은 기계적으로 하면 안 된다. 목소리와 자막을 보고, 녹화 중에 &quot;아, 이건 잘라 줘&quot;라고 말한 부분을 LLM이 판단해 잘라야 한다.</li>
+<li>모션 그래픽 디자인 스킬은 '볼트 키네틱'(자막상 표기)이라는 이름으로 만들었다. 여기에 아래 규칙을 적어 두었다. <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=538">8:58</a>)</small><ul>
+<li>텍스트를 렌더링하는 방법</li>
+<li>어떤 텍스트가 어디에 가야 하고, 어디에는 가면 안 되는지</li>
+<li>차트를 넣는 조건</li>
+<li>한 영상에 넣을 모션 그래픽 개수</li>
+</ul>
+</li>
+</ul>
+<blockquote class="tip"><p>💡 &quot;라이브만 던지면 알아서 되는&quot; 이유는 규칙을 미리 써 둔 스킬에 있다.</p>
+</blockquote>
+<h3>콘텐츠 자동화 파이프라인 (Shorts·롱폼 공통)</h3>
+<div class="flow"><div class="flow-title">🔁 알렉스의 7단계 콘텐츠 파이프라인</div><ol class="flow-strip"><li><span>기획·리서치</span></li><li><span>대본</span></li><li><span>음성</span></li><li><span>모션·편집</span></li><li><span>QA</span></li><li><span>패키징</span></li><li><span>업로드</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">기획·리서치</span><div class="d"><p>사람들이 관심을 갖고 열광하는 주제와 포맷을 리서치시킨다 <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=550">9:10</a>)</small></p>
+<ul>
+<li>벤치마킹은 하되 남의 것을 그대로 베끼지 않는다. 포맷과 스타일만 살리고 내 색깔과 의견을 입힌다</li>
+</ul>
+</div></li><li><span class="n">2</span><span class="t">대본</span><div class="d"><p>큰 틀과 스토리보드를 짜고, 알렉스의 말투를 많이 가져오게 한다 <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=584">9:44</a>)</small></p>
+<ul>
+<li>Shorts는 대본이 나쁘면 살아남기 어렵다</li>
+</ul>
+</div></li><li><span class="n">3</span><span class="t">음성</span><div class="d"><p>자기 목소리를 쓴다. 그것만으로 차별점이 생긴다</p>
+</div></li><li><span class="n">4</span><span class="t">모션·편집</span><div class="d"><p>HyperFrame(HTML 코드로 화면을 만들어 영상으로 바꾸는 스킬)을 쓴다. 영화 같은 장면은 Blender로 결과가 매번 같게(deterministic) 만들어 실수를 줄인다 <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=624">10:24</a>)</small></p>
+<ul>
+<li>알렉스 기억으로는 HyperFrame은 'Heizen'(자막상 표기) 회사가 만든 스킬이다</li>
+</ul>
+</div></li><li><span class="n">5</span><span class="t">QA</span><div class="d"><p>Claude가 만들면 Codex가, Codex가 만들면 Claude가 검증하는 독립 검토</p>
+</div></li><li><span class="n">6</span><span class="t">패키징</span><div class="d"><p>썸네일과 제목. 이것이 가장 중요할 때도 있다. 알렉스가 썸네일 사업을 하는 이유다</p>
+</div></li><li><span class="n">7</span><span class="t">업로드</span><div class="d"><p>'어사이드'(자막상 불분명)로 업로드한다</p>
+</div></li></ol></div>
+<ul>
+<li>이 파이프라인 화면을 스크린샷으로 찍어 Claude에게 &quot;나도 이거 할 수 있을까?&quot;라고 물어보라고 권한다. 거의 해 줄 가능성이 높지만 디테일이 중요하다고 덧붙였다.</li>
+</ul>
+<figure><a href="https://youtu.be/ESnqYamB_NI?t=559"><img src="04.jpg" alt="7단계 표: 기획·리서치~업로드·기록과 단계별 스크립트" loading="lazy"></a><figcaption>7단계 표: 기획·리서치~업로드·기록과 단계별 스크립트 · <a href="https://youtu.be/ESnqYamB_NI?t=559">▶ 9:19</a></figcaption></figure><h3>쓰는 도구</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>도구(자막 표기 기준)</th>
+  <th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Claude Code, Codex</td>
+  <td>작업 실행, 서로 교차 검증</td>
+</tr>
+<tr>
+  <td>HyperFrame</td>
+  <td>HTML 코딩으로 모션 화면을 만들어 영상화</td>
+</tr>
+<tr>
+  <td>11랩스(ElevenLabs)</td>
+  <td>용도는 자막상 불분명(음성 단계로 추정)</td>
+</tr>
+<tr>
+  <td>힉스필드(Higgsfield) C-Dance</td>
+  <td>영상 생성 (C-Dance는 자막상 표기)</td>
+</tr>
+<tr>
+  <td>Blender</td>
+  <td>모션 제작</td>
+</tr>
+<tr>
+  <td>오토클릭(자막상 불분명)</td>
+  <td>썸네일 제작</td>
+</tr>
+<tr>
+  <td>어사이드(자막상 불분명)</td>
+  <td>업로드</td>
+</tr>
+<tr>
+  <td>순어(자막상 불분명)</td>
+  <td>배경음악</td>
+</tr>
+<tr>
+  <td>FM 팩(자막상 불분명)</td>
+  <td>비디오 편집</td>
+</tr>
+<tr>
+  <td>규칙 시스템</td>
+  <td>하네스(에이전트 작업 규칙 틀) 관리</td>
+</tr>
+<tr>
+  <td>발행 원장</td>
+  <td>업로드 이벤트 기록</td>
+</tr>
+<tr>
+  <td>리모션(Remotion)</td>
+  <td>HyperFrame과 비슷한 렌더링 도구</td>
+</tr>
+</tbody>
+</table></div>
+<figure><a href="https://youtu.be/ESnqYamB_NI?t=706"><img src="05.jpg" alt="쓴 기술 카드: Higgsfield·Seedance 2.5, AutoKliq, Suno 등" loading="lazy"></a><figcaption>쓴 기술 카드: Higgsfield·Seedance 2.5, AutoKliq, Suno 등 · <a href="https://youtu.be/ESnqYamB_NI?t=706">▶ 11:46</a></figcaption></figure><h3>사람이 병목이 되지 않게: Human on the loop</h3>
+<ul>
+<li>알렉스는 Shorts 5개, 롱폼 3개, 모션 그래픽 교체, 웹사이트 수정, 하네스 변경을 동시에 돌린다. 그러다 보니 승인을 기다리며 '손 든' 작업이 쌓이고, 알렉스 자신이 병목(bottleneck)이 되었다. <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=743">12:23</a>)</small></li>
+<li>깨달은 점: 이래서는 규모를 키울 수 없다. 그래서 피드백을 한 번 줄 때마다 그것을 스킬, 룰, 하네스로 만들어 승인 요청을 최소화한다.</li>
+</ul>
+<figure><a href="https://youtu.be/ESnqYamB_NI?t=774"><img src="06.jpg" alt="Hermes Operator가 확인을 기다리는 작업들을 ✋로 나열" loading="lazy"></a><figcaption>Hermes Operator가 확인을 기다리는 작업들을 ✋로 나열 · <a href="https://youtu.be/ESnqYamB_NI?t=774">▶ 12:54</a></figcaption></figure><ul>
+<li>원칙은 에이전트에게 권한을 최대한 주고, 막아야 할 지점만 정확하게 설계(governance)하는 것이다. <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=799">13:19</a>)</small><ul>
+<li>Higgsfield를 최대 설정으로 돌리면 크레딧이 한 번에 다 날아간다. 그래서 상한을 Shorts 1편 500, 롱폼 1,500 크레딧으로 정했다.</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/ESnqYamB_NI?t=816"><img src="07.jpg" alt="핵심 3 · 크레딧 상한: Shorts 500, 롱폼 1,500 크레딧" loading="lazy"></a><figcaption>핵심 3 · 크레딧 상한: Shorts 500, 롱폼 1,500 크레딧 · <a href="https://youtu.be/ESnqYamB_NI?t=816">▶ 13:36</a></figcaption></figure><ul>
+<li>캐릭터를 생성한 뒤에는 영상을 만들기 전에 반드시 알렉스의 확인을 받게 했다.</li>
+<li>이런 규칙을 정한 뒤에는 &quot;내가 끼어들어 네 일을 멈추는 일이 없게 설계해 줘&quot;라고 지시한다.</li>
+<li>자막에는 'Human Under Loop'으로 들리지만, 설명란 표기는 'Human on the loop'이다.</li>
+</ul>
+<blockquote class="tip"><p>💡 내가 없어도 굴러가야 시스템이다. 확인 지점은 꼭 필요한 곳에만 둔다.</p>
+</blockquote>
+<h3>정리</h3>
+<ul>
+<li>알렉스가 롱폼 자동화로 해 본 것은 세 가지다. <small class="tm">(<a href="https://youtu.be/ESnqYamB_NI?t=851">14:11</a>)</small><ul>
+<li>라이브 1편을 롱폼 5편과 Shorts 22편으로 만들기</li>
+<li>남의 롱폼과 X 글을 내 해석으로 다시 풀어 2차 가공하기</li>
+<li>논문을 읽고 내 스타일과 내 목소리로 강의 만들기 (자막이 여기서 끝나 세부 내용은 없음)</li>
+</ul>
+</li>
+</ul>
+</section><section><h2>따라 해보기</h2>
+<h3>준비물</h3>
+<ul>
+<li>Claude. 채팅으로 기획하는 단계까지는 일반 Claude로 충분하다. 실제 편집 자동화는 알렉스처럼 Claude Code를 쓴다.</li>
+<li>재료: 라이브·강의·회의 녹화의 자막, 2차 가공할 원본 영상의 자막이나 X 글, 원본 영상의 댓글과 좋아요 수</li>
+<li>비용·소요 시간: 영상에 나오지 않는다. 영상 생성(Higgsfield 등)과 음성 도구는 유료 크레딧을 쓴다(보충).</li>
+</ul>
+<h3>단계별 방법</h3>
+<div class="flow"><div class="flow-title">🔁 설명란 실습 순서대로 따라 하기</div><ol class="flow-strip"><li><span>라이브 통째로 넘기기</span></li><li><span>해석 인터뷰 받기</span></li><li><span>댓글로 후속 기획</span></li><li><span>작업 규칙 스킬화</span></li><li><span>파이프라인 점검</span></li><li><span>개입 지점 정하기</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">라이브 통째로 넘기기</span><div class="d"><p>녹화 자막 전체를 붙여 넣고, 몇 편을 만들지도 Claude가 판단하게 한다. 아래 '1단계 입력'을 쓴다</p>
+</div></li><li><span class="n">2</span><span class="t">해석 인터뷰 받기</span><div class="d"><p>원본 영상 자막을 주고 Claude에게 질문 8개로 나를 인터뷰하게 한다. 한 번에 한 질문씩 말하듯 답한다. 아래 '2단계 입력'</p>
+</div></li><li><span class="n">3</span><span class="t">댓글로 후속 기획</span><div class="d"><p>원본 영상의 댓글과 좋아요 수를 주고, 상위 요청 3개에 답하는 기획안을 받는다. 아래 '3단계 입력'</p>
+</div></li><li><span class="n">4</span><span class="t">작업 규칙 스킬화</span><div class="d"><p>매번 같은 형식으로 만드는 콘텐츠의 규칙을 SKILL.md 초안으로 정리한다. 아래 '4단계 입력'</p>
+</div></li><li><span class="n">5</span><span class="t">파이프라인 점검</span><div class="d"><p>영상의 파이프라인 화면(9:16 부근)을 캡처해 첨부하고, 이번 주에 자동화할 2단계를 고르게 한다. 아래 '5단계 입력'</p>
+</div></li><li><span class="n">6</span><span class="t">개입 지점 정하기</span><div class="d"><p>크레딧 상한(알렉스는 Shorts 500, 롱폼 1,500)과 반드시 확인받을 시점(예: 캐릭터 생성 후)을 규칙으로 적는다</p>
+<ul>
+<li>설명란의 실습 프롬프트 7은 입력에서 잘려 원문이 없다</li>
+</ul>
+</div></li></ol></div>
+<p><strong>1단계 입력</strong> (설명란 실습 프롬프트 1)</p>
+<pre><code>아래는 제가 진행한 ○○ 라이브(또는 강의·회의 녹화)의 전체 자막입니다. 이 자막만으로 따로 볼 만한 롱폼과 Shorts를 몇 편 만들 수 있는지 직접 판단해 주세요. 편마다 ① 제목 ② 원본 구간(시작–끝 시각) ③ 첫 문장 ④ 시청자가 얻는 것 한 줄을 표로 정리하고, 같은 이야기가 두 편에 겹치지 않게 해 주세요. 완료 기준: 모든 구간이 자막의 실제 시각과 맞고, 각 편이 앞뒤 맥락 없이도 이해됩니다. [자막 붙여넣기: ○○]
+</code></pre>
+<p><strong>2단계 입력</strong> (실습 프롬프트 2)</p>
+<pre><code>아래는 ○○ 영상의 자막입니다. 저는 이 영상을 그대로 번역하지 않고, 제 해석을 담은 해설 영상을 만들려고 합니다. 이 영상을 본 시청자가 가장 궁금해할 질문 8개를 뽑아 저를 인터뷰해 주세요. 한 번에 한 질문만 묻고, 제 답을 들은 뒤 다음 질문으로 넘어가 주세요. 인터뷰가 끝나면 제 답만으로 10분 롱폼 개요(도입·본론 세 부분·마무리)를 써 주세요. 완료 기준: 원본의 주장과 제 의견이 구분되어 있고, 원본을 그대로 옮긴 문장이 없습니다. [자막 붙여넣기: ○○]
+</code></pre>
+<p><strong>3단계 입력</strong> (실습 프롬프트 4)</p>
+<pre><code>아래는 ○○ 영상에 달린 댓글과 좋아요 수입니다. 좋아요가 많은 요청이나 불만 3개를 골라, 그 요청에 답하는 후속 영상 기획안을 만들어 주세요. 기획안마다 ① 어떤 댓글에 답하는지(작성자 이름은 빼고) ② 영상에서 직접 보여 줄 것(화면·코드·프롬프트 등) ③ 첫 문장 ④ 10분 구성. 완료 기준: 각 기획이 댓글의 요청을 말이 아니라 화면으로 보여 주며 해결합니다. [댓글 붙여넣기: ○○]
+</code></pre>
+<p><strong>4단계 입력</strong> (실습 프롬프트 5)</p>
+<pre><code>제가 매번 같은 형식으로 만드는 ○○(영상·글 종류)의 작업 규칙을 Claude 스킬 문서(SKILL.md) 초안으로 정리하고 싶습니다. 아래 예시 ○○편과 제 메모를 보고 ① 자르는 것과 남기는 것 ② 텍스트·자막을 어디에 두고 어디엔 두지 않는지 ③ 차트·그래픽을 넣는 조건과 한 편당 개수 ④ 끝내기 전 검사 목록을 SKILL.md 형식으로 써 주세요. 파일을 만들거나 실행하지 말고 글로만 보여 주세요. 완료 기준: 다른 사람이 이 문서만 보고도 같은 형식으로 만들 수 있습니다. [예시·메모 붙여넣기: ○○]
+</code></pre>
+<p><strong>5단계 입력</strong> (실습 프롬프트 6, 파이프라인 화면 스크린샷 첨부)</p>
+<pre><code>이 화면은 한 크리에이터의 콘텐츠 자동화 단계(기획·리서치 → 대본 → 음성 → 모션·편집 → QA → 썸네일·패키징 → 업로드)입니다. 저는 ○○ 주제로 ○○(롱폼/Shorts)를 만들고, 지금 쓰는 도구는 ○○입니다. 제가 이걸 할 수 있을지 판단해 주고, 이번 주에 바로 자동화할 단계 2개를 골라 단계별로 필요한 도구·입력·결과물·사람이 확인할 지점을 표로 정리해 주세요. 계정 연결·업로드·결제는 하지 말고 계획만 세워 주세요. 완료 기준: 표의 각 줄을 제가 오늘 바로 시작할 수 있습니다.
+</code></pre>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 1~3단계와 5단계. 프롬프트 원문이 있어 Claude 채팅에 자막·댓글·스크린샷만 붙이면 된다.</li>
+<li class="warn">⚠️ 4단계 「작업 규칙 스킬화」: 프롬프트는 SKILL.md 초안까지만 만든다. 이 문서를 Claude Code에 스킬로 등록하는 방법은 영상에 없다 → Claude Code 공식 문서에서 'skills'를 검색해 등록 방법을 확인한다(보충). 알렉스의 실제 스킬 파일(볼트 키네틱 등)은 공개되지 않았다.</li>
+<li class="warn">⚠️ 영상 완성 단계(컷 편집, 음성, 모션, 렌더, 업로드): 이 노트의 단계는 기획과 계획까지다. HyperFrame, Higgsfield, 음성·업로드 도구의 설치·연결·설정법은 영상에 나오지 않는다 → 각 도구의 공식 사이트에서 설치 방법과 요금제를 확인한다. Higgsfield 등은 유료 크레딧이 필요하다.</li>
+<li class="warn">⚠️ 6단계 「개입 지점 정하기」: 실습 프롬프트 7의 원문이 입력에서 잘려 있다 → 영상 설명란에서 원문을 확인한다. 크레딧 상한 500/1,500은 알렉스의 값이므로 내 요금제에 맞게 정해야 한다.</li>
+<li class="warn">⚠️ 썸네일 자동 생성: 알렉스는 자기가 만드는 썸네일 서비스를 쓴다. 그 서비스 이름은 자막상 불분명하다('오토클릭').</li>
+<li class="warn">❓ 숏폼 편수가 앞부분에서는 &quot;20개인가&quot;, 뒷부분과 설명란에서는 22편이다. 업로드·음악·편집 도구 이름 일부('어사이드', '순어', 'FM 팩')는 받아쓰기 오류일 수 있으니 영상 11:28 화면에서 확인한다.</li>
+</ul>
+<h3>확인 방법</h3>
+<ul>
+<li>1단계: 표의 구간 시각이 원본 자막과 실제로 맞는지, 두 편에 같은 이야기가 겹치지 않는지 확인한다.</li>
+<li>2단계: 롱폼 개요에서 원본 주장과 내 의견이 구분되어 있고, 원본을 그대로 옮긴 문장이 없는지 확인한다.</li>
+<li>3단계: 각 기획안이 말이 아니라 화면(코드·프롬프트·에디터)으로 요청에 답하는지 확인한다.</li>
+<li>4단계: 다른 사람이 SKILL.md만 보고 같은 형식을 만들 수 있는지 확인한다.</li>
+</ul>
+<h3>막히면</h3>
+<ul>
+<li>번역하고 자막만 달면 누구나 하는 콘텐츠가 된다. 내 해석과 목소리를 반드시 더한다.</li>
+<li>내가 말하는 구간에서 이탈이 생겼던 사례가 있다. 해설 부분도 편집과 시각 자료로 보강한다.</li>
+<li>벤치마킹할 때는 포맷과 스타일만 가져온다. 남의 영상을 그대로 베끼는 것은 실제로 문제가 되고 있다.</li>
+<li>크레딧 상한 없이 영상 생성을 최대로 돌리면 크레딧이 한 번에 소진된다.</li>
+<li>승인 요청이 쌓이면 내가 병목이 된다. 같은 피드백을 두 번 하게 되면 그 내용을 룰·스킬로 만든다.</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>30시간: 처음 유튜브를 할 때 영상 한 편에 걸린 시간</li>
+<li>라이브 1편 → 롱폼 5편 + Shorts 22편</li>
+<li>남의 롱폼을 2차 가공한 영상 4편. 그중 하나가 조회수 26,000회</li>
+<li>&quot;99.8%는 아직 진짜 AI를 써 보지 못했다&quot;: 안드레이 카파시의 X 글</li>
+<li>503개: Claude Code 팀 영상의 좋아요 1위 댓글 &quot;말 말고 보여 줘&quot;</li>
+<li>크레딧 상한: Shorts 1편 500, 롱폼 1,500 (Higgsfield)</li>
+<li>동시 작업 예: Shorts 5개 + 롱폼 3개 + 모션 그래픽, 웹사이트, 하네스 수정</li>
+<li>&quot;이제 중요한 거는 재료를 만드는 일밖에 없다.&quot;</li>
+<li>&quot;제가 없이도 굴러가야 시스템이 돌아가잖아요.&quot;</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>영상의 주장: 롱폼 5편, Shorts 22편의 &quot;퀄리티가 나쁘지 않다&quot;는 것은 알렉스 본인의 평가다. 각 편의 조회수 같은 성과는 26,000회 사례 하나만 나왔다.</li>
+<li>내 의견: 사람의 해석을 더하는 2차 가공이라도, 남의 영상 클립을 쓰려면 저작권과 공정 이용 범위를 따로 확인해야 한다. 영상에서는 이 부분을 다루지 않는다.</li>
+<li>내 의견: &quot;라이브만 던지면 된다&quot;는 결과는 알렉스가 오랫동안 다듬은 스킬과 여러 유료 도구가 갖춰져 있어서 가능하다. 처음 하는 사람은 4단계(규칙 스킬화)에 가장 많은 시간을 들이게 될 것이다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>최근 녹화(라이브·강의·회의) 자막 하나를 1단계 프롬프트로 Claude에 넣고, 몇 편이 나오는지 확인하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>내가 자주 받는 피드백이나 반복 작업 규칙 3가지를 메모해 4단계 프롬프트로 SKILL.md 초안 받아 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>쓰고 있는 AI 도구마다 '자동 실행 한도(크레딧·비용)'와 '반드시 확인받을 시점'을 한 줄씩 정해 두기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1792906789 -->
