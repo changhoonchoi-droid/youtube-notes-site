@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Claude&#x27;s new mobile app updates are here</title>
+<meta property="og:title" content="Claude&#x27;s new mobile app updates are here">
+<meta property="og:description" content="Claude · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/SkpwzfR4A1E/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/SkpwzfR4A1E" style="background-image:url('https://i.ytimg.com/vi/SkpwzfR4A1E/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>Claude&#x27;s new mobile app updates are here</h1><p class="meta">Claude · 게시 2026-10-29</p><p class="note">🎙️ 자막 대신 영상 음성을 받아써서 정리 (en (음성 받아쓰기·GPU))</p>
+<a class="btn" href="https://youtu.be/SkpwzfR4A1E">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>iPhone Duo를 펼치거나 iPad에서 쓰면 Claude가 만든 결과물(차트 등)이 대화를 가리지 않고 옆 칸에 열린다.</li>
+<li>iOS·Android에서 회사 계정과 개인 계정에 동시에 로그인한 채 로그아웃 없이 바꿔 쓸 수 있다.</li>
+<li>Chromebook·폴더블의 Android 앱은 사이드바 크기 조절, 마우스·트랙패드, Claude Desktop과 같은 단축키를 지원해 노트북 앱처럼 쓸 수 있다.</li>
+<li>음성 모드는 더 빨리 답하고 시끄럽거나 작은 목소리도 더 잘 알아들으며, iPhone에서는 Apple CarPlay로도 쓸 수 있다.</li>
+<li>앱 메뉴·설정이 24개 언어가 늘어 모두 33개 언어로 나오고, iPhone·iPad에는 '당겨서 검색'이 곧 추가된다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>iPad·폴더블·Chromebook에서 Claude를 쓰는 분: 큰 화면을 제대로 활용하는 새 기능을 알 수 있습니다.</li>
+<li>회사·개인 계정을 나눠 쓰거나, 운전·이동 중 음성으로 Claude를 쓰는 분에게 특히 쓸모 있는 업데이트입니다.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>큰 화면에서 결과물이 대화 옆에 열린다 (iPhone Duo·iPad)</h3>
+<ul>
+<li>iPhone Duo를 펼치면 Claude가 만든 차트가 대화 바로 옆 별도 칸에 열린다. <small class="tm">(<a href="https://youtu.be/SkpwzfR4A1E?t=3">0:03</a>)</small></li>
+</ul>
+<figure><a href="https://youtu.be/SkpwzfR4A1E?t=41"><img src="01.jpg" alt="대화 옆 칸에 3,886 주문 차트 결과물이 함께 열린 화면" loading="lazy"></a><figcaption>대화 옆 칸에 3,886 주문 차트 결과물이 함께 열린 화면 · <a href="https://youtu.be/SkpwzfR4A1E?t=41">▶ 0:41</a></figcaption></figure><ul>
+<li>Claude가 아직 만드는 중에도 열리므로, 결과물을 읽으면서 동시에 수정 요청을 이어 갈 수 있다.</li>
+<li>자세히 보고 싶으면 전체 화면으로 키우고, 다 보면 다시 옆 칸으로 돌아간다.</li>
+<li>iPad도 같은 배치를 지원한다: 아티팩트(Claude가 만든 차트·문서 같은 결과물)가 대화를 덮지 않고 옆에 머문다. <small class="tm">(<a href="https://youtu.be/SkpwzfR4A1E?t=44">0:44</a>)</small></li>
+<li>Duo에서는 조작 버튼이 화면 가장자리 툴바에 모여 손이 쉽게 닿는다.</li>
+<li>창 두 개를 나란히 띄워 각각 다른 대화나 Claude Code 세션을 돌릴 수 있다. <small class="tm">(<a href="https://youtu.be/SkpwzfR4A1E?t=58">0:58</a>)</small><ul>
+<li>진행자는 iPad에서 한쪽은 계획, 다른 쪽은 만들기에 쓴다고 소개한다.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="tip"><p>💡 결과물을 보느라 대화를 닫을 필요가 없다 — 보면서 바로 고쳐 달라고 할 수 있다.</p>
+</blockquote>
+<h3>Chromebook·폴더블에서는 노트북 앱처럼 (Android)</h3>
+<ul>
+<li>Chromebook이나 폴더블에서 Android 앱이 노트북 앱에 가깝게 바뀌었다. <small class="tm">(<a href="https://youtu.be/SkpwzfR4A1E?t=69">1:09</a>)</small><ul>
+<li>크기를 조절할 수 있는 사이드바</li>
+<li>마우스·트랙패드 지원, 오른쪽 클릭 가능</li>
+<li>Claude Desktop과 같은 키보드 단축키 — 컴퓨터에서 쓰던 단축키가 그대로 통한다.</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/SkpwzfR4A1E?t=79"><img src="02.jpg" alt="&#x27;Works like a laptop app&#x27;: Resizable sidebar·마우스·우클릭" loading="lazy"></a><figcaption>&#x27;Works like a laptop app&#x27;: Resizable sidebar·마우스·우클릭 · <a href="https://youtu.be/SkpwzfR4A1E?t=79">▶ 1:19</a></figcaption></figure><h3>여러 계정 동시 로그인·사진 바로 첨부</h3>
+<ul>
+<li>가장 요청이 많았던 기능: 회사 계정과 개인 계정에 함께 로그인한 채로 로그아웃 없이 오갈 수 있다(iOS·Android). <small class="tm">(<a href="https://youtu.be/SkpwzfR4A1E?t=15">0:15</a>)</small></li>
+</ul>
+<figure><a href="https://youtu.be/SkpwzfR4A1E?t=19"><img src="03.jpg" alt="&#x27;Stay signed in to both&#x27; Work·Personal 계정 모두 Signed in" loading="lazy"></a><figcaption>&#x27;Stay signed in to both&#x27; Work·Personal 계정 모두 Signed in · <a href="https://youtu.be/SkpwzfR4A1E?t=19">▶ 0:19</a></figcaption></figure><ul>
+<li>iPhone에서는 사진을 고르는 즉시 대화에 나타나고, 업로드는 뒤에서 진행되므로 그동안 계속 입력할 수 있다.</li>
+</ul>
+<h3>음성 모드 개선과 CarPlay</h3>
+<ul>
+<li>음성 모드가 더 빨리 답하고, 시끄러운 방이나 작게 말할 때도 더 잘 알아듣는다(진행자는 사무실에서 쓸 때 체감했다고 함). <small class="tm">(<a href="https://youtu.be/SkpwzfR4A1E?t=80">1:20</a>)</small></li>
+<li>Android: 음성 모드를 쓸 수 있는 휴대폰 기종이 늘었다.</li>
+<li>iPhone: Apple CarPlay에서 음성 모드를 쓸 수 있어, 운전 중 손을 운전대에 둔 채 질문할 수 있다. <small class="tm">(<a href="https://youtu.be/SkpwzfR4A1E?t=98">1:38</a>)</small></li>
+<li>영어 외 언어의 음성도 더 자연스러워졌다.</li>
+</ul>
+<figure><a href="https://youtu.be/SkpwzfR4A1E?t=101"><img src="04.jpg" alt="CarPlay 화면에서 Claude 음성 모드가 &#x27;Listening&#x27; 중" loading="lazy"></a><figcaption>CarPlay 화면에서 Claude 음성 모드가 &#x27;Listening&#x27; 중 · <a href="https://youtu.be/SkpwzfR4A1E?t=101">▶ 1:41</a></figcaption></figure><h3>앱 언어 33개로 확대</h3>
+<ul>
+<li>앱이 24개 언어를 더 지원해 웹·데스크톱·iOS·Android 합쳐 모두 33개 언어가 됐다. <small class="tm">(<a href="https://youtu.be/SkpwzfR4A1E?t=109">1:49</a>)</small></li>
+<li>대화 자체는 원래 이 언어들로 가능했고, 이번에는 메뉴와 설정 화면까지 모국어로 바뀐다.</li>
+</ul>
+<h3>곧 나올 기능: 당겨서 검색 (iPhone·iPad)</h3>
+<ul>
+<li>곧 iPhone·iPad에서 화면을 아래로 당기면 검색이 열린다 — 예전 대화·프로젝트를 찾거나 설정으로 바로 갈 수 있다. <small class="tm">(<a href="https://youtu.be/SkpwzfR4A1E?t=133">2:13</a>)</small></li>
+<li>이 검색은 웹·데스크톱에는 이미 있다: Mac에서는 <code>Command K</code>. <small class="tm">(<a href="https://youtu.be/SkpwzfR4A1E?t=140">2:20</a>)</small></li>
+</ul>
+<figure><a href="https://youtu.be/SkpwzfR4A1E?t=130"><img src="05.jpg" alt="&#x27;Coming soon&#x27; 표시와 iPhone 앱의 Chats·Projects 목록" loading="lazy"></a><figcaption>&#x27;Coming soon&#x27; 표시와 iPhone 앱의 Chats·Projects 목록 · <a href="https://youtu.be/SkpwzfR4A1E?t=130">▶ 2:10</a></figcaption></figure></section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li><strong>24개</strong> 언어 추가 → 모두 <strong>33개</strong> 언어 (웹·데스크톱·iOS·Android)</li>
+<li>Mac 검색 단축키: <strong><code>Command K</code></strong></li>
+<li>여러 계정 동시 로그인: &quot;가장 요청이 많았던 기능 중 하나&quot;</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>(영상 내용) '당겨서 검색'은 아직 나오지 않은 기능이고 출시 시점은 &quot;곧(soon)&quot;이라고만 했다.</li>
+<li>(영상 내용) 결과물 옆 칸 배치는 iPhone Duo·iPad, 노트북형 화면은 Chromebook·폴더블 한정이라 일반 휴대폰에서는 해당하지 않는다.</li>
+<li>(내 의견) 음성 모드가 &quot;더 빨라졌다&quot;는 수치 없이 체감으로만 소개됐으니, 직접 써 보고 판단하는 편이 좋다. 새로 추가된 33개 언어 목록에 한국어가 들어 있는지도 영상에는 나오지 않는다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>앱을 최신 버전으로 업데이트하고, 회사·개인 계정을 모두 추가해 로그아웃 없이 전환되는지 확인하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Mac의 Claude 데스크톱이나 웹에서 <code>Command K</code> 를 눌러 예전 대화를 검색해 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>iPad를 쓴다면 차트를 만들어 달라고 해서 결과물이 대화 옆에 열리는지 확인하기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1793336858 -->
