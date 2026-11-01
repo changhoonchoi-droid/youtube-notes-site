@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>요즘 뜨는 그래프 엔지니어링, 대체 뭘까? | 정말 필요한지 직접 비교해 봤습니다</title>
+<meta property="og:title" content="요즘 뜨는 그래프 엔지니어링, 대체 뭘까? | 정말 필요한지 직접 비교해 봤습니다">
+<meta property="og:description" content="커리어해커 알렉스 · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/_PKMM2U8_wk/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/_PKMM2U8_wk" style="background-image:url('https://i.ytimg.com/vi/_PKMM2U8_wk/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>요즘 뜨는 그래프 엔지니어링, 대체 뭘까? | 정말 필요한지 직접 비교해 봤습니다</h1><p class="meta">커리어해커 알렉스 · 게시 2026-11-01</p>
+<a class="btn" href="https://youtu.be/_PKMM2U8_wk">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>'그래프 엔지니어링'은 일을 노드로 쪼개고 엣지로 이은 뒤, 다음 단계를 <strong>코드·모델·사람 중 누가 정할지</strong> 고르는 설계 작업이다(구글 클라우드 정의).</li>
+<li>새 기술이 아니라 프롬프트→컨텍스트→하네스→루프를 안에 품는 '양파의 바깥층'이며, 루프도 되돌아가는 화살표 하나짜리 가장 작은 그래프다.</li>
+<li>&quot;앤트로픽이 발표했다&quot;, &quot;1000배 개선&quot;, &quot;정확도 18%↑·비용 85%↓&quot; 같은 이야기는 거짓이거나 다른 맥락의 숫자다. 이런 숫자는 세 가지 질문으로 확인한다.</li>
+<li>같은 과제로 비교한 실험에서는 <strong>코드 검사 루프가 가장 싸고 안정적</strong>이었고, 그래프는 정확도는 같았지만 토큰을 4배 넘게 썼다.</li>
+<li>기본은 루프 하나, 쓸 이유 5가지 중 둘 이상일 때만 그래프로 나누고, 구조를 늘리기 전에 결과를 코드로 검사하는 검사기부터 만든다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>Claude Code·Codex 같은 AI 에이전트로 작업 흐름(하네스)을 짜고 있는데, 구조를 더 복잡하게 만들어야 할지 고민하는 분.</li>
+<li>새 유행어와 화려한 숫자에 휩쓸리지 않고 판단 기준을 갖고 싶은 분.</li>
+<li>내 하네스를 한 장의 설계도로 그려 보고 빈 곳을 찾고 싶은 분.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>그래프 엔지니어링의 정의</h3>
+<ul>
+<li>구글 클라우드 블로그(9월 29일)의 정의가 가장 깔끔하다: 일을 <strong>노드</strong>로 쪼개고 <strong>엣지</strong>로 잇고, 다음 단계를 코드가 정할지·모델이 정할지·사람이 정할지 고르는 설계 작업. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=15">0:15</a>)</small></li>
+<li>쉽게 말해 AI에게 일을 나눠 맡길 때 <strong>어디를 코드로 묶고 어디를 AI에게 맡길지</strong> 정하는 설계.</li>
+</ul>
+<figure><a href="https://youtu.be/_PKMM2U8_wk?t=29"><img src="01.jpg" alt="노드로 쪼갠다→엣지로 잇는다→다음을 누가 정하나(코드·모델·사람)" loading="lazy"></a><figcaption>노드로 쪼갠다→엣지로 잇는다→다음을 누가 정하나(코드·모델·사람) · <a href="https://youtu.be/_PKMM2U8_wk?t=29">▶ 0:29</a></figcaption></figure><h3>이름의 출처와 '양파' 구조</h3>
+<ul>
+<li>누가 발표한 용어가 아니라 X(옛 트위터)의 농담과 패러디에서 번졌다. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=38">0:38</a>)</small><ul>
+<li>2026년 7월 18일 피터 스타인버거가 &quot;아직 루프 얘기 중이야? 아니면 이제 그래프로 넘어갔어?&quot;라고 올렸고 313만 회 조회.</li>
+<li>같은 날 하멜 후세인이 &quot;루프 엔지니어링은 죽었다, 그래프 엔지니어링이 온다&quot;라는 X 아티클을 올렸는데, 본문은 움직이는 짤 하나와 마침표 하나뿐인 패러디.</li>
+</ul>
+</li>
+<li>지난 몇 년간 이름은 이렇게 이어졌다.</li>
+</ul>
+<div class="flow"><div class="flow-title">🔁 AI 엔지니어링 이름의 변화</div><ol class="flow-strip"><li><span>프롬프트 엔지니어링</span></li><li><span>컨텍스트 엔지니어링</span></li><li><span>하네스 엔지니어링</span></li><li><span>루프 엔지니어링</span></li><li><span>그래프 엔지니어링</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">프롬프트 엔지니어링</span><div class="d"><p>2023년 무렵</p>
+</div></li><li><span class="n">2</span><span class="t">컨텍스트 엔지니어링</span><div class="d"><p>2025년 6월</p>
+</div></li><li><span class="n">3</span><span class="t">하네스 엔지니어링</span><div class="d"><p>2025년 10월 ~ 2026년 2월</p>
+</div></li><li><span class="n">4</span><span class="t">루프 엔지니어링</span><div class="d"><p>2026년 3월 ~ 6월</p>
+</div></li><li><span class="n">5</span><span class="t">그래프 엔지니어링</span><div class="d"><p>2026년 7월 <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=69">1:09</a>)</small></p>
+</div></li></ol></div>
+<ul>
+<li>새 이름이 옛 이름을 대체하는 계단이 아니라 <strong>바깥층이 안쪽 층을 품는 양파</strong>다.<ul>
+<li>루프는 &quot;언제까지 다시 할지&quot;, 그래프는 &quot;루프 여러 개를 어떤 순서와 조건으로 이을지&quot;를 묻는다.</li>
+<li>XState를 만든 데이비드 크루시드(자막 표기)의 말처럼 루프도 그래프다 — 되돌아가는 화살표가 하나 있는 가장 작은 그래프. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=105">1:45</a>)</small></li>
+</ul>
+</li>
+<li>그래프 안의 노드 하나는 여전히 루프이고, 그 안에 하네스·컨텍스트·프롬프트가 다 들어 있다.</li>
+</ul>
+<blockquote class="tip"><p>💡 &quot;루프는 죽었다&quot;는 틀린 말 — 그래프는 루프를 품는 바깥층일 뿐이다.</p>
+</blockquote>
+<h3>퍼진 이야기 세 개 팩트체크</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>퍼진 이야기</th>
+  <th>판정</th>
+  <th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>앤트로픽이 그래프 엔지니어링을 발표했다</td>
+  <td>거짓</td>
+  <td>Claude 공식 문서 어디에도 이 말이 없음</td>
+</tr>
+<tr>
+  <td>앤트로픽 시니어 두 명이 카파시의 루프를 1000배 개선했다는 PDF</td>
+  <td>거짓</td>
+  <td>표지에 '앤트로픽과 관계없음'이라고 적혀 있고 1000배 측정은 어디에도 없음</td>
+</tr>
+<tr>
+  <td>그래프로 정확도 18% 상승, 비용 85% 절감</td>
+  <td>맥락 왜곡</td>
+  <td>숫자는 실제 논문에 있지만 공장 도면 한 장에 질문 19개로 잰 것이고, 두 숫자의 비교 대상도 다름. 게다가 제어 그래프가 아니라 지식 그래프(그래프 RAG) 쪽 숫자</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>이런 숫자를 보면 <strong>세 가지만 묻는다</strong>: ① 어떤 그래프인가? ② 무엇과 비교했나? ③ 숫자는 어디서 왔나? <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=162">2:42</a>)</small></li>
+</ul>
+<h3>노드·엣지·상태 — 식당 주방으로 보면</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>개념</th>
+  <th>식당 비유</th>
+  <th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>노드</td>
+  <td>주문 받기·요리·검수·서빙</td>
+  <td>일 하나. 안에서 일하는 건 사람·AI·코드 누구든 될 수 있음</td>
+</tr>
+<tr>
+  <td>엣지</td>
+  <td>&quot;요리가 끝나면 검수로, 떨어지면 다시 요리로&quot;</td>
+  <td>다음은 누구냐는 규칙. 되돌아가는 화살표가 루프, 여러 일을 동시에 시작했다 한 접시로 모으는 것도 엣지</td>
+</tr>
+<tr>
+  <td>상태</td>
+  <td>주문서(서류철)</td>
+  <td>모든 노드가 보고 고치는 기록. 무엇을 적고 어떤 형식으로 넘길지 정해야 함</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>상태는 셋 중 가장 자주 빠지는 개념</strong>이고, 뒤의 실험에서 그래프가 깨진 곳도 여기였다. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=195">3:15</a>)</small></li>
+<li>설계의 핵심은 각 엣지를 누가 정하느냐다.<ul>
+<li>검수 통과를 정해진 규칙으로 가르면 → 코드가 정함</li>
+<li>AI가 판단하게 두면 → 모델이 정함 <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=210">3:30</a>)</small></li>
+</ul>
+</li>
+</ul>
+<h3>이름만 새것, 진짜 새것 두 가지</h3>
+<ul>
+<li>노드와 엣지로 일을 엮는 건 워크플로 엔진에서 오래 써 온 생각이다. 랭체인도 7월 22일 블로그에서 &quot;새로운 생각이 아니다&quot;라고 직접 썼다(이 이름으로 득을 볼 회사가 한 말이라는 점도 참고).</li>
+<li>그래도 진짜 새것은 두 가지다. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=235">3:55</a>)</small><ul>
+<li><strong>노드 하나가 에이전트 하나 전체가 됐다</strong>: 예전 노드는 코드나 LLM 호출 한 번이었지만, 이제 노드 안에서 도구를 쓰고 스스로 반복하는 에이전트가 돈다.</li>
+<li><strong>모델이 그래프를 짜기 시작했다</strong>: Claude Code 다이나믹 워크플로(자막 표기)에서는 모델이 오케스트레이션(여러 에이전트를 지휘하는) 스크립트를 써서 서브 에이전트들을 돌린다. 문서 표현: &quot;워크플로는 계획을 코드로 옮긴다.&quot;</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/_PKMM2U8_wk?t=252"><img src="02.jpg" alt="Claude Code workflows 문서: 진짜 새것② 모델이 그래프를 쓴다" loading="lazy"></a><figcaption>Claude Code workflows 문서: 진짜 새것② 모델이 그래프를 쓴다 · <a href="https://youtu.be/_PKMM2U8_wk?t=252">▶ 4:12</a></figcaption></figure><ul>
+<li>그래서 사람은 노드를 하나하나 그리는 대신 <strong>경계</strong>를 정한다 — 어떤 권한을 주고, 어디서 검증하고, 어디서 사람이 승인하고, 예산은 얼마인지. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=265">4:25</a>)</small></li>
+</ul>
+<h3>'그래프'의 네 가지 뜻</h3>
+<p>튜링 포스트와 AI Builder Club의 구분을 따른다.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>종류</th>
+  <th>무엇</th>
+  <th>노드 / 엣지</th>
+  <th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>① 제어 그래프</td>
+  <td>일의 흐름도</td>
+  <td>단계·에이전트 / 다음 단계</td>
+  <td><strong>그래프 엔지니어링이 가리키는 것, 이 영상의 그래프</strong></td>
+</tr>
+<tr>
+  <td>② 지식 그래프</td>
+  <td>정보의 관계도</td>
+  <td>사실·개체 / 관계</td>
+  <td>그래프 RAG가 여기 속함. 18%·85%도 이쪽 숫자</td>
+</tr>
+<tr>
+  <td>③ 실행 기록(트레이스)</td>
+  <td>실제로 돌아간 경로를 나중에 그린 기록</td>
+  <td>—</td>
+  <td>디버깅과 평가용</td>
+</tr>
+<tr>
+  <td>④ 개선 그래프</td>
+  <td>루프 여러 개가 서로 감시하고 고치게 하자는 생각</td>
+  <td>—</td>
+  <td>카를 페레스(자막 표기)의 제안, 본인이 나중에 '그래프'라는 단어 선택이 틀렸다고 인정</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>&quot;그래프 엔지니어링이 RAG(검색해서 답에 붙이는 방식)를 대체한다&quot;는 범주가 틀린 말이다. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=305">5:05</a>)</small><ul>
+<li>마이크로소프트 논문도 그래프 RAG를 RAG의 한 방식이라고 쓴다.</li>
+<li>RAG는 '무엇을 보여 줄지'(컨텍스트 층의 일), 제어 그래프는 '일의 순서'다. 그래프의 노드 하나가 여전히 RAG를 쓸 수 있다.</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/_PKMM2U8_wk?t=307"><img src="03.jpg" alt="GraphRAG 논문 결론의 &#x27;a RAG approach&#x27; — RAG의 한 방식" loading="lazy"></a><figcaption>GraphRAG 논문 결론의 &#x27;a RAG approach&#x27; — RAG의 한 방식 · <a href="https://youtu.be/_PKMM2U8_wk?t=307">▶ 5:07</a></figcaption></figure><blockquote class="tip"><p>💡 '그래프'라는 말을 보면 네 가지 중 무엇인지부터 표시하라 — 오해 대부분이 거기서 풀린다.</p>
+</blockquote>
+<h3>실제로 돌아가는 AI 제작 팀의 그래프</h3>
+<p>이 채널의 제작 환경(Mac mini 한 대, Slack을 입구로 Claude Code·Codex 세션 여러 개)을 운영 기록 기준으로 다시 그린 재연 화면이다. 숫자는 10월 19일 확인 시점 값.</p>
+<ul>
+<li><strong>노드 = 세션 하나하나</strong>: 총 32개 — Claude Code 에이전트 15개, Codex 2개, 렌더처럼 긴 명령을 돌리는 잡(job) 여러 개, 종류 표시 없는 세션 4개. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=358">5:58</a>)</small></li>
+<li><strong>엣지 ① 잡 → 에이전트 깨우기</strong>: 오래 걸리는 일은 잡으로 넘기고, 잡이 끝나면 결과(종료 코드·로그 경로·로그 마지막 줄)가 기다리던 에이전트 세션에 한 줄로 입력된다.<ul>
+<li>에이전트는 기다리며 상태를 확인하지 않고 턴을 끝냈다가, 결과가 들어오면 다시 깨어난다.</li>
+<li>잡 기록 908개 중 896개에 깨울 세션이 적혀 있었다.</li>
+</ul>
+</li>
+<li><strong>엣지 ② 팬아웃·팬인</strong>: 작업 하나에 Slack 스레드 하나가 '레인'처럼 붙고, 보조·리뷰 세션은 부모의 레인을 물려받는다. 펼쳤던 일이 한 스레드로 다시 모인다.</li>
+<li><strong>상태 = 공유 기록 저장소</strong>:<ul>
+<li>체크포인트: 목표, 끝낸 일, 증거, 가정, 다음 할 일</li>
+<li>행동 기록: 한 일, 되돌리는 방법, 같은 일을 두 번 하지 않게 막는 중복 방지 키</li>
+</ul>
+</li>
+<li><strong>검증 노드</strong>: 에이전트는 자기 PR을 사람 승인 없이 main에 머지할 수 있지만, 그 길은 '세이프 머지' 스크립트 하나뿐이다. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=432">7:12</a>)</small><ul>
+<li>머지하는 세션이 스스로 남긴 리뷰는 세지 않는다. 리뷰는 다른 세션이 해야 한다.</li>
+<li>규칙이나 게이트 코드를 바꾸는 변경은 독립 리뷰 2개가 필요하다.</li>
+<li>배포가 붙은 저장소는 머지 뒤 배포를 최대 30분 기다리고, 헬스 체크 3번에 실패하면 자동으로 되돌린다.</li>
+</ul>
+</li>
+<li><strong>사람 승인 엣지는 다섯 가지뿐</strong>: ① 월 예산을 넘는 지출 ② 다른 사람에게 가거나 본인 이름으로 나가는 메시지 ③ 되돌릴 수 없는 삭제 ④ 계정 보안 ⑤ 규칙을 느슨하게 하는 변경.<ul>
+<li>여기에 걸리면 Slack 승인 카드가 올라오고, 그 카드 스레드에 '승인'이라고 답해야 같은 호출이 한 번 통과한다.</li>
+<li>승인 여부는 모델이 아니라 <strong>코드가 Slack이 붙인 사용자 정보로만</strong> 판정한다.</li>
+</ul>
+</li>
+<li><strong>사람에게 묻는 횟수를 줄인 이유</strong>: 10월 8~15일 한 주에 한 글자짜리 진행 답장이 146번 있었는데, 약 90%가 에이전트 추천안이나 &quot;결과 보내 줘&quot; 같은 기본값 선택이었고 진짜 게이트는 7번이었다.<ul>
+<li>규칙 문서: &quot;내가 병목이 되는 걸 피해 줘.&quot; 새 위험은 승인 목록에 더하지 말고 자동 검사로 막는다 → 사람 노드 대신 검증 노드를 늘리는 설계.</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/_PKMM2U8_wk?t=505"><img src="04.jpg" alt="10월 8~15일 진행 답장 146번 중 추천안·기본값 약 90%" loading="lazy"></a><figcaption>10월 8~15일 진행 답장 146번 중 추천안·기본값 약 90% · <a href="https://youtu.be/_PKMM2U8_wk?t=505">▶ 8:25</a></figcaption></figure><ul>
+<li><strong>감시 루프</strong>: 1분마다 감시 프로그램이 세션 보드와 레인 카드를 갱신하고, 1분 넘게 프롬프트 앞에서 멈춘 에이전트를 스레드에 보고한다. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=523">8:43</a>)</small><ul>
+<li>프롬프트에 대신 답하지는 않는다.</li>
+<li>에이전트가 추천안을 내고 턴을 끝냈는데 3분간 다른 답이 없으면 &quot;그 추천안으로 진행하라&quot;는 문장을 대신 입력한다. 단, 결정이 필요한 질문이거나 삭제·결제·권한·머지 같은 게이트성 단어가 있으면 하지 않는다.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="tip"><p>💡 규칙으로 정한 건 노드 하나하나가 아니라 경계다 — 어디서 검증하고, 어디서 사람이 멈추고, 무엇을 기록하고, 무엇을 자동으로 넘길지.</p>
+</blockquote>
+<h3>실험: 루프 vs 그래프</h3>
+<ul>
+<li><strong>과제</strong>: 출처 문서를 읽고 &quot;앤트로픽이 발표했나?&quot;, &quot;18%와 85%는 어디서 왔나?&quot; 같은 질문에 문서를 글자 그대로 인용해 답하기. 모델은 Claude Haiku 5.5 하나, 문서·질문·채점기 동일, 바꾼 것은 구조뿐. 실험은 AI 에이전트가 설계·실행했다. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=561">9:21</a>)</small></li>
+<li><strong>비교한 세 구조</strong><ul>
+<li>자기 검사 루프: 답하고 같은 모델이 스스로 검사해 고침</li>
+<li>코드 검사 루프: 답하면 코드가 인용문이 문서에 정말 있는지 검사해 틀린 줄을 돌려줌(카파시의 오토리서치와 같은 모양)</li>
+<li>그래프: 문서마다 조사 에이전트가 병렬로 근거 찾기 → 코드 검사(실패하면 그 조사로 한 번 되돌림) → 작성 에이전트가 답 쓰기 → 마지막 코드 관문</li>
+</ul>
+</li>
+<li><strong>결과(조건당 5회 평균)</strong> <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=630">10:30</a>)</small></li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>구조</th>
+  <th>어려운 조건</th>
+  <th>쉬운 조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>코드 검사 루프</td>
+  <td>5/5 · 8.3초 · 16,688토큰</td>
+  <td>5/5 · 6.9초 · 6,940토큰</td>
+</tr>
+<tr>
+  <td>자기 검사 루프</td>
+  <td>4/5 · 18.8초 · 34,473토큰</td>
+  <td>4/5 · 16.7초 · 17,407토큰</td>
+</tr>
+<tr>
+  <td>그래프</td>
+  <td>5/5 · 53.3초 · 73,692토큰</td>
+  <td>5/5 · 18.5초 · 28,427토큰</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>그래프는 코드 검사 루프의 4배 넘는 토큰을 썼다. 코드 검사 루프는 10번 모두 첫 답이 바로 통과했고, 단계를 더하면 비용이 늘거나 오류가 새로 생겼다.</li>
+</ul>
+<figure><a href="https://youtu.be/_PKMM2U8_wk?t=663"><img src="05.jpg" alt="쉬운 조건 토큰: 코드 검사 루프 6,940 · 그래프 28,427" loading="lazy"></a><figcaption>쉬운 조건 토큰: 코드 검사 루프 6,940 · 그래프 28,427 · <a href="https://youtu.be/_PKMM2U8_wk?t=663">▶ 11:03</a></figcaption></figure><ul>
+<li><strong>실패 해부</strong> <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=676">11:16</a>)</small><ul>
+<li>자기 검사 루프: 첫 답은 맞았는데 검사 단계가 답을 태그로 감싸거나 목록 기호를 빼서 망가뜨렸고, 모델 스스로 &quot;문제없다&quot;고 판정했다.</li>
+<li>그래프(첫 버전, 어려운 조건 1회): 조사 노드가 근거를 찾고 코드 검사도 통과했지만, 작성 노드에 따옴표로 감싼 텍스트로 넘기자 인용문 안의 따옴표 때문에 작성 노드가 &quot;인용할 원문이 없다&quot;고 답했다. → <strong>상태 형식 문제</strong>.</li>
+<li>상태를 JSON으로 넘기고 중복을 없앤 두 번째 버전은 10번 모두 통과.</li>
+</ul>
+</li>
+<li><strong>한계</strong><ul>
+<li>조건당 5회, 모델 1개, 정답이 분명한 사실 질문뿐. 문서 수백 개 병렬 처리나 사람 승인처럼 그래프가 이길 만한 상황은 없었다.</li>
+<li>코드 검사 루프와 그래프 v2는 첫 실행 결과를 본 뒤 더한 사후 수정이라 공정한 비교의 근거로는 약하다. 첫 실행(v1) 어려운 조건에서는 그래프 4/5 · 45.6초 · 71,270토큰, 자기 검사 루프 5/5 · 19.9초 · 37,651토큰이었다(설명란).</li>
+<li>그래서 결론은 &quot;그래프는 쓸모없다&quot;가 아니라 <strong>&quot;검사기를 먼저 만들고 그다음 구조를 고민하라&quot;</strong>까지.</li>
+</ul>
+</li>
+<li>논문도 같은 방향: TCS 논문(자막 표기)의 제거 실험에서 검사 루프(자막상 불분명)를 빼자 완료율이 95.0%에서 12.9%로 떨어졌다.</li>
+</ul>
+<blockquote class="tip"><p>💡 이 과제에선 모델의 첫 답이 충분히 좋았다 — 구조보다 코드 검사기가 비용 대비 효과가 컸다.</p>
+</blockquote>
+<h3>언제 그래프를 쓸까 — 체크리스트</h3>
+<ul>
+<li>블로그와 벤더 문서 수십 개의 기준이 거의 같다: <strong>기본은 루프 하나, 이유가 있을 때만 그래프.</strong> <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=753">12:33</a>)</small></li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>쓸 이유 5가지</th>
+  <th>쓰지 말 신호 4가지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>① 서로 독립인 일을 동시에 펼쳤다가 모아야 할 때</td>
+  <td>① 한 번 하고 끝나는 일</td>
+</tr>
+<tr>
+  <td>② 만든 쪽과 다른 쪽이 독립적으로 검증해야 할 때</td>
+  <td>② 아직 모양을 모르는 탐색 단계의 일</td>
+</tr>
+<tr>
+  <td>③ 단계마다 다른 모델·도구·권한이 필요할 때</td>
+  <td>③ 결과가 맞는지 기계로 잴 방법이 없는 일</td>
+</tr>
+<tr>
+  <td>④ 중간에 사람이 승인해야 할 때</td>
+  <td>④ 에이전트 하나가 아직 목표를 자주 잊을 때</td>
+</tr>
+<tr>
+  <td>⑤ 몇 시간 이상 걸려 중간 저장과 재개가 필요할 때</td>
+  <td></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>다른 기준들 <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=794">13:14</a>)</small><ul>
+<li>마이크로소프트: 함수로 처리할 수 있으면 AI 에이전트 대신 함수를 써라.</li>
+<li>구글: 흐름을 분명하게 그릴 수 있으면 정해진 코드로 가라.</li>
+<li>AI Builder Club: 네 가지 질문에 '예'가 하나 이하면 &quot;그래프 그림을 입은 루프&quot;다(네 가지 질문의 내용은 자막상 불분명).</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/_PKMM2U8_wk?t=767"><img src="06.jpg" alt="체크리스트: 쓸 이유 5가지와 쓰지 말 신호 4가지" loading="lazy"></a><figcaption>체크리스트: 쓸 이유 5가지와 쓰지 말 신호 4가지 · <a href="https://youtu.be/_PKMM2U8_wk?t=767">▶ 12:47</a></figcaption></figure><h3>비용과 반대 증거</h3>
+<ul>
+<li>앤트로픽의 멀티 에이전트 리서치 시스템은 내부 평가에서 단일 에이전트보다 성능이 90.2% 높았지만, 토큰은 채팅의 약 15배를 썼다. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=811">13:31</a>)</small></li>
+<li>구글·MIT 연구: 에이전트 하나의 성능이 이미 45%를 넘는 과제에서는 에이전트를 더 붙이면 오히려 손해였고, 순서대로 조건을 맞춰야 하는 계획 과제에서는 멀티 에이전트가 단일 에이전트보다 39~70% 낮았다. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=825">13:45</a>)</small></li>
+<li>그래프를 더하면 상태 관리, 연결 규칙, 디버깅할 거리, 일이 깨질 수 있는 자리가 함께 늘어난다.</li>
+</ul>
+<blockquote class="tip"><p>💡 그래프는 공짜가 아니다 — 성능이 오를 때도 비용은 몇 배로 뛴다.</p>
+</blockquote>
+</section><section><h2>따라 해보기</h2>
+<h3>준비물</h3>
+<ul>
+<li>Claude 또는 ChatGPT (영상 실행 예시는 새 Claude 세션, Sonnet 5.5, 설정·메모리·도구 없음)</li>
+<li>내 에이전트 하네스 설명: 설정 파일, 규칙 문서, 작업 흐름 설명</li>
+<li>Mermaid 그림을 볼 곳 (보충: Mermaid를 지원하는 마크다운 뷰어나 Mermaid 편집기 사이트)</li>
+<li>소요 시간: 10~20분 정도 (보충: 영상에 언급 없음)</li>
+</ul>
+<h3>단계별 방법</h3>
+<div class="flow"><div class="flow-title">🔁 내 하네스를 그래프로 그리기</div><ol class="flow-strip"><li><span>하네스 자료 모으기</span></li><li><span>새 세션 열기</span></li><li><span>프롬프트 붙여 넣기</span></li><li><span>결과 확인</span></li><li><span>그림 그리기</span></li><li><span>빈 곳 고치기</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">하네스 자료 모으기</span><div class="d"><p>지금 쓰는 설정 파일, 규칙 문서(CLAUDE.md 같은 것), 작업 흐름 설명을 한곳에 모은다. 토큰·계정 정보는 빼고 일반 명칭으로 바꾼다(영상 예시도 토큰·채널 ID·계정 정보를 넣지 않음).</p>
+</div></li><li><span class="n">2</span><span class="t">새 세션 열기</span><div class="d"><p>Claude나 ChatGPT에서 새 대화를 연다.</p>
+</div></li><li><span class="n">3</span><span class="t">프롬프트 붙여 넣기</span><div class="d"><p>아래 프롬프트의 ○○ 자리에 1단계 자료를 그대로 붙여 넣어 보낸다. <small class="tm">(<a href="https://youtu.be/_PKMM2U8_wk?t=878">14:38</a>)</small></p>
+</div></li><li><span class="n">4</span><span class="t">결과 확인</span><div class="d"><p>표 1개, Mermaid 코드 1개, 빈 곳 3줄이 왔는지 확인한다.</p>
+</div></li><li><span class="n">5</span><span class="t">그림 그리기</span><div class="d"><p>Mermaid 코드를 뷰어에 붙여 그림으로 본다(보충). 굵은 선은 사람이 정하는 엣지, 점선은 실패하면 되돌아가는 엣지.</p>
+</div><figure><a href="https://youtu.be/_PKMM2U8_wk?t=925"><img src="07.jpg" alt="모델이 돌려준 Mermaid 그림: 굵은 선=사람이 정함, 점선=실패해서 되돌아감" loading="lazy"></a><figcaption>모델이 돌려준 Mermaid 그림: 굵은 선=사람이 정함, 점선=실패해서 되돌아감 · <a href="https://youtu.be/_PKMM2U8_wk?t=925">▶ 15:25</a></figcaption></figure></li><li><span class="n">6</span><span class="t">빈 곳 고치기</span><div class="d"><p>'검사 없이 넘어가는 엣지'에 코드 검사기를 붙이고, '사람이 너무 자주 멈추는 곳'은 돈·외부 메시지·삭제·계정처럼 꼭 필요한 곳만 남긴다.</p>
+</div></li></ol></div>
+<p><strong>3단계에 입력할 내용</strong> (설명란 원문)</p>
+<pre><code>내 에이전트 하네스 설명: ○○ (설정 파일, 규칙 문서, 작업 흐름 설명을 그대로 붙여 넣기)
+
+이 하네스를 그래프로 설계도처럼 정리해 줘.
+1. 노드(일 하나: 에이전트, 스크립트, 검사, 사람 승인), 엣지(다음은 누구, 어떤 조건에서), 상태(노드 사이에 넘기는 기록)를 표로 뽑아 줘.
+2. 엣지마다 다음 단계를 누가 정하는지 적어 줘: 코드 / 모델 / 사람.
+3. 전체를 Mermaid flowchart 하나로 그려 줘. 사람이 정하는 엣지는 굵은 선, 실패하면 되돌아가는 엣지는 점선으로.
+4. 그림 아래에 빈 곳을 세 줄로 적어 줘: 검사 없이 넘어가는 엣지, 사람이 너무 자주 멈추는 곳, 기록이 안 남는 상태.
+
+완료 기준: 표 1개, Mermaid 코드 1개, 빈 곳 3줄.
+설명만 해 주고, 실제로 실행하거나 설정을 바꾸지는 마.
+</code></pre>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 2~4단계 — 프롬프트 원문이 설명란에 그대로 있고 완료 기준도 명확하다.</li>
+<li class="warn">⚠️ 1단계 「하네스 자료 모으기」: 설정 파일에 API 키·봇 토큰이 들어 있을 수 있는데 영상은 빼는 방법을 따로 말하지 않음 → 붙여 넣기 전에 키·토큰·비밀번호 줄을 지우거나 <code>***</code>로 바꾼다(보충).</li>
+<li class="warn">⚠️ 5단계 「그림 그리기」: Mermaid 코드를 어디서 그림으로 보는지 영상에 안 나옴 → GitHub 마크다운이나 Mermaid 공식 편집기(검색: &quot;Mermaid Live Editor&quot;)에 붙여 넣는다(보충).</li>
+<li class="warn">⚠️ 6단계 「빈 곳 고치기」: 검사기를 실제로 어떻게 만드는지는 영상 범위 밖 → 영상 실험의 코드 검사 루프 예시(자료실의 실험 코드)를 참고한다.</li>
+</ul>
+<h3>확인 방법</h3>
+<ul>
+<li>응답에 표 1개, Mermaid 코드 1개, 빈 곳 3줄이 모두 있는지.</li>
+<li>엣지마다 '코드/모델/사람' 중 하나가 적혀 있는지. 영상 예시에서는 엣지 20개 중 사람이 정하는 건 2개뿐이었다.</li>
+</ul>
+<h3>막히면</h3>
+<ul>
+<li>프롬프트 마지막 줄(&quot;실제로 실행하거나 설정을 바꾸지는 마&quot;)을 빼지 않는다 — 도구가 연결된 세션이면 설정을 건드릴 수 있다.</li>
+<li>자료실(로그인 없음): https://careerhackeralex.com/sharings/graph-engineering-20261018 — 체크리스트, 실험 코드, 출처 전체.</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>그래프 엔지니어링 정의 출처: 구글 클라우드 블로그 2026-09-29</li>
+<li>피터 스타인버거 X 게시물(2026-07-18) 313만 회 조회</li>
+<li>실험(어려운 조건): 코드 검사 루프 16,688토큰 vs 그래프 73,692토큰 — 4배 이상</li>
+<li>진행 답장 146번 중 약 90%가 기본값 선택, 진짜 게이트는 7번</li>
+<li>앤트로픽 멀티 에이전트: 성능 90.2%↑, 토큰 약 15배</li>
+<li>구글·MIT: 단일 에이전트 성능 45% 이상이면 에이전트 추가가 손해, 계획 과제에서 멀티 에이전트 39~70% 낮음</li>
+<li>&quot;루프도 그래프다 — 되돌아가는 화살표가 하나 있는 가장 작은 그래프.&quot;</li>
+<li>&quot;내가 병목이 되는 걸 피해 줘.&quot; (채널 제작 환경 규칙 문서)</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li><strong>실험의 범위</strong>: 영상도 밝혔듯 조건당 5회, 모델 1개, 정답이 분명한 사실 질문뿐이고 비교 대상 일부가 사후 수정판이다. v1에서는 오히려 자기 검사 루프가 5/5였으니, &quot;코드 검사 루프가 가장 낫다&quot;는 이 과제에 한한 결론으로 보는 게 맞다.</li>
+<li><strong>운영 사례의 성격</strong>: 제작 환경 화면은 운영 기록을 바탕으로 한 재연이다. 사람 승인 5가지, 감시 루프의 '3분 뒤 추천안 자동 진행' 같은 설계는 참고할 만하지만, 개인 환경에서 그대로 쓰면 자동 진행 범위를 더 좁혀야 할 수 있다(내 의견).</li>
+<li><strong>'쓸 이유 둘 이상' 기준</strong>: 영상 마무리의 &quot;5가지 중 둘 이상일 때만 그래프&quot;와 AI Builder Club의 &quot;네 가지 질문 중 예가 하나 이하면 루프&quot;는 비슷하지만 같은 기준은 아니다. 자료실 원문으로 질문 목록을 확인해 볼 필요가 있다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>위 프롬프트로 지금 쓰는 하네스를 그래프로 그려 보고, '검사 없이 넘어가는 엣지'를 하나 찾는다.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>내 하네스에서 노드 사이에 넘기는 기록(상태)이 어떤 형식(텍스트·JSON 등)으로 넘어가는지 확인한다.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>구조를 늘리기 전에, 결과 하나를 코드로 검사하는 간단한 검사기를 먼저 만든다.</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1793509658 -->
