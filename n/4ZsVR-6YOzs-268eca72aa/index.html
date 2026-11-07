@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>How Salesforce uses Claude Code</title>
+<meta property="og:title" content="How Salesforce uses Claude Code">
+<meta property="og:description" content="Claude · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/4ZsVR-6YOzs/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/4ZsVR-6YOzs" style="background-image:url('https://i.ytimg.com/vi/4ZsVR-6YOzs/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>How Salesforce uses Claude Code</h1><p class="meta">Claude · 게시 2026-11-06</p>
+<a class="btn" href="https://youtu.be/4ZsVR-6YOzs">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>Salesforce는 Claude Code로 수십 년 된 코드의 API를 몇 주~몇 달 만에 정리해 전 클라우드 플랫폼의 API 커버리지를 80~90%까지 끌어올렸다(원래 6개월~1년 예상).</li>
+<li>스탠퍼드 연구진과 만든 '효과적인 출력(effective output)' 점수로 ROI를 측정했고, 그 결과 출력량이 약 두 배가 됐다.</li>
+<li>코드량은 두 배로 늘었지만 코드당 버그 수는 오히려 줄었다 — 표준화된 SDLC·티켓·PR 데이터와 견제 장치 덕분이라고 설명한다.</li>
+<li>엔지니어를 단순 프롬프트에서 자율 에이전트 단계(P3·P4)로 옮기는 '에이전트 성숙도 곡선'과, 스킬을 평가해 공유하는 마켓플레이스가 확산의 핵심이었다.</li>
+<li>&quot;검증 없는 자율성은 자신감 쇼(confidence theater)&quot;라며, 에이전트에게 객관적 기준에 따른 증거를 요구하고 작업에 맞는 모델을 고르라고 조언한다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>조직에 AI 코딩 도구를 도입하고 ROI를 어떻게 잴지 고민하는 엔지니어링 리더·CTO.</li>
+<li>에이전트에게 얼마나 큰 일을 맡기고 어떻게 검증할지 감을 잡고 싶은 개발자.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>도입 성과: 헤드리스화와 코드 이해</h3>
+<ul>
+<li>수십 년 된 Salesforce 코드를 모든 애플리케이션이 API를 갖는 '헤드리스(headless)' 구조로 만드는 작업을 Claude Code로 몇 주~몇 달 만에 끝냈다. 원래는 페이지마다 API를 확인하고 빈틈을 찾느라 6개월~1년이 걸릴 일이었다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=48">0:48</a>)</small><ul>
+<li>팀 간 회의 없이 모든 클라우드 플랫폼의 API 커버리지 80~90%를 달성했다.</li>
+<li>새 코드가 아니라 기존 코드를 활용해 이뤘다는 점을 놀라운 일로 꼽았다.</li>
+</ul>
+</li>
+<li>한 아키텍트의 말: 남의 코드를 이해하려고 3~4개 팀과 소통하며 며칠씩 쓰던 회의가 사라진 것이 큰 변화였다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=374">6:14</a>)</small></li>
+<li>인시던트 대응: 에이전트가 원인과 담당 팀을 찾아 Slack에 근거(POC)를 공유하고 이관한다. 예전에는 약 9개 팀이 동시에 호출받던 상황이 정리됐다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=421">7:01</a>)</small></li>
+</ul>
+<blockquote class="tip"><p>💡 코드를 이해하는 데 드는 사람 간 조율 비용이 가장 먼저 줄었다.</p>
+</blockquote>
+<h3>ROI 측정: '효과적인 출력'</h3>
+<ul>
+<li>코드 줄 수나 주석 양으로는 가치를 판단할 수 없어서, 스탠퍼드 연구진과 코드의 품질·효율을 점수화하는 '효과적인 출력' 지표를 만들었다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=97">1:37</a>)</small><ul>
+<li>단순 수정·주석 추가는 낮은 점수, 로직 변경·새 기능은 높은 점수.</li>
+<li>이 지표로 AI 도입 전후 변화와 '효과적인 출력당 비용'을 볼 수 있다.</li>
+</ul>
+</li>
+<li>결과: 효과적인 출력이 두 배로 늘었다고 한다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=143">2:23</a>)</small></li>
+<li>비코딩 직무(영업·지원 등)도 기능별 지표(계약 성사 수, 처리 사례 수 등)를 정해 도입 전후를 비교한다. 차이가 없으면 사용법 문제인지 도구가 안 맞는 건지 원인을 따진다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=165">2:45</a>)</small></li>
+</ul>
+<h3>에이전트 성숙도 곡선</h3>
+<div class="flow"><div class="flow-title">🔁 에이전트 성숙도 단계</div><ol class="flow-strip"><li><span>간단한 지시</span></li><li><span>기준·계획 수립</span></li><li><span>팀·병렬 작업</span></li><li><span>자율·자동화</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">간단한 지시</span><div class="d"><p>&quot;가서 해줘&quot; 식 명령. 간단한 작업만 처리되고, 좋은 결과의 기준이 없어 큰 작업에서 막힌다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=257">4:17</a>)</small></p>
+</div></li><li><span class="n">2</span><span class="t">기준·계획 수립</span><div class="d"><p>무엇을 알아야 하고 무엇을 고려해야 하는지, 좋은 결과와 나쁜 결과를 정의하고 포괄적인 계획을 세운다.</p>
+</div></li><li><span class="n">3</span><span class="t">팀·병렬 작업</span><div class="d"><p>서브에이전트, 작업 분해, 작업 트리 관리, 병렬 처리를 활용한다.</p>
+</div></li><li><span class="n">4</span><span class="t">자율·자동화</span><div class="d"><p>에이전트들이 SDLC 전반의 워크플로우를 관리한다. 예: CI/CD에서 테스트 실패 시 한 에이전트가 원인을 고치고, 다른 에이전트가 코드 리뷰 후 병합한다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=304">5:04</a>)</small></p>
+</div></li></ol></div>
+<ul>
+<li>처음엔 기본 작업에만 쓰던 엔지니어 다수가 한두 달 만에 P3·P4 단계로 올라갔고, 지금은 수천 명이 자율 모드로 일한다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=235">3:55</a>)</small></li>
+<li>가장 큰 과제는 역량 강화(enablement)였다. P3·P4 도달이 제로섬이 아니라는 점을 설명하는 것이 중요했다.</li>
+</ul>
+<h3>확산 방법</h3>
+<ul>
+<li>실제 데이터와 영감으로 접근: 직원들이 자기 작업 방식을 라이브로 시연하고, 각 클라우드 팀이 몇 달 걸릴 일을 몇 주 만에 해낸 사례를 공유했다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=350">5:50</a>)</small></li>
+<li>실제 출시 제품을 Dreamforce(Reinforce로 자막 표기) 행사에서 발표해 &quot;정말 효과가 있다&quot;는 점을 보여 줬다.</li>
+<li>혁신은 상향식으로 일어나게 하고, 효과가 보이면 확장을 돕는다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=532">8:52</a>)</small></li>
+</ul>
+<h3>스킬 마켓플레이스와 평가</h3>
+<ul>
+<li>팀들이 만든 스킬을 공유하려는 아이디어에서 시작했다. 온라인 평가로 세션을 다시 보고, Claude가 스킬 개선(토큰 효율, 더 빠른 결론)을 제안하게 한다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=441">7:21</a>)</small></li>
+<li>공유되는 스킬이 실제 결과에 가치를 주는지 보여 줄 수 있고, 전체 엔지니어링 수준부터 소규모 스크럼 팀까지 계층 구조로 쓴다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=487">8:07</a>)</small></li>
+<li>수천 개 리포지토리에서 버그 수정을 대중화하려면, 처음 보는 코드베이스를 다루고 품질 높은 PR을 만드는 워크플로우가 필요하다.</li>
+</ul>
+<h3>품질 가드레일</h3>
+<ul>
+<li>최근 몇 달간 코드량이 거의 두 배가 됐지만 코드당 버그 수는 평균적으로 줄었다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=579">9:39</a>)</small></li>
+<li>이유: 사람이 하는 일에 대한 견제와 균형, 기존·신규 품질 메커니즘이 제대로 작동했기 때문.</li>
+<li>측정 가능한 이유: 모두 표준 SDLC를 따르고 티켓 라벨링이 일관되며 모든 데이터가 PR과 연결돼 있다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=627">10:27</a>)</small></li>
+<li>스킬 품질은 과학적으로 평가한다 — 사용자가 무엇을 이루려는지 묻고, 공유 후 다른 개발자가 실제 가치를 얻는지 확인한다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=556">9:16</a>)</small></li>
+</ul>
+<h3>새 모델 검증: 벤치마크 재생</h3>
+<ul>
+<li>벤치마크를 만들어 두고, 새 모델을 PDLC 전반의 단·장기 작업에 시뮬레이션해 비용·성능(더 나은가, 나쁜가)을 비교한다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=649">10:49</a>)</small></li>
+<li>새 기능인 'Fail to Failure' 테스트는 장기 작업 중 모델이 계속 실패하던 지점을 찾아, 새 모델이 통과하면 채택 근거로 삼는다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=672">11:12</a>)</small></li>
+</ul>
+<h3>검증 없는 자율성은 '자신감 쇼'</h3>
+<ul>
+<li>객관적 기준으로 에이전트 작업을 측정한다. 좋은 결과와 나쁜 결과(음성 테스트 케이스: 기존 스키마를 건드리지 않았는지, 새 스키마를 만들라 했는데 기존 엔티티에 필드를 추가하지 않았는지)를 정의한다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=697">11:37</a>)</small></li>
+<li>에이전트에게 &quot;스스로 검토해&quot;라고 하지 않고 &quot;품질·실패 특징을 찾았는가, 증거를 보여 달라&quot;고 요구한다. 특징을 매트릭스로 만들어 오게 하고, 부족하면 되돌려 보낸다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=742">12:22</a>)</small></li>
+</ul>
+<blockquote class="tip"><p>💡 자기 검토가 아니라 증거 제출을 요구한다.</p>
+</blockquote>
+<h3>작업 크기와 모델 선택</h3>
+<ul>
+<li>스토리 포인트가 클수록 좋다. 아주 작은 일은 에이전트 투입 노력이 아깝고, 큰 기능을 통째로 맡기면 모델·도구가 스스로 독립 작업으로 분해한다. 몇 분짜리 일은 빠른 상호작용 세션으로 취급한다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=764">12:44</a>)</small></li>
+<li>사람이 하던 작업 분해를 에이전트 팀이 대신할 수 있고, 사전 계획이 좋을수록 결과가 좋다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=812">13:32</a>)</small></li>
+<li>가장 큰 실수는 작업에 맞는 모델·가격·ROI를 고르는 것. 단순한 파일 생성에는 고성능 모델이 필요 없고, 작업의 길이·복잡도를 함께 본다. <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=832">13:52</a>)</small></li>
+<li>사례: 원인을 찾지 못한 제품 버그를 Opus가 디버그→수정→컴파일을 반복하며 24시간 만에 찾아 수정안을 냈고, 중요한 비즈니스 소프트웨어이므로 검증 과정을 거쳤다.</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>API 커버리지 80~90%, 6개월~1년 → 몇 주~몇 달</li>
+<li>효과적인 출력 약 2배, 코드량 약 2배인데 코드당 버그는 감소</li>
+<li>&quot;검증 없는 자율성은 자신감 쇼에 불과하다&quot; <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=697">11:37</a>)</small></li>
+<li>조언: &quot;과감해지세요&quot;, 참여 시스템에서 주체성(agency) 시스템으로의 전환 <small class="tm">(<a href="https://youtu.be/4ZsVR-6YOzs?t=913">15:13</a>)</small></li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>영상 속 수치는 Salesforce 내부 발표이며 외부 검증 자료는 없다. '효과적인 출력' 점수의 구체적 산식도 공개되지 않았다.</li>
+<li>표준화된 티켓·PR 데이터가 이미 있는 조직이라 가능한 측정일 수 있어, 데이터가 부실한 조직은 그대로 따라 하기 어렵다.</li>
+<li>자막이 자동 생성이라 일부 용어(예: Dreamforce/Reinforce, Claudeforce, '우화적/소네트적' 문제 = Opus/Sonnet 비유로 추정)는 불분명하다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>우리 팀의 AI 코딩 성과를 줄 수가 아니라 '변경의 무게(로직·기능 vs 단순 수정)'로 가늠할 지표를 정해 본다.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>에이전트에게 맡기는 다음 작업에 &quot;좋은 결과/나쁜 결과 기준&quot;과 &quot;증거 제출&quot;을 프롬프트에 넣어 본다.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>반복되는 작업 흐름 하나를 스킬로 정리해 팀에 공유해 본다.</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1794028329 -->
