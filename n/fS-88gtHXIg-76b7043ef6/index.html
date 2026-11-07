@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>How I Edit My Videos with Claude</title>
+<meta property="og:title" content="How I Edit My Videos with Claude">
+<meta property="og:description" content="The AI Advantage · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/fS-88gtHXIg/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/fS-88gtHXIg" style="background-image:url('https://i.ytimg.com/vi/fS-88gtHXIg/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>How I Edit My Videos with Claude</h1><p class="meta">The AI Advantage · 게시 2026-11-04</p>
+<a class="btn" href="https://youtu.be/fS-88gtHXIg">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>녹화한 영상에서 MP3를 뽑아 ChatGPT로 타임스탬프가 있는 SRT 자막을 만들고, 이를 Claude Design에 넣어 영상 내용에 맞는 애니메이션을 만든다.</li>
+<li>핵심은 텍스트보다 움직임 위주의 16:9 그래픽을 요청하는 전용 프롬프트이며, 설명란에 공개되어 있다.</li>
+<li>모델은 'Open 5.5'(자막 표기 그대로), Thinking 설정은 Extra나 Max로 두고, 로고와 인터페이스 스크린샷을 첨부한다.</li>
+<li>생성에는 영상 길이에 따라 30분~2시간이 걸리고, 완성본은 내레이션과 함께 검토한 뒤 편집 팀이 B롤 레이어로 최종 편집에 넣는다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>유튜브 영상에 들어갈 애니메이션 그래픽을 AI로 빠르게 만들고 싶은 크리에이터·편집자.</li>
+<li>녹화 → 자막 → 애니메이션 → 편집으로 이어지는 실제 팀 워크플로우를 참고하고 싶은 분.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>전체 워크플로우</h3>
+<ul>
+<li>녹화 → MP3 추출 → SRT 자막(타임스탬프) 생성 → Claude Design에서 애니메이션 생성 → 검토 → 편집 소프트웨어에 합성하는 순서다. (2:35)<blockquote class="tip"><p>💡 대사와 타임스탬프를 AI에 주면, 말하는 내용에 맞춰 움직이는 그래픽이 나온다.</p>
+</blockquote>
+</li>
+</ul>
+<div class="flow"><div class="flow-title">🔁 애니메이션 제작 순서</div><ol class="flow-strip"><li><span>녹화</span></li><li><span>공유</span></li><li><span>MP3 추출</span></li><li><span>자막 생성</span></li><li><span>애니메이션 생성</span></li><li><span>검토</span></li><li><span>편집 합성</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">녹화</span><div class="d"><p>카메라와 화면을 컴퓨터 소프트웨어로 함께 녹화한다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=31">0:31</a>)</small></p>
+</div></li><li><span class="n">2</span><span class="t">공유</span><div class="d"><p>Dropbox 폴더에 저장해 편집자에게 자동 동기화한다.</p>
+</div></li><li><span class="n">3</span><span class="t">MP3 추출</span><div class="d"><p>편집자가 녹화본에서 MP3를 뽑는다.</p>
+</div></li><li><span class="n">4</span><span class="t">자막 생성</span><div class="d"><p>ChatGPT에 MP3를 올려 SRT 자막을 만든다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=54">0:54</a>)</small></p>
+</div></li><li><span class="n">5</span><span class="t">애니메이션 생성</span><div class="d"><p>Claude Design에 SRT와 프롬프트를 넣는다.</p>
+</div></li><li><span class="n">6</span><span class="t">검토</span><div class="d"><p>내레이션과 함께 보며 수정할 곳을 확인한다.</p>
+</div></li><li><span class="n">7</span><span class="t">편집 합성</span><div class="d"><p>최종 영상에 B롤 레이어로 넣는다.</p>
+</div></li></ol></div>
+<figure><a href="https://youtu.be/fS-88gtHXIg?t=35"><img src="01.jpg" alt="카메라와 모니터가 놓인 작업실에서 녹화하는 모습" loading="lazy"></a><figcaption>카메라와 모니터가 놓인 작업실에서 녹화하는 모습 · <a href="https://youtu.be/fS-88gtHXIg?t=35">▶ 0:35</a></figcaption></figure><h3>녹화와 공유</h3>
+<ul>
+<li>외출 시에는 맥북 프로와 카메라, 집에서는 카메라에 연결한 맥 미니로 녹화한다.<ul>
+<li>항상 컴퓨터 소프트웨어로 녹화하는데, 작업이 하나로 합쳐져 더 편하기 때문이다.</li>
+</ul>
+</li>
+<li>녹화본은 Dropbox 폴더에 저장되어 편집자(로버트, 루카스)에게 자동 동기화된다.</li>
+</ul>
+<h3>타임스탬프 자막 만들기</h3>
+<ul>
+<li>녹화본에서 추출한 MP3를 ChatGPT에 올리고 SRT 자막 파일을 만들어 달라고 요청한다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=54">0:54</a>)</small><ul>
+<li>Claude 등 다른 AI를 써도 된다고 한다.</li>
+<li>결과물은 대사와 타임스탬프가 함께 들어간 스크립트다.</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/fS-88gtHXIg?t=69"><img src="02.jpg" alt="ChatGPT에서 만든 타임스탬프 SRT 자막 화면" loading="lazy"></a><figcaption>ChatGPT에서 만든 타임스탬프 SRT 자막 화면 · <a href="https://youtu.be/fS-88gtHXIg?t=69">▶ 1:09</a></figcaption></figure><h3>Claude Design 설정</h3>
+<ul>
+<li>Claude Design(claude.ai/design)에 SRT 파일을 넣고, 설명란의 애니메이션 프롬프트를 그대로 붙여 넣는다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=72">1:12</a>)</small></li>
+<li>프롬프트의 요지는 텍스트보다 움직임이 많은 16:9 비율 그래픽을 요청하는 것이다.<ul>
+<li>기본 설정은 텍스트를 너무 많이 생성하는 경향이 있어 이를 줄이려는 것이다.</li>
+</ul>
+</li>
+<li>모델은 보통 'Open 5.5'(자막 표기, 모델명 자막상 불분명), Thinking은 'Extra'나 'Max'로 설정한다.<ul>
+<li>기본값인 'Medium'보다 결과물이 훨씬 좋다고 한다.</li>
+</ul>
+</li>
+<li>로고와 인터페이스 스크린샷을 첨부하면 Claude가 실제 시각 자료를 파악한다.</li>
+</ul>
+<figure><a href="https://youtu.be/fS-88gtHXIg?t=124"><img src="03.jpg" alt="Claude Design 화면에서 Opus 5.5 · Extra 설정" loading="lazy"></a><figcaption>Claude Design 화면에서 Opus 5.5 · Extra 설정 · <a href="https://youtu.be/fS-88gtHXIg?t=124">▶ 2:04</a></figcaption></figure><h3>생성과 검토</h3>
+<ul>
+<li>엔터를 누르면 작업이 진행되며 영상 길이에 따라 30분~2시간이 걸린다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=110">1:50</a>)</small></li>
+<li>가끔 멈췄다고 알려주지 않고 실제로 멈춰 있는 경우가 있다. 그럴 땐 계속하라고 명령하면 된다.</li>
+<li>최종 영상에 넣기 전에 내레이션과 함께 다시 보고 수정 사항을 확인하는 과정이 매우 중요하다고 강조한다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=133">2:13</a>)</small></li>
+</ul>
+<h3>최종 편집</h3>
+<ul>
+<li>애니메이션은 추가 B롤 세트가 되어, 편집 팀이 원하는 부분만 골라 쓴다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=147">2:27</a>)</small></li>
+</ul>
+<figure><a href="https://youtu.be/fS-88gtHXIg?t=141"><img src="04.jpg" alt="완성된 애니메이션 결과물을 검토하는 화면" loading="lazy"></a><figcaption>완성된 애니메이션 결과물을 검토하는 화면 · <a href="https://youtu.be/fS-88gtHXIg?t=141">▶ 2:21</a></figcaption></figure></section><section><h2>따라 해보기</h2>
+<h3>준비물</h3>
+<ul>
+<li>Claude Design 접근 권한(claude.ai/design), ChatGPT 또는 다른 AI(자막용), 영상 편집 소프트웨어</li>
+<li>설명란의 프롬프트 문서, 로고 이미지, 인터페이스 스크린샷</li>
+<li>소요 시간: 생성에만 30분~2시간</li>
+</ul>
+<h3>단계별 방법</h3>
+<div class="flow"><div class="flow-title">🔁 따라 하기 순서</div><ol class="flow-strip"><li><span>녹화하기</span></li><li><span>MP3 추출</span></li><li><span>SRT 만들기</span></li><li><span>프롬프트 붙여넣기</span></li><li><span>옵션 설정</span></li><li><span>생성 후 확인</span></li><li><span>편집에 합성</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">녹화하기</span><div class="d"><p>카메라와 화면을 컴퓨터 소프트웨어로 함께 녹화한다.</p>
+</div></li><li><span class="n">2</span><span class="t">MP3 추출</span><div class="d"><p>녹화본에서 오디오(MP3)를 뽑는다. (추출 도구는 영상에서 생략됨)</p>
+</div></li><li><span class="n">3</span><span class="t">SRT 만들기</span><div class="d"><p>ChatGPT에 MP3를 올리고 &quot;SRT 자막 파일을 만들어 줘&quot;라고 요청한다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=54">0:54</a>)</small></p>
+</div></li><li><span class="n">4</span><span class="t">프롬프트 붙여넣기</span><div class="d"><p>Claude Design에 SRT와 설명란 프롬프트를 넣는다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=72">1:12</a>)</small></p>
+</div></li><li><span class="n">5</span><span class="t">옵션 설정</span><div class="d"><p>Thinking을 Extra/Max로 하고 로고·스크린샷을 첨부한다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=99">1:39</a>)</small></p>
+</div></li><li><span class="n">6</span><span class="t">생성 후 확인</span><div class="d"><p>엔터를 누르고 완성되면 내레이션과 함께 검토한다. 멈추면 &quot;계속해&quot;라고 입력한다.</p>
+</div></li><li><span class="n">7</span><span class="t">편집에 합성</span><div class="d"><p>결과 영상을 B롤 레이어로 편집 소프트웨어에 넣는다.</p>
+</div></li></ol></div>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 녹화, ChatGPT로 SRT 생성, 프롬프트 붙여넣기, 검토와 편집 합성의 큰 흐름.</li>
+<li class="warn">⚠️ 4단계 「프롬프트 붙여넣기」: 프롬프트 원문이 영상에 나오지 않음 → 설명란의 Google 문서 링크에서 복사.</li>
+<li class="warn">⚠️ 5단계 「옵션 설정」: 모델명이 자막에서 'Open 5.5'로 나와 정확하지 않음 → 영상 1:39 화면에서 모델 선택 메뉴 확인.</li>
+<li class="warn">⚠️ 2단계 「MP3 추출」: 사용 도구가 안 나옴 → 영상 편집 소프트웨어나 일반 변환 프로그램으로 추출 (보충).</li>
+<li class="warn">⚠️ Claude Design 이용 조건: 요금제나 접근 권한 요건이 영상에 안 나옴 → claude.ai/design에서 확인.</li>
+<li class="warn">❓ 결과물의 출력 형식(영상 파일 형식·해상도)이 구체적으로 언급되지 않음.</li>
+</ul>
+<h3>확인 방법</h3>
+<ul>
+<li>완성된 영상을 내레이션과 함께 재생했을 때 애니메이션이 말하는 내용과 맞고, 텍스트가 과하지 않은지 본다.</li>
+</ul>
+<h3>막히면</h3>
+<ul>
+<li>진행이 멈춘 듯 보이면 계속하라고 명령한다.</li>
+<li>텍스트가 너무 많이 나오면 프롬프트의 &quot;텍스트 최소, 움직임 위주&quot; 지시가 들어 있는지 확인한다.</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>생성 시간: 30분~2시간</li>
+<li>비율: 16:9</li>
+<li>Thinking 설정: Extra 또는 Max (기본 Medium보다 좋다고 함)</li>
+<li>AI Advantage Club: 1달러 가입 (영상 홍보 내용)</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>결과 품질에 대한 평가(&quot;아름답고 세련됐다&quot;)는 제작자 본인의 주관적 의견이다.</li>
+<li>30분~2시간의 생성 시간과 높은 Thinking 설정은 사용량·비용 부담이 될 수 있어, 자신의 요금제에서 가능한지 확인이 필요하다.</li>
+<li>영상은 프롬프트 원문을 보여 주지 않아 설명란 문서를 열어야 재현할 수 있다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>설명란의 프롬프트 문서를 열어 내용을 확인한다.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>짧은 영상 하나의 MP3로 SRT를 만들어 본다.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>로고와 화면 스크린샷을 준비해 Claude Design에서 짧게 시험해 본다.</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1794029908 -->
