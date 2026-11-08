@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>&quot;처음엔 저도 막막했어요&quot; 직장인이 AI 크리에이터가 되기까지</title>
+<meta property="og:title" content="&quot;처음엔 저도 막막했어요&quot; 직장인이 AI 크리에이터가 되기까지">
+<meta property="og:description" content="신영선의 AI탐구 · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/BBGz03RZG0Y/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/BBGz03RZG0Y" style="background-image:url('https://i.ytimg.com/vi/BBGz03RZG0Y/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>&quot;처음엔 저도 막막했어요&quot; 직장인이 AI 크리에이터가 되기까지</h1><p class="meta">신영선의 AI탐구 · 게시 2026-11-06</p><p class="note">🎙️ 자막 대신 영상 음성을 받아써서 정리 (ko (음성 받아쓰기·GPU))</p>
+<a class="btn" href="https://youtu.be/BBGz03RZG0Y">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>증권사 트레이딩 3년 뒤 쉬던 직장인(세비아님)이 AI 인스타 릴스로 시작해, 첫 게시 약 2주 만에 첫 광고 제안(35만 원)을 받았다.</li>
+<li>지금은 광고 제안이 하루 5~10건 들어오고, 한 업체 정산이 940만 원(진행자는 1,200만 원대)일 만큼 AI 크리에이터 광고 수익이 커졌다. 최고 월 수입은 약 11,000달러(1,400~1,500만 원)라고 한다.</li>
+<li>성장 비결은 특별한 트릭이 아니라 <strong>초반 두 달 동안 1일 1콘텐츠</strong>, 즉 양으로 밀어붙여 어느 하나가 터지길 기다리는 것이다.</li>
+<li>영상 편집은 클로드로 약 98% 자동화했고, 효과음·트랜지션·자막·컷 편집까지 설명만 하면 된다고 한다.</li>
+<li>AI 크리에이터는 AI를 삶처럼 쓰는 사람에게 맞고, 얼굴 노출은 신뢰와 성장 면에서 하는 쪽을 권하지만 안 해도 성공 사례는 있다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>AI로 인스타그램 릴스·콘텐츠 크리에이터를 시작하려는 직장인·이직 준비자.</li>
+<li>첫 협업 제안, 얼굴 노출, 계정 정지, 편집 자동화 등 초반 고민의 실제 경험담을 듣고 싶은 분.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>결론: 광고 수익은 투입 대비 효율이 높다고 말한다</h3>
+<ul>
+<li>출연자들은 여러 수입원(강의·컨설팅·SI 대행 등) 중 크리에이터 광고 수익이 인풋 대비 아웃풋이 가장 좋다고 본다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=16">0:16</a>)</small><ul>
+<li>릴스 한 편 단가는 &quot;100만 원 넘는다&quot;고 했고, 시급 1만 원 기준 100시간 분량이라고 계산했다.</li>
+<li>이미 평소 하던 일(콘텐츠 만들기)이라 기획·촬영·편집에 드는 자원이 적고, 편집은 대부분 자동화되어 있다.</li>
+</ul>
+</li>
+<li>광고 제안 규모는 하루 5~10건이고, 10건 중 1건 정도만 협업한다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=103">1:43</a>)</small><ul>
+<li>한 출연자는 한 업체의 지난달 세금계산서가 1,200만 원대, 다른 출연자는 한 업체 정산이 940만 원이라고 공개했다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=193">3:13</a>)</small></li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/BBGz03RZG0Y?t=236"><img src="01.jpg" alt="한 업체 10월 정산 세금계산서, 공급가액 12,780,000원" loading="lazy"></a><figcaption>한 업체 10월 정산 세금계산서, 공급가액 12,780,000원 · <a href="https://youtu.be/BBGz03RZG0Y?t=236">▶ 3:56</a></figcaption></figure><ul>
+<li>최고 월 수입은 약 11,000달러(약 1,400~1,500만 원)이며, 본인은 &quot;못 쳐내는 광고가 많아서 많지 않다고 느낀다&quot;고 했다.</li>
+<li>광고가 몰리는 이유: AI 서비스 기업이 늘면서, 화장품 회사가 뷰티 크리에이터에게 제품을 주듯 AI 회사도 AI 크리에이터에게 광고를 준다는 설명이다. TV 대신 SNS로 광고가 옮겨 갔다.<blockquote class="tip"><p>💡 AI 서비스 기업이 늘면서 AI 크리에이터가 새로운 광고 채널이 되고 있다.</p>
+</blockquote>
+</li>
+<li>한꺼번에 많이 받으면 계정이 망가질 수 있어 비슷한 주제는 간격을 두고 받아야 한다.</li>
+<li>일을 줄이고 싶을 때 줄이기 쉽다. 광고가 2~3주 단위로 움직여 크루즈처럼 천천히 방향이 바뀐다.</li>
+<li>모든 수치는 출연자 본인 말이며 사람마다 결과가 다르다.</li>
+</ul>
+<h3>시작 배경과 초기 타임라인</h3>
+<ul>
+<li>세비아님은 증권사 트레이딩을 약 3년 하다 적성이 안 맞아 쉬었고, 콘텐츠 제작은 처음이었다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=246">4:06</a>)</small></li>
+<li>첫 게시물은 1월 1일쯤, 첫 릴스는 1월 2일, 첫 터진 릴스는 1월 4일(조회수 약 14만). <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=1551">25:51</a>)</small></li>
+<li>1월 15일 실리콘밸리 G사 광고 에이전시에서 첫 메일이 왔다. 보수는 35만 원, 당시 팔로워 약 3,500명. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=918">15:18</a>)</small></li>
+</ul>
+<figure><a href="https://youtu.be/BBGz03RZG0Y?t=932"><img src="02.jpg" alt="팔로워 3,500명일 때 실리콘밸리에서 협업 메일이 왔다" loading="lazy"></a><figcaption>팔로워 3,500명일 때 실리콘밸리에서 협업 메일이 왔다 · <a href="https://youtu.be/BBGz03RZG0Y?t=932">▶ 15:32</a></figcaption></figure><ul>
+<li>휴가 중이라 답장 방법과 단가를 몰라 3일간 답장을 못 했다. 강의에서 양식을 공유했어도 막상 닥치면 기억이 안 났다고 한다.</li>
+<li>이후 같은 루프로 계속 수익화가 이어졌다.</li>
+<li>영상이 말하는 시기(작년/올해)가 자막 상 엇갈린다. (자막상 불분명)</li>
+</ul>
+<div class="flow"><div class="flow-title">🔁 세비아님의 초기 타임라인</div><ol class="flow-strip"><li><span>트레이딩 퇴사</span></li><li><span>첫 게시물</span></li><li><span>첫 바이럴</span></li><li><span>첫 협업 메일</span></li><li><span>월 최대 수익</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">트레이딩 퇴사</span><div class="d"><p>증권사 약 3년 근무 후 휴식</p>
+</div></li><li><span class="n">2</span><span class="t">첫 게시물</span><div class="d"><p>1월 1일쯤 인스타 시작, 1월 2일 첫 릴스</p>
+</div></li><li><span class="n">3</span><span class="t">첫 바이럴</span><div class="d"><p>1월 4일 릴스 약 14만 조회</p>
+</div></li><li><span class="n">4</span><span class="t">첫 협업 메일</span><div class="d"><p>1월 15일 G사 에이전시, 35만 원</p>
+</div></li><li><span class="n">5</span><span class="t">월 최대 수익</span><div class="d"><p>월 약 11,000달러</p>
+</div></li></ol></div>
+<h3>계정 급성장과 정지</h3>
+<ul>
+<li>인스타를 시작한 지 한 달 만에 3만 3천 명, 두 달째 4만 명까지 올랐다. 당시엔 AI 콘텐츠가 드물어 프롬프트만 좋아도 크게 터졌다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=534">8:54</a>)</small></li>
+<li>6시간 만에 조회수 200만을 찍은 게시물도 있었으나 삭제당했고, 위반이 누적되어 계정이 약 1.5~2개월 정지되었다.</li>
+<li>가만히 있기 싫어 두 번째 계정(캐러셀 중심)을 만들었고, 첫 계정 정지가 풀려 지금은 두 계정을 운영한다.</li>
+<li>이 대목은 시점·삭제 이유가 자막상 불분명하다. 정지 사유는 구체적으로 말하지 않았다.</li>
+</ul>
+<h3>AI 크리에이터에 적합한 사람</h3>
+<ul>
+<li>AI에 관심이 없으면 하기 어렵다. AI와 말 그대로 함께 살아야 하는 직업이기 때문이다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=722">12:02</a>)</small><ul>
+<li>화장품에 관심 없이 화장품 크리에이터가 되겠다는 것과 비슷하다고 비유했다.</li>
+</ul>
+</li>
+<li>시간을 들여 AI 도구를 써 보고 만드는 게 즐거운 사람에게는 이만한 직업이 없다고 추천한다.</li>
+<li>AI는 업종마다 쓰는 방식이 달라 다양한 크리에이터가 나올 수 있다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=449">7:29</a>)</small></li>
+<li>특별한 재능은 필요 없다는 입장이다. 고양이 사진이 촬영 이력의 전부였던 수강생도 잘하고 있다고 한다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=343">5:43</a>)</small></li>
+<li>어려움에는 뾰족한 답이 없고, 툴을 직접 눌러 보고 AI 답변을 꼼꼼히 읽어 문제를 찾고 다시 해 보는 것뿐이라고 한다.</li>
+<li>세비아님은 2023년부터 GPT·클로드·제미나이를 비교해 쓰며 관심을 쌓았다.</li>
+</ul>
+<h3>얼굴 노출 논쟁</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>구분</th>
+  <th>노출</th>
+  <th>비노출</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>의견</td>
+  <td>신뢰도가 다르고 성장이 상대적으로 빠르다 (눈대중, 데이터는 아님)</td>
+  <td>작년보다 성공 사례가 많아져 가능</td>
+</tr>
+<tr>
+  <td>근거</td>
+  <td>사람이 운영한다는 낙수 효과</td>
+  <td>비노출 남성 수강생 계정이 블랙핑크 소속사 협업 제안</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>세비아님은 &quot;괜찮으면 얼굴 노출을 권한다&quot;는 입장이다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=788">13:08</a>)</small></li>
+<li>외모 걱정에는 &quot;사람들은 생각보다 외모를 신경 쓰지 않고 캡컷 보정이 잘 된다&quot;고 답했다.</li>
+<li>반대 사례로 얼굴을 한 번도 안 보인 수강생이 핑크톤 귀여운 디자인으로 신곡 AI 콘텐츠 협업 제안을 받았다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=1220">20:20</a>)</small></li>
+</ul>
+<figure><a href="https://youtu.be/BBGz03RZG0Y?t=814"><img src="03.jpg" alt="색채·AI·경제·직장인 AI·육아 등 다양한 AI 인스타 계정" loading="lazy"></a><figcaption>색채·AI·경제·직장인 AI·육아 등 다양한 AI 인스타 계정 · <a href="https://youtu.be/BBGz03RZG0Y?t=814">▶ 13:34</a></figcaption></figure><h3>클로드로 영상 편집 자동화</h3>
+<ul>
+<li>작년에는 캡컷으로 자막 타이핑·컷 편집을 수작업했지만 지금은 클로드가 컷 편집, 효과음, 트랜지션, 이펙트, 애니메이션, 배속, 수정까지 해 준다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=1328">22:08</a>)</small></li>
+<li>이제는 편집을 몰라도 설명만 하면 되고, 세비아님은 약 98%를 클로드에 맡기고 마지막에 2%만 직접 본다.</li>
+<li>유튜브처럼 긴 영상도 자기 전에 걸어 두면 아침에 편집이 끝나 있다는 사례가 나온다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=1433">23:53</a>)</small></li>
+<li>단, 도메인 지식(캡컷 등 편집 지식)이 있으면 AI를 더 똑똑하게 쓸 수 있다. 손으로 먼저 해 보는 게 중요하지만 AI로 더 빨리 갈 수 있다.<blockquote class="tip"><p>💡 AI는 편집을 대신해도, 편집 지식이 있는 사람이 더 잘 시킨다.</p>
+</blockquote>
+</li>
+<li>AI 활용 역량이 쌓이면 다른 영역에도 적용할 &quot;무기&quot;가 생긴다.</li>
+</ul>
+<figure><a href="https://youtu.be/BBGz03RZG0Y?t=1364"><img src="04.jpg" alt="타임라인에 이펙트·애니메이션·트랜지션·효과음 편집 표시" loading="lazy"></a><figcaption>타임라인에 이펙트·애니메이션·트랜지션·효과음 편집 표시 · <a href="https://youtu.be/BBGz03RZG0Y?t=1364">▶ 22:44</a></figcaption></figure><h3>성장 노하우: 1일 1콘텐츠</h3>
+<ul>
+<li>딱 하나만 꼽으라면 첫 두 달은 1일 1콘텐츠(약 60개)다. 세비아님은 지금도 비슷하게 한다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=1494">24:54</a>)</small></li>
+<li>어느 게 터질지 모르니 양으로 밀어붙이는 게 초보에게 좋은 전략이다. 초반에 좋은 질의 영상을 만들기 어렵기 때문이다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=1551">25:51</a>)</small></li>
+<li>계정이 정지되어 처음부터 다시 한다면 얼굴 노출 영상 1개를 찍고 1일 1콘텐츠로 AI와 기획해 꾸준히 올린다고 답했다. <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=1587">26:27</a>)</small></li>
+<li>트릭은 없고 하던 방식을 계속하는 것이라고 정리했다.</li>
+</ul>
+</section><section><h2>따라 해보기</h2>
+<h3>준비물</h3>
+<ul>
+<li>인스타그램 계정, 영상 편집 툴(캡컷), AI 도구(클로드 등). 비용·소요 시간은 영상에 안 나옴.</li>
+</ul>
+<h3>단계별 방법</h3>
+<div class="flow"><div class="flow-title">🔁 초반 계정 키우기 순서</div><ol class="flow-strip"><li><span>주제 정하기</span></li><li><span>1일 1콘텐츠</span></li><li><span>AI로 기획</span></li><li><span>편집 자동화</span></li><li><span>협업 대응</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">주제 정하기</span><div class="d"><p>내가 쓰는 AI 활용법 중 공유할 것을 고른다</p>
+</div></li><li><span class="n">2</span><span class="t">1일 1콘텐츠</span><div class="d"><p>첫 두 달 매일 하나씩 올린다 <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=1494">24:54</a>)</small></p>
+</div></li><li><span class="n">3</span><span class="t">AI로 기획</span><div class="d"><p>AI와 함께 기획해 제작 부담을 줄인다</p>
+</div></li><li><span class="n">4</span><span class="t">편집 자동화</span><div class="d"><p>클로드에 편집을 설명으로 맡기고 마지막에 직접 확인 <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=1328">22:08</a>)</small></p>
+</div></li><li><span class="n">5</span><span class="t">협업 대응</span><div class="d"><p>광고 제안이 오면 양식을 준비해 답장한다 <small class="tm">(<a href="https://youtu.be/BBGz03RZG0Y?t=937">15:37</a>)</small></p>
+</div></li></ol></div>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 1일 1콘텐츠로 두 달 올리기, 얼굴 노출 여부 결정, 마지막 2%는 직접 확인.</li>
+<li class="warn">⚠️ 4단계 「편집 자동화」: 클로드로 편집하는 구체적 방법(어떤 도구·연동·프롬프트)이 영상에 안 나온다 → 영상 24:17 이후 예고된 2부, 또는 설명란 링크 강의 참고.</li>
+<li class="warn">⚠️ 5단계 「협업 대응」: 답장 양식과 단가 기준이 영상에 없다 → 유료·무료 강의에서 공유한 양식으로 보이며, 강의 확인 필요.</li>
+<li class="warn">⚠️ 1단계 「주제 정하기」: 어떤 주제가 잘 먹히는지 구체적 기준이 없다 → (보충) 본인 업무와 관련된 AI 활용 팁부터 시작.</li>
+<li class="warn">❓ 시기(작년 1월/올해 1월), 정지 이유가 엇갈리거나 불분명해 확인이 필요하다.</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>첫 협업: 35만 원, 팔로워 약 3,500명</li>
+<li>최고 월 수입: 약 11,000달러(약 1,400~1,500만 원)</li>
+<li>릴스 한 편 단가: 100만 원 이상</li>
+<li>광고 제안: 하루 5~10건, 실제 협업은 약 10건 중 1건</li>
+<li>성장 속도: 한 달 3만 3천 명, 두 달 4만 명, 6시간 만에 조회수 200만</li>
+<li>편집 자동화율: 약 98%</li>
+<li>&quot;트릭이라는 건 없고 그냥 하던 대로 계속 해야 되지 않을까.&quot;</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>출연자 두 사람은 AI 교육 강의로 수익을 내는 입장이라, 수익 사례가 홍보 성격을 띨 수 있다. 결과는 사람마다 다르다고 영상도 밝힌다.</li>
+<li>얼굴 노출이 성장에 유리하다는 주장은 &quot;눈대중&quot;이며 데이터가 없다.</li>
+<li>계정 정지 사유·광고 표시 규정 등 위험 요소는 깊이 다뤄지지 않았다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>오늘부터 AI 활용법 하나로 릴스 1개 기획해 올리기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>얼굴 노출 여부와 계정 콘셉트 정하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>클로드로 쉬운 편집(자막·컷) 한 가지 맡겨 보기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1794119087 -->
