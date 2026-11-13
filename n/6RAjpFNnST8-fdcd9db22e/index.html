@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>New Claude Fable 5.2 Is Insane (Yes, Again!)</title>
+<meta property="og:title" content="New Claude Fable 5.2 Is Insane (Yes, Again!)">
+<meta property="og:description" content="The AI Advantage · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/6RAjpFNnST8/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/6RAjpFNnST8" style="background-image:url('https://i.ytimg.com/vi/6RAjpFNnST8/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>New Claude Fable 5.2 Is Insane (Yes, Again!)</h1><p class="meta">The AI Advantage · 게시 2026-11-12</p>
+<a class="btn" href="https://youtu.be/6RAjpFNnST8">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>Fable 5.2는 Anthropic의 최신 모델로, 유료 Claude 플랜의 모델 전환기에서 선택하면 바로 쓸 수 있다.</li>
+<li>영상 제작자는 이 모델을 3D 그래픽·슬라이드·영상 편집에서 지금까지 본 것 중 가장 뛰어나다고 평가한다.</li>
+<li>벤치마크의 프리랜서 업무 과제 완료율이 Opus 5.5의 21%에서 41%로 거의 두 배가 됐다.</li>
+<li>가격은 가장 비싸지만(같은 작업 비용 Opus 45달러 vs Fable 81달러), 속도는 더 빠르고 결과물 디테일이 좋다.</li>
+<li>게임·교육용 인터랙티브 앱·뮤직비디오·설명 영상 등 시각적 작업에서 개선 폭이 가장 크다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>AI로 슬라이드, 교육 자료, 설명 영상을 만드는 분이 새 모델로 무엇이 가능해졌는지 알고 싶을 때.</li>
+<li>발표·영업·교육에 인터랙티브 요소를 넣을 아이디어를 찾는 분.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>모델 접근과 성능 평가</h3>
+<ul>
+<li>Fable 5.2는 유료 Claude 플랜에서 모델 전환기로 선택하면 쓸 수 있다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=43">0:43</a>)</small><ul>
+<li>직전까지 영상 제작자는 Opus 5.5를 최고 모델로 꼽았고, 이제 Fable을 &quot;새로운 왕&quot;으로 평가한다.</li>
+</ul>
+</li>
+<li>벤치마크에서 다른 모델을 거의 압도하며, 컴퓨터 사용 능력(컴퓨터를 직접 조작해 일을 처리하는 능력)도 최고 수준이라고 한다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=89">1:29</a>)</small></li>
+<li>실제 프리랜서 업무 과제 지표에서 완료율이 Opus 5.5 21% → Fable 5.2 41%로 늘었다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=113">1:53</a>)</small></li>
+</ul>
+<blockquote class="tip"><p>💡 컴퓨터로 하는 지식 노동 처리 능력이 약 두 배가 됐다 — 영상 속 벤치마크 기준.</p>
+</blockquote>
+<figure><a href="https://youtu.be/6RAjpFNnST8?t=115"><img src="01.jpg" alt="Remote Labor Index 행 41.3% vs Opus 5.5 21.3% 비교표" loading="lazy"></a><figcaption>Remote Labor Index 행 41.3% vs Opus 5.5 21.3% 비교표 · <a href="https://youtu.be/6RAjpFNnST8?t=115">▶ 1:55</a></figcaption></figure><h3>게임·3D 제작</h3>
+<ul>
+<li>웹 인터페이스에서 &quot;아주 상세하고 높은 퀄리티의 FPS 게임을 만들어 줘&quot;라는 간단한 프롬프트 하나로 AAA급 느낌의 FPS를 만들었다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=157">2:37</a>)</small><ul>
+<li>복잡한 설정 없이 아티팩트(Claude 화면 안에서 바로 실행되는 결과물) 안에서 빌드되고 모바일에서도 작동한다.</li>
+</ul>
+</li>
+<li>스노우 글로브 비교에서 Fable이 Opus 5.5보다 객체 상호작용·물리 효과가 더 현실적이었다. 퀘이크 스타일 게임도 한 번에 만들어졌다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=296">4:56</a>)</small></li>
+<li>같은 작업에서 Opus는 45달러, Fable은 81달러가 들었고 Fable이 더 빨랐다(약 2시간). <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=385">6:25</a>)</small><ul>
+<li>Fable은 물 표현, 배경 디테일, 배와 사람의 사실감이 더 좋았다. 물 표현은 AI의 오랜 약점이었다.</li>
+</ul>
+</li>
+<li>8시간 동안 만든 게임도 일부는 일관성을 유지하는 등 길고 복잡한 프로젝트에서도 진전이 있었다.</li>
+</ul>
+<div class="pair"><figure><a href="https://youtu.be/6RAjpFNnST8?t=156"><img src="02.jpg" alt="Fable 5.2가 만든 FPS 게임 조준 화면" loading="lazy"></a><figcaption>Fable 5.2가 만든 FPS 게임 조준 화면 · <a href="https://youtu.be/6RAjpFNnST8?t=156">▶ 2:36</a></figcaption></figure><figure><a href="https://youtu.be/6RAjpFNnST8?t=398"><img src="03.jpg" alt="Fable 5.2(위)와 Opus 5.5(아래)의 배·물 표현 비교" loading="lazy"></a><figcaption>Fable 5.2(위)와 Opus 5.5(아래)의 배·물 표현 비교 · <a href="https://youtu.be/6RAjpFNnST8?t=398">▶ 6:38</a></figcaption></figure></div><h3>슬라이드 제작</h3>
+<ul>
+<li>제작자가 'AI Advantage' 강의용 기억법 슬라이드를 만들었는데, 폴더 시스템 아이콘의 색상(주황·청록·네온 그린)과 순서를 이전 슬라이드 흐름 그대로 이어갔다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=227">3:47</a>)</small></li>
+<li>삽화부터 설정까지 처리했고 원하는 대로 수정할 수 있었다.</li>
+<li>'extra' 설정으로 약 30분이 걸렸고 Ultra 플랜 사용량의 1.5%만 썼다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=270">4:30</a>)</small></li>
+</ul>
+<blockquote class="tip"><p>💡 마스터마인드 모임에서 본 어떤 AI 슬라이드보다 낫다는 것이 제작자의 평가.</p>
+</blockquote>
+<figure><a href="https://youtu.be/6RAjpFNnST8?t=238"><img src="04.jpg" alt="폴더 6개를 아이콘 카드로 정리한 &#x27;Six folders, one job each&#x27; 슬라이드" loading="lazy"></a><figcaption>폴더 6개를 아이콘 카드로 정리한 &#x27;Six folders, one job each&#x27; 슬라이드 · <a href="https://youtu.be/6RAjpFNnST8?t=238">▶ 3:58</a></figcaption></figure><h3>교육용 인터랙티브 경험</h3>
+<ul>
+<li>와인 양조를 배우는 대화형 게임(Kieran Klaassen 제작)처럼 관심 주제를 게임으로 학습하는 앱을 만들 수 있다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=341">5:41</a>)</small></li>
+<li>Pat Simmons가 만든 센트럴 파크 시각적 역사는 이미지·애니메이션·타임라인을 담은 인터랙티브 결과물이다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=364">6:04</a>)</small></li>
+<li>게시물 링크는 영상 설명란에 있다.</li>
+</ul>
+<figure><a href="https://youtu.be/6RAjpFNnST8?t=374"><img src="05.jpg" alt="센트럴 파크 시각적 역사 인터랙티브 화면" loading="lazy"></a><figcaption>센트럴 파크 시각적 역사 인터랙티브 화면 · <a href="https://youtu.be/6RAjpFNnST8?t=374">▶ 6:14</a></figcaption></figure><h3>영상 제작·편집</h3>
+<ul>
+<li>뮤직비디오 예시는 음악은 Suno, 영상 생성은 Seed Dance, 편집·애니메이션은 Fable이 맡았다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=454">7:34</a>)</small></li>
+</ul>
+<figure><a href="https://youtu.be/6RAjpFNnST8?t=469"><img src="06.jpg" alt="뮤직비디오 제작 과정을 설명한 SNS 게시물 화면" loading="lazy"></a><figcaption>뮤직비디오 제작 과정을 설명한 SNS 게시물 화면 · <a href="https://youtu.be/6RAjpFNnST8?t=469">▶ 7:49</a></figcaption></figure><ul>
+<li>영상 생성 모델 연결에 Higgsfield MCP(자막상 &quot;Hicks Field&quot;)를 썼고, 나머지는 모두 Claude로 작업했다.</li>
+<li>설명 영상 제작이 이 모델의 가장 강한 분야 중 하나다. After Effects 수준의 애니메이션을 만들 수 있게 됐다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=500">8:20</a>)</small><ul>
+<li>Opus도 애니메이션은 가능했지만 이번이 큰 발전이라고 한다.</li>
+</ul>
+</li>
+</ul>
+<h3>개선이 큰 분야와 한계</h3>
+<ul>
+<li>Remote Labor Index(자막상 &quot;리모트 레이버 인덱스&quot;) 기준 가장 큰 성과는 오디오·음악, 건축·인테리어 디자인, 3D 모델링이다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=523">8:43</a>)</small></li>
+<li>산업 제품 디자인, 애니메이션 등 일부 과제는 아직 풀어야 할 점이 많다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=546">9:06</a>)</small></li>
+</ul>
+</section><section><h2>따라 해보기</h2>
+<h3>준비물</h3>
+<ul>
+<li>유료 Claude 플랜(영상 속 사례는 Ultra 플랜 사용). 모델 전환기에서 Fable 5.2 선택.</li>
+<li>영상 제작 사례는 추가로 Suno, Seed Dance, Higgsfield MCP 필요(가격은 영상에 나오지 않음).</li>
+</ul>
+<h3>단계별 방법</h3>
+<div class="flow"><div class="flow-title">🔁 Fable로 인터랙티브 결과물 만들기</div><ol class="flow-strip"><li><span>모델 선택</span></li><li><span>프롬프트 입력</span></li><li><span>아티팩트 실행</span></li><li><span>수정 요청</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">모델 선택</span><div class="d"><p>Claude 모델 전환기에서 Fable 5.2를 고른다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=43">0:43</a>)</small></p>
+</div></li><li><span class="n">2</span><span class="t">프롬프트 입력</span><div class="d"><p>웹 인터페이스에 만들고 싶은 것을 구체적으로 쓴다. 예: &quot;나를 위한 FPS 게임을 만들어 줘, 아주 상세하고 높은 퀄리티로&quot;. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=157">2:37</a>)</small></p>
+</div></li><li><span class="n">3</span><span class="t">아티팩트 실행</span><div class="d"><p>결과가 아티팩트 안에서 바로 빌드되므로 클릭해 실행한다. <small class="tm">(<a href="https://youtu.be/6RAjpFNnST8?t=181">3:01</a>)</small></p>
+</div></li><li><span class="n">4</span><span class="t">수정 요청</span><div class="d"><p>원하는 대로 고쳐 달라고 이어서 요청한다.</p>
+</div></li></ol></div>
+<p><strong>2단계에 입력할 내용 (영상 예시)</strong></p>
+<pre><code>나를 위한 FPS 게임을 만들어 줘, 아주 상세하고 높은 퀄리티로.
+AAA급 게임과 견줄 만한 시각적 퀄리티, 규모는 작게, 놀라울 정도로 사실적인 그래픽.
+</code></pre>
+<p>(자막을 바탕으로 풀어 쓴 문장이며 원문 프롬프트와 다를 수 있음)</p>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 모델 선택, 간단한 프롬프트로 아티팩트 게임 만들기.</li>
+<li class="warn">⚠️ 2단계 「프롬프트 입력」: 실제 프롬프트 원문이 전부 나오지 않음 → 영상 2:37 화면 확인, 위 예시로 시작해 보완.</li>
+<li class="warn">⚠️ 슬라이드 제작: 어떤 프롬프트·설정으로 만들었는지 안 나옴 → 'extra' 설정(보충: 추론 강도 설정으로 추정)을 쓴 점만 확인 가능.</li>
+<li class="warn">⚠️ 뮤직비디오 제작: Suno·Seed Dance·Higgsfield MCP 가입·결제 필요 여부와 연결 방법이 없음 → 설명란의 claudia.gallery/fable 페이지에서 제작 단계 확인.</li>
+<li class="warn">❓ 비용: Opus 45달러·Fable 81달러가 어떤 과금 방식(API 등)인지 불분명. 플랜 사용량 1.5%와 어떻게 다른지 영상에서 설명하지 않음.</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>프리랜서 업무 과제 완료율: Opus 5.5 21% → Fable 5.2 41%</li>
+<li>같은 작업 비용: Opus 45달러 vs Fable 81달러(Fable이 더 빠름, 약 2시간)</li>
+<li>슬라이드 제작: 약 30분, Ultra 플랜의 1.5%</li>
+<li>8시간 동안 만든 게임도 일부 일관성 유지</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>영상 속 평가(&quot;최고&quot;, &quot;비교 불가&quot;)는 제작자의 주관이다. 벤치마크와 사례 모두 공개 발표·SNS 데모라 잘 나온 결과만 골랐을 수 있다.</li>
+<li>비용이 Opus의 약 1.8배라서, 간단한 작업까지 Fable을 쓸 필요가 있는지는 따져 봐야 한다.</li>
+<li>일부 분야(산업 디자인 등)는 아직 부족하다고 영상도 인정한다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>평소 쓰는 슬라이드나 교육 자료 하나를 Fable 5.2와 기존 모델로 각각 만들어 비교해 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>내 업무·관심 주제를 설명하는 작은 인터랙티브 아티팩트를 한 번 요청해 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>설명란의 Central Park, First Crush 사례 링크를 열어 구성 방식 참고하기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1794547109 -->
