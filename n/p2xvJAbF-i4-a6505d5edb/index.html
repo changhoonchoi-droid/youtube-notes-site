@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Building the Claude API for the Frontier</title>
+<meta property="og:title" content="Building the Claude API for the Frontier">
+<meta property="og:description" content="Claude · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/p2xvJAbF-i4/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/p2xvJAbF-i4" style="background-image:url('https://i.ytimg.com/vi/p2xvJAbF-i4/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>Building the Claude API for the Frontier</h1><p class="meta">Claude · 게시 2026-11-12</p>
+<a class="btn" href="https://youtu.be/p2xvJAbF-i4">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>Messages API는 시스템·사용자 턴과 도구 호출로 이루어진 Claude API의 기본 구조이고, effort(노력 수준) 같은 조절 장치(knob)로 동작을 크게 바꿀 수 있다.</li>
+<li>새 기능은 연구팀의 발견과 고객 요청이 양방향으로 오가며 정해지고, 품질 기준(eval)을 넘은 것만 출시된다.</li>
+<li>모델이 바뀔 때는 기능을 추가하는 건 쉽지만 없애는 건 어렵기 때문에, 한동안 옛 방식으로 되돌릴 수 있게 두었다가 단계적으로 폐지한다.</li>
+<li>비용 절감의 첫 번째 수단은 프롬프트 캐싱(캐시 적중률 90%가 목표)이고, 토큰당 가격보다 &quot;토큰당 지능&quot;과 작업당 비용을 봐야 한다.</li>
+<li>Mythos와 Fable은 같은 모델 가중치이며, 분류기(classifier)와 인증 절차로 쓸 수 있는 범위만 다르다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>Claude API로 에이전트나 앱을 만들면서 비용과 모델 업그레이드 전략을 고민하는 개발자.</li>
+<li>새 모델이 나올 때마다 하네스(harness, 모델을 감싸는 프롬프트·도구·루프 구성)를 어떻게 재점검할지 알고 싶은 분.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>Messages API와 조절 장치</h3>
+<ul>
+<li>Messages API는 Claude API의 핵심(cornerstone)이다. 시스템 턴, 사용자 턴, 중간의 도구 호출이라는 업계 표준 구조 위에서 원하는 것을 만들 수 있다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=24">0:24</a>)</small></li>
+<li>그 위에 동작을 바꾸는 조절 장치가 얹혀 있다. 같은 모델도 effort를 높게 또는 낮게 주면 하이브리드 모델을 고른 것처럼 느낌이 달라진다.</li>
+<li>연구팀과 같은 공간에서 일하며 Claude가 가장 잘하는 방식을 기본값으로 넣었다. 문서의 가장 기본적인 요청을 복사해 써도 최상의 기본 경험을 얻는다.<blockquote class="tip"><p>💡 프롬프트로 유도하는 것보다 API 조절 장치가 훨씬 깊은 수준의 맞춤을 가능하게 한다.</p>
+</blockquote>
+</li>
+</ul>
+<h3>기능이 출시되는 과정</h3>
+<ul>
+<li>연구팀 → API 방향: 연구자가 Claude의 새로운 강점을 발견하면 기능이 된다. 예: 컴퓨터 사용 능력이 좋아진 것이 computer use 도구가 됐다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=113">1:53</a>)</small></li>
+<li>고객 → API 방향: 고객 요청이 연구팀의 학습 요청으로 바뀌고, 이미 나온 모델이 아니라 다음 모델에 반영된다.</li>
+<li>출시 전 첫 단계는 Claude가 그 기능을 얼마나 잘 쓰는지 평가(eval)하는 것이다. 고객에게도 각자 용도가 있으므로 자체 eval을 돌리라고 권한다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=245">4:05</a>)</small></li>
+<li>대표 사례 두 가지: 대화 중 effort 변경, 대화 중 시스템 프롬프트 변경. 예전에는 바꾸면 프롬프트 캐시가 깨져 사실상 쓸 수 없었다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=180">3:00</a>)</small><ul>
+<li>높은 effort로 돌던 에이전트가 다음 요청이 쉬운 걸 알아도, effort를 낮추면 캐시가 깨져 비용 절감 목적이 무너졌다.</li>
+<li>대화 중 effort 변경(베타)은 이 문제를 해결한다.</li>
+</ul>
+</li>
+</ul>
+<h3>모델 버전 관리와 마이그레이션</h3>
+<ul>
+<li>모델 문자열이 곧 버전 역할을 하고, API 버전·프롬프트 안정성과 얽혀 있다. 모델이 지능의 최전선에 있어 사용자가 변경을 감수할 가치가 크다.</li>
+<li>기능 추가는 불만이 없지만, 누군가 많이 의존하는 기능을 폐지하는 것이 어렵다.</li>
+<li>사례: 기존 확장 사고(extended thinking)에서 적응형 사고(adaptive thinking)로 전환. eval에서 이미 더 좋았지만 한동안 옛 방식으로 되돌릴 수 있게 두었다. 베타 헤더 등으로도 롤백할 수 있다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=393">6:33</a>)</small></li>
+<li>결국 모델이 옛 방식으로 더 이상 학습되지 않으면 하드 폐지가 필요하다. 아무 동작도 안 하는 API를 남기는 것이 더 해롭기 때문이다. 그래도 모델 한두 세대는 천천히 이전할 시간을 준다.<blockquote class="tip"><p>💡 강제 폐지는 하네스에서 이제 불필요해진 부분을 다시 점검하게 만드는 계기다.</p>
+</blockquote>
+</li>
+<li>모델이 10배 똑똑해지면 하네스 자체가 한계가 될 수 있으므로, 모델이 바뀔 때마다 앱·루프·설정 전체를 주기적으로 재평가하라고 권한다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=482">8:02</a>)</small></li>
+</ul>
+<h3>비용 관리</h3>
+<ul>
+<li>프롬프트 캐싱이 가장 큰 비용 수단이다. 캐싱을 최적화하지 않은 고객에게 가장 먼저 하는 권고다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=515">8:35</a>)</small><ul>
+<li>에이전트 대화처럼 두 번째 요청이 첫 요청에 내용만 덧붙이는 구조일 때, 이미 처리한 블록을 캐시한다.</li>
+<li>영업팀도 &quot;캐시율을 90%까지 올릴 수 있나?&quot;를 먼저 묻는다. 꿈의 수치로 통한다.</li>
+</ul>
+</li>
+<li>토큰당 비용에는 &quot;토큰당 지능&quot;이라는 차원이 필요하다. 고지능 모델(Fable)과 Haiku는 같은 결과를 내는 데 쓰는 토큰 수가 크게 다르다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=572">9:32</a>)</small><ul>
+<li>일부 기능은 토큰 단가를 바꾸지 않고 사용 토큰 수를 바꾼다.</li>
+<li>Haiku·Sonnet을 쓰는 사용자가 상위 모델로 바꾸면 더 좋은 결과를 얻는 경우가 있다.</li>
+<li>반대로 모델이 전반적으로 좋아지면, 예전엔 Fable 5만 풀던 작업을 Opus 5가 풀 수도 있다.</li>
+<li>비교 기준은 결국 eval이다.</li>
+</ul>
+</li>
+</ul>
+<h3>Mythos와 Fable, 안전장치</h3>
+<ul>
+<li>모든 API 모델은 오용을 막는 분류기를 거친다. 과학 연구 등 선한 사용을 위해 접근은 열되, 악용 우려는 균형을 잡는다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=757">12:37</a>)</small></li>
+<li>Mythos와 Fable은 같은 모델 가중치이며, 분류기에 따라 할 수 있는 범위만 다르다.<ul>
+<li>Mythos: 사이버 분야 등에서 올바른 사람에게 접근을 주기 위한 인증 절차(KYC, 영상 설명상 Cyber Verification Program)를 거친다.</li>
+<li>Fable: 그 절차를 거치지 않은 누구나 쓸 수 있다.</li>
+</ul>
+</li>
+<li>증류(distillation, 강한 모델의 출력으로 다른 모델을 학습시키는 것) 방지도 안전의 한 축이다. 안전장치 없는 모델이 퍼지는 것은 위험하며, 최근 사고(thinking) 보호 변경도 이 때문이라고 문서로 밝혔다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=801">13:21</a>)</small></li>
+<li>공개된 한 가지 변경 뒤에는 내부 실험 10가지 정도가 있고, 데이터 기반으로 오랜 시간 결정한다. 모델이 너무 잘해 eval을 더 어렵게 만들어야 하는 &quot;eval 포화&quot;도 겪는다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=846">14:06</a>)</small></li>
+</ul>
+<h3>앞으로의 방향</h3>
+<ul>
+<li>가장 중요한 것은 모델 지능이다. 새 모델이 나오면 기준에 못 미쳐 출시하지 않았던 기능들을 eval로 다시 돌려, 기준을 넘으면 출시한다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=909">15:09</a>)</small></li>
+<li>API는 에이전트 중심으로 설계된다. 클라이언트 도구(bash, 텍스트 에디터 등)와 사고·effort 조절 장치가 에이전트의 성패를 가른다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=993">16:33</a>)</small></li>
+<li>Claude Managed Agents(베타)는 Messages API 위에 만들어져, 에이전트 쪽에서 얻은 교훈이 Messages API에도 그대로 반영된다. <small class="tm">(<a href="https://youtu.be/p2xvJAbF-i4?t=1066">17:46</a>)</small></li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>프롬프트 캐시 적중률 90% = &quot;꿈의 숫자&quot;</li>
+<li>&quot;모델 지능만큼 중요한 것은 없다.&quot;</li>
+<li>출시된 기능 하나당 내부 실험 변형이 약 10개</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>캐싱·eval 중심 조언은 Anthropic 입장에서의 권고다. 실제 절감 효과는 내 워크로드로 직접 측정해야 한다.</li>
+<li>&quot;상위 모델이 결국 더 싸다&quot;는 주장은 영상에서 일반 수치 없이 설명만 나왔다. 작업별로 검증이 필요하다.</li>
+<li>Mythos/Fable의 접근 구분과 증류 방지 조치는 개발자 경험을 제한할 수 있는데, 구체적 기준은 영상에 나오지 않았다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>내 에이전트 요청이 &quot;덧붙이기&quot; 구조인지 확인하고 프롬프트 캐시 적중률을 측정한다.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>쓰는 모델과 effort·thinking 설정으로 작업당 비용·토큰·성공률을 비교하는 eval을 만든다.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>새 모델이 나오면 하네스에서 모델이 이제 알아서 하는 부분을 걷어낼 수 있는지 점검한다.</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1794546353 -->
