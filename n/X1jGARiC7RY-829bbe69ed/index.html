@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>“100% 영상 제작 자동화” 클로드코드로 영상 편집 이대로만 따라하세요 (2편)</title>
+<meta property="og:title" content="“100% 영상 제작 자동화” 클로드코드로 영상 편집 이대로만 따라하세요 (2편)">
+<meta property="og:description" content="신영선의 AI탐구 · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/X1jGARiC7RY/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/X1jGARiC7RY" style="background-image:url('https://i.ytimg.com/vi/X1jGARiC7RY/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>“100% 영상 제작 자동화” 클로드코드로 영상 편집 이대로만 따라하세요 (2편)</h1><p class="meta">신영선의 AI탐구 · 게시 2026-11-13</p>
+<a class="btn" href="https://youtu.be/X1jGARiC7RY">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>클로드 코드로 영상 편집을 자동화하려면 편집 도구는 검증된 캡컷(CapCut)이나 프리미어 프로를 쓰는 것이 좋다고 강조한다.</li>
+<li>영상 종류별 템플릿(기준 영상)을 만들어 두어야 AI가 같은 품질로 편집할 수 있다.</li>
+<li>템플릿을 설명하는 편집 업무 매뉴얼(SOP)을 마크다운·노션 등 문서로 만들어 클로드 코드 스킬로 남긴다.</li>
+<li>원본 영상을 구글 드라이브에 올리고 폴더를 지정해 요청하면, 클로드가 영상을 받아 자막 확인·편집까지 진행한다.</li>
+<li>실제 테스트에서 34초짜리 영상 편집에 약 40분이 걸렸고, 루틴 기능으로 폴더를 주기적으로 확인하게 하면 업로드만으로 편집이 돌아가는 구조를 만들 수 있다고 한다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>반복되는 영상 제작·편집 작업을 클로드 코드로 줄이고 싶은 콘텐츠 제작자, 마케터, 1인 사업자.</li>
+<li>자동화의 구조(도구 → 템플릿 → 매뉴얼 → 스킬 → 루틴)를 한 번에 잡고 싶은 분.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>편집 도구는 캡컷·프리미어 프로로</h3>
+<ul>
+<li>영상 편집은 캡컷이나 프리미어 프로 같은 편집 특화 도구로 해야 한다고 강하게 권한다. 다른 도구는 비추천이다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=95">1:35</a>)</small><ul>
+<li>이유: 자막, 모션, 효과음 같은 레이어가 도구 안에 세분화되어 남고, 이 데이터가 많을수록 클로드가 참고할 자료가 다양하고 정확해진다.</li>
+<li>근거로 제시한 것: 유튜브 구독자 약 10만 명, 팀의 릴스·캐러셀 월 발행량 약 50개, 주변 사례도 결국 같은 방식으로 귀결된다는 경험.</li>
+</ul>
+</li>
+<li>1편에서 설치한 오픈소스 3가지와 도구(클로드 코드, 캡컷 또는 프리미어 프로)는 필수다. 1편을 먼저 보라고 안내한다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=61">1:01</a>)</small></li>
+<li><blockquote class="tip"><p>💡 검증된 편집 도구가 만든 레이어 데이터가 곧 클로드의 학습 자료다.</p>
+</blockquote>
+</li>
+</ul>
+<figure><a href="https://youtu.be/X1jGARiC7RY?t=126"><img src="01.jpg" alt="편집 타임라인의 자막·컷·모션 레이어가 클로드의 참고 자료" loading="lazy"></a><figcaption>편집 타임라인의 자막·컷·모션 레이어가 클로드의 참고 자료 · <a href="https://youtu.be/X1jGARiC7RY?t=126">▶ 2:06</a></figcaption></figure><h3>영상 포맷별 템플릿과 업무 매뉴얼</h3>
+<ul>
+<li>영상 종류(브이로그, 1·2·3번 정보 전달형, 100% AI 영상 등)마다 기준이 되는 템플릿이 있어야 한다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=167">2:47</a>)</small></li>
+<li>템플릿 + 업무 매뉴얼을 AI가 참고해 스스로 돌아가는 순간이 자동화다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=209">3:29</a>)</small></li>
+<li>템플릿 편집본에는 효과, 자막, 중요 부분 노란색 강조, 폰트 디자인까지 레이어별로 들어 있어야 클로드가 &quot;이런 영상은 이런 기준으로 만든다&quot;를 학습한다.</li>
+<li>매뉴얼 형식은 마크다운 파일, 노션, 일반 문서 모두 가능하다.</li>
+<li>템플릿과 같은 포맷이 없는 영상은 결과 품질이 낮아질 가능성이 있다고 본인도 인정한다.</li>
+<li><blockquote class="tip"><p>💡 AI가 자동으로 해 주는 것이 아니라, 기준과 매뉴얼을 줘야 자동화가 된다.</p>
+</blockquote>
+</li>
+</ul>
+<figure><a href="https://youtu.be/X1jGARiC7RY?t=212"><img src="02.jpg" alt="기준 템플릿과 업무 매뉴얼을 따라 클로드가 자동으로 돌아간다" loading="lazy"></a><figcaption>기준 템플릿과 업무 매뉴얼을 따라 클로드가 자동으로 돌아간다 · <a href="https://youtu.be/X1jGARiC7RY?t=212">▶ 3:32</a></figcaption></figure><h3>구글 드라이브로 편집 요청</h3>
+<div class="flow"><div class="flow-title">🔁 편집 요청 순서</div><ol class="flow-strip"><li><span>오픈소스 설치</span></li><li><span>영상 업로드</span></li><li><span>폴더·영상 지정</span></li><li><span>SOP 참고 요청</span></li><li><span>자동 편집</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">오픈소스 설치</span><div class="d"><p>1편의 오픈소스 3가지와 시각 효과 도구를 클로드 코드에 설치한다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=248">4:08</a>)</small></p>
+</div></li><li><span class="n">2</span><span class="t">영상 업로드</span><div class="d"><p>핸드폰·액션캠 등으로 찍은 원본을 구글 드라이브 폴더에 올린다.</p>
+</div></li><li><span class="n">3</span><span class="t">폴더·영상 지정</span><div class="d"><p>영상 이름을 알려 주고 폴더를 참고하라고 요청한다.</p>
+</div></li><li><span class="n">4</span><span class="t">SOP 참고 요청</span><div class="d"><p>&quot;SOP 업무 매뉴얼을 참고해 캡컷으로 영상 편집을 자동 진행&quot;이라고 지시한다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=308">5:08</a>)</small></p>
+</div></li><li><span class="n">5</span><span class="t">자동 편집</span><div class="d"><p>클로드가 영상을 받아 내용·자막을 확인하고 편집한다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=401">6:41</a>)</small></p>
+</div></li></ol></div>
+<figure><a href="https://youtu.be/X1jGARiC7RY?t=308"><img src="03.jpg" alt="클로드에 드라이브 영상과 SOP 업무 매뉴얼 참고를 요청하는 입력창" loading="lazy"></a><figcaption>클로드에 드라이브 영상과 SOP 업무 매뉴얼 참고를 요청하는 입력창 · <a href="https://youtu.be/X1jGARiC7RY?t=308">▶ 5:08</a></figcaption></figure><h3>실제 편집 결과</h3>
+<ul>
+<li>클로드가 구글 드라이브에서 원본을 찾고, 앞서 만든 스킬·SOP·위키를 참고한다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=401">6:41</a>)</small></li>
+<li>받아쓰기로 스크립트를 만들고 반복되는 말을 잘라 낸 뒤 매뉴얼 번호에 따라 편집한다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=429">7:09</a>)</small></li>
+<li>34초짜리 영상 편집에 약 40분이 걸렸다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=443">7:23</a>)</small></li>
+<li>템플릿과 포맷이 맞지 않는 영상으로 테스트했는데도, 결과를 템플릿 영상과 비교해 &quot;퀄리티 좋다&quot;고 평가한다.</li>
+</ul>
+<figure><a href="https://youtu.be/X1jGARiC7RY?t=468"><img src="04.jpg" alt="예시 템플릿과 오늘 완성본 비교: 핵심어 강조 자막" loading="lazy"></a><figcaption>예시 템플릿과 오늘 완성본 비교: 핵심어 강조 자막 · <a href="https://youtu.be/X1jGARiC7RY?t=468">▶ 7:48</a></figcaption></figure><ul>
+<li>업로드·내보내기까지 자동화하면, 영상을 드라이브에 올리기만 해도 일관된 톤·자막·효과의 영상이 계속 만들어진다고 말한다.</li>
+</ul>
+<h3>확장 활용</h3>
+<ul>
+<li>클로드 코드의 루틴 기능으로 1~2시간마다 드라이브 폴더를 확인하게 하면, 올리는 순간 편집이 자동으로 시작된다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=554">9:14</a>)</small></li>
+<li>완성 영상의 스크립트를 쓰레드·블로그 등 텍스트 마케팅 콘텐츠로 파생할 수 있다.</li>
+<li>화자는 앱용 콘텐츠·이미지 대량 생성 시스템도 테스트 중이라고 언급한다. (자막상 구체 내용 불분명)</li>
+</ul>
+</section><section><h2>따라 해보기</h2>
+<h3>준비물</h3>
+<ul>
+<li>클로드 코드, 캡컷 또는 프리미어 프로, 구글 드라이브, 1편에서 안내한 오픈소스 3가지(이름은 이번 영상에 안 나옴).</li>
+<li>기준이 될 편집 완성본 영상과 업무 매뉴얼 문서.</li>
+<li>소요 시간: 설정 후 짧은 영상 한 편 편집에 약 40분(화자 테스트 기준).</li>
+</ul>
+<h3>단계별 방법</h3>
+<div class="flow"><div class="flow-title">🔁 편집 자동화 구축 순서</div><ol class="flow-strip"><li><span>1편 설치</span></li><li><span>템플릿 제작</span></li><li><span>매뉴얼 작성</span></li><li><span>스킬 저장</span></li><li><span>영상 업로드</span></li><li><span>편집 요청</span></li><li><span>루틴 설정</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">1편 설치</span><div class="d"><p>1편 영상을 보고 오픈소스 3가지와 보조 도구를 설치한다.</p>
+</div></li><li><span class="n">2</span><span class="t">템플릿 제작</span><div class="d"><p>영상 종류별로 캡컷·프리미어 편집본을 만든다. 자막, 모션, 효과음, 폰트를 레이어로 정리한다.</p>
+</div></li><li><span class="n">3</span><span class="t">매뉴얼 작성</span><div class="d"><p>템플릿의 편집 방식을 설명한 문서(MD·노션 등)를 만든다.</p>
+</div></li><li><span class="n">4</span><span class="t">스킬 저장</span><div class="d"><p>템플릿과 매뉴얼을 클로드 코드 스킬로 남긴다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=554">9:14</a>)</small></p>
+</div></li><li><span class="n">5</span><span class="t">영상 업로드</span><div class="d"><p>원본을 구글 드라이브 폴더에 올린다.</p>
+</div></li><li><span class="n">6</span><span class="t">편집 요청</span><div class="d"><p>폴더와 영상 이름을 알리고 SOP를 참고해 캡컷으로 편집하라고 요청한다.</p>
+</div></li><li><span class="n">7</span><span class="t">루틴 설정</span><div class="d"><p>1~2시간마다 폴더를 확인하도록 루틴을 건다. (선택)</p>
+</div></li></ol></div>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 전체 구조(도구 → 템플릿 → 매뉴얼 → 스킬 → 루틴)와 요청 문장의 형태.</li>
+<li class="warn">⚠️ 1단계 「1편 설치」: 오픈소스 3가지의 이름·설치법이 이번 영상에 없음 → 1편 영상 확인.</li>
+<li class="warn">⚠️ 2~3단계 「템플릿·매뉴얼」: 매뉴얼에 들어갈 항목, 스킬 만드는 법, 템플릿 편집본의 구체적 구성이 안 나옴 → 영상 2:47~4:08 화면 확인, 클로드 코드 공식 문서에서 스킬 검색 (보충).</li>
+<li class="warn">⚠️ 6단계 「편집 요청」: 클로드가 구글 드라이브에 접근하는 연동 방법(커넥터·인증)이 언급되지 않음 → 1편이나 설명란 자료 확인.</li>
+<li class="warn">⚠️ 7단계 「루틴 설정」: &quot;왼쪽 상단의 루틴 기능&quot;이라고만 말하고 설정법은 생략됨 → 클로드 코드 화면에서 직접 확인.</li>
+<li class="warn">⚠️ 비용: 캡컷·프리미어 프로의 유료 기능 필요 여부와 클로드 사용량은 언급 없음.</li>
+<li class="warn">❓ &quot;무료로 만들어 준다&quot;고 하지만 실제로는 클로드 사용 요금과 40분의 처리 시간이 든다. 포맷이 맞지 않는 영상인데 결과가 좋다는 평가는 화자의 주관이다.</li>
+</ul>
+<h3>확인 방법</h3>
+<ul>
+<li>편집본에 템플릿과 같은 자막 스타일, 강조 색, 효과음, 모션이 적용되었는지 비교한다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=461">7:41</a>)</small></li>
+</ul>
+<h3>막히면</h3>
+<ul>
+<li>템플릿에 없는 포맷의 영상은 결과 품질이 낮을 수 있으니, 그 종류의 템플릿을 먼저 추가한다. <small class="tm">(<a href="https://youtu.be/X1jGARiC7RY?t=275">4:35</a>)</small></li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>34초 영상 편집에 약 40분 소요.</li>
+<li>구글 드라이브 폴더 확인 주기: 1~2시간마다(루틴).</li>
+<li>필수 도구: 오픈소스 3가지 + 클로드 코드 + 캡컷(또는 프리미어 프로) = 6가지.</li>
+<li>화자 채널: 구독자 거의 10만 명, 팀 릴스·캐러셀 월 약 50개 발행.</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>화자는 컨설팅·강의를 운영하는 입장이라 &quot;검증된 도구만&quot;이라는 주장에 상업적 이해관계가 있을 수 있다. 다른 도구와 비교한 근거는 제시되지 않았다.</li>
+<li>시연 결과는 템플릿과 포맷이 맞지 않는 영상 하나이고, 편집 품질을 객관적으로 보여 주는 지표는 없다.</li>
+<li>34초 영상에 40분이 걸린다면, 영상 수가 많을 때 처리 시간과 사용량 비용을 따져 봐야 한다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>1편 영상을 보고 필요한 오픈소스·도구 목록 확인하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>자주 만드는 영상 종류 하나를 정해 캡컷으로 기준 편집본 만들기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>그 편집본의 편집 규칙(자막 스타일, 강조 색, 효과)을 마크다운 문서로 적어 보기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1794633406 -->
