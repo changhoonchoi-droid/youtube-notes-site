@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Claude’s New Whiteboards, Sheets &amp; Data: What You Can Do Now.</title>
+<meta property="og:title" content="Claude’s New Whiteboards, Sheets &amp; Data: What You Can Do Now.">
+<meta property="og:description" content="The AI Advantage · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/SDipcfxxa8s/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/SDipcfxxa8s" style="background-image:url('https://i.ytimg.com/vi/SDipcfxxa8s/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>Claude’s New Whiteboards, Sheets &amp; Data: What You Can Do Now.</h1><p class="meta">The AI Advantage · 게시 2026-11-13</p>
+<a class="btn" href="https://youtu.be/SDipcfxxa8s">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>Claude 아티팩트에 <strong>Sheets</strong>와 <strong>Whiteboard</strong>가 새로 생겼고, 기존 Dashboards는 <strong>Data</strong>로 이름이 바뀌었으며, 모두 유료 플랜 전체에서 쓸 수 있다.</li>
+<li>Sheets는 피벗 테이블·매크로가 없고 공유도 불편해서, 진행자는 Google Sheets에서 갈아탈 이유를 못 찾았다.</li>
+<li>Whiteboard는 아이디어 구상·워크플로 배치·행사 기획에 쓸 만하다는 것이 영상의 가장 큰 결론이다.</li>
+<li>Data는 대시보드를 만든 뒤 같은 탭 안에 &quot;집중 보기&quot;(시각 스토리 슬라이드)를 덧붙일 수 있지만, 지시를 완벽히 따르지 않아 추가 요청이 필요했다.</li>
+<li>ChatGPT Spaces는 이미지 생성이 강점이지만 $100 플랜에서만 쓸 수 있고 화이트보드 기능이 없다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>Claude 유료 플랜 사용자 중 새 아티팩트(Sheets·Whiteboard·Data) 중 무엇을 업무에 쓸지 가리고 싶은 분.</li>
+<li>Google Sheets에서 Claude로 옮겨야 하는지 고민하는 분.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>새로 생긴 아티팩트와 이용 조건</h3>
+<ul>
+<li>아티팩트에서 만들 수 있는 것은 Docs, Slides, Sheets, Design(영상·그래픽도 가능), Data, Whiteboard이다. 이 중 <strong>Sheets와 Whiteboard가 신규</strong>, Data는 예전 Dashboards의 새 이름이다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=33">0:33</a>)</small></li>
+<li>이 기능들은 $100·$200 같은 고가 플랜에 묶이지 않고 <strong>모든 유료 플랜</strong>에서 쓸 수 있다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=0">0:00</a>)</small></li>
+<li>진행자의 요약: Whiteboard는 워크플로에 보탤 만하고, 나머지는 기존 도구의 복제에 가깝다.</li>
+</ul>
+<figure><a href="https://youtu.be/SDipcfxxa8s?t=81"><img src="01.jpg" alt="Docs·Slides·Sheets·Design·Data·Whiteboard 아이콘, Sheets와 Whiteboard에 NEW 표시" loading="lazy"></a><figcaption>Docs·Slides·Sheets·Design·Data·Whiteboard 아이콘, Sheets와 Whiteboard에 NEW 표시 · <a href="https://youtu.be/SDipcfxxa8s?t=81">▶ 1:21</a></figcaption></figure><h3>Sheets: Google Sheets를 대체하기엔 약하다</h3>
+<ul>
+<li>화면과 사용법은 Google Sheets·Excel과 같고, 가져오기 버튼도 있다. 하지만 <strong>피벗 테이블, 동적 테이블, 매크로</strong>가 없고 기능 메뉴도 얕다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=96">1:36</a>)</small></li>
+<li>유일한 차별점은 AI가 쓰도록 설계된 인터페이스라는 점인데, 파일을 올리고 맥락 프롬프트를 주면 시트 안에서 Claude가 작업하고 옆에 사이드바가 열린다.</li>
+<li>Google Sheets에 Anthropic 공식 Claude 애드온을 깔고 같은 작업을 시켰더니 <strong>결과는 거의 같았다</strong>. 다만 Google 쪽은 바로 작업하지 않고 계획부터 세웠다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=198">3:18</a>)</small></li>
+<li>공유는 큰 약점이다. Google 계정은 누구나 있지만, 여기서는 상대를 Claude 계정에 초대하거나 공용 계정 또는 공개 설정이 필요하다.<ul>
+<li>테스트 시나리오: 가상의 애리조나 피닉스 헬스장 &quot;Desert Strength&quot;의 6개월 매출·지출 시트. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=163">2:43</a>)</small></li>
+<li>커넥터를 연결하면 Claude에서 Google 시트 안을 직접 작업할 수도 있다.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="tip"><p>💡 Sheets의 장점은 &quot;AI 전용 화면&quot;뿐이고, 공유·기능 깊이는 Google Sheets가 앞선다.</p>
+</blockquote>
+<figure><a href="https://youtu.be/SDipcfxxa8s?t=204"><img src="02.jpg" alt="시트에 합계·영업이익 열이 채워지고 매출 대 영업이익 차트가 생긴 화면" loading="lazy"></a><figcaption>시트에 합계·영업이익 열이 채워지고 매출 대 영업이익 차트가 생긴 화면 · <a href="https://youtu.be/SDipcfxxa8s?t=204">▶ 3:24</a></figcaption></figure><h3>Whiteboard: 아이디어를 시각으로 펼치는 도구</h3>
+<ul>
+<li>AI가 화이트보드 위에 구조를 직접 배치한다. 글 덩어리보다 시각·상호작용 요소가 이해에 낫다는 흐름의 연장이다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=254">4:14</a>)</small></li>
+<li>테스트: 같은 헬스장이 <strong>프로모션 예산 $300</strong>으로 무료 초보자 운동 프로그램을 열 때, 팀에 공유할 행사 기획 보드를 만들었다. 옆에 체크리스트가 붙은 이벤트 흐름이 나왔다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=309">5:09</a>)</small></li>
+<li>Miro·Whimsical 같은 도구가 있지만 진행자는 AI에게 이런 도구를 조종시킨 적이 없다. 이미 같은 화면에 있으니 앞으로 써 보겠다고 한다.</li>
+<li>추가 예시: 커피콩이 농장에서 컵까지 가는 여정 보드. 스타일 변경이나 차트 추가를 한 번에 요청할 수 있다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=412">6:52</a>)</small></li>
+</ul>
+<figure><a href="https://youtu.be/SDipcfxxa8s?t=426"><img src="03.jpg" alt="커피콩 여정 보드 아래에 선 차트가 추가된 화면" loading="lazy"></a><figcaption>커피콩 여정 보드 아래에 선 차트가 추가된 화면 · <a href="https://youtu.be/SDipcfxxa8s?t=426">▶ 7:06</a></figcaption></figure><ul>
+<li>이벤트 메모를 편집 가능한 보드로 바꾼 뒤 프로모션 예산이 바뀌었다고 말하면 보드 전체가 갱신된다.</li>
+<li>슬라이드에 가두지 않는 자유로운 방식이라 <strong>구상 단계</strong>용이고, 발표·피치의 백업 자료로도 쓰고 싶다고 한다.</li>
+</ul>
+<figure><a href="https://youtu.be/SDipcfxxa8s?t=346"><img src="04.jpg" alt="무료 초보자 운동 행사 흐름이 보드에 배치된 화면" loading="lazy"></a><figcaption>무료 초보자 운동 행사 흐름이 보드에 배치된 화면 · <a href="https://youtu.be/SDipcfxxa8s?t=346">▶ 5:46</a></figcaption></figure><h3>Data(구 Dashboards): 기본 보드 + 집중 보기</h3>
+<ul>
+<li>데이터를 넣으면 대시보드가 만들어지고, 품질은 Claude가 원래 최상급이던 영역 그대로다. 배경에 표준 프리셋이 있어 빠르다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=452">7:32</a>)</small></li>
+<li>새로 보이는 활용: 대시보드를 만든 뒤 <strong>15초짜리 시각 스토리(설명용 슬라이드)</strong> 를 같은 대시보드의 새 탭으로 추가한다. 큰 대시보드 + 특정 측면에 초점을 맞춘 보기 구조다.<ul>
+<li>예전에도 프롬프트로 웹사이트 하위 메뉴를 만들면 가능했지만, 이제는 빠르고 직관적이다.</li>
+</ul>
+</li>
+<li>한계: 매출 공백을 설명하는 스토리텔러 보기에서 지시를 완벽히 따르지 않아 추가 요청으로 채워야 했다. Claude에게는 드문 일이라고 한다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=532">8:52</a>)</small></li>
+</ul>
+<blockquote class="tip"><p>💡 매번 완벽하지 않으니 자연어로 고쳐 달라고 하는 전제로 쓰면 된다.</p>
+</blockquote>
+<figure><a href="https://youtu.be/SDipcfxxa8s?t=538"><img src="05.jpg" alt="&quot;Revenue is up. Profit is down.&quot; 30-second short 탭의 +$5,000·−$2,000 화면" loading="lazy"></a><figcaption>&quot;Revenue is up. Profit is down.&quot; 30-second short 탭의 +$5,000·−$2,000 화면 · <a href="https://youtu.be/SDipcfxxa8s?t=538">▶ 8:58</a></figcaption></figure><h3>ChatGPT Spaces와 비교</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>항목</th>
+  <th>Claude</th>
+  <th>ChatGPT Spaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>이용 플랜</td>
+  <td>모든 유료 플랜</td>
+  <td>현재 $100 플랜만</td>
+</tr>
+<tr>
+  <td>문서·슬라이드</td>
+  <td>지원</td>
+  <td>페이지, 슬라이드 지원</td>
+</tr>
+<tr>
+  <td>이미지 생성</td>
+  <td>자체 생성 없음(Hix Field·Fal AI API 같은 커넥터로 외부 모델 연결 필요)</td>
+  <td>자체 이미지 생성(실사·본인 얼굴 포함)</td>
+</tr>
+<tr>
+  <td>시각 작업</td>
+  <td>Claude Design, 영상은 Fable 5.2에서 특히 강하다고 평가</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>화이트보드</td>
+  <td>있음</td>
+  <td>없음</td>
+</tr>
+</tbody>
+</table></div>
+<figure><a href="https://youtu.be/SDipcfxxa8s?t=578"><img src="06.jpg" alt="ChatGPT 아이콘 앞 창살에 $100 표시, 플랜 제한을 보여 주는 장면" loading="lazy"></a><figcaption>ChatGPT 아이콘 앞 창살에 $100 표시, 플랜 제한을 보여 주는 장면 · <a href="https://youtu.be/SDipcfxxa8s?t=578">▶ 9:38</a></figcaption></figure><ul>
+<li>진행자의 판단: 접근성 때문에 이번 주는 Claude 사용자에게 좋은 주다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=560">9:20</a>)</small></li>
+</ul>
+<h3>진행자의 기능별 결론</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>기능</th>
+  <th>판단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Sheets</td>
+  <td>갈아탈 이유 없음. 간단한 작업은 조금 빠를 수 있음</td>
+</tr>
+<tr>
+  <td>Whiteboard</td>
+  <td>가장 유용. 아이디어 탐색, 대안 비교, 워크플로·앱 기능 계획의 &quot;지도&quot;로 활용</td>
+</tr>
+<tr>
+  <td>Data</td>
+  <td>대시보드 제작에 좋음</td>
+</tr>
+</tbody>
+</table></div>
+<h3>이번 주 다른 소식</h3>
+<ul>
+<li><strong>ChatGPT Business</strong>: 사업체를 ChatGPT에 등록하는 제품이다. 진행자는 AI용 옐로 페이지에 비유하며, 등록된 업체가 우선 추천될 것으로 예상한다(진행자 추측). Google 지도 등록처럼 해 두면 손해 볼 일이 없다고 본다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=665">11:05</a>)</small></li>
+<li><strong>Dots 사용자 지정 지침</strong>: 시스템 지침을 넣을 수 있게 되었고, 최대 <strong>35,000자</strong>다. 현재 Dots는 $100 플랜에서만 쓸 수 있다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=681">11:21</a>)</small></li>
+</ul>
+</section><section><h2>따라 해보기</h2>
+<h3>준비물</h3>
+<ul>
+<li>Claude 유료 플랜 계정(플랜 종류는 영상에서 &quot;모든 유료 플랜&quot;이라고만 함). 소요 시간은 몇 분.</li>
+</ul>
+<h3>단계별 방법</h3>
+<div class="flow"><div class="flow-title">🔁 Claude 화이트보드로 기획 보드 만들기</div><ol class="flow-strip"><li><span>아티팩트 열기</span></li><li><span>화이트보드 선택</span></li><li><span>Ask Claude 요청</span></li><li><span>수정 요청</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">아티팩트 열기</span><div class="d"><p>Claude의 Artifacts 메뉴로 이동한다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=315">5:15</a>)</small></p>
+</div></li><li><span class="n">2</span><span class="t">화이트보드 선택</span><div class="d"><p>종류 중 Whiteboard를 클릭한다.</p>
+</div></li><li><span class="n">3</span><span class="t">Ask Claude 요청</span><div class="d"><p>Ask Claude에 만들 주제를 적는다. 영상 예시는 &quot;$300 프로모션 예산으로 무료 초보자 운동 프로그램 기획안, 팀 공유용&quot;.</p>
+</div></li><li><span class="n">4</span><span class="t">수정 요청</span><div class="d"><p>스타일 변경, 차트 추가, 예산 변경 같은 수정을 말로 요청하면 보드가 갱신된다. <small class="tm">(<a href="https://youtu.be/SDipcfxxa8s?t=412">6:52</a>)</small></p>
+</div></li></ol></div>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 아티팩트에서 Whiteboard를 열고 요청해 결과를 수정하는 흐름.</li>
+<li class="warn">⚠️ 3단계 「Ask Claude 요청」: 프롬프트 원문이 영상에 나오지 않음 → 영상 5:03~5:36 화면에서 입력 문장을 확인하거나, 위 예시 문장을 바탕으로 직접 작성.</li>
+<li class="warn">⚠️ 준비물 「플랜」: 어떤 유료 플랜부터 되는지 정확한 이름이 안 나옴 → Claude 공식 사이트의 플랜 안내에서 확인(보충).</li>
+</ul>
+<h3>확인 방법</h3>
+<ul>
+<li>요청 후 보드에 항목이 배치되고, 예산 같은 값을 바꿔 말했을 때 전체가 함께 갱신되면 제대로 된 것이다.</li>
+</ul>
+<h3>막히면</h3>
+<ul>
+<li>영상은 Data 쪽에서 지시를 놓치는 경우가 있다고 했으므로, 화이트보드도 결과가 어긋나면 추가 요청으로 보완한다(Data 사례에서 유추).</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>프로모션 예산 $300, Dots 사용자 지정 지침 최대 35,000자.</li>
+<li>ChatGPT Spaces는 $100 플랜 한정, Claude의 새 기능은 모든 유료 플랜.</li>
+<li>&quot;Whiteboard is genuinely interesting&quot; — 진행자가 이번 업데이트에서 가장 높게 꼽은 기능.</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>Sheets 비교는 진행자의 짧은 테스트(가상 헬스장 데이터) 기준이다. 대용량·복잡한 데이터에서도 같을지는 확인이 필요하다.</li>
+<li>진행자는 Google Sheets 중심으로 일하는 사용자라 평가가 그쪽에 기운다. 협업 환경이 다르면 판단도 달라질 수 있다.</li>
+<li>ChatGPT Business의 &quot;등록 업체 우선 추천&quot;은 진행자의 추측이지 확인된 사실이 아니다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Claude 아티팩트에서 Whiteboard를 열어 이번 주 계획이나 진행 중인 기획 하나를 올려 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>쓰던 스프레드시트가 피벗 테이블·매크로를 쓰는지 확인해 Sheets 이전 필요 여부 판단하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>사업체를 운영한다면 ChatGPT Business 등록 방법을 영상 설명란 링크로 살펴보기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1794633809 -->
