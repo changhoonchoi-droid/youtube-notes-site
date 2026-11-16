@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>AI가 준 답을 그대로 돌려주는 일은 누구나 할 수 있습니다</title>
+<meta property="og:title" content="AI가 준 답을 그대로 돌려주는 일은 누구나 할 수 있습니다">
+<meta property="og:description" content="커리어해커 알렉스 · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/BIs_rLo3Rgo/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/BIs_rLo3Rgo" style="background-image:url('https://i.ytimg.com/vi/BIs_rLo3Rgo/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>AI가 준 답을 그대로 돌려주는 일은 누구나 할 수 있습니다</h1><p class="meta">커리어해커 알렉스 · 게시 2026-11-15</p>
+<a class="btn" href="https://youtu.be/BIs_rLo3Rgo">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>사람이 AI 사이에서 답을 복사·붙여넣기만 하는 &quot;미트 프록시(meat proxy, 인간 라우터)&quot;는 누구나 할 수 있어서 부가가치가 없다는 것이 영상의 주장이다.</li>
+<li>알렉스의 방법: 리서치·검증·초안은 AI 에이전트를 최대한 돌리고, 나온 보고서는 빈 문서에서 AI와 한 줄씩 다시 써 가며 이해한다.</li>
+<li>이 과정을 거치면 내용을 95%쯤 이해하게 되고, 그렇게 하지 않는 사람은 의심하게 된다고 말한다.</li>
+<li>도메인 전문가도 경력만으로는 지위를 지키기 어렵고, AI가 모르는 영역을 파고들며 스스로 검증하고 에고를 내려놓아야 한다.</li>
+<li>예전 코드는 유지보수하기보다 아이디어만 가져와 처음부터 새로 쓰는 편이 더 빠르다는 것이 알렉스의 의견이다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>AI를 쓰면서 &quot;일은 하는데 남는 게 없다&quot;고 느끼는 직장인·개발자.</li>
+<li>AI 보고서를 읽어도 머리에 안 들어와 이해하는 방법이 필요한 분.</li>
+<li>오래된 AI 코드 프로젝트를 유지할지 새로 쓸지 고민하는 분.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>AI 사고 외주화와 미트 프록시</h3>
+<ul>
+<li>실리콘밸리 개발자의 99%는 AI로 코딩·리뷰를 하고, 손으로 코딩하는 사람은 1%도 안 된다는 것이 알렉스의 주장이다. &quot;바이브 코딩은 그냥 코딩&quot;이라고 말한다. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=32">0:32</a>)</small></li>
+<li>미트 프록시: 질문을 받은 사람이 자기 AI에 그대로 복붙하고, 답을 다시 복붙해 돌려주는 상태. 받는 쪽도 AI에 복붙해 검토한다. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=61">1:01</a>)</small><ul>
+<li>알렉스 본인도 겪었다. 정보는 오가는데 체득되는 것이 하나도 없었다고 한다.</li>
+<li>AI 산출물이 너무 많아 사람이 읽을 수준을 넘어선 것도 원인으로 든다.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="tip"><p>💡 AI 답을 그대로 전달하는 일은 누구나 할 수 있어서 내가 더하는 가치가 없다.</p>
+</blockquote>
+<ul>
+<li>중국은 어린 학생에게 AI를 적극 쓰게 하고, 미국은 교실에서 AI를 빼는 쪽이라고 소개한다. 슈카 님 영상을 인용해 정답은 없고 균형이 중요하다고 말한다. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=159">2:39</a>)</small></li>
+</ul>
+<figure><a href="https://youtu.be/BIs_rLo3Rgo?t=209"><img src="01.jpg" alt="중국 아이들의 AI 교육과 미국 교실을 비교한 슬라이드" loading="lazy"></a><figcaption>중국 아이들의 AI 교육과 미국 교실을 비교한 슬라이드 · <a href="https://youtu.be/BIs_rLo3Rgo?t=209">▶ 3:29</a></figcaption></figure><h3>알렉스의 방법: AI 최대 활용 + 빈 문서에서 한 줄씩</h3>
+<div class="flow"><div class="flow-title">🔁 리서치에서 이해까지</div><ol class="flow-strip"><li><span>자료 수집</span></li><li><span>교차 검증</span></li><li><span>제안서 초안</span></li><li><span>양식 정하기</span></li><li><span>빈 문서에서 한 줄씩</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">자료 수집</span><div class="d"><p>에이전트를 100개쯤 돌려 관련 자료를 모두 긁어오게 한다. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=221">3:41</a>)</small></p>
+</div></li><li><span class="n">2</span><span class="t">교차 검증</span><div class="d"><p>Claude, GPT 등 여러 모델로 검증해 알짜만 추린다.</p>
+</div></li><li><span class="n">3</span><span class="t">제안서 초안</span><div class="d"><p>AI에게 &quot;너라면 어떻게 하겠냐&quot;며 proposal을 쓰게 하고 다시 검증한다. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=249">4:09</a>)</small></p>
+</div></li><li><span class="n">4</span><span class="t">양식 정하기</span><div class="d"><p>문제 정의(problem statement), 솔루션 제안, 가설·근거, 검증, 마일스톤 등 섹션을 정한다. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=277">4:37</a>)</small></p>
+</div></li><li><span class="n">5</span><span class="t">빈 문서에서 한 줄씩</span><div class="d"><p>AI가 한 문단 쓰면 읽고, 마음에 안 드는 것·모르는 것을 모두 물어본다(인터뷰).</p>
+</div><figure><a href="https://youtu.be/BIs_rLo3Rgo?t=309"><img src="02.jpg" alt="&#x27;프로포절 양식부터&#x27; 슬라이드: 무슨 문제를 푸나·어떻게 풀자는 건가" loading="lazy"></a><figcaption>&#x27;프로포절 양식부터&#x27; 슬라이드: 무슨 문제를 푸나·어떻게 풀자는 건가 · <a href="https://youtu.be/BIs_rLo3Rgo?t=309">▶ 5:09</a></figcaption></figure></li></ol></div>
+<ul>
+<li>조사에 10시간, 길게는 하루가 걸리기도 한다. 30장짜리 보고서는 괜찮지만 읽어도 안 들어와서 이 방식을 쓴다.</li>
+<li>이렇게 다 쓰고 나면 거의 95%까지 이해한다고 한다. 이렇게 하지 않는 사람은 앞으로 의심할 것 같다고 말한다.</li>
+</ul>
+<ul>
+<li>AI가 질문하는 소크라테스 모드(&quot;왜 그렇게 생각했니?&quot;)도 함께 쓴다고 한다.</li>
+</ul>
+<blockquote class="tip"><p>💡 AI는 최대한 돌리되, 이해는 빈 문서에서 직접 한 줄씩 쓰며 얻는다.</p>
+</blockquote>
+<h3>도메인 전문가의 지위</h3>
+<ul>
+<li>AI가 데이터로 갖고 있지 않은 정보(예: 공장 현장 지식)에서는 도메인 전문가가 여전히 매우 중요하다. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=503">8:23</a>)</small></li>
+<li>하지만 지식이 데이터로 존재하는 영역이라면 &quot;내가 AI보다 똑똑하다&quot;고 말하기 어렵다는 것이 알렉스의 생각이다.<ul>
+<li>예전엔 30년 차 말을 4년 차보다 믿었지만, AI 때문에 이 인식이 바뀌고 있다고 본다. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=569">9:29</a>)</small></li>
+</ul>
+</li>
+<li>알렉스가 꼽는 경력자의 진짜 가치: 끈기, 리더십, 책임감(accountability). <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=601">10:01</a>)</small></li>
+<li>잘하는 시니어는 자기 말을 100% 믿으라 하지 않고 직관으로 방향만 잡은 뒤 AI로 다시 검증한다.</li>
+<li>에고를 내려놓지 않으면 요즘은 취급받지 못한다고 말한다. 젊은 동료를 존중하고 언러닝(unlearning)을 연습한다고 한다.</li>
+</ul>
+<blockquote class="tip"><p>💡 30년 경력 자체가 아니라 AI가 모르는 것을 더 깊이 아는 것이 전문성을 지킨다.</p>
+</blockquote>
+<h3>오래된 AI 코드: 유지보수 vs 새로 쓰기</h3>
+<ul>
+<li>질문: 1년 전 바이브 코딩으로 시작한 프로젝트를 계속 쌓아도 되나, 더 좋은 모델로 갈아엎어야 하나. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=692">11:32</a>)</small></li>
+<li>알렉스의 답: 아이디어와 기득 지식만 가져와 처음부터 끝까지 새로 쓸 것이다. 새로 쓰는 데 하루가 안 걸리기 때문이다. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=756">12:36</a>)</small><ul>
+<li>사례: C++ 등으로 만든 서비스를 Rust로 갈아타는 흐름. 더 빠르고, 토큰이 덜 들고, 컴파일 언어라 더 안정적이라는 이유를 든다. <small class="tm">(<a href="https://youtu.be/BIs_rLo3Rgo?t=725">12:05</a>)</small></li>
+<li>개발 실력 늘리는 전통 방식도 &quot;인스타그램을 똑같이 만들어 보기&quot;였고, 시행착오로 DB·API·UI를 배운다.</li>
+<li>고치면 깨지는 소프트웨어를 유지보수하느니, 시행착오를 거친 뒤 다시 쓰는 편이 빠르다고 본다.</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/BIs_rLo3Rgo?t=820"><img src="03.jpg" alt="인스타그램을 만들며 배우는 방식을 그린 슬라이드" loading="lazy"></a><figcaption>인스타그램을 만들며 배우는 방식을 그린 슬라이드 · <a href="https://youtu.be/BIs_rLo3Rgo?t=820">▶ 13:40</a></figcaption></figure></section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>실리콘밸리에서 손으로 코딩하는 사람 1% 미만, 99%가 AI로 코딩·리뷰 (알렉스 주장)</li>
+<li>직접 써 보면 이해도 약 95%</li>
+<li>&quot;AI가 준 답을 그대로 돌려주는 일은 누구나 할 수 있다.&quot;</li>
+<li>조사·보고서 작성에 10시간~하루</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>99%, 95% 같은 수치는 알렉스 개인의 체감이며 근거 자료는 제시되지 않았다.</li>
+<li>새로 쓰기가 항상 빠른 것은 아니다. 기존 데이터·운영 중인 서비스·테스트가 얽히면 부담이 다를 수 있다(내 의견).</li>
+<li>미국 교실에서 AI를 뺀다는 이야기는 일반화된 사실인지 확인이 필요하다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>다음에 AI가 보고서를 주면 그대로 전달하지 말고 빈 문서에 문제 정의부터 AI와 한 줄씩 써 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>모르는 문단을 AI에게 &quot;왜 그렇게 생각했니?&quot;라고 인터뷰하듯 질문해 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>오래된 프로젝트 하나의 핵심 아이디어만 정리해 새로 쓰는 데 걸리는 시간을 가늠해 보기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1794806771 -->
