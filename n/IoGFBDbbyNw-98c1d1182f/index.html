@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>[김갑진의 양자물리학 몰아보기] 아인슈타인이 뒤집은 양자역학의 탄생부터 &#x27;저항 0&#x27; 초전도체. 양자컴퓨터의 비밀까지 (카이스트 물리학과 김갑진 교수)</title>
+<meta property="og:title" content="[김갑진의 양자물리학 몰아보기] 아인슈타인이 뒤집은 양자역학의 탄생부터 &#x27;저항 0&#x27; 초전도체. 양자컴퓨터의 비밀까지 (카이스트 물리학과 김갑진 교수)">
+<meta property="og:description" content="Understanding : All the Knowledge in the World · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/IoGFBDbbyNw/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/IoGFBDbbyNw" style="background-image:url('https://i.ytimg.com/vi/IoGFBDbbyNw/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>[김갑진의 양자물리학 몰아보기] 아인슈타인이 뒤집은 양자역학의 탄생부터 &#x27;저항 0&#x27; 초전도체. 양자컴퓨터의 비밀까지 (카이스트 물리학과 김갑진 교수)</h1><p class="meta">Understanding : All the Knowledge in the World · 게시 2026-11-21</p>
+<a class="btn" href="https://youtu.be/IoGFBDbbyNw">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>이 영상은 노벨 물리학상 이야기를 통해 &quot;과학은 진리가 아니라 의심과 실험 끝에 이뤄낸 합의&quot;라는 점을 보여 준다.</li>
+<li>첫 질문 &quot;빛은 알갱이인가 파동인가?&quot;는 뉴턴(알갱이) → 영·맥스웰(파동) → 플랑크·아인슈타인·콤프턴(다시 알갱이)으로 이어지고, 결론은 &quot;둘 다&quot;(양자역학의 상보성)다.</li>
+<li>둘째 질문 &quot;금속을 차갑게 하면 저항은 어떻게 될까?&quot;는 오네스의 초전도 발견, 46년 뒤 BCS 이론(쿠퍼쌍), 조셉슨 접합, 1986년 고온 초전도체로 이어진다.</li>
+<li>초전도 회로 전체가 하나의 양자 상태로 터널링한다는 1985년 실험이 구글 양자컴퓨터(초전도 큐비트)의 토대가 됐다.</li>
+<li>과학자들은 서로 다른 설명을 내놓고, 설명에서 나온 예측을 실험으로 검증하며 합의에 이른다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>양자역학·초전도·양자컴퓨터가 &quot;어떤 질문에서 출발했는지&quot; 흐름으로 알고 싶은 분</li>
+<li>수식 없이 노벨상 이야기로 과학의 작동 방식을 이해하고 싶은 분 (김갑진 KAIST 교수의 책 『우리는 어쩌다 과학을 믿게 되었을까』 내용)</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>과학은 진리가 아니라 합의다</h3>
+<ul>
+<li>과학은 진리를 말하는 게 아니라 &quot;가능한 설명&quot;을 내놓고, 과학자들이 싸우다가 움직일 수 없는 증거가 쌓이면 합의한다. 그 합의에 노벨 물리학상을 준다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=132">2:12</a>)</small><ul>
+<li>천동설에서 지동설로 넘어가는 데도 증거가 계속 쌓여서야 받아들여졌다.</li>
+<li>100℃에서 물이 끓는 것도 과학자는 &quot;온도계가 잘못됐을 것&quot;이라며 끝까지 의심하고, 더 이상 의심할 수 없을 때 믿는다.</li>
+</ul>
+</li>
+<li>새 이론이 나와도 옛 이론이 완전히 틀리는 건 아니다. 상대성이론이 나와도 뉴턴 역학은 여전히 맞는 영역이 있다.</li>
+<li>과학은 언제든 바뀔 수 있다. 100년 뒤 지금의 설명이 틀렸다고 증명될 수도 있다.</li>
+</ul>
+<blockquote class="tip"><p>💡 과학이 믿을 만한 이유는 &quot;진리라서&quot;가 아니라 의심과 검증을 끝까지 거쳤기 때문이다.</p>
+</blockquote>
+<figure><a href="https://youtu.be/IoGFBDbbyNw?t=145"><img src="01.jpg" alt="노벨 물리학상 이야기 강연 첫 슬라이드와 책 표지" loading="lazy"></a><figcaption>노벨 물리학상 이야기 강연 첫 슬라이드와 책 표지 · <a href="https://youtu.be/IoGFBDbbyNw?t=145">▶ 2:25</a></figcaption></figure><h3>뉴턴이 신뢰를 얻은 이유와 &quot;빛은 알갱이&quot;</h3>
+<ul>
+<li>뉴턴은 두 식(중력, F=ma)으로 우주의 운동을 설명했다.<ul>
+<li>핼리는 뉴턴 법칙으로 혜성이 76년 뒤 다시 온다고 예측했고, 자신이 죽은 뒤인 1758년 12월에 실제로 왔다. (자막상 사망 연도 표기는 불분명)</li>
+<li>천왕성 궤도가 계산과 안 맞자 바깥에 다른 천체가 있다고 계산했고, 그 자리에서 해왕성이 발견됐다.</li>
+<li>카벤디시는 두 질량 사이의 미세한 중력을 거울과 빛으로 증폭해 측정했다. 이렇게 G를 알면 지구 질량이 나오고, 이어서 태양과 행성 질량도 알 수 있다.</li>
+</ul>
+</li>
+<li>뉴턴은 &quot;빛은 힘을 안 주면 직진하는 알갱이&quot;라고 주장했다. 프리즘으로 색이 갈라지는 걸 보고 &quot;색은 물질이 아니라 빛의 특성&quot;이라고도 봤다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=585">9:45</a>)</small></li>
+</ul>
+<blockquote class="tip"><p>💡 &quot;미래를 예측하고 없던 걸 찾아낸&quot; 뉴턴의 권위가 너무 커서 그의 빛 이론에 반대하기가 어려웠다.</p>
+</blockquote>
+<figure><a href="https://youtu.be/IoGFBDbbyNw?t=588"><img src="02.jpg" alt="뉴턴 법칙으로 1758년 혜성 재출현을 예측한 슬라이드" loading="lazy"></a><figcaption>뉴턴 법칙으로 1758년 혜성 재출현을 예측한 슬라이드 · <a href="https://youtu.be/IoGFBDbbyNw?t=588">▶ 9:48</a></figcaption></figure><h3>빛의 정체를 둘러싼 논쟁 타임라인</h3>
+<div class="flow"><div class="flow-title">🔁 빛은 알갱이인가 파동인가</div><ol class="flow-strip"><li><span>뉴턴: 알갱이</span></li><li><span>영: 파동</span></li><li><span>맥스웰: 전자기파</span></li><li><span>플랑크: 에너지가 띄엄띄엄</span></li><li><span>아인슈타인: 광전효과</span></li><li><span>밀리컨: 검증</span></li><li><span>콤프턴·보테: 산란</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">뉴턴: 알갱이</span><div class="d"><p>직진하므로 알갱이라고 주장</p>
+</div></li><li><span class="n">2</span><span class="t">영: 파동</span><div class="d"><p>이중슬릿 실험의 간섭무늬는 알갱이로는 설명 불가 <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1096">18:16</a>)</small></p>
+</div></li><li><span class="n">3</span><span class="t">맥스웰: 전자기파</span><div class="d"><p>방정식으로 &quot;빛은 전기와 자기가 진동하며 나아가는 파동&quot;임을 증명, 종지부 <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1179">19:39</a>)</small></p>
+</div></li><li><span class="n">4</span><span class="t">플랑크: 에너지가 띄엄띄엄</span><div class="d"><p>뜨거운 물체의 빛 스펙트럼을 맞추려면 에너지가 불연속이어야 함</p>
+</div></li><li><span class="n">5</span><span class="t">아인슈타인: 광전효과</span><div class="d"><p>빛이 알갱이라면 설명됨</p>
+</div></li><li><span class="n">6</span><span class="t">밀리컨: 검증</span><div class="d"><p>10년 실험으로 예측이 정확히 맞음</p>
+</div></li><li><span class="n">7</span><span class="t">콤프턴·보테: 산란</span><div class="d"><p>알갱이 충돌로 해석, 동시측정으로 확인(1954 노벨상)</p>
+</div></li></ol></div>
+<ul>
+<li>영은 &quot;나도 뉴턴을 존경하지만 그가 무결하다고 믿을 이유는 없다&quot;고 했다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1150">19:10</a>)</small></li>
+<li>파동이라면 간섭무늬가 생긴다. 알갱이라면 구멍 두 개 뒤에 점이 두 군데만 생겨야 한다.</li>
+</ul>
+<div class="pair"><figure><a href="https://youtu.be/IoGFBDbbyNw?t=1084"><img src="03.jpg" alt="영의 이중 슬릿 실험(1801)의 간섭무늬" loading="lazy"></a><figcaption>영의 이중 슬릿 실험(1801)의 간섭무늬 · <a href="https://youtu.be/IoGFBDbbyNw?t=1084">▶ 18:04</a></figcaption></figure><figure><a href="https://youtu.be/IoGFBDbbyNw?t=1269"><img src="04.jpg" alt="맥스웰 방정식 슬라이드: 전자기파 스펙트럼, &#x27;빛은 파동이다!&#x27;" loading="lazy"></a><figcaption>맥스웰 방정식 슬라이드: 전자기파 스펙트럼, &#x27;빛은 파동이다!&#x27; · <a href="https://youtu.be/IoGFBDbbyNw?t=1269">▶ 21:09</a></figcaption></figure></div><h3>파동으로는 설명 안 되는 실험들 (알갱이론의 근거)</h3>
+<ul>
+<li><strong>흑체복사</strong>: 물질과 상관없이 온도만 같으면 빛의 스펙트럼이 같다. 이를 별의 온도 측정에 쓴다.<ul>
+<li>빈의 식은 피크 오른쪽이, 레일리의 식은 피크 왼쪽이 안 맞았다.</li>
+<li>플랑크는 &quot;에너지가 1, 2, 3처럼 띄엄띄엄 있다&quot;고 가정해 계산한 뒤 간격을 0으로 보내는 방식으로 전체를 정확히 맞췄다. 연속이면 설명이 안 됐다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1486">24:46</a>)</small></li>
+</ul>
+</li>
+<li><strong>광전효과</strong>(레나르트): 금속에 빛을 쏘면 전자가 튀어나온다.<ul>
+<li>빛을 세게(밝게) 쏘면 전자 수만 늘고 속도는 그대로다.</li>
+<li>파장(색)을 바꾸면 달라진다. 보라색은 빠르게 튀고, 빨간색은 아무리 세도 안 나온다.</li>
+<li>아인슈타인은 &quot;빛은 진동수에 비례하는 에너지를 가진 알갱이&quot;라고 설명했고, 진동수와 전자 에너지의 관계는 직선으로 나온다고 예측했다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1868">31:08</a>)</small></li>
+</ul>
+</li>
+<li><strong>밀리컨의 검증</strong>: 아인슈타인이 틀렸음을 보이려고 10년을 실험했는데 예측과 정확히 일치했다. 직선의 기울기가 플랑크 상수 h다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1963">32:43</a>)</small></li>
+<li><strong>콤프턴 산란</strong>: 파란색(X선)을 물질에 쏘면 더 긴 파장이 나온다. 당구공 충돌로 에너지를 잃는 것처럼 알갱이로 해석해야 설명된다.<ul>
+<li>BKS 이론(보어·크라머스·슬레이터)은 파동을 지키려고 &quot;에너지 보존을 포기해도 좋다&quot;고까지 했다.</li>
+<li>보테와 가이거는 튕겨 나온 전자와 빛을 동시에 측정해 알갱이 충돌임을 직접 확인했고, BKS는 틀렸다고 인정했다.</li>
+</ul>
+</li>
+<li>영의 간섭 실험은 &quot;무조건 파동&quot;, 콤프턴은 &quot;무조건 알갱이&quot;여야 설명된다.</li>
+</ul>
+<figure><a href="https://youtu.be/IoGFBDbbyNw?t=1323"><img src="05.jpg" alt="온도별 흑체복사 스펙트럼 그래프와 빈의 슬라이드" loading="lazy"></a><figcaption>온도별 흑체복사 스펙트럼 그래프와 빈의 슬라이드 · <a href="https://youtu.be/IoGFBDbbyNw?t=1323">▶ 22:03</a></figcaption></figure><h3>결론: 상보성 — 알갱이이면서 파동</h3>
+<ul>
+<li>빛(그리고 모든 물질)은 알갱이이면서 파동이다. 보어의 &quot;상보성&quot;은 서로 배타적인 두 관점이 함께 있어야 세상을 이해할 수 있다는 철학이다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=2391">39:51</a>)</small></li>
+<li>슬릿을 통과할 때는 파동 성질이, 충돌할 때는 알갱이 성질이 나타난다. 어느 쪽으로 보이는지는 &quot;관측하는 순간&quot; 정해진다는 것이 현재의 해석이다.</li>
+<li>설명하기 어려워서 이렇게 말하는 것일 뿐 진리는 아니다. 100년 뒤 다른 설명이 나올 수도 있다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=2570">42:50</a>)</small></li>
+</ul>
+<h3>둘째 질문: 온도를 낮추면 저항은?</h3>
+<ul>
+<li>드루드는 전자가 원자와 부딪혀 속도가 일정해지는 것을 저항이라고 설명했다. 빗방울의 종단속도와 같은 원리다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=2725">45:25</a>)</small></li>
+<li>켈빈은 &quot;온도가 내려가면 전자가 얼어붙어 저항이 커진다&quot;, 오네스는 &quot;원자가 덜 떨려서 저항이 줄어든다&quot;고 예측했다.</li>
+<li>오네스가 헬륨 액화 기술로 직접 실험했다. 저항은 점점 줄다가 약 4.2K에서 갑자기 뚝 떨어졌다. (측정 오차 때문에 &quot;0&quot;이 아니라 10⁻⁵Ω 이하라고 보고했다.) <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=2888">48:08</a>)</small></li>
+<li>이것이 초전도 현상의 발견이고, 발견 2년 뒤 노벨상을 받았다. 이 온도(약 -269℃)까지 내릴 수 있는 사람은 당시 오네스뿐이었다.</li>
+<li>진짜 0인지 확인하려고 납 코일에 전류를 만들고 자기장을 며칠간 지켜봤다. 전류는 헬륨이 떨어져 냉각이 끊길 때까지 멈추지 않았다. 그래도 그는 &quot;1억분의 1 이하&quot;라고만 표현했다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=2975">49:35</a>)</small></li>
+</ul>
+<figure><a href="https://youtu.be/IoGFBDbbyNw?t=2917"><img src="06.jpg" alt="오네스의 초전도 발견(1911): 온도에 따른 수은 저항 그래프" loading="lazy"></a><figcaption>오네스의 초전도 발견(1911): 온도에 따른 수은 저항 그래프 · <a href="https://youtu.be/IoGFBDbbyNw?t=2917">▶ 48:37</a></figcaption></figure><h3>초전도의 설명: BCS 이론</h3>
+<ul>
+<li>설명에 46년이 걸렸다. 양자역학이 정립되고 나서야 가능했기 때문이다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=3087">51:27</a>)</small></li>
+<li>바딘·쿠퍼·슈리퍼(BCS)는 전자 두 개가 쌍(쿠퍼쌍)으로 다닌다고 설명했다.<ul>
+<li>쌍이 되면 보존(boson)이 되어 집단 상태가 가능하다.</li>
+<li>한 전자가 지나가면 주변 양이온이 끌려와 모이고, 뒤따르는 전자가 그 자리의 인력을 느껴 짝을 이룬다. 마이너스끼리도 쌍이 될 수 있다.</li>
+<li>전자는 파동이어서 모든 쌍의 결이 맞으면 장애물에 걸리지 않고 지나간다.</li>
+</ul>
+</li>
+<li>이 이론은 두 가지를 예측했다. 쌍을 깨는 결합에너지가 있고, 25K 이상에서는 초전도가 불가능하다.</li>
+<li>예이버(자막상 &quot;에베이&quot;)가 터널링 실험으로 결합에너지를 확인했다. 에사키의 반도체 터널링 발견이 토대였다.</li>
+<li>조셉슨은 22살 대학생 때 &quot;양쪽 다 초전도체면 쌍이 통째로 넘어갈 수도 있다&quot;고 예측했다. 바딘은 말이 안 된다고 했지만 이듬해 벨 연구소가 실험으로 증명했고, 조셉슨은 노벨상을 받았다.</li>
+</ul>
+<h3>25K 한계를 깬 고온 초전도체 (1986)</h3>
+<ul>
+<li>마티아스는 100개쯤 새 초전도체를 찾으며 &quot;산소·자성·절연체·이론물리학자를 피하라&quot;는 규칙을 세웠다. 열쇠를 가로등 아래서만 찾는 사람 이야기로 새 영역 탐색의 중요성을 말했다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=3638">1:00:38</a>)</small></li>
+<li>1986년 베드노르츠와 뮐러(자막상 표기 불분명)가 35K에서 초전도를 발견하고, 몇 달 뒤 95K(액체질소로 가능한 온도)가 나왔다. 이듬해 노벨상을 받았다.</li>
+<li>물질은 란타늄·바륨·구리 산화물로, 산소가 있고 자성이 있는 절연체였다. 마티아스의 규칙 전부를 어겼다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=3752">1:02:32</a>)</small></li>
+<li>BCS의 25K 한계는 순수 물질에서는 맞다. 하지만 이 물질이 왜 초전도가 되는지는 지금도 아무도 설명하지 못한다. 설명하면 노벨상 감이다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=3807">1:03:27</a>)</small></li>
+</ul>
+<h3>거시적 양자 터널링과 양자컴퓨터</h3>
+<div class="flow"><div class="flow-title">🔁 초전도 질문에서 양자컴퓨터까지</div><ol class="flow-strip"><li><span>쌍으로 결이 맞는 전자</span></li><li><span>레깃의 예측</span></li><li><span>1985 실험</span></li><li><span>온도가 평평해짐</span></li><li><span>큰 회로가 인공 원자</span></li><li><span>구글 양자컴퓨터</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">쌍으로 결이 맞는 전자</span><div class="d"><p>초전도체 안의 모든 전자가 하나의 양자 상태</p>
+</div></li><li><span class="n">2</span><span class="t">레깃의 예측</span><div class="d"><p>10²³개 규모의 전체가 한 번에 터널링할 수 있다고 계산</p>
+</div></li><li><span class="n">3</span><span class="t">1985 실험</span><div class="d"><p>클라크 교수와 박사후연구원, 학생 세 명이 온도를 mK 이하로 낮춤</p>
+</div></li><li><span class="n">4</span><span class="t">온도가 평평해짐</span><div class="d"><p>열로 넘는 게 아니라 터널로 뚫고 간다는 증거</p>
+</div></li><li><span class="n">5</span><span class="t">큰 회로가 인공 원자</span><div class="d"><p>칩 위 초전도 회로를 큐비트로 사용</p>
+</div></li><li><span class="n">6</span><span class="t">구글 양자컴퓨터</span><div class="d"><p>학생이던 마티니스(자막상 &quot;마티리스&quot;)가 구글에서 개발, 2019 양자 우월성 논문</p>
+</div></li></ol></div>
+<ul>
+<li>이 실험 덕분에 원자 단위가 아닌 칩 크기 회로에서도 양자 현상을 볼 수 있게 됐다. 만들기도 쉽고 큐비트를 늘리기도 쉽다.</li>
+</ul>
+<blockquote class="tip"><p>💡 &quot;저항이 어떻게 될까?&quot;라는 단순한 질문이 40년 뒤 양자컴퓨터로 이어졌다.</p>
+</blockquote>
+<figure><a href="https://youtu.be/IoGFBDbbyNw?t=4060"><img src="07.jpg" alt="거시적 양자 터널링(1985): 열 요동 전이와 터널링 전이 구분 그래프" loading="lazy"></a><figcaption>거시적 양자 터널링(1985): 열 요동 전이와 터널링 전이 구분 그래프 · <a href="https://youtu.be/IoGFBDbbyNw?t=4060">▶ 1:07:40</a></figcaption></figure><h3>양자역학이 이미 쓰이는 곳</h3>
+<ul>
+<li>반도체: 전자가 파동이어서 터널링이 일어난다. 컴퓨터 칩(CMOS)이 이를 활용한다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=4300">1:11:40</a>)</small></li>
+<li>레이저: 원자 에너지 준위가 딱 정해져 있어 똑같은 빛이 계속 나온다. 결을 맞춘 빛이라 달까지도 쏜다.</li>
+</ul>
+<h3>노벨상을 받는 사람의 특징</h3>
+<ul>
+<li>질문은 의외로 단순하다. 예를 들어 &quot;하드디스크 소자에 전류를 흘려 저항을 재보자&quot;는 생각 하나가 노벨상이 됐다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=4608">1:16:48</a>)</small></li>
+<li>대부분 박사후연구원·학생의 새 아이디어로 시작한다(쿠퍼쌍도 박사후연구원 아이디어였다). 교수는 중요한 문제를 알아보는 안목과 경험을 맡는다.</li>
+<li>공부할수록 &quot;나도 생각할 수 있었는데&quot;라는 경우와 &quot;수학을 따라가지 못해 이해 못 하는&quot; 경우가 있다고 한다.</li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>항목</th>
+  <th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>핼리혜성</td>
+  <td>76년 주기, 1758년 12월 재출현, 다음은 2061~62년경</td>
+</tr>
+<tr>
+  <td>초전도 발견</td>
+  <td>약 4.2K(-269℃), 오네스, 발견 2년 후 노벨상</td>
+</tr>
+<tr>
+  <td>BCS 이론</td>
+  <td>발견 후 46년 만에 설명(1957)</td>
+</tr>
+<tr>
+  <td>BCS 한계</td>
+  <td>25K 이상 불가 → 1986년 35K → 95K</td>
+</tr>
+<tr>
+  <td>조셉슨</td>
+  <td>22살에 예측, 노벨상</td>
+</tr>
+<tr>
+  <td>거시 터널링 실험</td>
+  <td>1985년, 구글 양자 우월성 논문은 2019년</td>
+</tr>
+<tr>
+  <td>보어</td>
+  <td>&quot;한 가지 관점으로는 세상이 이해되지 않는다&quot;</td>
+</tr>
+<tr>
+  <td>영</td>
+  <td>&quot;뉴턴이 무결하다고 믿을 이유는 없다&quot;</td>
+</tr>
+</tbody>
+</table></div>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>강연 특성상 방정식·세부 실험 조건은 단순화돼 있다(예: 광전효과는 &quot;진동수가 높을수록 에너지가 크다&quot;는 식의 선형 관계). 정확한 내용은 책이나 교과서로 확인해야 한다.</li>
+<li>&quot;관측하는 순간 파동/알갱이가 정해진다&quot;는 해석은 여러 해석 중 하나이며, 교수 스스로도 &quot;진리가 아니다&quot;라고 밝혔다.</li>
+<li>고유명사와 연도는 자막 인식 오류가 있을 수 있어(예: 예이버, 베드노르츠, 마티니스) 인용 전에 검색으로 확인하는 것이 좋다.</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>레이저 포인터를 머리카락에 비춰 벽에 생기는 간섭무늬를 직접 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>&quot;광전효과&quot;, &quot;쿠퍼쌍&quot;, &quot;조셉슨 접합&quot; 중 하나를 골라 공식 자료로 10분 더 읽어 보기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>책 『우리는 어쩌다 과학을 믿게 되었을까』 목차 확인하기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1795298889 -->
