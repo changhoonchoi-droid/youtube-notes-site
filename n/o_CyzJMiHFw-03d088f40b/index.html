@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>우리가 알던 시험은 모두 사라져야 합니다</title>
+<meta property="og:title" content="우리가 알던 시험은 모두 사라져야 합니다">
+<meta property="og:description" content="커리어해커 알렉스 · 유튜브 정리 노트">
+<meta property="og:image" content="https://i.ytimg.com/vi/o_CyzJMiHFw/hqdefault.jpg">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
+header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+header.top .info{padding:16px 18px 18px}
+h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
+section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
+h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+section.glance h2{border-color:var(--accent);color:var(--accent)}
+h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+p,li{margin:.45em 0}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
+pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+figure{margin:16px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
+figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
+small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
+small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+.pair figure{margin:4px 0}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+li.task-list-item{list-style:none;margin-left:-1.3em}
+blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
+li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
+li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
+.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.flow-title{font-weight:700;margin:0 0 10px}
+.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
+.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
+.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
+.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
+.flow-steps{list-style:none;padding:0;margin:0}
+.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
+.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.flow-steps>li:last-child::before{display:none}
+.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.flow-steps .t{font-weight:700;line-height:32px;display:block}
+.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
+.flow-steps .d p{margin:.2em 0}
+.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
+.flow-steps figure{margin:10px 0 4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style></head>
+<body><main>
+<header class="top"><a class="thumb" href="https://youtu.be/o_CyzJMiHFw" style="background-image:url('https://i.ytimg.com/vi/o_CyzJMiHFw/hqdefault.jpg')" aria-label="원본 영상"></a>
+<div class="info"><h1>우리가 알던 시험은 모두 사라져야 합니다</h1><p class="meta">커리어해커 알렉스 · 게시 2026-11-20</p>
+<a class="btn" href="https://youtu.be/o_CyzJMiHFw">▶ 원본 영상 보기</a></div></header>
+<section class="glance"><h2>한눈에 보기</h2>
+<ul>
+<li>세무사 시험 수석 합격자가 초소형 카메라로 문제를 찍어 생성형 AI에 보내 답을 받아 적었다고 자백했고, 감독 아래서도 걸리지 않았다는 점이 더 큰 문제다.</li>
+<li>영상 속 주장: 기존 시험·면접 방식을 AI 이전 그대로 유지하는 것은 맞지 않으며, 부정행위를 완전히 막기는 어려워 평가 제도 자체가 바뀔 가능성이 높다.</li>
+<li>시험이 표준화된 이유는 지원자 대비 감독 자원이 부족하고 평가의 공정성을 지키기 위해서였는데, 이 전제가 AI로 흔들리고 있다.</li>
+<li>앞으로는 AI를 써서 문제를 해결하는 사람과 AI가 못하는 일(미감, 문제 정의, 예측, 스토리텔링)을 하는 사람이 인재로 여겨질 것이라고 본다.</li>
+<li>수험생·취준생은 지금 준비를 포기하지 말고, 변화를 먼저 보고 선택과 집중을 하라고 권한다.</li>
+</ul>
+</section><section><h2>이런 분께 도움이 됩니다</h2>
+<ul>
+<li>수능·자격증·취업을 준비하며 AI 시대에 시험과 전문성의 의미가 걱정되는 분.</li>
+<li>채용·평가 제도가 어떻게 바뀔지, 어떤 역량이 중요해질지 한 사람의 현장 시각(실리콘밸리 기업 재직)으로 들어보고 싶은 분.</li>
+</ul>
+</section><section><h2>핵심 내용</h2>
+<h3>사건과 배경</h3>
+<ul>
+<li>세무사 시험 수석 합격자(400점 만점에 만점에 가까운 점수)가 AI로 치팅했다고 스스로 자백했다. 방법은 초소형 카메라로 문제를 촬영 → 생성형 AI에 전송 → 스마트폰으로 답을 확인해 옮겨 적기였다. <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=0">0:00</a>)</small><ul>
+<li>문제의 핵심은 걸리지 않았다는 것이고, 그동안 알지 못한 부정행위가 더 있었는지, 시험 운영이 제대로 되고 있는지 의심이 커졌다. 수능을 앞둔 시점이라 파장이 컸다.</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/o_CyzJMiHFw?t=45"><img src="01.jpg" alt="기사 &#x27;감독관 2명씩 두고도… 자백으로 겨우 잡은 AI 커닝&#x27;" loading="lazy"></a><figcaption>기사 &#x27;감독관 2명씩 두고도… 자백으로 겨우 잡은 AI 커닝&#x27; · <a href="https://youtu.be/o_CyzJMiHFw?t=45">▶ 0:45</a></figcaption></figure><ul>
+<li>앞선 대표 사례는 Cluely. 미국 컬럼비아대 재학생이 'Interview Coder'라는 도구로 아마존 코딩 인터뷰를 통과한 뒤 이를 제품화해 창업했고, 슬로건이 &quot;cheat on everything&quot;이었다. <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=66">1:06</a>)</small><ul>
+<li>옹호 시각: 도구가 아니라 시스템이 잘못이다. AI가 다 하는 세상에서 사람에게 코딩 문제를 풀게 하는 것 자체가 문제라는 주장.</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/o_CyzJMiHFw?t=88"><img src="02.jpg" alt="TechCrunch 기사: 컬럼비아대생, &#x27;cheat on everything&#x27;으로 $5.3M 투자" loading="lazy"></a><figcaption>TechCrunch 기사: 컬럼비아대생, &#x27;cheat on everything&#x27;으로 $5.3M 투자 · <a href="https://youtu.be/o_CyzJMiHFw?t=88">▶ 1:28</a></figcaption></figure><ul>
+<li>화자(커리어해커 알렉스)는 이 도구를 좋게 보지 않지만, 문제의 심각성에는 동의한다.</li>
+</ul>
+<blockquote class="tip"><p>💡 AI 이전에 만든 시험·면접 절차를 그대로 유지하는 것이 맞느냐가 화자의 핵심 질문이다.</p>
+</blockquote>
+<h3>기존 방어책의 한계</h3>
+<ul>
+<li>코로나 이후 원격 면접(줌 + 코드 입력 화면)이 보편화됐고, 이를 노린 AI 치팅 방지 소프트웨어도 나왔지만 화자는 쉽게 뚫릴 것으로 본다. <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=164">2:44</a>)</small></li>
+<li>대응 변화: 대면(온사이트) 면접 복귀, 문제 교체, 회사 실제 프로젝트를 과제로 주는 테이크홈 프로젝트.</li>
+</ul>
+<figure><a href="https://youtu.be/o_CyzJMiHFw?t=206"><img src="03.jpg" alt="자막: &#x27;우리 회사 프로젝트를 줄 테니까 그거 해 와&#x27;" loading="lazy"></a><figcaption>자막: &#x27;우리 회사 프로젝트를 줄 테니까 그거 해 와&#x27; · <a href="https://youtu.be/o_CyzJMiHFw?t=206">▶ 3:26</a></figcaption></figure><ul>
+<li>모든 엔지니어가 코딩·디자인·기획서·프로토타입·피치덱까지 AI로 만드는 현실에서, AI를 쓰지 않는다고 전제한 면접 결과가 실제 업무 실력을 얼마나 반영하는지 의문이라고 한다. <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=227">3:47</a>)</small></li>
+</ul>
+<h3>시험은 왜 생겼나</h3>
+<ul>
+<li>자원 문제: 지원자는 수만 명인데 감독·평가할 사람은 천 명도 안 되어 표준화된 시험이 됐다. <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=262">4:22</a>)</small></li>
+<li>공정성: 사람이 붙어 평가하면 호불호에 따른 편차가 생길 수 있다.</li>
+<li>이 두 전제(자원 부족, 객관성)가 AI로 깨지기 시작해 문제가 된다는 설명.</li>
+</ul>
+<figure><a href="https://youtu.be/o_CyzJMiHFw?t=290"><img src="04.jpg" alt="지원자 &#x27;수만 명&#x27; 대 감독 인력 &#x27;천 명&#x27; 비교 도표" loading="lazy"></a><figcaption>지원자 &#x27;수만 명&#x27; 대 감독 인력 &#x27;천 명&#x27; 비교 도표 · <a href="https://youtu.be/o_CyzJMiHFw?t=290">▶ 4:50</a></figcaption></figure><h3>실력 검증은 어떻게 바뀔까</h3>
+<ul>
+<li>현재 실리콘밸리 기업이 보는 역량(화자 경험): 문제 해결, 소통, 책임감, 성실함. 에이전트 활용은 기본이고, 여러 에이전트를 잘 끌어 쓰는 에이전트 오케스트레이션 경험이 빠르고 익숙한 사람을 인재로 본다. <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=324">5:24</a>)</small></li>
+<li>어려운 점: 같이 일해 보지 않고는 알기 어렵다. AI를 주고 문제 해결 과정을 지켜보는 방식도 모델·프롬프트·결과 편차가 커서 평가가 난감하다. 아직 정답이 없다.</li>
+</ul>
+<figure><a href="https://youtu.be/o_CyzJMiHFw?t=365"><img src="05.jpg" alt="&#x27;에이전트 오케스트레이션&#x27; 슬라이드: 사람이 에이전트 A~D를 활용" loading="lazy"></a><figcaption>&#x27;에이전트 오케스트레이션&#x27; 슬라이드: 사람이 에이전트 A~D를 활용 · <a href="https://youtu.be/o_CyzJMiHFw?t=365">▶ 6:05</a></figcaption></figure><ul>
+<li>해법은 두 가지: ① 부정행위를 철저히 막기 ② 납득 가능한 선에서 평가 제도를 바꾸기. 화자는 ②가 높은 확률로 도입된다고 본다. <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=437">7:17</a>)</small><ul>
+<li>근거: 기술이 발전할수록 막기는 더 어려워진다. 극단적 예로 뇌에 칩을 심는다면 막을 수 없고, 모두에게 엑스레이를 찍을 수도 없다.</li>
+</ul>
+</li>
+<li>AI가 평가를 맡는 시나리오(화자의 예측): <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=514">8:34</a>)</small><ul>
+<li>답변 패턴으로 본인 생각인지, AI 도움을 받는지 확률적으로 판단</li>
+<li>AI를 걸러내는 '킬러 문항'</li>
+<li>AI 감독관과의 일대일 맞춤형(personalized) 대면 인터뷰. 문제 풀이 점수보다 능력을 더 정확히 평가할 수도 있다고 본다.</li>
+</ul>
+</li>
+</ul>
+<figure><a href="https://youtu.be/o_CyzJMiHFw?t=552"><img src="06.jpg" alt="기사 속 &quot;AI로는 구술시험을 통과할 수 없다&quot; 문구" loading="lazy"></a><figcaption>기사 속 &quot;AI로는 구술시험을 통과할 수 없다&quot; 문구 · <a href="https://youtu.be/o_CyzJMiHFw?t=552">▶ 9:12</a></figcaption></figure><blockquote class="tip"><p>💡 자원 부족과 객관성 문제를 풀 수 있는 것은 결국 AI뿐이라는 것이 화자의 논리다.</p>
+</blockquote>
+<h3>전문성의 시대와 인재상</h3>
+<ul>
+<li>이현서 님 영상(&quot;전문성의 시대는 끝났다&quot;)을 언급. 변호사·세무사·변리사 등에서 AI가 더 잘한다면 자격증이 AI보다 낫다는 근거가 되는지 묻는다. <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=589">9:49</a>)</small><ul>
+<li>화자 의견: 경험, 대면에서 얻는 지식 등 AI가 못 배우는 영역이 있어 의사 등은 다르지만, 지식 노동자가 AI를 이기기는 거의 어렵다.</li>
+</ul>
+</li>
+<li>그래서 전문 자격시험은 줄고 두 유형의 인재 선발로 바뀔 것이라고 예측한다. <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=606">10:06</a>)</small></li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>유형</th>
+  <th>요건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>① AI로 어떤 문제든 푸는 사람</td>
+  <td>욕망(큰 사람이 결과의 질·양·속도 차이가 큼), 성실·책임감, 소통·대화 능력</td>
+</tr>
+<tr>
+  <td>② AI가 못하는 걸 잘하는 사람</td>
+  <td>미감, 정의되지 않은 문제 정의, 없는 현상 예측, 철학적 시선, 스토리텔링, 휴먼 터치</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>인재는 희소성에서 나오는데, 모두가 AI를 가졌으니 지능은 희소하지 않다. <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=729">12:09</a>)</small></li>
+</ul>
+</section><section><h2>기억할 숫자·인용</h2>
+<ul>
+<li>세무사 시험 400점 만점에 만점에 가까운 점수 (영상 속 언급).</li>
+<li>Cluely 슬로건: &quot;cheat on everything&quot;.</li>
+<li>지원자 수만 명 vs 감독 가능 인원 천 명 미만 (화자의 개략적 표현).</li>
+<li>참고로 영상 설명란에 Cluely 투자 유치 기사(TechCrunch, a16z, $15M)가 링크돼 있다.</li>
+</ul>
+</section><section><h2>따라 해보기</h2>
+<p>(방법론 성격이 아니라 절차형 내용은 없고, 화자가 직접 하는 준비 방향만 아래에 정리)</p>
+<h3>화자가 하는 준비</h3>
+<div class="flow"><div class="flow-title">🔁 화자가 권하는 대응 순서</div><ol class="flow-strip"><li><span>눈앞의 준비 지속</span></li><li><span>선택과 집중</span></li><li><span>변화 먼저 보기</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">눈앞의 준비 지속</span><div class="d"><p>먼 미래 때문에 당장의 시험·입시를 포기하면 오히려 리스크가 크다 <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=793">13:13</a>)</small></p>
+</div></li><li><span class="n">2</span><span class="t">선택과 집중</span><div class="d"><p>진로 피벗, 과감한 선택 등 의미는 다양하다 <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=826">13:46</a>)</small></p>
+</div></li><li><span class="n">3</span><span class="t">변화 먼저 보기</span><div class="d"><p>입시·취업·자격증 제도가 흔들릴 것을 전제로 스스로 변화한다 <small class="tm">(<a href="https://youtu.be/o_CyzJMiHFw?t=913">15:13</a>)</small></p>
+</div></li></ol></div>
+<h3>따라 할 수 있는지 점검</h3>
+<ul>
+<li class="ok">✅ 바로 따라 할 수 있음: 방향 설정(눈앞의 준비 유지, 선택과 집중)은 이해 가능.</li>
+<li class="warn">⚠️ 2단계 「선택과 집중」: 무엇을 선택하고 어떻게 집중할지 구체적 기준이 영상에 없음 → 영상 12:35 이후 화자의 사례(에이전트 설계, 지식 관리, 에이전트와 사람의 협업 연구)를 참고하되 일반화는 어려움.</li>
+<li class="warn">❓ 입시를 덜 준비해도 된다는 취지의 발언이 있으나 &quot;정말 학벌이 중요하지 않을 수도 있다&quot;는 가정이어서, 수능 등 실제 준비 비중은 개인이 판단해야 함.</li>
+</ul>
+</section><section><h2>생각해볼 점</h2>
+<ul>
+<li>영상 내용은 화자의 예측이며 근거 자료나 통계는 제시되지 않았다. 특히 &quot;AI가 사람을 더 정확히 평가할 것&quot;이라는 주장은 검증되지 않았고, AI 평가의 공정성·편향 문제는 다루지 않는다.</li>
+<li>화자는 실리콘밸리 소프트웨어 기업 환경에서 말하고 있어, 의료·법률 등 자격 중심 직군이나 한국 입시 제도에 그대로 적용하기는 어렵다.</li>
+<li>이 영상은 화자의 강의 상품 링크가 설명란에 있으므로, 불안감을 자극하는 메시지의 상업적 맥락도 염두에 둘 만하다. (내 의견)</li>
+</ul>
+</section><section><h2>바로 해볼 일</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>지금 준비 중인 시험·채용에서 AI 사용 규정과 평가 방식(구술·대면 등)이 바뀌었는지 공식 공지로 확인하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>내가 AI로 문제를 끝까지 풀어낸 경험(프로젝트·결과물)을 하나 만들어 기록하기</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>내가 가진 'AI가 못하는 강점'(문제 정의, 소통, 스토리텔링 등)이 무엇인지 3줄로 적어 보기</li>
+</ul>
+</section>
+<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
+</main></body></html>
+<!-- build 1795238151 -->
