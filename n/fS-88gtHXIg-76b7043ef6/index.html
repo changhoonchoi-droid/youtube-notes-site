@@ -1,197 +1,31 @@
-<!doctype html>
-<html lang="ko"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
-<meta name="color-scheme" content="light dark">
-<title>How I Edit My Videos with Claude</title>
-<meta property="og:title" content="How I Edit My Videos with Claude">
-<meta property="og:description" content="The AI Advantage · 유튜브 정리 노트">
-<meta property="og:image" content="https://i.ytimg.com/vi/fS-88gtHXIg/hqdefault.jpg">
-<style>
-:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
-@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
-main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
-header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
-header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
-header.top .info{padding:16px 18px 18px}
-h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
-.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
-.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
-.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
-section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
-section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
-h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
-section.glance h2{border-color:var(--accent);color:var(--accent)}
-h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-p,li{margin:.45em 0}
-ul,ol{padding-left:1.3em}
-a{color:var(--accent)}
-code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
-pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
-pre code{background:none;padding:0}
-blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
-.tbl{overflow-x:auto;margin:12px 0}
-table{border-collapse:collapse;width:100%;font-size:.92rem}
-th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
-th{background:var(--code)}
-figure{margin:16px 0}
-figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
-figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
-figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
-small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
-small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
-.pair{display:grid;gap:12px;grid-template-columns:1fr}
-.pair figure{margin:4px 0}
-@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
-li.task-list-item{list-style:none;margin-left:-1.3em}
-blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
-li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
-li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
-.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
-.flow-title{font-weight:700;margin:0 0 10px}
-.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
-.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
-.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
-.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
-.flow-steps{list-style:none;padding:0;margin:0}
-.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
-.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
-.flow-steps>li:last-child::before{display:none}
-.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
-.flow-steps .t{font-weight:700;line-height:32px;display:block}
-.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
-.flow-steps .d p{margin:.2em 0}
-.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
-.flow-steps figure{margin:10px 0 4px}
-footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
-</style></head>
-<body><main>
-<header class="top"><a class="thumb" href="https://youtu.be/fS-88gtHXIg" style="background-image:url('https://i.ytimg.com/vi/fS-88gtHXIg/hqdefault.jpg')" aria-label="원본 영상"></a>
-<div class="info"><h1>How I Edit My Videos with Claude</h1><p class="meta">The AI Advantage · 게시 2026-11-04</p>
-<a class="btn" href="https://youtu.be/fS-88gtHXIg">▶ 원본 영상 보기</a></div></header>
-<section class="glance"><h2>한눈에 보기</h2>
-<ul>
-<li>녹화한 영상에서 MP3를 뽑아 ChatGPT로 타임스탬프가 있는 SRT 자막을 만들고, 이를 Claude Design에 넣어 영상 내용에 맞는 애니메이션을 만든다.</li>
-<li>핵심은 텍스트보다 움직임 위주의 16:9 그래픽을 요청하는 전용 프롬프트이며, 설명란에 공개되어 있다.</li>
-<li>모델은 'Open 5.5'(자막 표기 그대로), Thinking 설정은 Extra나 Max로 두고, 로고와 인터페이스 스크린샷을 첨부한다.</li>
-<li>생성에는 영상 길이에 따라 30분~2시간이 걸리고, 완성본은 내레이션과 함께 검토한 뒤 편집 팀이 B롤 레이어로 최종 편집에 넣는다.</li>
-</ul>
-</section><section><h2>이런 분께 도움이 됩니다</h2>
-<ul>
-<li>유튜브 영상에 들어갈 애니메이션 그래픽을 AI로 빠르게 만들고 싶은 크리에이터·편집자.</li>
-<li>녹화 → 자막 → 애니메이션 → 편집으로 이어지는 실제 팀 워크플로우를 참고하고 싶은 분.</li>
-</ul>
-</section><section><h2>핵심 내용</h2>
-<h3>전체 워크플로우</h3>
-<ul>
-<li>녹화 → MP3 추출 → SRT 자막(타임스탬프) 생성 → Claude Design에서 애니메이션 생성 → 검토 → 편집 소프트웨어에 합성하는 순서다. (2:35)<blockquote class="tip"><p>💡 대사와 타임스탬프를 AI에 주면, 말하는 내용에 맞춰 움직이는 그래픽이 나온다.</p>
-</blockquote>
-</li>
-</ul>
-<div class="flow"><div class="flow-title">🔁 애니메이션 제작 순서</div><ol class="flow-strip"><li><span>녹화</span></li><li><span>공유</span></li><li><span>MP3 추출</span></li><li><span>자막 생성</span></li><li><span>애니메이션 생성</span></li><li><span>검토</span></li><li><span>편집 합성</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">녹화</span><div class="d"><p>카메라와 화면을 컴퓨터 소프트웨어로 함께 녹화한다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=31">0:31</a>)</small></p>
-</div></li><li><span class="n">2</span><span class="t">공유</span><div class="d"><p>Dropbox 폴더에 저장해 편집자에게 자동 동기화한다.</p>
-</div></li><li><span class="n">3</span><span class="t">MP3 추출</span><div class="d"><p>편집자가 녹화본에서 MP3를 뽑는다.</p>
-</div></li><li><span class="n">4</span><span class="t">자막 생성</span><div class="d"><p>ChatGPT에 MP3를 올려 SRT 자막을 만든다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=54">0:54</a>)</small></p>
-</div></li><li><span class="n">5</span><span class="t">애니메이션 생성</span><div class="d"><p>Claude Design에 SRT와 프롬프트를 넣는다.</p>
-</div></li><li><span class="n">6</span><span class="t">검토</span><div class="d"><p>내레이션과 함께 보며 수정할 곳을 확인한다.</p>
-</div></li><li><span class="n">7</span><span class="t">편집 합성</span><div class="d"><p>최종 영상에 B롤 레이어로 넣는다.</p>
-</div></li></ol></div>
-<figure><a href="https://youtu.be/fS-88gtHXIg?t=35"><img src="01.jpg" alt="카메라와 모니터가 놓인 작업실에서 녹화하는 모습" loading="lazy"></a><figcaption>카메라와 모니터가 놓인 작업실에서 녹화하는 모습 · <a href="https://youtu.be/fS-88gtHXIg?t=35">▶ 0:35</a></figcaption></figure><h3>녹화와 공유</h3>
-<ul>
-<li>외출 시에는 맥북 프로와 카메라, 집에서는 카메라에 연결한 맥 미니로 녹화한다.<ul>
-<li>항상 컴퓨터 소프트웨어로 녹화하는데, 작업이 하나로 합쳐져 더 편하기 때문이다.</li>
-</ul>
-</li>
-<li>녹화본은 Dropbox 폴더에 저장되어 편집자(로버트, 루카스)에게 자동 동기화된다.</li>
-</ul>
-<h3>타임스탬프 자막 만들기</h3>
-<ul>
-<li>녹화본에서 추출한 MP3를 ChatGPT에 올리고 SRT 자막 파일을 만들어 달라고 요청한다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=54">0:54</a>)</small><ul>
-<li>Claude 등 다른 AI를 써도 된다고 한다.</li>
-<li>결과물은 대사와 타임스탬프가 함께 들어간 스크립트다.</li>
-</ul>
-</li>
-</ul>
-<figure><a href="https://youtu.be/fS-88gtHXIg?t=69"><img src="02.jpg" alt="ChatGPT에서 만든 타임스탬프 SRT 자막 화면" loading="lazy"></a><figcaption>ChatGPT에서 만든 타임스탬프 SRT 자막 화면 · <a href="https://youtu.be/fS-88gtHXIg?t=69">▶ 1:09</a></figcaption></figure><h3>Claude Design 설정</h3>
-<ul>
-<li>Claude Design(claude.ai/design)에 SRT 파일을 넣고, 설명란의 애니메이션 프롬프트를 그대로 붙여 넣는다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=72">1:12</a>)</small></li>
-<li>프롬프트의 요지는 텍스트보다 움직임이 많은 16:9 비율 그래픽을 요청하는 것이다.<ul>
-<li>기본 설정은 텍스트를 너무 많이 생성하는 경향이 있어 이를 줄이려는 것이다.</li>
-</ul>
-</li>
-<li>모델은 보통 'Open 5.5'(자막 표기, 모델명 자막상 불분명), Thinking은 'Extra'나 'Max'로 설정한다.<ul>
-<li>기본값인 'Medium'보다 결과물이 훨씬 좋다고 한다.</li>
-</ul>
-</li>
-<li>로고와 인터페이스 스크린샷을 첨부하면 Claude가 실제 시각 자료를 파악한다.</li>
-</ul>
-<figure><a href="https://youtu.be/fS-88gtHXIg?t=124"><img src="03.jpg" alt="Claude Design 화면에서 Opus 5.5 · Extra 설정" loading="lazy"></a><figcaption>Claude Design 화면에서 Opus 5.5 · Extra 설정 · <a href="https://youtu.be/fS-88gtHXIg?t=124">▶ 2:04</a></figcaption></figure><h3>생성과 검토</h3>
-<ul>
-<li>엔터를 누르면 작업이 진행되며 영상 길이에 따라 30분~2시간이 걸린다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=110">1:50</a>)</small></li>
-<li>가끔 멈췄다고 알려주지 않고 실제로 멈춰 있는 경우가 있다. 그럴 땐 계속하라고 명령하면 된다.</li>
-<li>최종 영상에 넣기 전에 내레이션과 함께 다시 보고 수정 사항을 확인하는 과정이 매우 중요하다고 강조한다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=133">2:13</a>)</small></li>
-</ul>
-<h3>최종 편집</h3>
-<ul>
-<li>애니메이션은 추가 B롤 세트가 되어, 편집 팀이 원하는 부분만 골라 쓴다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=147">2:27</a>)</small></li>
-</ul>
-<figure><a href="https://youtu.be/fS-88gtHXIg?t=141"><img src="04.jpg" alt="완성된 애니메이션 결과물을 검토하는 화면" loading="lazy"></a><figcaption>완성된 애니메이션 결과물을 검토하는 화면 · <a href="https://youtu.be/fS-88gtHXIg?t=141">▶ 2:21</a></figcaption></figure></section><section><h2>따라 해보기</h2>
-<h3>준비물</h3>
-<ul>
-<li>Claude Design 접근 권한(claude.ai/design), ChatGPT 또는 다른 AI(자막용), 영상 편집 소프트웨어</li>
-<li>설명란의 프롬프트 문서, 로고 이미지, 인터페이스 스크린샷</li>
-<li>소요 시간: 생성에만 30분~2시간</li>
-</ul>
-<h3>단계별 방법</h3>
-<div class="flow"><div class="flow-title">🔁 따라 하기 순서</div><ol class="flow-strip"><li><span>녹화하기</span></li><li><span>MP3 추출</span></li><li><span>SRT 만들기</span></li><li><span>프롬프트 붙여넣기</span></li><li><span>옵션 설정</span></li><li><span>생성 후 확인</span></li><li><span>편집에 합성</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">녹화하기</span><div class="d"><p>카메라와 화면을 컴퓨터 소프트웨어로 함께 녹화한다.</p>
-</div></li><li><span class="n">2</span><span class="t">MP3 추출</span><div class="d"><p>녹화본에서 오디오(MP3)를 뽑는다. (추출 도구는 영상에서 생략됨)</p>
-</div></li><li><span class="n">3</span><span class="t">SRT 만들기</span><div class="d"><p>ChatGPT에 MP3를 올리고 &quot;SRT 자막 파일을 만들어 줘&quot;라고 요청한다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=54">0:54</a>)</small></p>
-</div></li><li><span class="n">4</span><span class="t">프롬프트 붙여넣기</span><div class="d"><p>Claude Design에 SRT와 설명란 프롬프트를 넣는다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=72">1:12</a>)</small></p>
-</div></li><li><span class="n">5</span><span class="t">옵션 설정</span><div class="d"><p>Thinking을 Extra/Max로 하고 로고·스크린샷을 첨부한다. <small class="tm">(<a href="https://youtu.be/fS-88gtHXIg?t=99">1:39</a>)</small></p>
-</div></li><li><span class="n">6</span><span class="t">생성 후 확인</span><div class="d"><p>엔터를 누르고 완성되면 내레이션과 함께 검토한다. 멈추면 &quot;계속해&quot;라고 입력한다.</p>
-</div></li><li><span class="n">7</span><span class="t">편집에 합성</span><div class="d"><p>결과 영상을 B롤 레이어로 편집 소프트웨어에 넣는다.</p>
-</div></li></ol></div>
-<h3>따라 할 수 있는지 점검</h3>
-<ul>
-<li class="ok">✅ 바로 따라 할 수 있음: 녹화, ChatGPT로 SRT 생성, 프롬프트 붙여넣기, 검토와 편집 합성의 큰 흐름.</li>
-<li class="warn">⚠️ 4단계 「프롬프트 붙여넣기」: 프롬프트 원문이 영상에 나오지 않음 → 설명란의 Google 문서 링크에서 복사.</li>
-<li class="warn">⚠️ 5단계 「옵션 설정」: 모델명이 자막에서 'Open 5.5'로 나와 정확하지 않음 → 영상 1:39 화면에서 모델 선택 메뉴 확인.</li>
-<li class="warn">⚠️ 2단계 「MP3 추출」: 사용 도구가 안 나옴 → 영상 편집 소프트웨어나 일반 변환 프로그램으로 추출 (보충).</li>
-<li class="warn">⚠️ Claude Design 이용 조건: 요금제나 접근 권한 요건이 영상에 안 나옴 → claude.ai/design에서 확인.</li>
-<li class="warn">❓ 결과물의 출력 형식(영상 파일 형식·해상도)이 구체적으로 언급되지 않음.</li>
-</ul>
-<h3>확인 방법</h3>
-<ul>
-<li>완성된 영상을 내레이션과 함께 재생했을 때 애니메이션이 말하는 내용과 맞고, 텍스트가 과하지 않은지 본다.</li>
-</ul>
-<h3>막히면</h3>
-<ul>
-<li>진행이 멈춘 듯 보이면 계속하라고 명령한다.</li>
-<li>텍스트가 너무 많이 나오면 프롬프트의 &quot;텍스트 최소, 움직임 위주&quot; 지시가 들어 있는지 확인한다.</li>
-</ul>
-</section><section><h2>기억할 숫자·인용</h2>
-<ul>
-<li>생성 시간: 30분~2시간</li>
-<li>비율: 16:9</li>
-<li>Thinking 설정: Extra 또는 Max (기본 Medium보다 좋다고 함)</li>
-<li>AI Advantage Club: 1달러 가입 (영상 홍보 내용)</li>
-</ul>
-</section><section><h2>생각해볼 점</h2>
-<ul>
-<li>결과 품질에 대한 평가(&quot;아름답고 세련됐다&quot;)는 제작자 본인의 주관적 의견이다.</li>
-<li>30분~2시간의 생성 시간과 높은 Thinking 설정은 사용량·비용 부담이 될 수 있어, 자신의 요금제에서 가능한지 확인이 필요하다.</li>
-<li>영상은 프롬프트 원문을 보여 주지 않아 설명란 문서를 열어야 재현할 수 있다.</li>
-</ul>
-</section><section><h2>바로 해볼 일</h2>
-<ul>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>설명란의 프롬프트 문서를 열어 내용을 확인한다.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>짧은 영상 하나의 MP3로 SRT를 만들어 본다.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>로고와 화면 스크린샷을 준비해 Claude Design에서 짧게 시험해 본다.</li>
-</ul>
-</section>
-<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
-</main></body></html>
-<!-- build 1794029908 -->
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>🔒 How I Edit My Videos with Claude</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0f1320;color:#e8ebf2;
+font-family:"Pretendard Variable",Pretendard,-apple-system,"Malgun Gothic",sans-serif}
+.box{width:min(380px,90vw);padding:28px;border-radius:18px;background:#181d2c;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+h1{font-size:20px;margin:0 0 4px}p{color:#9aa3b5;font-size:14px;margin:0 0 16px}
+input[type=password]{width:100%;box-sizing:border-box;font-size:17px;padding:12px 14px;border-radius:10px;border:1px solid #2c3449;background:#0f1320;color:#fff}
+button{width:100%;margin-top:10px;font-size:16px;font-weight:700;padding:12px;border:0;border-radius:10px;background:#5b7cff;color:#fff;cursor:pointer}
+label{display:flex;gap:6px;align-items:center;font-size:13px;color:#9aa3b5;margin-top:12px}#e{color:#ff7b8a;min-height:18px;margin:10px 0 0}
+#w{display:none;color:#9aa3b5;font-size:14px}</style></head>
+<body><div class="box" id="g"><h1>🔒 개인 리포트</h1><p>How I Edit My Videos with Claude</p>
+<form id="f"><input id="p" type="password" placeholder="암호" autocomplete="current-password" autofocus><button>열기</button></form>
+<label><input type="checkbox" id="r" checked> 이 기기에서 암호 기억</label><p id="e"></p></div>
+<p id="w">여는 중…</p>
+<script>
+const D={"salt": "MFJcwL7lLwh3bxyXSlnavg==", "iv": "YwH9CSDU7G6GxhPe", "ct": "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", "it": 200000, "k": "hub-pw"},K=D.k||"hub-pw";
+const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function dec(pw){const k=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
+const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b(D.salt),iterations:D.it,hash:"SHA-256"},k,{name:"AES-GCM",length:256},false,["decrypt"]);
+return new TextDecoder().decode(await crypto.subtle.decrypt({name:"AES-GCM",iv:b(D.iv)},key,b(D.ct)));}
+async function fresh(){try{const r=await fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"});
+const m=(await r.text()).match(/const D=(\{.*?\})[,;]/);if(m)Object.assign(D,JSON.parse(m[1]));}catch(_){}}
+async function go(pw,remember,auto){document.getElementById("w").style.display="block";
+try{await fresh();const h=await dec(pw);try{if(remember)localStorage.setItem(K,pw);}catch(_){}
+const hash=location.hash;document.open();document.write(h);document.close();if(hash)setTimeout(()=>{location.hash="";location.hash=hash},50);}
+catch(err){document.getElementById("w").style.display="none";try{localStorage.removeItem(K)}catch(_){}
+if(!auto)document.getElementById("e").textContent="암호가 맞지 않습니다";}}
+document.getElementById("f").onsubmit=ev=>{ev.preventDefault();go(document.getElementById("p").value,document.getElementById("r").checked,false)};
+let s=null;try{s=localStorage.getItem(K)}catch(_){}if(s)go(s,true,true);
+</script></body></html>

@@ -1,288 +1,31 @@
-<!doctype html>
-<html lang="ko"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
-<meta name="color-scheme" content="light dark">
-<title>AI 처음이라면, 설치 없이 말로 시작하는 첫 30분</title>
-<meta property="og:title" content="AI 처음이라면, 설치 없이 말로 시작하는 첫 30분">
-<meta property="og:description" content="커리어해커 알렉스 · 유튜브 정리 노트">
-<meta property="og:image" content="https://i.ytimg.com/vi/M8kW8GHq9vc/hqdefault.jpg">
-<style>
-:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
-@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
-main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
-header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
-header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
-header.top .info{padding:16px 18px 18px}
-h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
-.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
-.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
-.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
-section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
-section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
-h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
-section.glance h2{border-color:var(--accent);color:var(--accent)}
-h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-p,li{margin:.45em 0}
-ul,ol{padding-left:1.3em}
-a{color:var(--accent)}
-code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
-pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
-pre code{background:none;padding:0}
-blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
-.tbl{overflow-x:auto;margin:12px 0}
-table{border-collapse:collapse;width:100%;font-size:.92rem}
-th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
-th{background:var(--code)}
-figure{margin:16px 0}
-figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
-figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
-figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
-small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
-small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
-.pair{display:grid;gap:12px;grid-template-columns:1fr}
-.pair figure{margin:4px 0}
-@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
-li.task-list-item{list-style:none;margin-left:-1.3em}
-blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
-li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
-li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
-.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
-.flow-title{font-weight:700;margin:0 0 10px}
-.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
-.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
-.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
-.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
-.flow-steps{list-style:none;padding:0;margin:0}
-.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
-.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
-.flow-steps>li:last-child::before{display:none}
-.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
-.flow-steps .t{font-weight:700;line-height:32px;display:block}
-.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
-.flow-steps .d p{margin:.2em 0}
-.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
-.flow-steps figure{margin:10px 0 4px}
-footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
-</style></head>
-<body><main>
-<header class="top"><a class="thumb" href="https://youtu.be/M8kW8GHq9vc" style="background-image:url('https://i.ytimg.com/vi/M8kW8GHq9vc/hqdefault.jpg')" aria-label="원본 영상"></a>
-<div class="info"><h1>AI 처음이라면, 설치 없이 말로 시작하는 첫 30분</h1><p class="meta">커리어해커 알렉스 · 게시 2026-11-05</p>
-<a class="btn" href="https://youtu.be/M8kW8GHq9vc">▶ 원본 영상 보기</a></div></header>
-<section class="glance"><h2>한눈에 보기</h2>
-<ul>
-<li>설치나 결제 없이, 말로 AI에게 말 거는 것부터 시작한다. 완전 처음이면 ChatGPT 앱의 보이스 모드, 조금 써 봤다면 Claude 데스크톱 앱으로 컴퓨터를 보고 나를 파악하게 한다.</li>
-<li>첫날의 첫 질문은 &quot;짧게 나에 대해 아는 것을 한 문단으로 설명해 봐&quot;다. AI가 나를 얼마나 아는지 보는 테스트이면서, AI에게 나의 맥락을 쌓아 주는 첫걸음이다.</li>
-<li>무료로 충분하고, 한도에 걸릴 때 유료로 넘어가면 된다. 늦게 시작해도 불리하지 않다는 것이 화자(메타 근무자)의 주장이다.</li>
-<li>회사 일에 쓰기 전에 설정의 데이터 컨트롤에서 &quot;내 대화를 모델 학습에 쓰는 옵션&quot;을 끈다. 답이 의심스러우면 근거 자료를 달라고 하거나 다른 AI에게 검증시킨다.</li>
-<li>연습은 하루 30분이다. 내가 AI에게 질문하고, AI가 나에게 질문하게 하는 두 가지를 반복하며 맥락을 쌓는다.</li>
-</ul>
-</section><section><h2>이런 분께 도움이 됩니다</h2>
-<ul>
-<li>AI를 한 번도 안 써 봤거나 써 봤지만 뭘 더 해야 할지 모르는 직장인.</li>
-<li>얻는 것: 오늘 바로 시작할 첫 행동, 첫 질문 3개, 회사 일에 쓰기 전 점검할 설정 하나, 2주 연습 방식.</li>
-</ul>
-</section><section><h2>핵심 내용</h2>
-<h3>출발점은 지금 수준에 따라 다르다</h3>
-<ul>
-<li>화자의 출발 원칙은 &quot;무조건 써 본다&quot;이고, 모른다는 것도 AI에게 그대로 물어보는 게 최고라고 한다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=0">0:00</a>)</small></li>
-<li>수준별 추천은 아래와 같다.</li>
-</ul>
-<div class="tbl"><table>
-<thead>
-<tr>
-  <th>지금 수준</th>
-  <th>추천</th>
-  <th>할 일</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>AI도 기술도 전혀 모름 (시니어 포함)</td>
-  <td>ChatGPT 앱 + 보이스 모드</td>
-  <td>앱을 받아 음성으로 대화하며 다 물어본다</td>
-</tr>
-<tr>
-  <td>ChatGPT는 해 봤고 더 해 보고 싶음</td>
-  <td>Claude 데스크톱 앱</td>
-  <td>컴퓨터를 보고 나를 파악하게 한다</td>
-</tr>
-</tbody>
-</table></div>
-<ul>
-<li>Claude 데스크톱 앱에는 이렇게 시킨다: &quot;이 컴퓨터에 내가 하는 프로젝트가 많다. 어떤 프로젝트를 하는지 전부 찾고 맥락을 파악해 봐.&quot; <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=118">1:58</a>)</small><ul>
-<li>대화만 하는 단계에서 벗어나려면 AI에게 맥락을 줘야 한다. 컴퓨터에는 PPT, 개발 폴더 같은 내 맥락이 이미 있다.</li>
-</ul>
-</li>
-<li>화자는 첫 질문으로 &quot;처음 쓰는 사람은 어떻게 시작하라고 추천해?&quot;를 AI에게 물어보라고 한다. 답은 거창한 것 말고 자주 하는 작은 일(답장 초안, 일정 정리, 장보기 리스트)부터, 질문은 친구에게 말하듯 던지고 나온 답을 고쳐 달라고 주고받으라는 내용이었다.</li>
-</ul>
-<figure><a href="https://youtu.be/M8kW8GHq9vc?t=48"><img src="01.jpg" alt="Claude 데스크톱 앱 첫 화면 &#x27;Hello, night owl&#x27;" loading="lazy"></a><figcaption>Claude 데스크톱 앱 첫 화면 &#x27;Hello, night owl&#x27; · <a href="https://youtu.be/M8kW8GHq9vc?t=48">▶ 0:48</a></figcaption></figure><blockquote class="tip"><p>💡 완전 처음이면 ChatGPT 음성 대화, 그다음 단계는 Claude로 컴퓨터 맥락 파악이다.</p>
-</blockquote>
-<h3>첫날: &quot;나를 설명해 봐&quot;</h3>
-<ul>
-<li>첫날의 첫 질문은 &quot;네가 나에 대해 아는 것을 짧게 한 문단으로 설명해 봐&quot;다. 왜 하는지는 화자가 이렇게 설명한다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=237">3:57</a>)</small><ul>
-<li>AI가 나를 아는 게 가장 중요하고, 이 질문은 AI가 나를 얼마나 아는지 테스트하는 용도다.</li>
-<li>나를 모르는 AI는 거의 쓸모가 없고, 지금은 &quot;맥락 싸움&quot;이다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=307">5:07</a>)</small></li>
-</ul>
-</li>
-<li>AI가 나를 알면 달라지는 점은 아래와 같다.<ul>
-<li>질문을 덜 해도 바로 나에게 맞는 답이 나온다.</li>
-<li>영상 속 예시에서는 &quot;이번 주 유튜브 라이브 주제 세 개&quot; 같은 바로 쓰이는 요청이 나온다.</li>
-<li>완전 처음인 사람에게는 &quot;내일 할 일 하나만 말해 봐&quot; 같은 한 장면부터 시작한다.</li>
-</ul>
-</li>
-<li>초보가 해 볼 만한 질문 세 가지: <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=331">5:31</a>)</small><ol>
-<li>너는 뭘 할 수 있니?</li>
-<li>나에 대해서 궁금한 거 100개까지 물어봐 봐.</li>
-<li>이제 나를 알았으니까, 네가 나를 도와줄 수 있는 게 뭐야?</li>
-</ol>
-</li>
-</ul>
-<figure><a href="https://youtu.be/M8kW8GHq9vc?t=263"><img src="02.jpg" alt="&#x27;나를 설명해봐&#x27; 질문에 AI가 음성으로 답하는 화면" loading="lazy"></a><figcaption>&#x27;나를 설명해봐&#x27; 질문에 AI가 음성으로 답하는 화면 · <a href="https://youtu.be/M8kW8GHq9vc?t=263">▶ 4:23</a></figcaption></figure><blockquote class="tip"><p>💡 AI에게 나를 알려 주는 일이 첫날의 가장 큰 일이다.</p>
-</blockquote>
-<h3>무료로 충분하고, 늦지 않았다</h3>
-<ul>
-<li>무료만 써도 충분하다. 처음부터 결제하지 말고, 막혔을 때 유료로 넘어간다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=358">5:58</a>)</small><ul>
-<li>화자는 보이스 모드에 한 시간 한도가 있다고 &quot;알고 있다&quot;고 했다. 한도에 걸리는 시점이 유료로 넘어갈 때라는 취지다.</li>
-</ul>
-</li>
-<li>늦게 시작해도 따라잡을 수 있다. 먼저 썼다고 더 잘 쓰는 게 아니다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=383">6:23</a>)</small><ul>
-<li>차이는 마인드셋, 즉 내가 AI를 얼마나 믿고 쓸 것인가에서 난다.</li>
-<li>근거로 든 사례: 자신이 다니는 메타는 직원이 약 10만 명이고 연봉도 높지만 모두가 AI를 잘 쓰는 건 아니다. 화자는 자신처럼 급진적으로 쓰는 사람이 1천 명도 안 될 것(1% 미만)이라고 본다. 이는 화자 본인의 체감 추정이다.</li>
-</ul>
-</li>
-</ul>
-<figure><a href="https://youtu.be/M8kW8GHq9vc?t=363"><img src="03.jpg" alt="&#x27;무료만 써도 충분한가요, 처음부터 유료 결제하는 게 나은가요?&#x27; 질문 화면" loading="lazy"></a><figcaption>&#x27;무료만 써도 충분한가요, 처음부터 유료 결제하는 게 나은가요?&#x27; 질문 화면 · <a href="https://youtu.be/M8kW8GHq9vc?t=363">▶ 6:03</a></figcaption></figure><blockquote class="tip"><p>💡 무료로 시작해 한도에 걸릴 때 결제해도 늦지 않다.</p>
-</blockquote>
-<h3>믿어도 되는지: 거짓말 걸러내기와 회사 보안</h3>
-<ul>
-<li>AI가 그럴듯하게 틀릴 때 거르는 방법은 두 가지다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=450">7:30</a>)</small><ul>
-<li>질문할 때부터 &quot;검증될 만한 문서·자료에 기반해서 답해 줘&quot;라고 한다.</li>
-<li>다른 AI에게 검증시킨다. 화자는 코딩할 때 Codex가 한 일을 Claude가, Claude가 한 일을 Codex가 검증하게 하는 방식이 가장 도움이 됐다고 한다.</li>
-</ul>
-</li>
-<li>회사 일에 AI를 써도 되는지는, 우리 회사 보안 규정에서 무엇이 위험한지를 AI에게 먼저 물어보라고 한다. 위험한 것으로는 개인정보와 기밀 정보 유출을 든다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=499">8:19</a>)</small></li>
-<li>가장 구체적인 조치는 설정 → 데이터 컨트롤에서 &quot;Improve the model for everyone&quot;(대화를 모델 학습에 쓸지 정하는 옵션)을 끄는 것이다. 화자는 &quot;반드시 끄세요&quot;라고 강조한다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=543">9:03</a>)</small><ul>
-<li>끄지 않으면 내 대화가 모델 학습에 쓰여 유출될 수 있다는 것이 화자의 설명이다.</li>
-<li>메뉴의 정확한 위치는 화자도 기억이 안 난다고 했다(자막상 불분명).</li>
-<li>이 설정을 끄는 것만으로는 안전하다고 단정하기 어렵다. 화자도 &quot;웬만큼 괜찮지 않을까&quot;라고 했다.</li>
-</ul>
-</li>
-</ul>
-<figure><a href="https://youtu.be/M8kW8GHq9vc?t=551"><img src="04.jpg" alt="Data controls의 &#x27;Improve the model for everyone&#x27; 옵션" loading="lazy"></a><figcaption>Data controls의 &#x27;Improve the model for everyone&#x27; 옵션 · <a href="https://youtu.be/M8kW8GHq9vc?t=551">▶ 9:11</a></figcaption></figure><blockquote class="tip"><p>💡 회사 일에 쓰기 전에 학습 옵션부터 끈다.</p>
-</blockquote>
-<h3>도구는 하나만, 스마트폰도 충분</h3>
-<ul>
-<li>이름이 많아 헷갈리면 이렇게 고른다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=560">9:20</a>)</small><ul>
-<li>한 번도 안 써 봤다면 ChatGPT.</li>
-<li>조금 써 봤다면 Claude를 받아 데스크톱으로 쓰는 것.</li>
-</ul>
-</li>
-<li>컴퓨터가 없어도 스마트폰만으로 충분하다.<ul>
-<li>화자는 최근 스마트폰을 대놓고 겨냥해 나오는 에이전트 서비스를 예로 든다. 서비스 이름은 자막상 불분명하다.</li>
-<li>이런 서비스는 뒤쪽에 컴퓨터(머신)를 두고 있어서, 내 컴퓨터가 없어도 남의 컴퓨터를 빌려 쓰는 셈이다.</li>
-</ul>
-</li>
-</ul>
-<h3>하루 30분 연습</h3>
-<ul>
-<li>두 가지만 하루 30분 한다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=616">10:16</a>)</small><ol>
-<li>매일 AI에게 질문하는 습관.</li>
-<li>매일 AI가 나에게 질문하도록 유도하기.</li>
-</ol>
-</li>
-<li>주고받을수록 맥락이 쌓여 AI가 나를 어떻게 도울지 알게 되고, 그다음에 스킬이나 자동화(오토메이션)를 하나씩 만들면 쌓인다.</li>
-</ul>
-<figure><a href="https://youtu.be/M8kW8GHq9vc?t=629"><img src="05.jpg" alt="&#x27;하루 몇 분씩, 어떤 순서로 연습하면 한 달 뒤에 실력이 붙나요?&#x27; 질문 화면" loading="lazy"></a><figcaption>&#x27;하루 몇 분씩, 어떤 순서로 연습하면 한 달 뒤에 실력이 붙나요?&#x27; 질문 화면 · <a href="https://youtu.be/M8kW8GHq9vc?t=629">▶ 10:29</a></figcaption></figure><blockquote class="tip"><p>💡 질문을 주고받는 것만으로도 맥락이 쌓여 실력이 붙는다.</p>
-</blockquote>
-</section><section><h2>따라 해보기</h2>
-<h3>준비물</h3>
-<ul>
-<li>스마트폰 또는 컴퓨터, ChatGPT 앱(무료 계정). 두 번째 단계부터는 Claude 데스크톱 앱.</li>
-<li>비용: 시작은 무료. 소요 시간: 첫날 약 30분.</li>
-<li>영상 설명란에 AI 에이전트에 붙여 넣는 추천 프롬프트 3개가 있다.</li>
-</ul>
-<div class="tbl"><table>
-<thead>
-<tr>
-  <th>프롬프트</th>
-  <th>만드는 것</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>1/3 내 컴퓨터를 보고 나를 파악하게</td>
-  <td>근거 파일을 붙인 <code>about-me.md</code>, 10줄 요약 <code>about-me-short.md</code>, 자동화할 일 3개 <code>automations.md</code></td>
-</tr>
-<tr>
-  <td>2/3 AI가 나를 아는지 테스트</td>
-  <td>출처가 붙은 소개 문단과 모르는 것 5가지 질문(<code>profile.md</code>), 답을 반영한 <code>context.md</code></td>
-</tr>
-<tr>
-  <td>3/3 하루 30분 AI 연습표</td>
-  <td>2주 연습표 <code>practice-2weeks.md</code>와 1일차 기록 <code>day01.md</code></td>
-</tr>
-</tbody>
-</table></div>
-<h3>단계별 방법</h3>
-<div class="flow"><div class="flow-title">🔁 첫날 30분 시작 순서</div><ol class="flow-strip"><li><span>앱 받기</span></li><li><span>학습 옵션 끄기</span></li><li><span>음성으로 말 걸기</span></li><li><span>나를 설명시키기</span></li><li><span>초보 질문 3개</span></li><li><span>하루 30분 반복</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">앱 받기</span><div class="d"><p>스마트폰에 ChatGPT 앱을 받는다. 가입 방법은 영상에 없다(보충: 앱스토어에서 설치 후 로그인).</p>
-</div></li><li><span class="n">2</span><span class="t">학습 옵션 끄기</span><div class="d"><p>설정 → 데이터 컨트롤에서 &quot;Improve the model for everyone&quot;을 끈다. 회사 일에 쓰기 전에 필수다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=543">9:03</a>)</small></p>
-</div></li><li><span class="n">3</span><span class="t">음성으로 말 걸기</span><div class="d"><p>보이스 모드를 켜고 &quot;AI 입문자는 어떻게 시작하라고 추천해?&quot;처럼 편하게 묻는다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=71">1:11</a>)</small></p>
-</div></li><li><span class="n">4</span><span class="t">나를 설명시키기</span><div class="d"><p>&quot;네가 나에 대해 아는 것을 짧게 한 문단으로 설명해 줘&quot;라고 한다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=237">3:57</a>)</small></p>
-</div></li><li><span class="n">5</span><span class="t">초보 질문 3개</span><div class="d"><p>&quot;너는 뭘 할 수 있니?&quot;, &quot;나에 대해 궁금한 거 100개까지 물어봐&quot;, &quot;나를 알았으니 네가 도와줄 수 있는 게 뭐야?&quot;를 차례로 묻는다.</p>
-</div></li><li><span class="n">6</span><span class="t">하루 30분 반복</span><div class="d"><p>내가 묻는 날과 AI가 나에게 묻게 하는 날을 섞어 매일 한다.</p>
-</div></li></ol></div>
-<p><strong>4단계와 5단계에 입력할 내용</strong></p>
-<pre><code>네가 나에 대해 아는 것을 짧게 한 문단으로 설명해 줘.
-</code></pre>
-<pre><code>너는 뭘 할 수 있니?
-나에 대해서 궁금한 거 100개까지 물어봐 봐.
-이제 나를 알았으니까, 네가 나를 도와줄 수 있는 게 뭐야?
-</code></pre>
-<h3>따라 할 수 있는지 점검</h3>
-<ul>
-<li class="ok">✅ 바로 따라 할 수 있음: 앱을 받아 음성으로 말 걸기, &quot;나를 설명해 봐&quot;와 세 가지 질문, 하루 30분 연습 방식.</li>
-<li class="warn">⚠️ 2단계 「학습 옵션 끄기」: 메뉴 위치가 &quot;데이터 컨트롤 같은 곳&quot;으로만 나오고 화자도 정확한 경로를 기억하지 못한다 → 영상 9:03 화면을 확인하거나 앱 설정에서 &quot;데이터 컨트롤&quot;을 찾아본다. 앱 버전에 따라 이름이 다를 수 있다(보충).</li>
-<li class="warn">⚠️ 3단계 「음성으로 말 걸기」: 보이스 모드를 켜는 버튼 위치가 영상에 안 나온다 → 앱 안에서 음성 아이콘을 찾는다(보충). 보이스 모드에는 한 시간 한도가 있다고 하지만, 정확한 수치는 화자가 &quot;알고 있다&quot;는 수준으로만 말했다.</li>
-<li class="warn">⚠️ Claude 데스크톱 앱 단계: 설치 방법과 &quot;컴퓨터를 읽게 하는&quot; 권한 설정이 영상에 없다 → 공식 사이트에서 Claude 데스크톱 앱을 검색하고, 영상 설명란의 프롬프트 1/3을 활용한다. 폴더 접근 권한 부여는 앱 안내를 따른다(보충).</li>
-<li class="warn">⚠️ 6단계 「하루 30분 반복」: 영상에는 날짜별 구체적인 계획이 없다 → 영상 설명란의 프롬프트 3/3으로 2주 연습표를 만든다.</li>
-<li class="warn">❓ 화자는 완전 초보에게 ChatGPT를, 조금 써 본 사람에게 Claude를 권하지만 둘 중 무엇이 더 낫다는 비교 근거는 말하지 않는다.</li>
-</ul>
-<h3>확인 방법</h3>
-<ul>
-<li>4단계에서 AI가 내 일과 관심사를 어느 정도 맞게 설명하면 맥락이 쌓이고 있는 것이다. 틀린 부분은 고쳐서 다시 알려 준다.</li>
-<li>5단계에서 나온 AI의 질문에 답하고 나서 다시 &quot;나를 설명해 봐&quot;를 물으면 답이 더 정확해져야 한다.</li>
-</ul>
-<h3>막히면</h3>
-<ul>
-<li>질문을 완벽하게 만들려 하지 않는다. 친구에게 말하듯 던지고 답을 고쳐 달라고 한다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=71">1:11</a>)</small></li>
-<li>답이 의심스러우면 근거 자료를 달라고 하거나 다른 AI에게 검증시킨다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=450">7:30</a>)</small></li>
-<li>무료 한도에 걸리는 순간이 유료를 고민할 때다. <small class="tm">(<a href="https://youtu.be/M8kW8GHq9vc?t=358">5:58</a>)</small></li>
-</ul>
-</section><section><h2>기억할 숫자·인용</h2>
-<ul>
-<li>하루 30분: 질문하기와 질문받기만으로 맥락이 쌓인다.</li>
-<li>이 영상은 2026년 10월 24일 라이브 'AI 100문 100답'을 편집한 것이다.</li>
-<li>&quot;AI의 시작은 무조건 써 보는 것.&quot;</li>
-<li>&quot;나를 전혀 모르는 AI는 거의 쓸모가 없다. 이제는 맥락 싸움이다.&quot;</li>
-<li>메타 직원 약 10만 명 중 급진적으로 쓰는 사람이 1% 미만이라는 것은 화자의 체감이다.</li>
-</ul>
-</section><section><h2>생각해볼 점</h2>
-<ul>
-<li>화자는 AI 업계 종사자라 활용 수준이 높다. &quot;먼저 써도 더 잘 쓰는 건 아니다&quot;는 화자의 경험담이고, 통계로 확인된 사실은 아니다.</li>
-<li>&quot;학습 옵션만 끄면 웬만큼 괜찮다&quot;는 말은 느슨하다. 회사의 실제 보안 규정(개인정보·기밀 반입 금지 등)은 별도로 확인해야 한다.</li>
-<li>영상 속 AI의 답변 예시는 라이브에서 나온 일부이고, 바로 가장 좋은 답을 보장하지 않는다. 나에게 맞는 질문은 직접 해 보며 찾아야 한다.</li>
-</ul>
-</section><section><h2>바로 해볼 일</h2>
-<ul>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>ChatGPT 앱을 받고 &quot;네가 나에 대해 아는 것을 한 문단으로 설명해 줘&quot;라고 물어보기</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>설정 → 데이터 컨트롤에서 모델 학습 옵션을 끄기</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>&quot;나에 대해 궁금한 거 100개까지 물어봐 봐&quot;에 10분만 답해 보기</li>
-</ul>
-</section>
-<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
-</main></body></html>
-<!-- build 1794028835 -->
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>🔒 AI 처음이라면, 설치 없이 말로 시작하는 첫 30분</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0f1320;color:#e8ebf2;
+font-family:"Pretendard Variable",Pretendard,-apple-system,"Malgun Gothic",sans-serif}
+.box{width:min(380px,90vw);padding:28px;border-radius:18px;background:#181d2c;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+h1{font-size:20px;margin:0 0 4px}p{color:#9aa3b5;font-size:14px;margin:0 0 16px}
+input[type=password]{width:100%;box-sizing:border-box;font-size:17px;padding:12px 14px;border-radius:10px;border:1px solid #2c3449;background:#0f1320;color:#fff}
+button{width:100%;margin-top:10px;font-size:16px;font-weight:700;padding:12px;border:0;border-radius:10px;background:#5b7cff;color:#fff;cursor:pointer}
+label{display:flex;gap:6px;align-items:center;font-size:13px;color:#9aa3b5;margin-top:12px}#e{color:#ff7b8a;min-height:18px;margin:10px 0 0}
+#w{display:none;color:#9aa3b5;font-size:14px}</style></head>
+<body><div class="box" id="g"><h1>🔒 개인 리포트</h1><p>AI 처음이라면, 설치 없이 말로 시작하는 첫 30분</p>
+<form id="f"><input id="p" type="password" placeholder="암호" autocomplete="current-password" autofocus><button>열기</button></form>
+<label><input type="checkbox" id="r" checked> 이 기기에서 암호 기억</label><p id="e"></p></div>
+<p id="w">여는 중…</p>
+<script>
+const D={"salt": "c1EEUxdKk7wrTM19ALGSGg==", "iv": "qHkxSgT0hnaWr63g", "ct": "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", "it": 200000, "k": "hub-pw"},K=D.k||"hub-pw";
+const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function dec(pw){const k=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
+const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b(D.salt),iterations:D.it,hash:"SHA-256"},k,{name:"AES-GCM",length:256},false,["decrypt"]);
+return new TextDecoder().decode(await crypto.subtle.decrypt({name:"AES-GCM",iv:b(D.iv)},key,b(D.ct)));}
+async function fresh(){try{const r=await fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"});
+const m=(await r.text()).match(/const D=(\{.*?\})[,;]/);if(m)Object.assign(D,JSON.parse(m[1]));}catch(_){}}
+async function go(pw,remember,auto){document.getElementById("w").style.display="block";
+try{await fresh();const h=await dec(pw);try{if(remember)localStorage.setItem(K,pw);}catch(_){}
+const hash=location.hash;document.open();document.write(h);document.close();if(hash)setTimeout(()=>{location.hash="";location.hash=hash},50);}
+catch(err){document.getElementById("w").style.display="none";try{localStorage.removeItem(K)}catch(_){}
+if(!auto)document.getElementById("e").textContent="암호가 맞지 않습니다";}}
+document.getElementById("f").onsubmit=ev=>{ev.preventDefault();go(document.getElementById("p").value,document.getElementById("r").checked,false)};
+let s=null;try{s=localStorage.getItem(K)}catch(_){}if(s)go(s,true,true);
+</script></body></html>

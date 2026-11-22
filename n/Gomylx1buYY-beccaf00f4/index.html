@@ -1,278 +1,31 @@
-<!doctype html>
-<html lang="ko"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
-<meta name="color-scheme" content="light dark">
-<title>[박형근의 테슬라 2부] 10초면 차 한 대씩 찍어내는 무인택시 공장을 테슬라는 왜 놀리고 있을까? &#x27;사이버캡&#x27;의 미친 원가 비결 (HMG경영연구원 박형근 실장)</title>
-<meta property="og:title" content="[박형근의 테슬라 2부] 10초면 차 한 대씩 찍어내는 무인택시 공장을 테슬라는 왜 놀리고 있을까? &#x27;사이버캡&#x27;의 미친 원가 비결 (HMG경영연구원 박형근 실장)">
-<meta property="og:description" content="Understanding : All the Knowledge in the World · 유튜브 정리 노트">
-<meta property="og:image" content="https://i.ytimg.com/vi/Gomylx1buYY/hqdefault.jpg">
-<style>
-:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
-@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
-main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
-header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
-header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
-header.top .info{padding:16px 18px 18px}
-h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
-.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
-.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
-.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
-section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
-section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
-h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
-section.glance h2{border-color:var(--accent);color:var(--accent)}
-h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-p,li{margin:.45em 0}
-ul,ol{padding-left:1.3em}
-a{color:var(--accent)}
-code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
-pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
-pre code{background:none;padding:0}
-blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
-.tbl{overflow-x:auto;margin:12px 0}
-table{border-collapse:collapse;width:100%;font-size:.92rem}
-th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
-th{background:var(--code)}
-figure{margin:16px 0}
-figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
-figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
-figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
-small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
-small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
-.pair{display:grid;gap:12px;grid-template-columns:1fr}
-.pair figure{margin:4px 0}
-@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
-li.task-list-item{list-style:none;margin-left:-1.3em}
-blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
-li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
-li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
-.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
-.flow-title{font-weight:700;margin:0 0 10px}
-.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
-.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
-.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
-.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
-.flow-steps{list-style:none;padding:0;margin:0}
-.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
-.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
-.flow-steps>li:last-child::before{display:none}
-.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
-.flow-steps .t{font-weight:700;line-height:32px;display:block}
-.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
-.flow-steps .d p{margin:.2em 0}
-.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
-.flow-steps figure{margin:10px 0 4px}
-footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
-</style></head>
-<body><main>
-<header class="top"><a class="thumb" href="https://youtu.be/Gomylx1buYY" style="background-image:url('https://i.ytimg.com/vi/Gomylx1buYY/hqdefault.jpg')" aria-label="원본 영상"></a>
-<div class="info"><h1>[박형근의 테슬라 2부] 10초면 차 한 대씩 찍어내는 무인택시 공장을 테슬라는 왜 놀리고 있을까? &#x27;사이버캡&#x27;의 미친 원가 비결 (HMG경영연구원 박형근 실장)</h1><p class="meta">Understanding : All the Knowledge in the World · 게시 2026-11-03</p>
-<a class="btn" href="https://youtu.be/Gomylx1buYY">▶ 원본 영상 보기</a></div></header>
-<section class="glance"><h2>한눈에 보기</h2>
-<ul>
-<li>테슬라 사이버캡 공장은 최대 가동 시 10초에 한 대씩 찍어낼 수 있는데, 운행 허가가 난 곳이 없어 일주일에 몇 번만 돌리고 있다는 것이 영상의 핵심 관찰이다.</li>
-<li>사이버캡은 차량 원가가 수억 원대인 웨이모보다 훨씬 싸고, 생산 단가 추정으로는 이미 택시·우버보다 운행 비용이 낮다는 분석이 있어 &quot;돌릴 수만 있으면 바로 수익&quot;이라는 주장이다.</li>
-<li>로보택시는 자율주행 기술과 다른 생태계다. 문 닫기·청소·충전·관제·콜센터까지 사람 없이 돌려야 수익이 나며, 사이버캡은 처음부터 로봇 운영을 전제로 설계됐다.</li>
-<li>로보택시(제한 구역·중앙 관제)와 일반 승용차 FSD(감독형)는 당분간 분리 운영될 것이며, 책임 문제 때문에 테슬라가 개인 차량까지 완전 무인을 허용하는 시점은 최소 몇 년 뒤로 본다.</li>
-<li>가장 큰 걸림돌은 기술이 아니라 규제와 사회적 합의다. 현대차 연구원은 그래도 현대차에 기회가 있다고 보며, 머스크의 &quot;꿈을 실행으로 연결하는 리더십&quot;을 배울 점으로 꼽는다.</li>
-</ul>
-</section><section><h2>이런 분께 도움이 됩니다</h2>
-<ul>
-<li>테슬라 로보택시 사업이 왜 &quot;기술은 됐는데 돈은 아직 못 버는 상태&quot;인지 구조적으로 이해하고 싶은 투자자.</li>
-<li>웨이모와 테슬라의 로보택시 경쟁 포인트(차량 원가, 운영 자동화, 데이터 격차)를 비교해 보고 싶은 분.</li>
-<li>자동차·모빌리티 업계에서 자율주행 전환 속도를 가늠해야 하는 실무자.</li>
-</ul>
-</section><section><h2>핵심 내용</h2>
-<h3>결론: 차와 공장은 준비됐고, 남은 것은 규제와 운영 자동화</h3>
-<ul>
-<li>발표자(HMG경영연구원 박형근 실장)는 테슬라가 사이버캡 생산 설비를 이미 다 갖춰 놓고 운행 허가를 기다리는 상태라고 본다. 규제가 풀리면 수십 개 도시로 한 번에 퍼질 수 있는 &quot;허들을 조금씩 넘어가는 단계&quot;다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=302">5:02</a>, <a href="https://youtu.be/Gomylx1buYY?t=370">6:10</a>)</small></li>
-</ul>
-<figure><a href="https://youtu.be/Gomylx1buYY?t=475"><img src="01.jpg" alt="발표자 박형근 HMG경영연구원 실장 (명패)" loading="lazy"></a><figcaption>발표자 박형근 HMG경영연구원 실장 (명패) · <a href="https://youtu.be/Gomylx1buYY?t=475">▶ 7:55</a></figcaption></figure><ul>
-<li>다만 공장을 놀리는 동안 손실이 쌓이므로, 테슬라가 규제 대기 구간을 얼마나 잘 버티느냐가 관건이라고 본다.</li>
-</ul>
-<blockquote class="tip"><p>💡 테슬라의 로보택시는 기술 경쟁이 아니라 &quot;규제가 풀리는 속도&quot;와 &quot;사람 없이 돌리는 운영 설계&quot;의 경쟁이다.</p>
-</blockquote>
-<h3>자율주행 시대는 생각보다 빨리 올 수 있다</h3>
-<ul>
-<li>1900년 뉴욕 5번가 사진에는 자동차가 한 대 정도이고 나머지는 마차였는데, 불과 13년 뒤에는 거리가 자동차로 뒤덮였다. 자율주행도 10여 년 안에 스며들 수 있다는 비유다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=56">0:56</a>)</small></li>
-</ul>
-<figure><a href="https://youtu.be/Gomylx1buYY?t=48"><img src="02.jpg" alt="&#x27;13년 만에 바뀐 거리의 주인공&#x27; 슬라이드, 1900년·1913년 5번가 사진" loading="lazy"></a><figcaption>&#x27;13년 만에 바뀐 거리의 주인공&#x27; 슬라이드, 1900년·1913년 5번가 사진 · <a href="https://youtu.be/Gomylx1buYY?t=48">▶ 0:48</a></figcaption></figure><ul>
-<li>운전이 취미인 사람도 있지만 상당수는 운전에 피로를 느끼므로, &quot;운전이라는 노동에서 해방&quot;이 테슬라와 자율주행 기업들의 명분이다.</li>
-<li>머스크는 운전대가 달린 마지막 스포츠카가 로드스터가 될 거라는 주장을 하고 싶었을 것이고, 사이버캡이 수백 개 도시에서 수십만 대 돌아다니면 다음 소형차에 핸들을 달 이유를 되묻게 될 것이라고 발표자는 본다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=150">2:30</a>)</small></li>
-<li>발표자 자신도 &quot;당장 온다는 뜻은 아니다&quot;라고 전제를 깐다.</li>
-</ul>
-<h3>사이버캡의 원가·생산 능력</h3>
-<ul>
-<li>사이버캡은 운전대와 페달을 뺀 완전 무인 설계다. 언박스드 공정(차체를 큰 모듈로 나눠 동시에 조립하는 테슬라의 새 생산 방식)으로 최대 가동 시 10초당 한 대, 연간 수백만 대 생산이 가능하다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=302">5:02</a>)</small></li>
-<li>그런데 돌릴 곳이 없어 일부러 일주일에 몇 번만 가동한다. 제조업 기준으로 공장을 놀리는 기간은 수십억에서 수천억 원까지 손실이 날 수 있는 구간이다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=1478">24:38</a>)</small></li>
-<li>웨이모는 차량 한 대가 수억 원을 호가해 운영비 부담이 크고, 우버보다 약 30% 프리미엄 요금을 받는데도 손실을 내고 있다는 설명이다.</li>
-<li>사이버캡은 미래 생산 단가를 추정하면 이미 택시·우버(사람이 운전하는 호출 서비스)보다 싸다는 분석들이 나오고 있어, 자율주행이 완벽하게 되고 운행만 허용되면 바로 수익이 나는 사업이 된다는 주장이다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=429">7:09</a>)</small></li>
-<li>사이버캡이 어떻게 만들어지는지는 샌디 먼로(Munro &amp; Associates)의 '사이버캡 딥다이브' 영상에 나온다고 소개한다.</li>
-</ul>
-<blockquote class="tip"><p>💡 웨이모는 비싼 차를 비싸게 태워도 적자, 사이버캡은 싸게 만들어 우버보다 싸게 태워도 흑자라는 것이 발표자의 비교다.</p>
-</blockquote>
-<h3>로보택시는 자율주행 기술과 &quot;전혀 다른 생태계&quot;</h3>
-<ul>
-<li>자율주행 기술이 아무리 좋아도 로보택시 사업에는 기사가 하던 부수 서비스가 다 따라붙는다. 그래서 테슬라도 이 분야에서는 후발 주자이고, 운영 데이터가 전혀 없었다는 평가다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=1091">18:11</a>)</small></li>
-<li>웨이모가 겪는 운영 문제:<ul>
-<li>기존 5세대 차량(재규어 I-PACE)은 수동문이어서 승객이 문을 안 닫고 내리면 닫아 줄 사람이 필요하고, 실제로 그 일에 돈을 쓴다. 그래서 자동 개폐가 되는 지커(Zeekr) 기반 차량으로 세대 교체 중이다.</li>
-<li>기사가 없으니 커피·음식 자국 등 청소를 누군가 해야 한다.</li>
-<li>자동 충전 설계가 안 돼 있어 사람이 충전해 줘야 한다.</li>
-<li>관제 서비스와 콜센터도 운영해야 한다.</li>
-</ul>
-</li>
-<li>테슬라는 사이버캡 공개 행사 때부터 &quot;모든 것을 로봇으로&quot; 한다는 전제로 설계했다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=1122">18:42</a>)</small><ul>
-<li>자동문이라 문 열림 문제가 없고, 스테이션에 들어가면 문이 열려 청소 로봇이 자동으로 진입한다.</li>
-<li>내장 소재는 물분사·물걸레 세척이 가능한 소재로 구성해 기계로 워싱할 수 있다.</li>
-<li>충전은 지금은 사람이 꽂아 주지만, 궁극적으로 무선 충전이나 로봇 충전을 지향한다.</li>
-</ul>
-</li>
-<li>발표자는 &quot;차량이 운행되는 동안 사람의 개입이 사실상 없게 설계하는 것&quot;이 로보택시 사업의 승부처라고 본다. 웨이모도 그 자리에 머물지 않고 같은 설계를 준비하고 있다고 덧붙인다.</li>
-</ul>
-<div class="tbl"><table>
-<thead>
-<tr>
-  <th>항목</th>
-  <th>웨이모 (현재 5세대 I-PACE)</th>
-  <th>테슬라 사이버캡</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>차량 원가</td>
-  <td>수억 원대</td>
-  <td>훨씬 저가 (택시·우버보다 운행 단가 낮다는 분석)</td>
-</tr>
-<tr>
-  <td>문</td>
-  <td>수동문, 안 닫으면 사람이 닫아야 함 (차세대는 자동)</td>
-  <td>자동문</td>
-</tr>
-<tr>
-  <td>청소</td>
-  <td>사람이 청소</td>
-  <td>청소 로봇 진입, 물세척 가능 소재</td>
-</tr>
-<tr>
-  <td>충전</td>
-  <td>사람이 충전</td>
-  <td>지금은 사람, 목표는 무선·로봇 충전</td>
-</tr>
-<tr>
-  <td>운영 데이터</td>
-  <td>많음 (11개 도시 확장 중)</td>
-  <td>적음, 후발</td>
-</tr>
-</tbody>
-</table></div>
-<h3>운영 현황과 데이터 격차</h3>
-<ul>
-<li>테슬라 로보택시 무인 운영은 출범 당시 약 20대 테스트에서 45대로 시작해 지금 400대를 막 넘어가고 있다. 사이버캡 외에 모델 Y 형태의 로보택시를 포함해 실제 운영 대수는 200~300대 수준이라는 설명이다(동시 운영 비율 숫자는 자막상 불분명). <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=1214">20:14</a>)</small></li>
-</ul>
-<figure><a href="https://youtu.be/Gomylx1buYY?t=1224"><img src="03.jpg" alt="텍사스 등록 사이버캡 45대→573대(9.3~10.31) 슬라이드" loading="lazy"></a><figcaption>텍사스 등록 사이버캡 45대→573대(9.3~10.31) 슬라이드 · <a href="https://youtu.be/Gomylx1buYY?t=1224">▶ 20:24</a></figcaption></figure><ul>
-<li>오스틴에서는 운전대 없는 금빛 사이버캡이 &quot;발에 치이듯&quot; 많이 보인다고 전한다.</li>
-<li>호출 방식은 카카오택시처럼 앱으로 부르면 가까운 차가 오지만, 아직 픽업·드롭 구간을 안전이 확보된 곳으로 제한한다. 웨이모도 비슷하며, 킥보드 반납 존처럼 안전 설계를 둔 것으로 보면 된다. 중국 선전의 포니(Pony.ai)는 아무 데서나 세워 줬다는 진행자 경험도 나온다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=1276">21:16</a>)</small></li>
-<li>웨이모의 수치: 등록 대수 약 3,000대, 주간 호출 50만 회, 연말에는 주간 100만 회 전망. 발표자는 여기서 쌓이는 픽업·드롭 데이터가 테슬라와의 격차라고 본다.</li>
-<li>다만 테슬라는 차량 공급 능력이 웨이모보다 훨씬 크므로, 규제만 합의되면 데이터를 매우 빠르게 쌓을 수 있다는 전망이다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=1416">23:36</a>)</small></li>
-</ul>
-<h3>로보택시와 일반 승용차 FSD는 당분간 분리된다</h3>
-<ul>
-<li>주행 기술 자체는 로보택시와 일반 테슬라 차가 같다. 사이버캡의 FSD 하드웨어가 조금 더 고사양이지만, 하드웨어 4 기준 모델 Y·모델 3에 수평 전이가 가능하다. 모델 Y도 핸들과 페달이 달린 채로 이미 수백 대가 무인 주행을 시작했다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=486">8:06</a>, <a href="https://youtu.be/Gomylx1buYY?t=632">10:32</a>)</small></li>
-<li>그런데도 일반 승용차는 &quot;감독형&quot;으로 남는다. 차이는 책임과 예외 상황 대응이다.<ul>
-<li>로보택시는 제한 구역, 400~500대 규모라 중앙 관제 요원이 모니터하다가 위험하면 버튼을 눌러 멈추거나, 엉뚱한 곳에 세워진 승객의 전화를 받는 등 돌발 상황을 처리한다. 탑승자는 비감독이지만 뒷단은 감독 중인 구조다.</li>
-<li>바이두(Baidu)는 차량 10대당 모니터 요원 1명 수준까지 내려오면 수익이 난다고 말한다.</li>
-<li>일반 승용차는 전 세계 약 700만 대, 미국만 180만 대(자막상 FSD 장착 여부 불분명)가 풀려 있어 어디서 사고가 날지 예측할 수 없고, 사고 책임을 테슬라가 져야 한다.</li>
-</ul>
-</li>
-<li>테슬라가 지금 책임을 떠안을 이유도 없다. 책임을 지지 않아도 소비자가 FSD를 구독하고 있어 매출은 이미 발생한다.<ul>
-<li>미국 구매자 중 FSD 구독 비중은 작년 약 12%, 올해 초 50% 초과, 최근 달에는 70%까지 올라갔다는 수치다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=542">9:02</a>)</small></li>
-</ul>
-</li>
-<li>사이버캡이 수십만 대 풀려 데이터가 충분히 쌓이면 테슬라가 &quot;사고 책임을 지겠다&quot;고 선언하는 시점이 올 수 있지만, 발표자는 최소 몇 년은 걸릴 것으로 보수적으로 본다.</li>
-</ul>
-<div class="tbl"><table>
-<thead>
-<tr>
-  <th>구분</th>
-  <th>로보택시 (사이버캡·모델 Y)</th>
-  <th>일반 소유 차량 FSD</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>운행 구역</td>
-  <td>제한 구역</td>
-  <td>어디든</td>
-</tr>
-<tr>
-  <td>감독</td>
-  <td>탑승자 비감독, 중앙 관제 요원 모니터</td>
-  <td>운전자가 감독, 개입 준비 필수</td>
-</tr>
-<tr>
-  <td>사고 책임</td>
-  <td>테슬라 통제하</td>
-  <td>테슬라가 지려면 선언 필요, 현재 미실시</td>
-</tr>
-<tr>
-  <td>수익 모델</td>
-  <td>호출 요금</td>
-  <td>FSD 구독 (이미 매출 발생)</td>
-</tr>
-</tbody>
-</table></div>
-<div class="flow"><div class="flow-title">🔁 발표자가 보는 완전 무인 확산 단계</div><ol class="flow-strip"><li><span>제한 구역 로보택시</span></li><li><span>규제기관 검토 통과</span></li><li><span>수십만 대 운행·데이터 축적</span></li><li><span>책임 선언·일반 차 전이</span></li><li><span>다음 차에 핸들 삭제</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">제한 구역 로보택시</span><div class="d"><p>오스틴 등에서 수백 대를 중앙 관제하며 운영, 사고 한 건에도 사업이 닫힐 수 있어 천천히 확대</p>
-</div></li><li><span class="n">2</span><span class="t">규제기관 검토 통과</span><div class="d"><p>미국은 제조사 자가 승인 체제지만 중앙 규제기관 검토 중, 넘으면 수십 개 도시로 확산</p>
-</div></li><li><span class="n">3</span><span class="t">수십만 대 운행·데이터 축적</span><div class="d"><p>공장은 이미 준비돼 있어 허가만 나면 빠르게 늘릴 수 있음</p>
-</div></li><li><span class="n">4</span><span class="t">책임 선언·일반 차 전이</span><div class="d"><p>데이터 자신감이 생기면 테슬라가 사고 책임을 선언하고 HW4 모델 Y·3에 비감독 FSD 적용</p>
-</div></li><li><span class="n">5</span><span class="t">다음 차에 핸들 삭제</span><div class="d"><p>소형차 설계에서 운전대를 달 이유를 되묻는 단계</p>
-</div></li></ol></div>
-<h3>규제와 사회적 합의가 진짜 허들</h3>
-<ul>
-<li>미국은 형식 승인을 제조사가 스스로 하는 자가 검증 체계라 테슬라가 풀려면 지금도 크게 풀 수 있지만, 사고 한 건이 커지면 사업 자체를 접어야 할 수 있어 규제기관 눈치를 보며 천천히 푼다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=273">4:33</a>)</small></li>
-<li>한국은 타다 사례처럼 국내 산업 보호와 사회적 합의 문제여서 무작정 허용되기 어렵다. 다만 &quot;테슬라 FSD 왜 안 풀어 주냐&quot;는 여론처럼, 해외에서 로보택시를 타 본 사람이 늘면 &quot;우리도 하자&quot;는 합의가 형성되는 순간 넘어갈 것으로 본다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=897">14:57</a>)</small></li>
-<li>유럽 규제기관도 다수 개인 소유 차량에 한 번에 자율주행을 부여하는 것은 허용이 쉽지 않다.</li>
-<li>진행자는 결국 &quot;로비가 얼마나 빨리 먹히느냐&quot;에 달릴 수 있다고 정리한다.</li>
-</ul>
-<h3>현대차 연구원의 시각: 기회는 있고, 배울 것은 리더십</h3>
-<ul>
-<li>현대차에도 여전히 기회가 있다고 발표자는 본다.</li>
-<li>10여 년 테슬라를 공부하며 느낀 것은 머스크가 &quot;상상도 할 수 없는 일을 꿈꾸고 직원에게 전파하고 실행해 내는&quot; 점에서 정주영 회장 등 선대 회장들과 기본 정신이 같다는 것이다. 스케일만 국가 차원에서 우주 차원으로 달라졌다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=1575">26:15</a>)</small></li>
-<li>같은 장면을 보고 &quot;대단하다&quot;고 느끼는 사람과 &quot;저걸 어디에 쓰나&quot; 하는 사람의 차이가 기업 경쟁력 차이로 이어진다고 본다.</li>
-<li>현대차 경영진 피드백도 &quot;리더십이 실행으로 연결되는 모습&quot;에서 교훈을 얻었다는 쪽이 많았다고 전한다. 로드스터 같은 결정은 회의로 도출될 결론이 아니라 톱 리더가 직접 밀어야 나온다는 것이다. <small class="tm">(<a href="https://youtu.be/Gomylx1buYY?t=1664">27:44</a>)</small></li>
-</ul>
-<blockquote class="tip"><p>💡 &quot;일론 머스크에서 정주영의 유전자가 보인다&quot; — 지금 우리 기업에 필요한 정신이라는 발표자의 결론.</p>
-</blockquote>
-</section><section><h2>기억할 숫자·인용</h2>
-<ul>
-<li>사이버캡 최대 생산 속도: 10초당 1대, 연 수백만 대. 현재 가동은 일주일에 몇 번.</li>
-<li>공장을 놀리는 구간의 손실: 제조업 기준 수십억~수천억 원.</li>
-<li>웨이모: 차량 한 대 수억 원, 우버 대비 약 30% 프리미엄 요금에도 손실. 등록 약 3,000대, 주간 호출 50만 회, 연말 100만 회 전망, 11개 도시 확장 중.</li>
-<li>테슬라 로보택시 무인 운영: 약 20대 테스트 → 45대 → 400대 돌파.</li>
-<li>미국 테슬라 구매자 FSD 구독 비중: 작년 약 12% → 올해 초 50% 초과 → 최근 70%.</li>
-<li>테슬라 차량 보급: 전 세계 약 700만 대, 미국 약 180만 대.</li>
-<li>바이두 기준 수익 분기점: 차량 10대당 관제 요원 1명.</li>
-<li>마차→자동차 전환: 1900년 뉴욕 5번가 자동차 1대 → 13년 뒤 전부 자동차.</li>
-<li>&quot;돌릴 수만 있으면 얘는 바로 수익이 나는 사업이 되는 거예요.&quot;</li>
-<li>&quot;로보택시 사업은 전혀 다른 생태계인 겁니다.&quot;</li>
-</ul>
-</section><section><h2>생각해볼 점</h2>
-<ul>
-<li>영상의 &quot;사이버캡은 이미 우버보다 싸다&quot;는 미래 생산 단가 추정에 근거한 분석이라고 발표자 스스로 밝힌다. 실제 운영비(관제 인력·보험·사고 비용)가 포함된 숫자인지는 영상에 나오지 않으므로 투자 판단에 그대로 쓰기는 어렵다.</li>
-<li>발표자는 현대차 계열 연구원이고 &quot;경쟁사지만 걱정 아닌 걱정&quot;이라 말한다. 테슬라를 높게 평가하되 규제 허들과 운영 데이터 격차를 강조하는 균형은 참고하되, 현대차 쪽 시각이라는 점은 감안할 필요가 있다.</li>
-<li>로보택시 운영 대수와 비율 숫자가 자막에서 일부 뭉개져 있다(400대 돌파 vs 200~300대 운영). 정확한 수치는 테슬라 공식 발표를 확인하는 것이 안전하다.</li>
-</ul>
-</section><section><h2>바로 해볼 일</h2>
-<ul>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Munro &amp; Associates의 '사이버캡 딥다이브' 영상을 찾아 언박스드 공정과 세척 가능 내장 설계를 직접 확인하기.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>테슬라 로보택시(오스틴)와 웨이모 운영 대수·호출 수의 최신 공식 수치를 찾아 영상 숫자와 비교하기.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>테슬라 투자나 산업 분석을 한다면 &quot;기술&quot;이 아니라 &quot;규제 통과 시점&quot;과 &quot;운영 자동화 진척&quot;을 체크 항목으로 추가하기.</li>
-</ul>
-</section>
-<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
-</main></body></html>
-<!-- build 1793744350 -->
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>🔒 [박형근의 테슬라 2부] 10초면 차 한 대씩 찍어내는 무인택시 공장을 테슬라는 왜 놀리고 있을까? &amp;#x27;사이버캡&amp;#x27;의 미친 원가 비결 (HMG경영연구원 박형근 실장)</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0f1320;color:#e8ebf2;
+font-family:"Pretendard Variable",Pretendard,-apple-system,"Malgun Gothic",sans-serif}
+.box{width:min(380px,90vw);padding:28px;border-radius:18px;background:#181d2c;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+h1{font-size:20px;margin:0 0 4px}p{color:#9aa3b5;font-size:14px;margin:0 0 16px}
+input[type=password]{width:100%;box-sizing:border-box;font-size:17px;padding:12px 14px;border-radius:10px;border:1px solid #2c3449;background:#0f1320;color:#fff}
+button{width:100%;margin-top:10px;font-size:16px;font-weight:700;padding:12px;border:0;border-radius:10px;background:#5b7cff;color:#fff;cursor:pointer}
+label{display:flex;gap:6px;align-items:center;font-size:13px;color:#9aa3b5;margin-top:12px}#e{color:#ff7b8a;min-height:18px;margin:10px 0 0}
+#w{display:none;color:#9aa3b5;font-size:14px}</style></head>
+<body><div class="box" id="g"><h1>🔒 개인 리포트</h1><p>[박형근의 테슬라 2부] 10초면 차 한 대씩 찍어내는 무인택시 공장을 테슬라는 왜 놀리고 있을까? &amp;#x27;사이버캡&amp;#x27;의 미친 원가 비결 (HMG경영연구원 박형근 실장)</p>
+<form id="f"><input id="p" type="password" placeholder="암호" autocomplete="current-password" autofocus><button>열기</button></form>
+<label><input type="checkbox" id="r" checked> 이 기기에서 암호 기억</label><p id="e"></p></div>
+<p id="w">여는 중…</p>
+<script>
+const D={"salt": "v1XRfqFVFU6o3lb45ZURmg==", "iv": "wt4gi+/9NOHi3dPo", "ct": "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", "it": 200000, "k": "hub-pw"},K=D.k||"hub-pw";
+const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function dec(pw){const k=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
+const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b(D.salt),iterations:D.it,hash:"SHA-256"},k,{name:"AES-GCM",length:256},false,["decrypt"]);
+return new TextDecoder().decode(await crypto.subtle.decrypt({name:"AES-GCM",iv:b(D.iv)},key,b(D.ct)));}
+async function fresh(){try{const r=await fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"});
+const m=(await r.text()).match(/const D=(\{.*?\})[,;]/);if(m)Object.assign(D,JSON.parse(m[1]));}catch(_){}}
+async function go(pw,remember,auto){document.getElementById("w").style.display="block";
+try{await fresh();const h=await dec(pw);try{if(remember)localStorage.setItem(K,pw);}catch(_){}
+const hash=location.hash;document.open();document.write(h);document.close();if(hash)setTimeout(()=>{location.hash="";location.hash=hash},50);}
+catch(err){document.getElementById("w").style.display="none";try{localStorage.removeItem(K)}catch(_){}
+if(!auto)document.getElementById("e").textContent="암호가 맞지 않습니다";}}
+document.getElementById("f").onsubmit=ev=>{ev.preventDefault();go(document.getElementById("p").value,document.getElementById("r").checked,false)};
+let s=null;try{s=localStorage.getItem(K)}catch(_){}if(s)go(s,true,true);
+</script></body></html>

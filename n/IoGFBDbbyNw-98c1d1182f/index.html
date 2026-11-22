@@ -1,263 +1,31 @@
-<!doctype html>
-<html lang="ko"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
-<meta name="color-scheme" content="light dark">
-<title>[김갑진의 양자물리학 몰아보기] 아인슈타인이 뒤집은 양자역학의 탄생부터 &#x27;저항 0&#x27; 초전도체. 양자컴퓨터의 비밀까지 (카이스트 물리학과 김갑진 교수)</title>
-<meta property="og:title" content="[김갑진의 양자물리학 몰아보기] 아인슈타인이 뒤집은 양자역학의 탄생부터 &#x27;저항 0&#x27; 초전도체. 양자컴퓨터의 비밀까지 (카이스트 물리학과 김갑진 교수)">
-<meta property="og:description" content="Understanding : All the Knowledge in the World · 유튜브 정리 노트">
-<meta property="og:image" content="https://i.ytimg.com/vi/IoGFBDbbyNw/hqdefault.jpg">
-<style>
-:root{--bg:#f6f7f9;--card:#fff;--text:#1d2129;--muted:#5f6673;--line:#e3e6eb;--accent:#d93025;--accent-soft:#fdecea;--code:#f1f3f5;--warn-soft:#fff4d6}
-@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--text:#e7e9ec;--muted:#9aa1ad;--line:#2c3138;--accent:#ff6b5e;--accent-soft:#3a1f1d;--code:#252a31;--warn-soft:#3a3115}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
-main{max-width:780px;margin:0 auto;padding:20px 16px 64px}
-header.top{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px}
-header.top .thumb{display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
-header.top .info{padding:16px 18px 18px}
-h1{font-size:1.45rem;line-height:1.4;margin:0 0 8px}
-.meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
-.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
-.btn{display:inline-block;margin-top:12px;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
-section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px 14px;margin:0 0 16px}
-section.glance{border:2px solid var(--accent);background:linear-gradient(var(--accent-soft),var(--card) 140px)}
-h2{font-size:1.2rem;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
-section.glance h2{border-color:var(--accent);color:var(--accent)}
-h3{font-size:1.06rem;margin:24px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-p,li{margin:.45em 0}
-ul,ol{padding-left:1.3em}
-a{color:var(--accent)}
-code{background:var(--code);border-radius:5px;padding:.1em .35em;font-size:.88em}
-pre{background:var(--code);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.85rem;line-height:1.55}
-pre code{background:none;padding:0}
-blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid var(--line);color:var(--muted)}
-.tbl{overflow-x:auto;margin:12px 0}
-table{border-collapse:collapse;width:100%;font-size:.92rem}
-th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
-th{background:var(--code)}
-figure{margin:16px 0}
-figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#000}
-figcaption{font-size:.86rem;color:var(--muted);margin-top:6px;line-height:1.5}
-figcaption a{text-decoration:none;font-weight:600;white-space:nowrap}
-small.tm{font-size:.74em;color:var(--muted);white-space:nowrap;margin-left:2px}
-small.tm a{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
-.pair{display:grid;gap:12px;grid-template-columns:1fr}
-.pair figure{margin:4px 0}
-@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
-li.task-list-item{list-style:none;margin-left:-1.3em}
-blockquote.tip{border:0;border-radius:12px;background:var(--accent-soft);color:var(--text);padding:10px 14px;font-weight:600}
-li.warn{background:var(--warn-soft);border-radius:8px;padding:4px 8px;list-style:none;margin-left:-1.3em}
-li.ok{list-style:none;margin-left:-1.3em;padding:0 8px}
-.flow{margin:18px 0;padding:14px 14px 4px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
-.flow-title{font-weight:700;margin:0 0 10px}
-.flow-strip{display:flex;flex-wrap:wrap;gap:6px 4px;list-style:none;padding:0;margin:0 0 14px}
-.flow-strip li{margin:0;display:flex;align-items:center;font-size:.82rem;line-height:1.3}
-.flow-strip span{background:var(--accent);color:#fff;border-radius:999px;padding:4px 10px;font-weight:600}
-.flow-strip li:not(:last-child)::after{content:"→";color:var(--muted);margin-left:4px;font-weight:700}
-.flow-steps{list-style:none;padding:0;margin:0}
-.flow-steps>li{position:relative;padding:0 0 16px 46px;margin:0}
-.flow-steps>li::before{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:2px;background:var(--line)}
-.flow-steps>li:last-child::before{display:none}
-.flow-steps .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
-.flow-steps .t{font-weight:700;line-height:32px;display:block}
-.flow-steps .d{color:var(--text);font-size:.95rem;line-height:1.65}
-.flow-steps .d p{margin:.2em 0}
-.flow-steps .d ul{margin:.2em 0;padding-left:1.1em}
-.flow-steps figure{margin:10px 0 4px}
-footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
-</style></head>
-<body><main>
-<header class="top"><a class="thumb" href="https://youtu.be/IoGFBDbbyNw" style="background-image:url('https://i.ytimg.com/vi/IoGFBDbbyNw/hqdefault.jpg')" aria-label="원본 영상"></a>
-<div class="info"><h1>[김갑진의 양자물리학 몰아보기] 아인슈타인이 뒤집은 양자역학의 탄생부터 &#x27;저항 0&#x27; 초전도체. 양자컴퓨터의 비밀까지 (카이스트 물리학과 김갑진 교수)</h1><p class="meta">Understanding : All the Knowledge in the World · 게시 2026-11-21</p>
-<a class="btn" href="https://youtu.be/IoGFBDbbyNw">▶ 원본 영상 보기</a></div></header>
-<section class="glance"><h2>한눈에 보기</h2>
-<ul>
-<li>이 영상은 노벨 물리학상 이야기를 통해 &quot;과학은 진리가 아니라 의심과 실험 끝에 이뤄낸 합의&quot;라는 점을 보여 준다.</li>
-<li>첫 질문 &quot;빛은 알갱이인가 파동인가?&quot;는 뉴턴(알갱이) → 영·맥스웰(파동) → 플랑크·아인슈타인·콤프턴(다시 알갱이)으로 이어지고, 결론은 &quot;둘 다&quot;(양자역학의 상보성)다.</li>
-<li>둘째 질문 &quot;금속을 차갑게 하면 저항은 어떻게 될까?&quot;는 오네스의 초전도 발견, 46년 뒤 BCS 이론(쿠퍼쌍), 조셉슨 접합, 1986년 고온 초전도체로 이어진다.</li>
-<li>초전도 회로 전체가 하나의 양자 상태로 터널링한다는 1985년 실험이 구글 양자컴퓨터(초전도 큐비트)의 토대가 됐다.</li>
-<li>과학자들은 서로 다른 설명을 내놓고, 설명에서 나온 예측을 실험으로 검증하며 합의에 이른다.</li>
-</ul>
-</section><section><h2>이런 분께 도움이 됩니다</h2>
-<ul>
-<li>양자역학·초전도·양자컴퓨터가 &quot;어떤 질문에서 출발했는지&quot; 흐름으로 알고 싶은 분</li>
-<li>수식 없이 노벨상 이야기로 과학의 작동 방식을 이해하고 싶은 분 (김갑진 KAIST 교수의 책 『우리는 어쩌다 과학을 믿게 되었을까』 내용)</li>
-</ul>
-</section><section><h2>핵심 내용</h2>
-<h3>과학은 진리가 아니라 합의다</h3>
-<ul>
-<li>과학은 진리를 말하는 게 아니라 &quot;가능한 설명&quot;을 내놓고, 과학자들이 싸우다가 움직일 수 없는 증거가 쌓이면 합의한다. 그 합의에 노벨 물리학상을 준다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=132">2:12</a>)</small><ul>
-<li>천동설에서 지동설로 넘어가는 데도 증거가 계속 쌓여서야 받아들여졌다.</li>
-<li>100℃에서 물이 끓는 것도 과학자는 &quot;온도계가 잘못됐을 것&quot;이라며 끝까지 의심하고, 더 이상 의심할 수 없을 때 믿는다.</li>
-</ul>
-</li>
-<li>새 이론이 나와도 옛 이론이 완전히 틀리는 건 아니다. 상대성이론이 나와도 뉴턴 역학은 여전히 맞는 영역이 있다.</li>
-<li>과학은 언제든 바뀔 수 있다. 100년 뒤 지금의 설명이 틀렸다고 증명될 수도 있다.</li>
-</ul>
-<blockquote class="tip"><p>💡 과학이 믿을 만한 이유는 &quot;진리라서&quot;가 아니라 의심과 검증을 끝까지 거쳤기 때문이다.</p>
-</blockquote>
-<figure><a href="https://youtu.be/IoGFBDbbyNw?t=145"><img src="01.jpg" alt="노벨 물리학상 이야기 강연 첫 슬라이드와 책 표지" loading="lazy"></a><figcaption>노벨 물리학상 이야기 강연 첫 슬라이드와 책 표지 · <a href="https://youtu.be/IoGFBDbbyNw?t=145">▶ 2:25</a></figcaption></figure><h3>뉴턴이 신뢰를 얻은 이유와 &quot;빛은 알갱이&quot;</h3>
-<ul>
-<li>뉴턴은 두 식(중력, F=ma)으로 우주의 운동을 설명했다.<ul>
-<li>핼리는 뉴턴 법칙으로 혜성이 76년 뒤 다시 온다고 예측했고, 자신이 죽은 뒤인 1758년 12월에 실제로 왔다. (자막상 사망 연도 표기는 불분명)</li>
-<li>천왕성 궤도가 계산과 안 맞자 바깥에 다른 천체가 있다고 계산했고, 그 자리에서 해왕성이 발견됐다.</li>
-<li>카벤디시는 두 질량 사이의 미세한 중력을 거울과 빛으로 증폭해 측정했다. 이렇게 G를 알면 지구 질량이 나오고, 이어서 태양과 행성 질량도 알 수 있다.</li>
-</ul>
-</li>
-<li>뉴턴은 &quot;빛은 힘을 안 주면 직진하는 알갱이&quot;라고 주장했다. 프리즘으로 색이 갈라지는 걸 보고 &quot;색은 물질이 아니라 빛의 특성&quot;이라고도 봤다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=585">9:45</a>)</small></li>
-</ul>
-<blockquote class="tip"><p>💡 &quot;미래를 예측하고 없던 걸 찾아낸&quot; 뉴턴의 권위가 너무 커서 그의 빛 이론에 반대하기가 어려웠다.</p>
-</blockquote>
-<figure><a href="https://youtu.be/IoGFBDbbyNw?t=588"><img src="02.jpg" alt="뉴턴 법칙으로 1758년 혜성 재출현을 예측한 슬라이드" loading="lazy"></a><figcaption>뉴턴 법칙으로 1758년 혜성 재출현을 예측한 슬라이드 · <a href="https://youtu.be/IoGFBDbbyNw?t=588">▶ 9:48</a></figcaption></figure><h3>빛의 정체를 둘러싼 논쟁 타임라인</h3>
-<div class="flow"><div class="flow-title">🔁 빛은 알갱이인가 파동인가</div><ol class="flow-strip"><li><span>뉴턴: 알갱이</span></li><li><span>영: 파동</span></li><li><span>맥스웰: 전자기파</span></li><li><span>플랑크: 에너지가 띄엄띄엄</span></li><li><span>아인슈타인: 광전효과</span></li><li><span>밀리컨: 검증</span></li><li><span>콤프턴·보테: 산란</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">뉴턴: 알갱이</span><div class="d"><p>직진하므로 알갱이라고 주장</p>
-</div></li><li><span class="n">2</span><span class="t">영: 파동</span><div class="d"><p>이중슬릿 실험의 간섭무늬는 알갱이로는 설명 불가 <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1096">18:16</a>)</small></p>
-</div></li><li><span class="n">3</span><span class="t">맥스웰: 전자기파</span><div class="d"><p>방정식으로 &quot;빛은 전기와 자기가 진동하며 나아가는 파동&quot;임을 증명, 종지부 <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1179">19:39</a>)</small></p>
-</div></li><li><span class="n">4</span><span class="t">플랑크: 에너지가 띄엄띄엄</span><div class="d"><p>뜨거운 물체의 빛 스펙트럼을 맞추려면 에너지가 불연속이어야 함</p>
-</div></li><li><span class="n">5</span><span class="t">아인슈타인: 광전효과</span><div class="d"><p>빛이 알갱이라면 설명됨</p>
-</div></li><li><span class="n">6</span><span class="t">밀리컨: 검증</span><div class="d"><p>10년 실험으로 예측이 정확히 맞음</p>
-</div></li><li><span class="n">7</span><span class="t">콤프턴·보테: 산란</span><div class="d"><p>알갱이 충돌로 해석, 동시측정으로 확인(1954 노벨상)</p>
-</div></li></ol></div>
-<ul>
-<li>영은 &quot;나도 뉴턴을 존경하지만 그가 무결하다고 믿을 이유는 없다&quot;고 했다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1150">19:10</a>)</small></li>
-<li>파동이라면 간섭무늬가 생긴다. 알갱이라면 구멍 두 개 뒤에 점이 두 군데만 생겨야 한다.</li>
-</ul>
-<div class="pair"><figure><a href="https://youtu.be/IoGFBDbbyNw?t=1084"><img src="03.jpg" alt="영의 이중 슬릿 실험(1801)의 간섭무늬" loading="lazy"></a><figcaption>영의 이중 슬릿 실험(1801)의 간섭무늬 · <a href="https://youtu.be/IoGFBDbbyNw?t=1084">▶ 18:04</a></figcaption></figure><figure><a href="https://youtu.be/IoGFBDbbyNw?t=1269"><img src="04.jpg" alt="맥스웰 방정식 슬라이드: 전자기파 스펙트럼, &#x27;빛은 파동이다!&#x27;" loading="lazy"></a><figcaption>맥스웰 방정식 슬라이드: 전자기파 스펙트럼, &#x27;빛은 파동이다!&#x27; · <a href="https://youtu.be/IoGFBDbbyNw?t=1269">▶ 21:09</a></figcaption></figure></div><h3>파동으로는 설명 안 되는 실험들 (알갱이론의 근거)</h3>
-<ul>
-<li><strong>흑체복사</strong>: 물질과 상관없이 온도만 같으면 빛의 스펙트럼이 같다. 이를 별의 온도 측정에 쓴다.<ul>
-<li>빈의 식은 피크 오른쪽이, 레일리의 식은 피크 왼쪽이 안 맞았다.</li>
-<li>플랑크는 &quot;에너지가 1, 2, 3처럼 띄엄띄엄 있다&quot;고 가정해 계산한 뒤 간격을 0으로 보내는 방식으로 전체를 정확히 맞췄다. 연속이면 설명이 안 됐다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1486">24:46</a>)</small></li>
-</ul>
-</li>
-<li><strong>광전효과</strong>(레나르트): 금속에 빛을 쏘면 전자가 튀어나온다.<ul>
-<li>빛을 세게(밝게) 쏘면 전자 수만 늘고 속도는 그대로다.</li>
-<li>파장(색)을 바꾸면 달라진다. 보라색은 빠르게 튀고, 빨간색은 아무리 세도 안 나온다.</li>
-<li>아인슈타인은 &quot;빛은 진동수에 비례하는 에너지를 가진 알갱이&quot;라고 설명했고, 진동수와 전자 에너지의 관계는 직선으로 나온다고 예측했다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1868">31:08</a>)</small></li>
-</ul>
-</li>
-<li><strong>밀리컨의 검증</strong>: 아인슈타인이 틀렸음을 보이려고 10년을 실험했는데 예측과 정확히 일치했다. 직선의 기울기가 플랑크 상수 h다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=1963">32:43</a>)</small></li>
-<li><strong>콤프턴 산란</strong>: 파란색(X선)을 물질에 쏘면 더 긴 파장이 나온다. 당구공 충돌로 에너지를 잃는 것처럼 알갱이로 해석해야 설명된다.<ul>
-<li>BKS 이론(보어·크라머스·슬레이터)은 파동을 지키려고 &quot;에너지 보존을 포기해도 좋다&quot;고까지 했다.</li>
-<li>보테와 가이거는 튕겨 나온 전자와 빛을 동시에 측정해 알갱이 충돌임을 직접 확인했고, BKS는 틀렸다고 인정했다.</li>
-</ul>
-</li>
-<li>영의 간섭 실험은 &quot;무조건 파동&quot;, 콤프턴은 &quot;무조건 알갱이&quot;여야 설명된다.</li>
-</ul>
-<figure><a href="https://youtu.be/IoGFBDbbyNw?t=1323"><img src="05.jpg" alt="온도별 흑체복사 스펙트럼 그래프와 빈의 슬라이드" loading="lazy"></a><figcaption>온도별 흑체복사 스펙트럼 그래프와 빈의 슬라이드 · <a href="https://youtu.be/IoGFBDbbyNw?t=1323">▶ 22:03</a></figcaption></figure><h3>결론: 상보성 — 알갱이이면서 파동</h3>
-<ul>
-<li>빛(그리고 모든 물질)은 알갱이이면서 파동이다. 보어의 &quot;상보성&quot;은 서로 배타적인 두 관점이 함께 있어야 세상을 이해할 수 있다는 철학이다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=2391">39:51</a>)</small></li>
-<li>슬릿을 통과할 때는 파동 성질이, 충돌할 때는 알갱이 성질이 나타난다. 어느 쪽으로 보이는지는 &quot;관측하는 순간&quot; 정해진다는 것이 현재의 해석이다.</li>
-<li>설명하기 어려워서 이렇게 말하는 것일 뿐 진리는 아니다. 100년 뒤 다른 설명이 나올 수도 있다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=2570">42:50</a>)</small></li>
-</ul>
-<h3>둘째 질문: 온도를 낮추면 저항은?</h3>
-<ul>
-<li>드루드는 전자가 원자와 부딪혀 속도가 일정해지는 것을 저항이라고 설명했다. 빗방울의 종단속도와 같은 원리다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=2725">45:25</a>)</small></li>
-<li>켈빈은 &quot;온도가 내려가면 전자가 얼어붙어 저항이 커진다&quot;, 오네스는 &quot;원자가 덜 떨려서 저항이 줄어든다&quot;고 예측했다.</li>
-<li>오네스가 헬륨 액화 기술로 직접 실험했다. 저항은 점점 줄다가 약 4.2K에서 갑자기 뚝 떨어졌다. (측정 오차 때문에 &quot;0&quot;이 아니라 10⁻⁵Ω 이하라고 보고했다.) <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=2888">48:08</a>)</small></li>
-<li>이것이 초전도 현상의 발견이고, 발견 2년 뒤 노벨상을 받았다. 이 온도(약 -269℃)까지 내릴 수 있는 사람은 당시 오네스뿐이었다.</li>
-<li>진짜 0인지 확인하려고 납 코일에 전류를 만들고 자기장을 며칠간 지켜봤다. 전류는 헬륨이 떨어져 냉각이 끊길 때까지 멈추지 않았다. 그래도 그는 &quot;1억분의 1 이하&quot;라고만 표현했다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=2975">49:35</a>)</small></li>
-</ul>
-<figure><a href="https://youtu.be/IoGFBDbbyNw?t=2917"><img src="06.jpg" alt="오네스의 초전도 발견(1911): 온도에 따른 수은 저항 그래프" loading="lazy"></a><figcaption>오네스의 초전도 발견(1911): 온도에 따른 수은 저항 그래프 · <a href="https://youtu.be/IoGFBDbbyNw?t=2917">▶ 48:37</a></figcaption></figure><h3>초전도의 설명: BCS 이론</h3>
-<ul>
-<li>설명에 46년이 걸렸다. 양자역학이 정립되고 나서야 가능했기 때문이다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=3087">51:27</a>)</small></li>
-<li>바딘·쿠퍼·슈리퍼(BCS)는 전자 두 개가 쌍(쿠퍼쌍)으로 다닌다고 설명했다.<ul>
-<li>쌍이 되면 보존(boson)이 되어 집단 상태가 가능하다.</li>
-<li>한 전자가 지나가면 주변 양이온이 끌려와 모이고, 뒤따르는 전자가 그 자리의 인력을 느껴 짝을 이룬다. 마이너스끼리도 쌍이 될 수 있다.</li>
-<li>전자는 파동이어서 모든 쌍의 결이 맞으면 장애물에 걸리지 않고 지나간다.</li>
-</ul>
-</li>
-<li>이 이론은 두 가지를 예측했다. 쌍을 깨는 결합에너지가 있고, 25K 이상에서는 초전도가 불가능하다.</li>
-<li>예이버(자막상 &quot;에베이&quot;)가 터널링 실험으로 결합에너지를 확인했다. 에사키의 반도체 터널링 발견이 토대였다.</li>
-<li>조셉슨은 22살 대학생 때 &quot;양쪽 다 초전도체면 쌍이 통째로 넘어갈 수도 있다&quot;고 예측했다. 바딘은 말이 안 된다고 했지만 이듬해 벨 연구소가 실험으로 증명했고, 조셉슨은 노벨상을 받았다.</li>
-</ul>
-<h3>25K 한계를 깬 고온 초전도체 (1986)</h3>
-<ul>
-<li>마티아스는 100개쯤 새 초전도체를 찾으며 &quot;산소·자성·절연체·이론물리학자를 피하라&quot;는 규칙을 세웠다. 열쇠를 가로등 아래서만 찾는 사람 이야기로 새 영역 탐색의 중요성을 말했다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=3638">1:00:38</a>)</small></li>
-<li>1986년 베드노르츠와 뮐러(자막상 표기 불분명)가 35K에서 초전도를 발견하고, 몇 달 뒤 95K(액체질소로 가능한 온도)가 나왔다. 이듬해 노벨상을 받았다.</li>
-<li>물질은 란타늄·바륨·구리 산화물로, 산소가 있고 자성이 있는 절연체였다. 마티아스의 규칙 전부를 어겼다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=3752">1:02:32</a>)</small></li>
-<li>BCS의 25K 한계는 순수 물질에서는 맞다. 하지만 이 물질이 왜 초전도가 되는지는 지금도 아무도 설명하지 못한다. 설명하면 노벨상 감이다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=3807">1:03:27</a>)</small></li>
-</ul>
-<h3>거시적 양자 터널링과 양자컴퓨터</h3>
-<div class="flow"><div class="flow-title">🔁 초전도 질문에서 양자컴퓨터까지</div><ol class="flow-strip"><li><span>쌍으로 결이 맞는 전자</span></li><li><span>레깃의 예측</span></li><li><span>1985 실험</span></li><li><span>온도가 평평해짐</span></li><li><span>큰 회로가 인공 원자</span></li><li><span>구글 양자컴퓨터</span></li></ol><ol class="flow-steps"><li><span class="n">1</span><span class="t">쌍으로 결이 맞는 전자</span><div class="d"><p>초전도체 안의 모든 전자가 하나의 양자 상태</p>
-</div></li><li><span class="n">2</span><span class="t">레깃의 예측</span><div class="d"><p>10²³개 규모의 전체가 한 번에 터널링할 수 있다고 계산</p>
-</div></li><li><span class="n">3</span><span class="t">1985 실험</span><div class="d"><p>클라크 교수와 박사후연구원, 학생 세 명이 온도를 mK 이하로 낮춤</p>
-</div></li><li><span class="n">4</span><span class="t">온도가 평평해짐</span><div class="d"><p>열로 넘는 게 아니라 터널로 뚫고 간다는 증거</p>
-</div></li><li><span class="n">5</span><span class="t">큰 회로가 인공 원자</span><div class="d"><p>칩 위 초전도 회로를 큐비트로 사용</p>
-</div></li><li><span class="n">6</span><span class="t">구글 양자컴퓨터</span><div class="d"><p>학생이던 마티니스(자막상 &quot;마티리스&quot;)가 구글에서 개발, 2019 양자 우월성 논문</p>
-</div></li></ol></div>
-<ul>
-<li>이 실험 덕분에 원자 단위가 아닌 칩 크기 회로에서도 양자 현상을 볼 수 있게 됐다. 만들기도 쉽고 큐비트를 늘리기도 쉽다.</li>
-</ul>
-<blockquote class="tip"><p>💡 &quot;저항이 어떻게 될까?&quot;라는 단순한 질문이 40년 뒤 양자컴퓨터로 이어졌다.</p>
-</blockquote>
-<figure><a href="https://youtu.be/IoGFBDbbyNw?t=4060"><img src="07.jpg" alt="거시적 양자 터널링(1985): 열 요동 전이와 터널링 전이 구분 그래프" loading="lazy"></a><figcaption>거시적 양자 터널링(1985): 열 요동 전이와 터널링 전이 구분 그래프 · <a href="https://youtu.be/IoGFBDbbyNw?t=4060">▶ 1:07:40</a></figcaption></figure><h3>양자역학이 이미 쓰이는 곳</h3>
-<ul>
-<li>반도체: 전자가 파동이어서 터널링이 일어난다. 컴퓨터 칩(CMOS)이 이를 활용한다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=4300">1:11:40</a>)</small></li>
-<li>레이저: 원자 에너지 준위가 딱 정해져 있어 똑같은 빛이 계속 나온다. 결을 맞춘 빛이라 달까지도 쏜다.</li>
-</ul>
-<h3>노벨상을 받는 사람의 특징</h3>
-<ul>
-<li>질문은 의외로 단순하다. 예를 들어 &quot;하드디스크 소자에 전류를 흘려 저항을 재보자&quot;는 생각 하나가 노벨상이 됐다. <small class="tm">(<a href="https://youtu.be/IoGFBDbbyNw?t=4608">1:16:48</a>)</small></li>
-<li>대부분 박사후연구원·학생의 새 아이디어로 시작한다(쿠퍼쌍도 박사후연구원 아이디어였다). 교수는 중요한 문제를 알아보는 안목과 경험을 맡는다.</li>
-<li>공부할수록 &quot;나도 생각할 수 있었는데&quot;라는 경우와 &quot;수학을 따라가지 못해 이해 못 하는&quot; 경우가 있다고 한다.</li>
-</ul>
-</section><section><h2>기억할 숫자·인용</h2>
-<div class="tbl"><table>
-<thead>
-<tr>
-  <th>항목</th>
-  <th>내용</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>핼리혜성</td>
-  <td>76년 주기, 1758년 12월 재출현, 다음은 2061~62년경</td>
-</tr>
-<tr>
-  <td>초전도 발견</td>
-  <td>약 4.2K(-269℃), 오네스, 발견 2년 후 노벨상</td>
-</tr>
-<tr>
-  <td>BCS 이론</td>
-  <td>발견 후 46년 만에 설명(1957)</td>
-</tr>
-<tr>
-  <td>BCS 한계</td>
-  <td>25K 이상 불가 → 1986년 35K → 95K</td>
-</tr>
-<tr>
-  <td>조셉슨</td>
-  <td>22살에 예측, 노벨상</td>
-</tr>
-<tr>
-  <td>거시 터널링 실험</td>
-  <td>1985년, 구글 양자 우월성 논문은 2019년</td>
-</tr>
-<tr>
-  <td>보어</td>
-  <td>&quot;한 가지 관점으로는 세상이 이해되지 않는다&quot;</td>
-</tr>
-<tr>
-  <td>영</td>
-  <td>&quot;뉴턴이 무결하다고 믿을 이유는 없다&quot;</td>
-</tr>
-</tbody>
-</table></div>
-</section><section><h2>생각해볼 점</h2>
-<ul>
-<li>강연 특성상 방정식·세부 실험 조건은 단순화돼 있다(예: 광전효과는 &quot;진동수가 높을수록 에너지가 크다&quot;는 식의 선형 관계). 정확한 내용은 책이나 교과서로 확인해야 한다.</li>
-<li>&quot;관측하는 순간 파동/알갱이가 정해진다&quot;는 해석은 여러 해석 중 하나이며, 교수 스스로도 &quot;진리가 아니다&quot;라고 밝혔다.</li>
-<li>고유명사와 연도는 자막 인식 오류가 있을 수 있어(예: 예이버, 베드노르츠, 마티니스) 인용 전에 검색으로 확인하는 것이 좋다.</li>
-</ul>
-</section><section><h2>바로 해볼 일</h2>
-<ul>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>레이저 포인터를 머리카락에 비춰 벽에 생기는 간섭무늬를 직접 보기</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>&quot;광전효과&quot;, &quot;쿠퍼쌍&quot;, &quot;조셉슨 접합&quot; 중 하나를 골라 공식 자료로 10분 더 읽어 보기</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>책 『우리는 어쩌다 과학을 믿게 되었을까』 목차 확인하기</li>
-</ul>
-</section>
-<footer>유튜브 정리 노트 · 영상 화면을 누르면 그 장면부터 재생됩니다</footer>
-</main></body></html>
-<!-- build 1795298889 -->
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>🔒 [김갑진의 양자물리학 몰아보기] 아인슈타인이 뒤집은 양자역학의 탄생부터 &amp;#x27;저항 0&amp;#x27; 초전도체. 양자컴퓨터의 비밀까지 (카이스트 물리학과 김갑진 교수)</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0f1320;color:#e8ebf2;
+font-family:"Pretendard Variable",Pretendard,-apple-system,"Malgun Gothic",sans-serif}
+.box{width:min(380px,90vw);padding:28px;border-radius:18px;background:#181d2c;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+h1{font-size:20px;margin:0 0 4px}p{color:#9aa3b5;font-size:14px;margin:0 0 16px}
+input[type=password]{width:100%;box-sizing:border-box;font-size:17px;padding:12px 14px;border-radius:10px;border:1px solid #2c3449;background:#0f1320;color:#fff}
+button{width:100%;margin-top:10px;font-size:16px;font-weight:700;padding:12px;border:0;border-radius:10px;background:#5b7cff;color:#fff;cursor:pointer}
+label{display:flex;gap:6px;align-items:center;font-size:13px;color:#9aa3b5;margin-top:12px}#e{color:#ff7b8a;min-height:18px;margin:10px 0 0}
+#w{display:none;color:#9aa3b5;font-size:14px}</style></head>
+<body><div class="box" id="g"><h1>🔒 개인 리포트</h1><p>[김갑진의 양자물리학 몰아보기] 아인슈타인이 뒤집은 양자역학의 탄생부터 &amp;#x27;저항 0&amp;#x27; 초전도체. 양자컴퓨터의 비밀까지 (카이스트 물리학과 김갑진 교수)</p>
+<form id="f"><input id="p" type="password" placeholder="암호" autocomplete="current-password" autofocus><button>열기</button></form>
+<label><input type="checkbox" id="r" checked> 이 기기에서 암호 기억</label><p id="e"></p></div>
+<p id="w">여는 중…</p>
+<script>
+const D={"salt": "FTtJSMiD7WFzcEg2CFKjig==", "iv": "h+6vSMTLsUZOZLk2", "ct": "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", "it": 200000, "k": "hub-pw"},K=D.k||"hub-pw";
+const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function dec(pw){const k=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
+const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b(D.salt),iterations:D.it,hash:"SHA-256"},k,{name:"AES-GCM",length:256},false,["decrypt"]);
+return new TextDecoder().decode(await crypto.subtle.decrypt({name:"AES-GCM",iv:b(D.iv)},key,b(D.ct)));}
+async function fresh(){try{const r=await fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"});
+const m=(await r.text()).match(/const D=(\{.*?\})[,;]/);if(m)Object.assign(D,JSON.parse(m[1]));}catch(_){}}
+async function go(pw,remember,auto){document.getElementById("w").style.display="block";
+try{await fresh();const h=await dec(pw);try{if(remember)localStorage.setItem(K,pw);}catch(_){}
+const hash=location.hash;document.open();document.write(h);document.close();if(hash)setTimeout(()=>{location.hash="";location.hash=hash},50);}
+catch(err){document.getElementById("w").style.display="none";try{localStorage.removeItem(K)}catch(_){}
+if(!auto)document.getElementById("e").textContent="암호가 맞지 않습니다";}}
+document.getElementById("f").onsubmit=ev=>{ev.preventDefault();go(document.getElementById("p").value,document.getElementById("r").checked,false)};
+let s=null;try{s=localStorage.getItem(K)}catch(_){}if(s)go(s,true,true);
+</script></body></html>
